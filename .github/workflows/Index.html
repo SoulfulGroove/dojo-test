@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Earth Scroll — Line Editing Quest</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 24px;
+				background: #111111;
+				font-family: Arial, sans-serif;
+				color: #ffffff;
+			}
+
+			.quest-wrap {
+				max-width: 800px;
+				margin: 40px auto;
+				padding: 24px;
+				background: #1c1c1c;
+				border-radius: 12px;
+				color: #ffffff;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			}
+
+			.quest-title {
+				margin-top: 0;
+				color: #c9a84c;
+				text-align: center;
+				margin-bottom: 10px;
+				letter-spacing: 1px;
+			}
+
+			.quest-sub {
+				color: #cccccc;
+				text-align: center;
+				margin-top: 0;
+				margin-bottom: 24px;
+				line-height: 1.6;
+			}
+
+			.progress-label {
+				margin-bottom: 10px;
+				color: #cccccc;
+			}
+
+			.progress-text {
+				color: #c9a84c;
+				font-weight: bold;
+			}
+
+			.progress-track {
+				width: 100%;
+				background: #333333;
+				border-radius: 999px;
+				overflow: hidden;
+				margin-bottom: 24px;
+				height: 18px;
+			}
+
+			.progress-bar {
+				width: 0%;
+				height: 100%;
+				background: linear-gradient(90deg, #4dd2ff, #4dff88);
+				transition: width 0.25s ease;
+			}
+
+			.task-list {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 10px;
+			}
+
+			.task-btn {
+				background: #2a1111;
+				color: #ff6666;
+				border: none;
+				border-radius: 8px;
+				padding: 14px 16px;
+				text-align: left;
+				cursor: pointer;
+				font-size: 15px;
+				transition: all 0.2s ease;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+			}
+
+			.task-btn:hover {
+				transform: translateY(-1px);
+				filter: brightness(1.08);
+			}
+
+			.task-btn.complete {
+				background: #112a18;
+				color: #4dff88;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="quest-wrap">
+			<h2 class="quest-title">Earth Scroll — Line Editing Quest</h2>
+
+			<p class="quest-sub">
+				Click a section to toggle it complete or incomplete.
+			</p>
+
+			<div class="progress-label">
+				Progress:
+				<span id="progressText" class="progress-text"
+					>0 / 9 Complete</span
+				>
+			</div>
+
+			<div class="progress-track">
+				<div id="progressBar" class="progress-bar"></div>
+			</div>
+
+			<div id="taskList" class="task-list">
+				<button class="task-btn" data-complete="false">
+					Section 1 — Title and Opening Passage
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 2 — The Ground of the Way
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 3 — Broad Strategy Principles
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 4 — The Carpenter Analogy
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 5 — The Warrior’s Training
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 6 — Rhythm and Timing Foundations
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 7 — The Two Swords Principle
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 8 — Daily Practice and Discipline
+				</button>
+				<button class="task-btn" data-complete="false">
+					Section 9 — Summary Pass and Final Line Review
+				</button>
+			</div>
+		</div>
+
+		<script>
+			(function () {
+				const buttons = document.querySelectorAll(".task-btn");
+				const progressText = document.getElementById("progressText");
+				const progressBar = document.getElementById("progressBar");
+
+				function updateProgress() {
+					const total = buttons.length;
+					const complete = Array.from(buttons).filter(
+						(btn) => btn.dataset.complete === "true"
+					).length;
+					const percent = (complete / total) * 100;
+
+					progressText.textContent =
+						complete + " / " + total + " Complete";
+					progressBar.style.width = percent + "%";
+				}
+
+				buttons.forEach((btn) => {
+					btn.addEventListener("click", function () {
+						const isComplete = this.dataset.complete === "true";
+						this.dataset.complete = isComplete ? "false" : "true";
+						this.classList.toggle("complete", !isComplete);
+						updateProgress();
+					});
+				});
+
+				updateProgress();
+			})();
+		</script>
+	</body>
+</html>
