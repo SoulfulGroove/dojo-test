@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Arbitrage Starter</title>
+  <style>
+    :root { --bg:#0f1115; --panel:#1a1f29; --text:#e9eef8; --muted:#9ba6bc; --good:#2ecc71; --warn:#f1c40f; --bad:#e74c3c; }
+    body { margin:0; font-family:Arial,sans-serif; background:var(--bg); color:var(--text); }
+    .wrap{max-width:1000px;margin:24px auto;padding:16px;}
+    .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+    .card{background:var(--panel);border-radius:12px;padding:16px}
+    h1,h2{margin-top:0}
+    label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+    input,select,textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #2f3645;background:#121620;color:var(--text)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700}
+    .buy{background:rgba(46,204,113,.2);color:var(--good)} .watch{background:rgba(241,196,15,.2);color:var(--warn)} .pass{background:rgba(231,76,60,.2);color:var(--bad)}
+    .metric{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2b3140}
+    canvas{background:#111622;border-radius:8px;width:100%;height:220px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr;} .row{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>BookArb Starter (/bookarb)</h1>
+    <div class="grid">
+      <section class="card">
+        <h2>Input Form</h2>
+        <div class="row"><div><label>ISBN-10</label><input id="isbn10" /></div><div><label>ISBN-13</label><input id="isbn13" /></div></div>
+        <div class="row"><div><label>Title</label><input id="title" /></div><div><label>Author</label><input id="author" /></div></div>
+        <div class="row"><div><label>Condition</label><select id="condition"><option>Like New</option><option>Good</option><option>Acceptable</option><option>Poor</option></select></div><div><label>Edition</label><input id="edition" /></div></div>
+        <div class="row"><div><label>Source Cost ($)</label><input id="cost" type="number" step="0.01" value="8" /></div><div><label>Shipping Weight (lb)</label><input id="weight" type="number" step="0.1" value="1.2" /></div></div>
+        <div class="row"><div><label>Expected Sale Price ($)</label><input id="sale" type="number" step="0.01" value="34" /></div><div><label>Packing Cost ($)</label><input id="pack" type="number" step="0.01" value="0.8" /></div></div>
+        <div class="row"><div><label>Sold Comp Count</label><input id="sold" type="number" value="6" /></div><div><label>Active Listing Count</label><input id="active" type="number" value="18" /></div></div>
+        <div class="row"><div><label>eBay Fee %</label><input id="feePct" type="number" step="0.1" value="13.25" /></div><div><label>Shipping Cost ($)</label><input id="ship" type="number" step="0.01" value="4.63" /></div></div>
+        <label>Notes</label><textarea id="notes" rows="3" placeholder="Highlighting, water damage, missing code..."></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Decision Card</h2>
+        <div id="decisionPill" class="pill watch">WATCH</div>
+        <div class="metric"><span>Expected Net</span><strong id="net">$0.00</strong></div>
+        <div class="metric"><span>Expected Profit</span><strong id="profit">$0.00</strong></div>
+        <div class="metric"><span>ROI</span><strong id="roi">0%</strong></div>
+        <div class="metric"><span>Sell-through</span><strong id="sellThrough">0%</strong></div>
+        <div class="metric"><span>Strike Score</span><strong id="strike">0</strong></div>
+        <div class="metric"><span>Suggested Listing Price</span><strong id="suggested">$0.00</strong></div>
+        <div class="metric"><span>Main Risk</span><strong id="risk">Comp depth</strong></div>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:16px;">
+      <h2>Book “Ticker” Demo (Concept)</h2>
+      <p style="color:var(--muted)">Mock 14-day estimated net trend (example of stock-style charting for book arbitrage).</p>
+      <canvas id="trend" width="960" height="220"></canvas>
+    </section>
+  </div>
+
+  <script>
+    const ids = ["cost","sale","pack","ship","feePct","sold","active","condition"];
+    ids.forEach(id => document.getElementById(id).addEventListener("input", calculate));
+
+    function toNum(id){ return Number(document.getElementById(id).value || 0); }
+
+    function scoreSpread(p){ if(p<5) return 0; if(p<10) return 1; if(p<25) return 2; return 3; }
+    function scoreLiquidity(sold){ if(sold<=0) return 0; if(sold<3) return 1; if(sold<8) return 2; return 3; }
+    function scoreCompetition(active,sold){ if(sold===0) return 0; const ratio = active/Math.max(sold,1); if(ratio>6) return 0; if(ratio>3) return 1; if(ratio>1.5) return 2; return 3; }
+    function scoreCondition(c){ return ({"Poor":0,"Acceptable":1,"Good":2,"Like New":3})[c] ?? 1; }
+    function scoreSourceAdvantage(cost, sale){ const gap = sale - cost; if(gap<8) return 0; if(gap<15) return 1; if(gap<25) return 2; return 3; }
+
+    function calculate(){
+      const cost=toNum("cost"), sale=toNum("sale"), pack=toNum("pack"), ship=toNum("ship"), feePct=toNum("feePct"), sold=toNum("sold"), active=toNum("active");
+      const fee = sale*(feePct/100);
+      const net = sale-fee-ship-pack;
+      const profit = net-cost;
+      const roi = cost>0?(profit/cost)*100:0;
+      const sellThrough = active>0?(sold/active)*100:0;
+      const strike = scoreSpread(profit)+scoreLiquidity(sold)+scoreCompetition(active,sold)+scoreCondition(document.getElementById("condition").value)+scoreSourceAdvantage(cost,sale);
+
+      let decision = "PASS", cls="pass";
+      if(strike>=12){ decision="STRONG STRIKE"; cls="buy"; }
+      else if(strike>=9){ decision="BUY"; cls="buy"; }
+      else if(strike>=6){ decision="WATCH"; cls="watch"; }
+
+      const risk = sold===0?"No sold comps":(document.getElementById("condition").value==="Poor"?"Condition risk":"Competition depth");
+      const suggested = Math.max(sale, sale*1.03);
+
+      document.getElementById("net").textContent = money(net);
+      document.getElementById("profit").textContent = money(profit);
+      document.getElementById("roi").textContent = `${roi.toFixed(1)}%`;
+      document.getElementById("sellThrough").textContent = `${sellThrough.toFixed(1)}%`;
+      document.getElementById("strike").textContent = String(strike);
+      document.getElementById("suggested").textContent = money(suggested);
+      document.getElementById("risk").textContent = risk;
+
+      const pill = document.getElementById("decisionPill");
+      pill.textContent = decision;
+      pill.className = `pill ${cls}`;
+
+      drawTrend(net);
+    }
+
+    function money(v){ return `$${v.toFixed(2)}`; }
+
+    function drawTrend(baseNet){
+      const canvas = document.getElementById("trend");
+      const ctx = canvas.getContext("2d");
+      const points = Array.from({length:14}, (_,i)=> baseNet + Math.sin(i/2)*1.8 + (Math.random()-0.5)*1.2);
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.strokeStyle="#3b4458"; ctx.lineWidth=1;
+      for(let y=20;y<220;y+=40){ ctx.beginPath(); ctx.moveTo(30,y); ctx.lineTo(canvas.width-20,y); ctx.stroke(); }
+      const min=Math.min(...points)-2, max=Math.max(...points)+2;
+      const xStep=(canvas.width-60)/(points.length-1);
+      ctx.strokeStyle="#4dd2ff"; ctx.lineWidth=3; ctx.beginPath();
+      points.forEach((p,i)=>{ const x=30+i*xStep; const y=200-((p-min)/(max-min))*160; i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); });
+      ctx.stroke();
+    }
+
+    calculate();
+  </script>
+</body>
+</html>
