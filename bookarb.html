@@ -28,6 +28,7 @@
       <section class="card">
         <h2>Input Form</h2>
         <div class="row"><div><label>ISBN-10</label><input id="isbn10" /></div><div><label>ISBN-13</label><input id="isbn13" /></div></div>
+        <div class="row"><div><button id="lookupBtn" type="button" style="width:100%;padding:10px;border-radius:8px;border:0;background:#2e6bff;color:#fff;font-weight:700;">Lookup ISBN</button></div><div><div id="lookupStatus" style="font-size:12px;color:#9ba6bc;padding-top:10px;">Enter ISBN-10 or ISBN-13, then click Lookup.</div></div></div>
         <div class="row"><div><label>Title</label><input id="title" /></div><div><label>Author</label><input id="author" /></div></div>
         <div class="row"><div><label>Condition</label><select id="condition"><option>Like New</option><option>Good</option><option>Acceptable</option><option>Poor</option></select></div><div><label>Edition</label><input id="edition" /></div></div>
         <div class="row"><div><label>Source Cost ($)</label><input id="cost" type="number" step="0.01" value="8" /></div><div><label>Shipping Weight (lb)</label><input id="weight" type="number" step="0.1" value="1.2" /></div></div>
@@ -68,6 +69,31 @@
     function scoreCompetition(active,sold){ if(sold===0) return 0; const ratio = active/Math.max(sold,1); if(ratio>6) return 0; if(ratio>3) return 1; if(ratio>1.5) return 2; return 3; }
     function scoreCondition(c){ return ({"Poor":0,"Acceptable":1,"Good":2,"Like New":3})[c] ?? 1; }
     function scoreSourceAdvantage(cost, sale){ const gap = sale - cost; if(gap<8) return 0; if(gap<15) return 1; if(gap<25) return 2; return 3; }
+
+    
+    document.getElementById("lookupBtn").addEventListener("click", lookupISBN);
+
+    async function lookupISBN(){
+      const isbn = (document.getElementById("isbn13").value || document.getElementById("isbn10").value || "").replace(/[^0-9Xx]/g, "");
+      const status = document.getElementById("lookupStatus");
+      if(!isbn){ status.textContent = "Please enter an ISBN-10 or ISBN-13 first."; return; }
+      status.textContent = "Looking up ISBN...";
+      try {
+        const res = await fetch(`https://openlibrary.org/isbn/${isbn}.json`);
+        if(!res.ok) throw new Error("not found");
+        const data = await res.json();
+        document.getElementById("title").value = data.title || document.getElementById("title").value;
+        document.getElementById("edition").value = data.publish_date || document.getElementById("edition").value;
+        if (Array.isArray(data.authors) && data.authors.length){
+          const authorRes = await fetch(`https://openlibrary.org${data.authors[0].key}.json`);
+          if(authorRes.ok){ const authorData = await authorRes.json(); document.getElementById("author").value = authorData.name || document.getElementById("author").value; }
+        }
+        status.textContent = `Loaded metadata for ISBN ${isbn}.`;
+      } catch (e) {
+        status.textContent = `No Open Library record found for ISBN ${isbn}.`;
+      }
+      calculate();
+    }
 
     function calculate(){
       const cost=toNum("cost"), sale=toNum("sale"), pack=toNum("pack"), ship=toNum("ship"), feePct=toNum("feePct"), sold=toNum("sold"), active=toNum("active");
