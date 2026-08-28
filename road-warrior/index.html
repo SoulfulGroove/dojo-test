@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111714" />
+  <title>Road Warrior Offer Calculator</title>
+  <style>
+    :root {
+      --bg: #0d1210;
+      --panel: #151d19;
+      --panel-2: #1a241f;
+      --line: #2d3b34;
+      --text: #edf3ef;
+      --muted: #9eaaa3;
+      --accent: #c9a45d;
+      --good: #78c78f;
+      --warn: #e0b56b;
+      --bad: #dc817b;
+      --shadow: 0 16px 40px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(201,164,93,.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    button, input { font: inherit; }
+
+    .shell {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: max(18px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    }
+
+    header { margin: 4px 0 18px; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 6vw, 2.45rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+
+    .sub {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.45;
+    }
+
+    .baseline {
+      margin-top: 12px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 10px;
+      border: 1px solid rgba(201,164,93,.28);
+      border-radius: 999px;
+      color: #e8d4ab;
+      background: rgba(201,164,93,.08);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      margin-top: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+
+    .input-wrap { position: relative; }
+
+    input {
+      width: 100%;
+      border: 1px solid #34443c;
+      background: #0e1512;
+      color: var(--text);
+      border-radius: 12px;
+      padding: 13px 42px 13px 13px;
+      outline: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(201,164,93,.11);
+    }
+
+    .suffix {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #748079;
+      font-size: .78rem;
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .mode-label { margin: 15px 0 8px; }
+
+    .modes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .mode {
+      border: 1px solid #34443c;
+      background: #101713;
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 11px 7px;
+      cursor: pointer;
+      font-size: .78rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .mode small {
+      display: block;
+      margin-top: 4px;
+      color: #748079;
+      font-size: .68rem;
+    }
+
+    .mode.active {
+      border-color: var(--accent);
+      background: rgba(201,164,93,.12);
+      color: #f2dfb8;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side {
+      border-radius: 15px;
+      padding: 15px;
+      background: #101713;
+      border: 1px solid #2c3933;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .efficiency {
+      font-size: clamp(2.6rem, 11vw, 4.8rem);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.06em;
+      margin: 10px 0 8px;
+    }
+
+    .status {
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    .buffer {
+      font-size: clamp(1.65rem, 7vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      margin: 10px 0 4px;
+    }
+
+    .muted { color: var(--muted); }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+
+    .primary-metrics,
+    .secondary-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .metric {
+      border: 1px solid #2b3932;
+      border-radius: 13px;
+      padding: 12px;
+      background: rgba(8,12,10,.35);
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: .71rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 5px;
+    }
+
+    .metric .value {
+      font-size: 1.16rem;
+      font-weight: 850;
+      letter-spacing: -.02em;
+    }
+
+    .secondary-title {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .footer-note {
+      margin: 14px 2px 0;
+      color: #76827b;
+      font-size: .74rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .reset {
+      width: 100%;
+      margin-top: 12px;
+      border: 1px solid #34443c;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 12px;
+      padding: 11px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    @media (max-width: 520px) {
+      .shell { padding-left: 12px; padding-right: 12px; }
+      .card { padding: 13px; border-radius: 16px; }
+      .grid { gap: 10px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-side { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .buffer { margin: 0; text-align: right; }
+      .primary-metrics, .secondary-metrics { gap: 8px; }
+      .metric { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="eyebrow">Road Warrior</div>
+      <h1>Offer Calculator</h1>
+      <p class="sub">Judge how efficiently an offer uses your time relative to your operating baseline.</p>
+      <div class="baseline">Baseline: $16.67/hr · 3.6 min/$</div>
+    </header>
+
+    <section class="card" aria-label="Offer inputs">
+      <div class="grid">
+        <div class="field">
+          <label for="payout">Offer payout</label>
+          <div class="input-wrap">
+            <input id="payout" type="number" min="0" step="0.01" inputmode="decimal" value="21.72" />
+            <span class="suffix">$</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="appMinutes">App-estimated time</label>
+          <div class="input-wrap">
+            <input id="appMinutes" type="number" min="0" step="0.1" inputmode="decimal" value="33" />
+            <span class="suffix">min</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="offerMiles">Offer mileage</label>
+          <div class="input-wrap">
+            <input id="offerMiles" type="number" min="0" step="0.1" inputmode="decimal" value="0" />
+            <span class="suffix">mi</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="repositionMiles">Reposition mileage</label>
+          <div class="input-wrap">
+            <input id="repositionMiles" type="number" min="0" step="0.1" inputmode="decimal" value="8.6" />
+            <span class="suffix">mi</span>
+          </div>
+        </div>
+      </div>
+
+      <label class="mode-label">Reposition driving mode</label>
+      <div class="modes" role="group" aria-label="Reposition driving mode">
+        <button class="mode" type="button" data-rate="1.0">Highway<small>1.0 min/mi</small></button>
+        <button class="mode active" type="button" data-rate="1.5">Mixed<small>1.5 min/mi</small></button>
+        <button class="mode" type="button" data-rate="2.0">City / Slow<small>2.0 min/mi</small></button>
+      </div>
+    </section>
+
+    <section class="card" aria-live="polite" aria-label="Offer results">
+      <div class="hero">
+        <div class="hero-main">
+          <div class="kicker">Offer efficiency</div>
+          <div id="efficiency" class="efficiency good">170.4%</div>
+          <div id="status" class="status good">+70.4% above baseline efficiency</div>
+        </div>
+        <div class="hero-side">
+          <div>
+            <div class="kicker">Time buffer</div>
+            <div class="muted" style="font-size:.76rem;margin-top:5px">gained / lost</div>
+          </div>
+          <div id="buffer" class="buffer good">+32.3 min</div>
+        </div>
+      </div>
+
+      <div class="primary-metrics">
+        <div class="metric">
+          <div class="label">Full-cycle time</div>
+          <div id="fullCycle" class="value">45.9 min</div>
+        </div>
+        <div class="metric">
+          <div class="label">Baseline budget</div>
+          <div id="budget" class="value">78.2 min</div>
+        </div>
+      </div>
+
+      <div class="secondary-title">Secondary metrics</div>
+      <div class="secondary-metrics">
+        <div class="metric">
+          <div class="label">Reposition time</div>
+          <div id="repositionTime" class="value">12.9 min</div>
+        </div>
+        <div class="metric">
+          <div class="label">Equivalent hourly</div>
+          <div id="hourly" class="value">$28.39/hr</div>
+        </div>
+        <div class="metric">
+          <div class="label">Budget consumed</div>
+          <div id="consumed" class="value">58.7%</div>
+        </div>
+        <div class="metric">
+          <div class="label">Minutes per dollar</div>
+          <div id="minutesPerDollar" class="value">2.11 min/$</div>
+        </div>
+        <div class="metric">
+          <div class="label">Dollars per minute</div>
+          <div id="dollarsPerMinute" class="value">$0.473/min</div>
+        </div>
+        <div class="metric">
+          <div class="label">Offer mileage</div>
+          <div id="offerMileageOut" class="value">0.0 mi</div>
+        </div>
+      </div>
+
+      <button id="reset" class="reset" type="button">Reset example</button>
+    </section>
+
+    <p class="footer-note">Efficiency = baseline allowable time ÷ full-cycle time. 100% means the offer exactly meets the 3.6 min/$ baseline.</p>
+  </main>
+
+  <script>
+    const BASELINE_MIN_PER_DOLLAR = 3.6;
+    let repositionRate = 1.5;
+
+    const $ = (id) => document.getElementById(id);
+    const inputs = [$("payout"), $("appMinutes"), $("offerMiles"), $("repositionMiles")];
+
+    function number(id) {
+      const n = parseFloat($(id).value);
+      return Number.isFinite(n) && n >= 0 ? n : 0;
+    }
+
+    function toneForEfficiency(value) {
+      if (value >= 100) return "good";
+      if (value >= 85) return "warn";
+      return "bad";
+    }
+
+    function paint(el, tone) {
+      el.classList.remove("good", "warn", "bad");
+      el.classList.add(tone);
+    }
+
+    function calculate() {
+      const payout = number("payout");
+      const appMinutes = number("appMinutes");
+      const offerMiles = number("offerMiles");
+      const repositionMiles = number("repositionMiles");
+
+      const repositionTime = repositionMiles * repositionRate;
+      const fullCycle = appMinutes + repositionTime;
+      const budget = payout * BASELINE_MIN_PER_DOLLAR;
+      const efficiency = fullCycle > 0 ? (budget / fullCycle) * 100 : 0;
+      const buffer = budget - fullCycle;
+      const hourly = fullCycle > 0 ? (payout / fullCycle) * 60 : 0;
+      const consumed = budget > 0 ? (fullCycle / budget) * 100 : 0;
+      const minutesPerDollar = payout > 0 ? fullCycle / payout : 0;
+      const dollarsPerMinute = fullCycle > 0 ? payout / fullCycle : 0;
+
+      $("efficiency").textContent = `${efficiency.toFixed(1)}%`;
+      $("buffer").textContent = `${buffer >= 0 ? "+" : ""}${buffer.toFixed(1)} min`;
+      $("fullCycle").textContent = `${fullCycle.toFixed(1)} min`;
+      $("budget").textContent = `${budget.toFixed(1)} min`;
+      $("repositionTime").textContent = `${repositionTime.toFixed(1)} min`;
+      $("hourly").textContent = `$${hourly.toFixed(2)}/hr`;
+      $("consumed").textContent = `${consumed.toFixed(1)}%`;
+      $("minutesPerDollar").textContent = `${minutesPerDollar.toFixed(2)} min/$`;
+      $("dollarsPerMinute").textContent = `$${dollarsPerMinute.toFixed(3)}/min`;
+      $("offerMileageOut").textContent = `${offerMiles.toFixed(1)} mi`;
+
+      const delta = efficiency - 100;
+      $("status").textContent = delta >= 0
+        ? `+${delta.toFixed(1)}% above baseline efficiency`
+        : `${Math.abs(delta).toFixed(1)}% below baseline efficiency`;
+
+      const tone = toneForEfficiency(efficiency);
+      paint($("efficiency"), tone);
+      paint($("status"), tone);
+      paint($("buffer"), buffer >= 0 ? "good" : "bad");
+    }
+
+    inputs.forEach((input) => input.addEventListener("input", calculate));
+
+    document.querySelectorAll(".mode").forEach((button) => {
+      button.addEventListener("click", () => {
+        repositionRate = parseFloat(button.dataset.rate);
+        document.querySelectorAll(".mode").forEach((b) => b.classList.remove("active"));
+        button.classList.add("active");
+        calculate();
+      });
+    });
+
+    $("reset").addEventListener("click", () => {
+      $("payout").value = "21.72";
+      $("appMinutes").value = "33";
+      $("offerMiles").value = "0";
+      $("repositionMiles").value = "8.6";
+      repositionRate = 1.5;
+      document.querySelectorAll(".mode").forEach((b) => {
+        b.classList.toggle("active", b.dataset.rate === "1.5");
+      });
+      calculate();
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
