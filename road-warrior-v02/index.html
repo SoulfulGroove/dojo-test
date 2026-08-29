@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111714" />
+  <title>Road Warrior Offer Calculator v0.2</title>
+  <style>
+    :root {
+      --bg:#0d1210; --panel:#151d19; --panel-2:#1a241f; --line:#2d3b34;
+      --text:#edf3ef; --muted:#9eaaa3; --accent:#c9a45d;
+      --good:#78c78f; --warn:#e0b56b; --bad:#dc817b; --shadow:0 16px 40px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at top,rgba(201,164,93,.10),transparent 30%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    button,input{font:inherit}.shell{width:min(100%,760px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom))}
+    header{margin:4px 0 18px}.eyebrow{color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+    h1{margin:0;font-size:clamp(1.75rem,6vw,2.45rem);line-height:1.05;letter-spacing:-.03em}.sub{margin:8px 0 0;color:var(--muted);font-size:.95rem;line-height:1.45}
+    .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.chip{display:inline-flex;align-items:center;padding:7px 10px;border:1px solid rgba(201,164,93,.28);border-radius:999px;color:#e8d4ab;background:rgba(201,164,93,.08);font-size:.78rem;font-weight:750}
+    .card{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-top:14px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field.full{grid-column:1/-1}label{display:block;margin-bottom:7px;color:var(--muted);font-size:.78rem;font-weight:750}
+    .input-wrap{position:relative}input{width:100%;border:1px solid #34443c;background:#0e1512;color:var(--text);border-radius:12px;padding:13px 42px 13px 13px;outline:none;font-size:1.05rem;font-weight:700}
+    input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(201,164,93,.11)}.suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#748079;font-size:.78rem;font-weight:800;pointer-events:none}
+    .mode-label{margin:15px 0 8px}.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mode{border:1px solid #34443c;background:#101713;color:var(--muted);border-radius:12px;padding:11px 7px;cursor:pointer;font-size:.78rem;font-weight:800;line-height:1.2}.mode small{display:block;margin-top:4px;color:#748079;font-size:.68rem}.mode.active{border-color:var(--accent);background:rgba(201,164,93,.12);color:#f2dfb8}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}.hero-main,.hero-side{border-radius:15px;padding:15px;background:#101713;border:1px solid #2c3933}.kicker{color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.efficiency{font-size:clamp(2.6rem,11vw,4.8rem);font-weight:900;line-height:.95;letter-spacing:-.06em;margin:10px 0 8px}.status{font-size:.84rem;font-weight:800}.buffer{font-size:clamp(1.65rem,7vw,2.5rem);font-weight:900;letter-spacing:-.04em;margin:10px 0 4px}.muted{color:var(--muted)}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+    .drag-card{margin-top:12px;border:1px solid #2b3932;border-radius:15px;padding:14px;background:#0f1613}.drag-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-end}.drag-name{font-size:1.18rem;font-weight:900}.drag-impact{font-size:1.35rem;font-weight:900;white-space:nowrap}.bar{height:10px;border-radius:999px;background:#26322d;overflow:hidden;margin-top:12px}.bar>span{display:block;height:100%;width:50%;background:currentColor;border-radius:inherit;transition:width .2s ease}.bar-row{display:flex;justify-content:space-between;gap:10px;margin-top:7px;color:var(--muted);font-size:.72rem;font-weight:750}
+    .primary-metrics,.secondary-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.metric{border:1px solid #2b3932;border-radius:13px;padding:12px;background:rgba(8,12,10,.35)}.metric .label{color:var(--muted);font-size:.71rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}.metric .value{font-size:1.16rem;font-weight:850;letter-spacing:-.02em}.secondary-title{margin:16px 0 0;color:var(--muted);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .landmarks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.landmark{border:1px solid #2b3932;border-radius:12px;padding:10px;text-align:center;background:#101713}.landmark strong{display:block;font-size:1.05rem}.landmark span{display:block;margin-top:3px;color:var(--muted);font-size:.7rem;font-weight:750}
+    .footer-note{margin:14px 2px 0;color:#76827b;font-size:.74rem;line-height:1.45;text-align:center}.reset{width:100%;margin-top:12px;border:1px solid #34443c;background:transparent;color:var(--muted);border-radius:12px;padding:11px;font-weight:800;cursor:pointer}
+    @media(max-width:520px){.shell{padding-left:12px;padding-right:12px}.card{padding:13px;border-radius:16px}.grid{gap:10px}.hero{grid-template-columns:1fr}.hero-side{display:flex;align-items:center;justify-content:space-between;gap:12px}.buffer{margin:0;text-align:right}.primary-metrics,.secondary-metrics{gap:8px}.metric{padding:10px}.drag-head{align-items:flex-start}.landmarks{gap:6px}.landmark{padding:9px 5px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header>
+    <div class="eyebrow">Road Warrior · v0.2 Experiment</div>
+    <h1>Offer Calculator</h1>
+    <p class="sub">Same offer math, with a session buffer and drag layer added on top.</p>
+    <div class="chips"><div class="chip">Baseline: $16.67/hr · 3.6 min/$</div><div class="chip">Experimental clone</div></div>
+  </header>
+
+  <section class="card" aria-label="Offer inputs">
+    <div class="grid">
+      <div class="field"><label for="payout">Offer payout</label><div class="input-wrap"><input id="payout" type="number" min="0" step="0.01" inputmode="decimal" value="25.38"/><span class="suffix">$</span></div></div>
+      <div class="field"><label for="appMinutes">App-estimated time</label><div class="input-wrap"><input id="appMinutes" type="number" min="0" step="0.1" inputmode="decimal" value="46"/><span class="suffix">min</span></div></div>
+      <div class="field"><label for="offerMiles">Offer mileage</label><div class="input-wrap"><input id="offerMiles" type="number" min="0" step="0.1" inputmode="decimal" value="14.4"/><span class="suffix">mi</span></div></div>
+      <div class="field"><label for="repositionMiles">Reposition mileage</label><div class="input-wrap"><input id="repositionMiles" type="number" min="0" step="0.1" inputmode="decimal" value="9"/><span class="suffix">mi</span></div></div>
+      <div class="field full"><label for="currentBuffer">Current session buffer</label><div class="input-wrap"><input id="currentBuffer" type="number" step="0.1" inputmode="decimal" value="30"/><span class="suffix">min</span></div></div>
+    </div>
+    <label class="mode-label">Reposition driving mode</label>
+    <div class="modes" role="group" aria-label="Reposition driving mode">
+      <button class="mode" type="button" data-rate="1.0">Highway<small>1.0 min/mi</small></button>
+      <button class="mode active" type="button" data-rate="1.5">Mixed<small>1.5 min/mi</small></button>
+      <button class="mode" type="button" data-rate="2.0">City / Slow<small>2.0 min/mi</small></button>
+    </div>
+  </section>
+
+  <section class="card" aria-live="polite" aria-label="Offer results">
+    <div class="hero">
+      <div class="hero-main"><div class="kicker">Offer efficiency</div><div id="efficiency" class="efficiency good">153.6%</div><div id="status" class="status good">Buffer Builder · $25.59/hr pace</div></div>
+      <div class="hero-side"><div><div class="kicker">Offer buffer impact</div><div id="impactLabel" class="muted" style="font-size:.76rem;margin-top:5px">gained</div></div><div id="buffer" class="buffer good">+31.9 min</div></div>
+    </div>
+
+    <div class="drag-card">
+      <div class="drag-head"><div><div class="kicker">Session reserve</div><div id="dragName" class="drag-name good">Building reserve</div></div><div id="afterBuffer" class="drag-impact good">61.9 min after</div></div>
+      <div class="bar"><span id="reserveBar" class="good" style="width:100%"></span></div>
+      <div class="bar-row"><span id="beforeBuffer">30.0 min before</span><span id="reserveNote">+31.9 min added</span></div>
+    </div>
+
+    <div class="primary-metrics">
+      <div class="metric"><div class="label">Full-cycle time</div><div id="fullCycle" class="value">59.5 min</div></div>
+      <div class="metric"><div class="label">Buffer pace</div><div id="bufferPace" class="value good">+32.2 min/hr</div></div>
+      <div class="metric"><div class="label">Equivalent hourly</div><div id="hourly" class="value">$25.59/hr</div></div>
+      <div class="metric"><div class="label">Drag / gain class</div><div id="dragClass" class="value good">Buffer Builder</div></div>
+    </div>
+
+    <div class="secondary-title">Quick efficiency landmarks</div>
+    <div class="landmarks"><div class="landmark"><strong>120%</strong><span>≈ $20/hr</span></div><div class="landmark"><strong>150%</strong><span>≈ $25/hr</span></div><div class="landmark"><strong>180%</strong><span>≈ $30/hr</span></div></div>
+
+    <div class="secondary-title">Secondary metrics</div>
+    <div class="secondary-metrics">
+      <div class="metric"><div class="label">Baseline budget</div><div id="budget" class="value">91.4 min</div></div>
+      <div class="metric"><div class="label">Reposition time</div><div id="repositionTime" class="value">13.5 min</div></div>
+      <div class="metric"><div class="label">Budget consumed</div><div id="consumed" class="value">65.1%</div></div>
+      <div class="metric"><div class="label">Minutes per dollar</div><div id="minutesPerDollar" class="value">2.34 min/$</div></div>
+      <div class="metric"><div class="label">Dollars per minute</div><div id="dollarsPerMinute" class="value">$0.427/min</div></div>
+      <div class="metric"><div class="label">Offer mileage</div><div id="offerMileageOut" class="value">14.4 mi</div></div>
+    </div>
+    <button id="reset" class="reset" type="button">Reset example</button>
+  </section>
+  <p class="footer-note">100% is neutral. Above 100% builds time reserve; below 100% consumes it. Buffer pace shows how many reserve minutes this efficiency would gain or burn per active hour.</p>
+</main>
+<script>
+  const BASELINE_MIN_PER_DOLLAR=3.6; let repositionRate=1.5;
+  const $=id=>document.getElementById(id); const inputs=[$("payout"),$("appMinutes"),$("offerMiles"),$("repositionMiles"),$("currentBuffer")];
+  function number(id,allowNegative=false){const n=parseFloat($(id).value);if(!Number.isFinite(n))return 0;return allowNegative?n:Math.max(0,n)}
+  function toneForEfficiency(v){if(v>=100)return"good";if(v>=85)return"warn";return"bad"}
+  function paint(el,tone){el.classList.remove("good","warn","bad");el.classList.add(tone)}
+  function classify(v){if(v>=120)return["Buffer Builder","good"];if(v>=100)return["Above Baseline","good"];if(v>=90)return["Light Drag","warn"];if(v>=80)return["Moderate Drag","warn"];if(v>=70)return["Heavy Drag","bad"];return["Severe Drag","bad"]}
+  function calculate(){
+    const payout=number("payout"), appMinutes=number("appMinutes"), offerMiles=number("offerMiles"), repositionMiles=number("repositionMiles"), currentBuffer=number("currentBuffer",true);
+    const repositionTime=repositionMiles*repositionRate, fullCycle=appMinutes+repositionTime, budget=payout*BASELINE_MIN_PER_DOLLAR;
+    const efficiency=fullCycle>0?(budget/fullCycle)*100:0, buffer=budget-fullCycle, afterBuffer=currentBuffer+buffer, hourly=fullCycle>0?(payout/fullCycle)*60:0;
+    const consumed=budget>0?(fullCycle/budget)*100:0, minutesPerDollar=payout>0?fullCycle/payout:0, dollarsPerMinute=fullCycle>0?payout/fullCycle:0;
+    const bufferPace=(efficiency/100-1)*60, [dragClass,dragTone]=classify(efficiency), tone=toneForEfficiency(efficiency);
+    $("efficiency").textContent=`${efficiency.toFixed(1)}%`; $("status").textContent=`${dragClass} · $${hourly.toFixed(2)}/hr pace`; $("buffer").textContent=`${buffer>=0?"+":""}${buffer.toFixed(1)} min`;
+    $("impactLabel").textContent=buffer>=0?"gained":"drag"; $("fullCycle").textContent=`${fullCycle.toFixed(1)} min`; $("budget").textContent=`${budget.toFixed(1)} min`; $("repositionTime").textContent=`${repositionTime.toFixed(1)} min`; $("hourly").textContent=`$${hourly.toFixed(2)}/hr`;
+    $("consumed").textContent=`${consumed.toFixed(1)}%`; $("minutesPerDollar").textContent=`${minutesPerDollar.toFixed(2)} min/$`; $("dollarsPerMinute").textContent=`$${dollarsPerMinute.toFixed(3)}/min`; $("offerMileageOut").textContent=`${offerMiles.toFixed(1)} mi`;
+    $("bufferPace").textContent=`${bufferPace>=0?"+":""}${bufferPace.toFixed(1)} min/hr`; $("dragClass").textContent=dragClass; $("afterBuffer").textContent=`${afterBuffer.toFixed(1)} min after`; $("beforeBuffer").textContent=`${currentBuffer.toFixed(1)} min before`;
+    $("reserveNote").textContent=buffer>=0?`+${buffer.toFixed(1)} min added`:`${Math.abs(buffer).toFixed(1)} min burned`;
+    if(buffer>=0){$("dragName").textContent="Building reserve"}else if(afterBuffer>0){$("dragName").textContent="Burning reserve"}else if(afterBuffer===0){$("dragName").textContent="Reserve exhausted"}else{$("dragName").textContent="Below reserve"}
+    const base=Math.max(Math.abs(currentBuffer),1); const reservePct=buffer>=0?100:Math.max(0,Math.min(100,(Math.max(afterBuffer,0)/base)*100)); $("reserveBar").style.width=`${reservePct}%`;
+    paint($("efficiency"),tone);paint($("status"),tone);paint($("buffer"),buffer>=0?"good":"bad");paint($("bufferPace"),bufferPace>=0?"good":dragTone);paint($("dragClass"),dragTone);paint($("afterBuffer"),afterBuffer>=0?(buffer>=0?"good":"warn"):"bad");paint($("dragName"),buffer>=0?"good":afterBuffer>0?"warn":"bad");paint($("reserveBar"),buffer>=0?"good":afterBuffer>0?"warn":"bad");
+  }
+  inputs.forEach(input=>input.addEventListener("input",calculate)); document.querySelectorAll(".mode").forEach(button=>button.addEventListener("click",()=>{repositionRate=parseFloat(button.dataset.rate);document.querySelectorAll(".mode").forEach(b=>b.classList.remove("active"));button.classList.add("active");calculate()}));
+  $("reset").addEventListener("click",()=>{$("payout").value="25.38";$("appMinutes").value="46";$("offerMiles").value="14.4";$("repositionMiles").value="9";$("currentBuffer").value="30";repositionRate=1.5;document.querySelectorAll(".mode").forEach(b=>b.classList.toggle("active",b.dataset.rate==="1.5"));calculate()}); calculate();
+</script>
+</body>
+</html>
