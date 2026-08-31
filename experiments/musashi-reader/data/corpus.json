@@ -1,0 +1,2654 @@
+{
+  "source": {
+    "filename": "V4 Book of Five Rings Japanese Versions.txt",
+    "encoding": "UTF-8",
+    "sha256": "80a0709963d40aa0c7567ac117f2f4204f003a1884b3022250bc83a811fa0148",
+    "byte_count": 83939,
+    "line_count": 532
+  },
+  "segmentation_level": "paragraph",
+  "sentence_segmentation": false,
+  "preamble": "The Book of Five Rings (五輪書)\n\nInformation (情報)\nNotes (付記)\n\n奥書\n\n原典\n細川家本（肥後系）\n\n親本\n金港堂書籍 宮本武蔵\n\n発行日\n明治四十二年四月二十七日 発行\n\n著作者及び校訂者の著作権\n\n著者\n\t宮本武蔵\n\t消滅\n\n親本の校訂者\n\t宮本武蔵遺蹟顕彰会\n\t昭和十五年消滅\n\t池辺義象\n\t昭和二十九年消滅\n\n本書および凡例について\n宮本武蔵自筆の書は失われたといわれており、いま世にあるものは写本です。\n\n散見される誤記については、明らかな箇所は直接修正し、疑わしい箇所は可視化しました。\n\n記述の確認は、主に、同じく細川家本を記した高柳光壽校訂の岩波文庫版を参照しました。\n\n多用されている事・心・所をはじめとした抽象的な表現は技法のひとつと捉え、訳の中になるべく生かすようにしました。\n\n",
+  "scrolls": [
+    {
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "scroll_index": 0,
+      "source_line": 39
+    },
+    {
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "scroll_index": 1,
+      "source_line": 49
+    },
+    {
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "scroll_index": 2,
+      "source_line": 163
+    },
+    {
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "scroll_index": 3,
+      "source_line": 308
+    },
+    {
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "scroll_index": 4,
+      "source_line": 446
+    },
+    {
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "scroll_index": 5,
+      "source_line": 517
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "0000",
+      "section_title": "序 (Preface)",
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "section_index": 0,
+      "source_line": 39
+    },
+    {
+      "section_id": "0100",
+      "section_title": "地の巻 (Scroll of Earth)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 1,
+      "source_line": 49
+    },
+    {
+      "section_id": "0101",
+      "section_title": "一 序 (Introduction)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 2,
+      "source_line": 51
+    },
+    {
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 3,
+      "source_line": 58
+    },
+    {
+      "section_id": "0103",
+      "section_title": "三 一 兵法の道大工にたとへたる事 (Analogy of the Way with the Carpenter)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 4,
+      "source_line": 71
+    },
+    {
+      "section_id": "0104",
+      "section_title": "四 一 兵法の道 (The Way of Strategy)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 5,
+      "source_line": 78
+    },
+    {
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 6,
+      "source_line": 85
+    },
+    {
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 7,
+      "source_line": 104
+    },
+    {
+      "section_id": "0107",
+      "section_title": "七 一 兵法二ツの字の利を知事 (To Know the Advantage of Strategy)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 8,
+      "source_line": 117
+    },
+    {
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 9,
+      "source_line": 124
+    },
+    {
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_index": 10,
+      "source_line": 135
+    },
+    {
+      "section_id": "0200",
+      "section_title": "水の巻",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 11,
+      "source_line": 163
+    },
+    {
+      "section_id": "0201",
+      "section_title": "一 序",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 12,
+      "source_line": 165
+    },
+    {
+      "section_id": "0202",
+      "section_title": "二 一 兵法心持の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 13,
+      "source_line": 168
+    },
+    {
+      "section_id": "0203",
+      "section_title": "三 一 兵法の身なりの事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 14,
+      "source_line": 171
+    },
+    {
+      "section_id": "0204",
+      "section_title": "四 一 兵法の目付と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 15,
+      "source_line": 174
+    },
+    {
+      "section_id": "0205",
+      "section_title": "五 一 太刀の持様の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 16,
+      "source_line": 179
+    },
+    {
+      "section_id": "0206",
+      "section_title": "六 一 足つかひの事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 17,
+      "source_line": 184
+    },
+    {
+      "section_id": "0207",
+      "section_title": "七 一 五方の構の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 18,
+      "source_line": 187
+    },
+    {
+      "section_id": "0208",
+      "section_title": "八 一 太刀の道と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 19,
+      "source_line": 191
+    },
+    {
+      "section_id": "0209",
+      "section_title": "九 一 五ツのおもての次第 第一の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 20,
+      "source_line": 194
+    },
+    {
+      "section_id": "0210",
+      "section_title": "一〇 一 おもての第二の次第の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 21,
+      "source_line": 198
+    },
+    {
+      "section_id": "0211",
+      "section_title": "一一 一 おもて第三の次第の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 22,
+      "source_line": 202
+    },
+    {
+      "section_id": "0212",
+      "section_title": "一二 一 おもて第四の次第の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 23,
+      "source_line": 205
+    },
+    {
+      "section_id": "0213",
+      "section_title": "一三 一 おもて第五の次第の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 24,
+      "source_line": 208
+    },
+    {
+      "section_id": "0214",
+      "section_title": "一四 一 有構無構の数の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 25,
+      "source_line": 211
+    },
+    {
+      "section_id": "0215",
+      "section_title": "一五 一 敵を打に一拍子の打の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 26,
+      "source_line": 218
+    },
+    {
+      "section_id": "0216",
+      "section_title": "一六 一 二のこしの拍子の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 27,
+      "source_line": 221
+    },
+    {
+      "section_id": "0217",
+      "section_title": "一七 一 無念無想の打と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 28,
+      "source_line": 224
+    },
+    {
+      "section_id": "0218",
+      "section_title": "一八 一 流水の打と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 29,
+      "source_line": 227
+    },
+    {
+      "section_id": "0219",
+      "section_title": "一九 一 縁のあたりと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 30,
+      "source_line": 230
+    },
+    {
+      "section_id": "0220",
+      "section_title": "二〇 一 石火のあたりと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 31,
+      "source_line": 233
+    },
+    {
+      "section_id": "0221",
+      "section_title": "二一 一 紅葉の打と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 32,
+      "source_line": 236
+    },
+    {
+      "section_id": "0222",
+      "section_title": "二二 一 太刀にかはる身と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 33,
+      "source_line": 239
+    },
+    {
+      "section_id": "0223",
+      "section_title": "二三 一 打とあたると云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 34,
+      "source_line": 242
+    },
+    {
+      "section_id": "0224",
+      "section_title": "二四 一 しうこうの身と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 35,
+      "source_line": 247
+    },
+    {
+      "section_id": "0225",
+      "section_title": "二五 一 しつこうの身と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 36,
+      "source_line": 250
+    },
+    {
+      "section_id": "0226",
+      "section_title": "二六 一 たけくらべと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 37,
+      "source_line": 253
+    },
+    {
+      "section_id": "0227",
+      "section_title": "二七 一 ねばりをかくると云ふ事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 38,
+      "source_line": 256
+    },
+    {
+      "section_id": "0228",
+      "section_title": "二八 一 身のあたりと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 39,
+      "source_line": 259
+    },
+    {
+      "section_id": "0229",
+      "section_title": "二九 一 三ツのうけの事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 40,
+      "source_line": 262
+    },
+    {
+      "section_id": "0230",
+      "section_title": "三〇 一 面てをさすと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 41,
+      "source_line": 265
+    },
+    {
+      "section_id": "0231",
+      "section_title": "三一 一 心をさすと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 42,
+      "source_line": 270
+    },
+    {
+      "section_id": "0232",
+      "section_title": "三二 一 かつとつと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 43,
+      "source_line": 273
+    },
+    {
+      "section_id": "0233",
+      "section_title": "三三 一 はりうけと云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 44,
+      "source_line": 276
+    },
+    {
+      "section_id": "0234",
+      "section_title": "三四 一 多敵の位の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 45,
+      "source_line": 279
+    },
+    {
+      "section_id": "0235",
+      "section_title": "三五 一 打あひの利の事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 46,
+      "source_line": 284
+    },
+    {
+      "section_id": "0236",
+      "section_title": "三六 一 一ツの打と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 47,
+      "source_line": 290
+    },
+    {
+      "section_id": "0237",
+      "section_title": "三七 一 直通の位と云事",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 48,
+      "source_line": 293
+    },
+    {
+      "section_id": "0238",
+      "section_title": "三八 後書",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_index": 49,
+      "source_line": 298
+    },
+    {
+      "section_id": "0300",
+      "section_title": "火の巻",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 50,
+      "source_line": 308
+    },
+    {
+      "section_id": "0301",
+      "section_title": "一 序",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 51,
+      "source_line": 310
+    },
+    {
+      "section_id": "0302",
+      "section_title": "二 一 場の次第と云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 52,
+      "source_line": 315
+    },
+    {
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 53,
+      "source_line": 320
+    },
+    {
+      "section_id": "0304",
+      "section_title": "四 一 枕をおさふると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 54,
+      "source_line": 331
+    },
+    {
+      "section_id": "0305",
+      "section_title": "五 一 とをこすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 55,
+      "source_line": 334
+    },
+    {
+      "section_id": "0306",
+      "section_title": "六 一 けいきを知ると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 56,
+      "source_line": 339
+    },
+    {
+      "section_id": "0307",
+      "section_title": "七 一 けんをふむと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 57,
+      "source_line": 342
+    },
+    {
+      "section_id": "0308",
+      "section_title": "八 一 くづれを知ると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 58,
+      "source_line": 347
+    },
+    {
+      "section_id": "0309",
+      "section_title": "九 一 敵になると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 59,
+      "source_line": 352
+    },
+    {
+      "section_id": "0310",
+      "section_title": "一〇 一 四手をはなすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 60,
+      "source_line": 357
+    },
+    {
+      "section_id": "0311",
+      "section_title": "一一 一 かげをうごかすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 61,
+      "source_line": 360
+    },
+    {
+      "section_id": "0312",
+      "section_title": "一二 一 かげをおさふると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 62,
+      "source_line": 363
+    },
+    {
+      "section_id": "0313",
+      "section_title": "一三 一 うつらかすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 63,
+      "source_line": 366
+    },
+    {
+      "section_id": "0314",
+      "section_title": "一四 一 むかつかすると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 64,
+      "source_line": 377
+    },
+    {
+      "section_id": "0315",
+      "section_title": "一五 一 おびやかすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 65,
+      "source_line": 388
+    },
+    {
+      "section_id": "0316",
+      "section_title": "一六 一 まぶるると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 66,
+      "source_line": 391
+    },
+    {
+      "section_id": "0317",
+      "section_title": "一七 一 かどにさはると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 67,
+      "source_line": 394
+    },
+    {
+      "section_id": "0318",
+      "section_title": "一八 一 うろめかすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 68,
+      "source_line": 397
+    },
+    {
+      "section_id": "0319",
+      "section_title": "一九 一 三ツの声と云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 69,
+      "source_line": 400
+    },
+    {
+      "section_id": "0320",
+      "section_title": "二〇 一 まぎるると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 70,
+      "source_line": 405
+    },
+    {
+      "section_id": "0321",
+      "section_title": "二一 一 ひしぐと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 71,
+      "source_line": 408
+    },
+    {
+      "section_id": "0322",
+      "section_title": "二二 一 さんかいのかはりと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 72,
+      "source_line": 413
+    },
+    {
+      "section_id": "0323",
+      "section_title": "二三 一 そこをぬくと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 73,
+      "source_line": 416
+    },
+    {
+      "section_id": "0324",
+      "section_title": "二四 一 あらたになると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 74,
+      "source_line": 419
+    },
+    {
+      "section_id": "0325",
+      "section_title": "二五 一 そとうごしゆと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 75,
+      "source_line": 422
+    },
+    {
+      "section_id": "0326",
+      "section_title": "二六 一 しやうそつをしると云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 76,
+      "source_line": 425
+    },
+    {
+      "section_id": "0327",
+      "section_title": "二七 一 つかをはなすと云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 77,
+      "source_line": 428
+    },
+    {
+      "section_id": "0328",
+      "section_title": "二八 一 いはほの身と云事",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 78,
+      "source_line": 431
+    },
+    {
+      "section_id": "0329",
+      "section_title": "二九 後書",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_index": 79,
+      "source_line": 436
+    },
+    {
+      "section_id": "0400",
+      "section_title": "風の巻",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 80,
+      "source_line": 446
+    },
+    {
+      "section_id": "0401",
+      "section_title": "一 兵法他流の道を知る事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 81,
+      "source_line": 447
+    },
+    {
+      "section_id": "0402",
+      "section_title": "二 一 他流に大きなる太刀を持事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 82,
+      "source_line": 450
+    },
+    {
+      "section_id": "0403",
+      "section_title": "三 一 他流に於てつよみの太刀と云事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 83,
+      "source_line": 457
+    },
+    {
+      "section_id": "0404",
+      "section_title": "四 一 他流に短き太刀を用ゐる事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 84,
+      "source_line": 462
+    },
+    {
+      "section_id": "0405",
+      "section_title": "五 一 他流に太刀かず多き事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 85,
+      "source_line": 469
+    },
+    {
+      "section_id": "0406",
+      "section_title": "六 一 他流に太刀の構を用る事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 86,
+      "source_line": 474
+    },
+    {
+      "section_id": "0407",
+      "section_title": "七 一 他流に目付と云事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 87,
+      "source_line": 481
+    },
+    {
+      "section_id": "0408",
+      "section_title": "八 一 他流に足つかひ有事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 88,
+      "source_line": 486
+    },
+    {
+      "section_id": "0409",
+      "section_title": "九 一 他の兵法にはやきを用る事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 89,
+      "source_line": 491
+    },
+    {
+      "section_id": "0410",
+      "section_title": "一〇 一 他流に奥表と云事",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 90,
+      "source_line": 500
+    },
+    {
+      "section_id": "0411",
+      "section_title": "一一 後書",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_index": 91,
+      "source_line": 505
+    },
+    {
+      "section_id": "0500",
+      "section_title": "空の巻",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_index": 92,
+      "source_line": 517
+    },
+    {
+      "section_id": "0501",
+      "section_title": "一 （段）",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_index": 93,
+      "source_line": 519
+    }
+  ],
+  "paragraphs": [
+    {
+      "paragraph_id": "P000",
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "section_id": "0000",
+      "section_title": "序 (Preface)",
+      "paragraph_index": 0,
+      "source_line_start": 41,
+      "text": "`兵法の道 `二天一流 `と号し数年鍛錬の事初て書物に書き顕はさんと思ふ",
+      "source_line_end": 42
+    },
+    {
+      "paragraph_id": "P001",
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "section_id": "0000",
+      "section_title": "序 (Preface)",
+      "paragraph_index": 1,
+      "source_line_start": 43,
+      "text": "`時に寛永二十年十月上旬の頃九州肥後の地巌殿山に上り天を拝し観音を礼し仏前に向ひ生国播磨の武士新免武蔵藤原玄信年つもりて六十 `我若年のむかしより兵法の道に心をかけ十三歳にして初て勝負を為す `その相手新当流の有馬喜兵衛といふ `兵法者に打勝ち十六歳にして但馬国秋山といふ強力の兵法者に打ち勝ち二十一歳にして都に上り天下の兵法者に逢ひて数度の勝負を決すといへども勝利を得ずといふことなし `その後国々所々に至り諸流の兵法者に行逢ひ六十余度まで勝負すといへども一度もその利を失はず `その程年十三より二十八九までのことなり",
+      "source_line_end": 44
+    },
+    {
+      "paragraph_id": "P002",
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "section_id": "0000",
+      "section_title": "序 (Preface)",
+      "paragraph_index": 2,
+      "source_line_start": 45,
+      "text": "`三十を越えて跡をおもひ見るに兵法至極して勝つにはあらず `おのづから道の器用ありて天理を離れざるが故か `又は他流の兵法不足なる所にや `その後猶も深き道理を得んと朝鍛夕錬して見ればおのづから兵法の道にあふこと我五十歳のころなり `それより以来は尋ね入るべき道なくして光陰をおくる",
+      "source_line_end": 46
+    },
+    {
+      "paragraph_id": "P003",
+      "scroll_id": "0000",
+      "scroll_title": "序 (Preface)",
+      "section_id": "0000",
+      "section_title": "序 (Preface)",
+      "paragraph_index": 3,
+      "source_line_start": 47,
+      "text": "`兵法の利にまかせて諸芸諸能の道となせば万事に於て我に師匠なし `今この書を作るといへども仏法儒道の古語をもからず軍記軍法の古きことをも用ゐずこの一流の見立実の心をあらはすこと天道と観世音とを鏡として十月十日の夜寅の一点に筆を把りて書き初るものなり",
+      "source_line_end": 48
+    },
+    {
+      "paragraph_id": "P004",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0101",
+      "section_title": "一 序 (Introduction)",
+      "paragraph_index": 4,
+      "source_line_start": 52,
+      "text": "`夫兵法と云事武家の法也 `将たる者はとりわき此法を行なひ卒たる者も此道を知るべき事なり `今世の中に兵法の道慥に弁まへたるといふ武士なし `先道を顕して有は仏法として人をたすくる道 `又儒道として文の道を糾し医者といひて諸病を治する道 `或は歌道者とて和歌の道ををしへ或は数寄者 弓法者 其外諸芸諸能までも思ひ思ひに稽古しこころこころにすくものなり `兵法の道にはすく人まれ也",
+      "source_line_end": 53
+    },
+    {
+      "paragraph_id": "P005",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0101",
+      "section_title": "一 序 (Introduction)",
+      "paragraph_index": 5,
+      "source_line_start": 54,
+      "text": "`先武士は `文武二道 `と云ひて二ツの道を嗜む事是道也 `縦此道ぶきようなり共武士たるものはおのれおのれが分際程は兵の法をばつとむべき事也 `大形武士の思ふ心をはかるに `武士は只 `死ぬる `と云ふ道を嗜む事 `と覚ゆる程の儀也 `死する道に於ては武士ばかりに限らず `出家にても女にても百姓以下に至るまで義理を知り恥を思ひ死するべきを思ひきる事は其差別なきものなり `武士の兵法をおこなふ道は何事に於ても大にすぐるるところを本とし或は一身の切合にかち或は数人の戦に勝主君の為我身の為名をあげ身をたてんと思ふ是兵法の徳をもつてなり",
+      "source_line_end": 55
+    },
+    {
+      "paragraph_id": "P006",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0101",
+      "section_title": "一 序 (Introduction)",
+      "paragraph_index": 6,
+      "source_line_start": 56,
+      "text": "`又世の中に `兵法の道をならひても実の時の役にはたつまじき `と思ふ心あるべし `其儀に於ては何時にても役に立やうに稽古し万事に至り役に立様に教る事是兵法の実の道也",
+      "source_line_end": 57
+    },
+    {
+      "paragraph_id": "P007",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 7,
+      "source_line_start": 59,
+      "text": "`漢土和朝迄も此道を行なふ者を `兵法の達者 `と云伝へたり `武士として此法を学ばずと云事有べからず",
+      "source_line_end": 60
+    },
+    {
+      "paragraph_id": "P008",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 8,
+      "source_line_start": 61,
+      "text": "`近代 `兵法者 `と云て世を渡る者是は剣術一通の事也 `常陸国かしまかんとりの社人共 `明神の伝へとして流々をたてて国々を回り人に伝ふる事近き頃の儀也 `古しへより十能七芸と有うちに `利方 `と云て芸にわたると云へ共 `利方 `と云出すより剣術一通にかぎるべからず `剣術一へんの利までにては剣術も知りがたし `勿論兵の法には叶べからず",
+      "source_line_end": 62
+    },
+    {
+      "paragraph_id": "P009",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 9,
+      "source_line_start": 63,
+      "text": "`世の中を見るに諸芸をうり物にしたて我身をうり物のやうに思ひ諸道具につけてもうり物にこしらへる心花実の二ツにして花よりも実のすくなき所也 `とりわき此兵法の道に色をかざり花をさかせて術をてらひ或は `一道場 `或は `二道場 `など云て此道を教へ此道を習ひて `利を得ん `と思ふ事誰か云ふ `なまひやうはふ大疵のもと `まこと成べし",
+      "source_line_end": 64
+    },
+    {
+      "paragraph_id": "P010",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 10,
+      "source_line_start": 65,
+      "text": "`凡人の世を渡る事士農工商とて四ツの道也 `一ツには農の道 `農人は色々の農具を設け四季転変の心得いとまなくして春秋を送る事是農の道也 `二ツにはあきなひの道 `酒を作るものは夫々の道具をもとめ其善悪の利を得て渡世をおくるいづれもあきなひの道 `其身其身のかせぎ其利を以て世を渡る也是商の道 `三ツには士の道 `武士に於てはさまざまの兵具をこしらへ兵具しなじなの徳を弁へたらんこそ武士の道なるべけれ `兵具をもたしなまず其具々の利をも覚ざる事武家は少々たしなみのあさきもの歟 `四ツには工の道 `大工の道に於ては種々様々の道具をたくみこしらへ其具々を能つかひ覚えすみかねを以て其さしづをただしいとまもなくそのわざをして世を渡る是士農工商四ツの道也",
+      "source_line_end": 66
+    },
+    {
+      "paragraph_id": "P011",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 11,
+      "source_line_start": 67,
+      "text": "`兵法を大工の道にたとへて云あらはす也 `大工にたとふる事 `家 `といふ事につけての儀也 `公家 武家 四家 其家のやぶれ 家のつづくと云事 `其流 `其風 `其家 `などと云へば `家 `と云より大工の道にたとへたり `大工 `は `大きにたくむ `と書なれば兵法の道 `大きなるたくみ `によつて大工に云なぞらへて書顕す也",
+      "source_line_end": 68
+    },
+    {
+      "paragraph_id": "P012",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0102",
+      "section_title": "二 一 兵法の道と云事 (The Way of Military Strategy)",
+      "paragraph_index": 12,
+      "source_line_start": 69,
+      "text": "`兵の法を学ばんと思はば此書を思案して師ははり弟子は糸と成てたえず稽古有るべき事也",
+      "source_line_end": 70
+    },
+    {
+      "paragraph_id": "P013",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0103",
+      "section_title": "三 一 兵法の道大工にたとへたる事 (Analogy of the Way with the Carpenter)",
+      "paragraph_index": 13,
+      "source_line_start": 72,
+      "text": "`大将は大工の統領として天下のかねを弁へ其国のかねを糾し其家のかねを知る事統領の道也 `大工の統領は堂塔伽藍のすみかねを覚えくうでんろうかくのさしづを知り人々をつかひ家々を取立る事 `大工の統領も武家の統領も同じ事也 `家を立るに木配りをする事 `直にして節もなく見つきのよきを表の柱とし少し節有り共直につよきをうちの柱としたとひかよわくとも節なき木の見ざまよきをば敷居 鴨居 戸 障子と夫々に遣ひ節有り共ゆがみたり共強き木をば其家の強み強みを見分て能吟味して遣ふに於ては其家久しくくづれがたし `又材木のうちにしても節多くゆがみて弱きをばあししろ共なし後には薪共なすべき也",
+      "source_line_end": 73
+    },
+    {
+      "paragraph_id": "P014",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0103",
+      "section_title": "三 一 兵法の道大工にたとへたる事 (Analogy of the Way with the Carpenter)",
+      "paragraph_index": 14,
+      "source_line_start": 74,
+      "text": "`統領に於て大工を遣ふ事 `其上中下を知り或はとこまはり或は戸 障子或は敷居 鴨居 天井以下夫々に遣ひてあしきは根太をはらせ猶悪きにはくさびをけづらせ人を見分て遣へば其はか行て手際よきもの也 `果敢の行き手際よきを云ふ所 `物毎をゆるさざる事 `たいゆう知事 `気の上中下を知る事 `いさみを付ると云事 `むたいを知るといふ事 `箇様の事共統領の心持に有事也",
+      "source_line_end": 75
+    },
+    {
+      "paragraph_id": "P015",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0103",
+      "section_title": "三 一 兵法の道大工にたとへたる事 (Analogy of the Way with the Carpenter)",
+      "paragraph_index": 15,
+      "source_line_start": 76,
+      "text": "`兵法の利かくのごとし",
+      "source_line_end": 77
+    },
+    {
+      "paragraph_id": "P016",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0104",
+      "section_title": "四 一 兵法の道 (The Way of Strategy)",
+      "paragraph_index": 16,
+      "source_line_start": 79,
+      "text": "`士卒たる者は大工にして手づから其道具をとぎ色々のせめ道具をこしらへ大工の箱に入て持統領云付る所をうけ柱こうりやう共てうのにてけづりとこだなをもかんなにてけづりすかし物ほり物をもしてよくかねを糾しすみずみめんどう迄も手際能く仕立る所大工の法也 `大工のわざ手にかけて能くしおぼえすみかねを能知りて後は統領となる物也 `大工のたしなみ能きるる道具を持透々にとぐことが肝要也 `其道具をとつてみづし 書棚 机 卓又はあんどん まないた 鍋のふた迄も達者にする所大工の専なり `士卒たる者このごとく也 `能々吟味有べし",
+      "source_line_end": 80
+    },
+    {
+      "paragraph_id": "P017",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0104",
+      "section_title": "四 一 兵法の道 (The Way of Strategy)",
+      "paragraph_index": 17,
+      "source_line_start": 81,
+      "text": "`大工のたしなみ `ひずまざる事 `とめをあはする事 `かんなにて能くけづる事 `すりみがかざる事 `後にひすかざる事 `肝要也",
+      "source_line_end": 82
+    },
+    {
+      "paragraph_id": "P018",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0104",
+      "section_title": "四 一 兵法の道 (The Way of Strategy)",
+      "paragraph_index": 18,
+      "source_line_start": 83,
+      "text": "`此道を学ばんと思はば書顕す所のことごとに心を入て能吟味有べきもの也",
+      "source_line_end": 84
+    },
+    {
+      "paragraph_id": "P019",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 19,
+      "source_line_start": 86,
+      "text": "`五ツの道を分ち一まき一まきにして其利を知らしめんが為に `地 `水 `火 `風 `空 `として五巻に書顕す也",
+      "source_line_end": 87
+    },
+    {
+      "paragraph_id": "P020",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 20,
+      "source_line_start": 88,
+      "text": "`地の巻 `に於ては兵法の道の大体我一流の見立 `剣術一通にしてはまことの道を得がたし `大きなる所よりちひさき所を知り浅きより深きに至る直なる道の地形を引ならすによつて初を `地の巻 `と名付也",
+      "source_line_end": 89
+    },
+    {
+      "paragraph_id": "P021",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 21,
+      "source_line_start": 90,
+      "text": "`第二 `水の巻 `水を本として心も水になる也 `水は方円のうつわものに随ひ一滴と也さう海となる `水に碧潭の色有り `清き所を用ゐて一流の事を此巻に書顕す也",
+      "source_line_end": 91
+    },
+    {
+      "paragraph_id": "P022",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 22,
+      "source_line_start": 92,
+      "text": "`剣術一通の理さだかに見分け一人の敵に自由に勝時は世界の人に皆勝所也 `人に勝と云心は千万の敵にも同意也 `将たる者の兵法ちひさきを大きになす事尺のかたを以て大仏をたつるに同じ `箇様の儀こまやかには書分がたし `一を以て万を知る事兵法の利也 `一流の事を此 `水の巻 `に書しるす也",
+      "source_line_end": 93
+    },
+    {
+      "paragraph_id": "P023",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 23,
+      "source_line_start": 94,
+      "text": "`第三 `火の巻 `此巻に戦の事を書記也 `火は大小となりけやけき心有によつて合戦の事を書也 `合戦の道一人と一人との戦ひも万と万との戦ひも同じ道也 `心を大きなる事になし心を小さくなして能く吟味して見るべし `大きなる所は見えやすし `小さき所は見えがたし `其子細大人数の事は即座にもとほりがたし一人の事は心一つにてかはる事はやきによつて小さき所知る事得がたし `能吟味有べし",
+      "source_line_end": 95
+    },
+    {
+      "paragraph_id": "P024",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 24,
+      "source_line_start": 96,
+      "text": "`此火の巻の事はやき間のことなるによつて日々に手馴常の如く思ひ心のかはらぬ所兵法の肝要也 `然るによつて戦勝負の所を `火の巻 `に書顕す也",
+      "source_line_end": 97
+    },
+    {
+      "paragraph_id": "P025",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 25,
+      "source_line_start": 98,
+      "text": "`第四 `風の巻 `此巻を風の巻としるす事我一流の事にはあらず `世の中の兵法其流々の事を書載する所也 `風 `と云に於ては `昔の風 `今の風 `其家々の風 `などとあれば世間の兵法其流々のしわざをさだかに書顕す是風也 `他の事を能知らずしては自のわきまへ成がたし `道が事々をおこなふに `外道 `と云ふ心有り `日々に其道を勤むると云ふ共心のそむけば其身のよき道と思ふ共直なる所より見れば実の道には有らず `実の道をきはめざれば少心のゆがみに付て後には大きにゆがむもの也 `吟味すべし",
+      "source_line_end": 99
+    },
+    {
+      "paragraph_id": "P026",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 26,
+      "source_line_start": 100,
+      "text": "`他の兵法 `剣術ばかり `と世に思ふ事尤也 `我兵法の利わざに於ても各別の儀也 `世間の兵法を知しめん為に `風の巻 `として他流の事を書顕す也",
+      "source_line_end": 101
+    },
+    {
+      "paragraph_id": "P027",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0105",
+      "section_title": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls)",
+      "paragraph_index": 27,
+      "source_line_start": 102,
+      "text": "`第五 `空の巻 `此巻 `空 `と書顕す事 `空 `と云ひ出すよりしては `何をか `奥 `と云 `何をか `口 `といはん `道理を得ては道理をはなれ兵法の道におのれと自由ありておのれと奇特を得 `時にあひてはひやうしを知り自ら打自あたる是皆空の道也 `おのづと実の道に入事を `空の巻 `にして書とどむるもの也",
+      "source_line_end": 103
+    },
+    {
+      "paragraph_id": "P028",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 28,
+      "source_line_start": 105,
+      "text": "`二刀 `と云出す所武士は将卒共にぢきに二刀を腰に付る役也 `昔は `太刀刀 `と云今は `刀脇差 `と云 `武士たる者の此両腰を持事こまかに書顕すに及ばず `我朝に於てしるもしらぬも腰におぶ事武士の道也 `此二つの利をしらしめん為に `二刀一流 `と云也 `槍長刀よりしては `外の物 `と云て武道具の内也",
+      "source_line_end": 106
+    },
+    {
+      "paragraph_id": "P029",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 29,
+      "source_line_start": 107,
+      "text": "`一流の道初心の者に於て太刀刀両手に持て道を仕習ふ事実の所也 `一命を捨る時は道具を残さず役に立たきもの也 `道具を役に立てず腰に納めて死する事本意に有べからず `然共両手に物を持事左右共に自由には叶ひがたし `太刀を片手に取習せん為なり",
+      "source_line_end": 108
+    },
+    {
+      "paragraph_id": "P030",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 30,
+      "source_line_start": 109,
+      "text": "`槍 長刀 大道具は是非に及ばず刀脇差に於てはいづれも片手にて持道具也 `太刀を両手にて持てあしき事 `馬上にてあしし `かけ走る時あしし `沼 いけ 石原 さかしき道 人こみにあしし `左に弓槍を持其外何れの道具を持てもみな片手にて太刀をつかふものなれば両手に太刀を構ふる事実の道に非ず `若片手にて打ころしがたき時は両手にても打とむべし `手間の入る事にても有べからず",
+      "source_line_end": 110
+    },
+    {
+      "paragraph_id": "P031",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 31,
+      "source_line_start": 111,
+      "text": "`先片手にて太刀を振り習はん為に二刀として太刀を片手にて振覚ゆる道也 `人毎に初てとる時は太刀おもくして振回しがたきものなれ共万初めてとり付時は弓も引がたし長刀も振りがたし `いづれも其道具道具になれては弓も力つよくなり太刀も振つけぬれば道の力を得て振よくなるなり `太刀の道と云事はやくふるに非ず `第二 `水の巻 `にて知るべし `太刀はひろき所にて振り脇差はせまき所にて振事先道の本意也",
+      "source_line_end": 112
+    },
+    {
+      "paragraph_id": "P032",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 32,
+      "source_line_start": 113,
+      "text": "`此一流に於て長きにても勝短かきにても勝 `故によつて太刀の寸を定めず `何にても勝事を得る心一流の道也 `太刀一ツ持たるよりも二ツ持てよき所大勢を一人して戦ふ時又とり籠り者などの時によき事有",
+      "source_line_end": 114
+    },
+    {
+      "paragraph_id": "P033",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0106",
+      "section_title": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\")",
+      "paragraph_index": 33,
+      "source_line_start": 115,
+      "text": "`箇様之儀今委しく書顕すに及ばず `一を以て万を知るべし `兵法の道行ひ得ては一ツも見えずと云事なし `能々吟味有べき也",
+      "source_line_end": 116
+    },
+    {
+      "paragraph_id": "P034",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0107",
+      "section_title": "七 一 兵法二ツの字の利を知事 (To Know the Advantage of Strategy)",
+      "paragraph_index": 34,
+      "source_line_start": 118,
+      "text": "`此道に於て太刀を振得たる者を `兵法者 `と世に言伝へたり `武芸の道に至て弓を能く射れば `射手 `と云鉄砲を得たる者は `鉄砲打 `と云ふ `槍を遣ひ得ては `槍遣 `と云ひ長刀を覚えては `長刀遣 `と云ふ `然るに於ては太刀の道を覚えたる者を `太刀遣 `脇差遣 `といはん事也 `弓 鉄砲 槍 長刀 皆是武家の道具なればいづれも兵法の道也 `然共太刀よりして `兵法 `と云事道理也",
+      "source_line_end": 119
+    },
+    {
+      "paragraph_id": "P035",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0107",
+      "section_title": "七 一 兵法二ツの字の利を知事 (To Know the Advantage of Strategy)",
+      "paragraph_index": 35,
+      "source_line_start": 120,
+      "text": "`太刀の徳よりして世を納め身を納る事なれば太刀は兵法のおこる所也 `太刀の徳を得ては一人して十人に勝事也 `一人にして十人に勝なれば百人して千人に勝千人にして万人に勝 `然るによつて我一流の兵法に一人も万人も同じ事にして武士の法を残らず `兵法 `と云所也",
+      "source_line_end": 121
+    },
+    {
+      "paragraph_id": "P036",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0107",
+      "section_title": "七 一 兵法二ツの字の利を知事 (To Know the Advantage of Strategy)",
+      "paragraph_index": 36,
+      "source_line_start": 122,
+      "text": "`道に於て儒者 仏者 数寄者 しつけ者 乱舞者此等の事は武士の道にはなし `其道に有らざると云ふ共道を広く知れば物事に出あふ事なり `何れも人間に於て我道我道を能みがく事肝要也",
+      "source_line_end": 123
+    },
+    {
+      "paragraph_id": "P037",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "paragraph_index": 37,
+      "source_line_start": 125,
+      "text": "`武道具の利をわきまふるに何れの道具にてもおりにふれ時にしたがひ出合もの也 `脇差は座のせまき所敵の身ぎはへよりて其利多し `太刀は何れの所にても大形出合ふ利有り `長刀は戦場にては槍におとる心有 `槍は先手なり `長刀は後手也 `同じ位のまなびにしては槍は少し強く槍長刀も事によりつまりたる所にては其利少し `取籠り者などにも然るべからず `只戦場の道具なるべし `合戦の場にしては肝要の道具なり `され共座敷にての利をおぼへこまやかに思ひ実の道を忘るるに於ては出合がたるべし",
+      "source_line_end": 126
+    },
+    {
+      "paragraph_id": "P038",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "paragraph_index": 38,
+      "source_line_start": 127,
+      "text": "`弓は合戦の場にてかけひきにも出合槍わき其外物きは物きはにてはやく取合するものなれば野相の合戦などにとりわきよき物也 `城攻など又敵相二十間をこえては不足なるもの也 `当世に於ては弓は申に及ばず諸芸花多して実少なし `左様の芸能は肝要の時役に立がたし `鉄砲其利多し `城廓の内にしては鉄砲にしく事なし `野相などにても合戦のはじまらぬうちは其利多し `戦はじまりては不足なるべし `弓の一の徳は放つ矢人の目に見えてよし `鉄砲の玉は目に見えざる所不足也 `此儀能々吟味有べき也",
+      "source_line_end": 128
+    },
+    {
+      "paragraph_id": "P039",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "paragraph_index": 39,
+      "source_line_start": 129,
+      "text": "`馬の事 `つよくこたへてくせなき事肝要也",
+      "source_line_end": 130
+    },
+    {
+      "paragraph_id": "P040",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "paragraph_index": 40,
+      "source_line_start": 131,
+      "text": "`総て武道具につけ馬も大形にありき刀脇差も大形にきれ槍長刀も大形にとほり弓鉄砲もつよくそこねざる様に有べし `道具以下にもかたわけてすく事有べからず `あまりたる事はたらぬと同じ事也 `人まねをせずとも我身に随ひ武道具は手にあふ様に有べし",
+      "source_line_end": 132
+    },
+    {
+      "paragraph_id": "P041",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0108",
+      "section_title": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy)",
+      "paragraph_index": 41,
+      "source_line_start": 133,
+      "text": "`将卒共に物にすき物を嫌ふ事悪し `工夫肝要也",
+      "source_line_end": 134
+    },
+    {
+      "paragraph_id": "P042",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "paragraph_index": 42,
+      "source_line_start": 136,
+      "text": "`物毎に付拍子は有る物なれ共とりわけ兵法の拍子鍛錬なくては及がたき所也 `世の中の拍子あらはれて有事乱舞の道れい人管絃の拍子など是皆能あふ所のろくなる拍子也 `武芸の道にわたつて弓を射 鉄砲を放 馬に乗る事迄も拍子調子は有り諸芸諸能に至ても拍子をそむく事は有るべからず `又空なる事に於ても拍子は有り `武士の身の上にして奉公に身をしあぐる拍子しさぐる拍子筈のあふ筈のちがふ拍子有 `或は商の道分限になる拍子 `分限にても其たゆる拍子 `道々に付けて拍子の相違有事也 `物毎のさかゆる拍子おとろふる拍子 `能々分別すべし",
+      "source_line_end": 137
+    },
+    {
+      "paragraph_id": "P043",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "paragraph_index": 43,
+      "source_line_start": 138,
+      "text": "`兵法の拍子に於て様々有事也 `先あふ拍子を知つてちがふ拍子を弁へ大小遅速の拍子の中にもあたる拍子を知り間の拍子を知り背く拍子を知る事兵法の専也 `此背く拍子弁へ得ずしては兵法たしかならざる事也 `兵法の戦に其敵其敵の拍子を知り敵の思ひよらざる拍子を以て空の拍子を智恵の拍子より発して勝所也 `何れの巻にも拍子の事を専書記也 `其書付の吟味をして能々鍛錬すべきもの也",
+      "source_line_end": 139
+    },
+    {
+      "paragraph_id": "P044",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "paragraph_index": 44,
+      "source_line_start": 140,
+      "text": "`右一流の兵法の道朝な朝な夕な夕な勤め行ふによつて自ら広き心になつて多分一分の兵法として世に伝ふる所初て書顕す事 `地 `水 `火 `風 `空 `是五巻也",
+      "source_line_end": 141
+    },
+    {
+      "paragraph_id": "P045",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "paragraph_index": 45,
+      "source_line_start": 142,
+      "text": "`我兵法を学ばんと思ふ人は道を行ふ法有り\n\n`第一によこしまになき事を思ふ所\n`第二に道の鍛錬する所\n`第三に諸芸にさはる所\n`第四に諸職の道を知事\n`第五に物毎の損徳を弁ふる事\n`第六に諸事目利を仕覚る事\n`第七に目に見えぬ所をさとつて知る事\n`第八にわづかなる事にも気を付る事\n`第九に役に立ぬ事をせざる事",
+      "source_line_end": 153
+    },
+    {
+      "paragraph_id": "P046",
+      "scroll_id": "0100",
+      "scroll_title": "地の巻 (Scroll of Earth)",
+      "section_id": "0109",
+      "section_title": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy)",
+      "paragraph_index": 46,
+      "source_line_start": 154,
+      "text": "`大形如㆑此理を心に懸て兵法の道鍛錬すべき也 `此道に限て直なる所を広く見立ざれば兵法の達者とは成がたし `此法を学び得ては一身にして二十三十の敵にも負べき道にあらず `先気に兵法をたえさず直なる道を勤ては手にて打勝目に見る事も人に勝ち又鍛錬を以て総体自由なれば身よりも人に勝ち又此道になれたるなれば心を以ても人に勝ち此所に至てはいかにとして人にまくる道有んや `又大きなる兵法にしては善人をもつ事に勝人数を遣ふ事に勝身を正しく行ふ道に勝国を治る事に勝民をやしなふ事に勝世の例法をおこなふに勝 `何れの道に於ても人に負ざる所を知りて身をたすけ名をたすくる所是兵法の道也\n\n`正保二年五月十二日　　新免武蔵\n`寺尾孫之丞殿\n\n`寛文七年二月五日　　寺尾夢世勝延 花押\n`山本源介殿",
+      "source_line_end": 162
+    },
+    {
+      "paragraph_id": "P047",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0201",
+      "section_title": "一 序",
+      "paragraph_index": 47,
+      "source_line_start": 166,
+      "text": "`兵法二天一流の心水を本として利方の法を行ふによつて `水の巻 `として一流の太刀筋此書に書顕すもの也 `此道いづれもこまやかに心の儘には書分がたし `縦ことばつづかざると云ふ共利は自ら聞ゆべし `此書に書付たる所ことごと一字一字にて思案すべし `大形に思ひては道のちがふ事多かるべし `兵法の利に於て一人と一人との勝負の様に書付たる所なり共万人と万人との合戦の利に心得大きに見立所肝要也 `此道に限つて少なり共道を見違へ道の迷ひ有りては悪道へ落るもの也 `此書付計を見て兵法の道には及事に非ず `此書に書付たるを我身にとつて書付を見ると思はずならふと思はずにせものにせずして則ち我心より見出したる利にして常に其身になつて能々工夫すべし",
+      "source_line_end": 167
+    },
+    {
+      "paragraph_id": "P048",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0202",
+      "section_title": "二 一 兵法心持の事",
+      "paragraph_index": 48,
+      "source_line_start": 169,
+      "text": "`兵法の道に於て心の持様は常の心に替る事なかれ `常にも兵法の時にも少も替らずして心を広く直にしてきつくひつぱらず少もたるまず心のかたよらぬ様に心をまん中におきて心を静にゆるがせて其ゆるぎのせつなもゆるぎやまぬ様に能々吟味すべし `静なる時も心は静ならず何とはやき時も心は少もはやからず心は体につれず体は心につれず心に用心して身は用心せず心のたらぬ事なくして心を少もあやまらさずうへの心はよわく共そこの心をつよく心を人に見分られざる様にして小身なるものは心に大きなる事を残らず知り大身なるものは心に小さき事を能知りて大身も小身も心を直にして我身のひいきをせざる様に心を持事肝要也 `心の内にごらず広くして広き所へ智恵を置べき也 `智恵も心もひたとみがく事専也 `智恵をとぎ天下の理非を弁へ物毎の善悪を知り万の芸能其道其道をわたり世間の人に少しもだまされざる様にして後兵法の智恵となる心也 `兵法の智恵に於てとりわきちがふ事有もの也 `戦の場万事せはしき時なれ共兵法の道理をきはめうごきなき心能々吟味すべし",
+      "source_line_end": 170
+    },
+    {
+      "paragraph_id": "P049",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0203",
+      "section_title": "三 一 兵法の身なりの事",
+      "paragraph_index": 49,
+      "source_line_start": 172,
+      "text": "`身のかかり顔はうつむかず あをのかず かたむかず ひずまず目をみださず ひたいにしはをよせずまゆあいにしわをよせて目の玉のうごかざる様にしてまたたきせぬ様に思ひて目を少しすくめる様にしてうらやかに見ゆるかほ鼻すぢ直にして少しおとがひを出す心也 `首はうしろのすぢを直にうなじに力を入れて肩より総身はひとしく覚え両の肩をさげ背すぢをろくに尻を出さずひざより足先まで力を入て腰のかがまざる様に腹をはり `くさびをしむる `と云ひて脇差のさやに腹をもたせて帯のくつろがざる様にくさびをしむると云教有り `総て兵法の身に於て常の身を兵法の身とし兵法の身を常の身とする事肝要なり `能々吟味すべし",
+      "source_line_end": 173
+    },
+    {
+      "paragraph_id": "P050",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0204",
+      "section_title": "四 一 兵法の目付と云事",
+      "paragraph_index": 50,
+      "source_line_start": 175,
+      "text": "`目の付様は大きに広く付る目也 `観 `見 `二ツの事 `観の目つよく見の目よわく遠き所を近く見近き所を遠く見る事兵法の専也 `敵の太刀を知り聊敵の太刀を見ずと云事兵法の大事也 `工夫有べし",
+      "source_line_end": 176
+    },
+    {
+      "paragraph_id": "P051",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0204",
+      "section_title": "四 一 兵法の目付と云事",
+      "paragraph_index": 51,
+      "source_line_start": 177,
+      "text": "`此目付ちひさき兵法にも大きなる兵法にも同じ事也 `目の玉動かずして両脇を見る事肝要也 `箇様の事いそがしき時俄には弁へがたし `此書付を覚え常住此目付になりて何事にも目付の替らざる所能々吟味有べきもの也",
+      "source_line_end": 178
+    },
+    {
+      "paragraph_id": "P052",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0205",
+      "section_title": "五 一 太刀の持様の事",
+      "paragraph_index": 52,
+      "source_line_start": 180,
+      "text": "`太刀の取様は大指人さしを浮べる心に持 `たけ高指しめずゆるまず くすし指小指をしむる心にして持也 `手の内にはくつろぎの有事悪し `敵をきるものなり `と思ひて太刀を取るべし`敵をきる時も手の内に替りなく手のすくまざる様に持べし `もし敵の太刀をはる事 うくる事 あたる事 おさへる事有り共大指人さし指斗を少替る心にして兎にも角にも `きる `と思ひて太刀を取るべし `ためしものなどきる時の手の内も兵法にしてきる時の手の内も `人をきる `と云手の内に替る事なし",
+      "source_line_end": 181
+    },
+    {
+      "paragraph_id": "P053",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0205",
+      "section_title": "五 一 太刀の持様の事",
+      "paragraph_index": 53,
+      "source_line_start": 182,
+      "text": "`総て太刀にても手にても `ゐつく `と云事を嫌ふ `ゐつく `はしぬる手也 `ゐつかざる `は生る手也 `能々心得べきもの也",
+      "source_line_end": 183
+    },
+    {
+      "paragraph_id": "P054",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0206",
+      "section_title": "六 一 足つかひの事",
+      "paragraph_index": 54,
+      "source_line_start": 185,
+      "text": "`足の運び様の事 `つま先を少うけてきびすを強く踏べし `足遣ひはことによりて大小遅速は有共常にあゆむが如し `足に飛足 浮足 ふみすゆる足とて是三ツ嫌ふ足也 `此道の大事にいはく `陰陽の足 `と云是肝心也 `陰陽の足とは片足斗動かさぬもの也 `きる時 ひく時 うくる時迄も `陰 `陽 `とて右左右左踏む足也 `返す返す片足踏事有べからず `能々吟味すべきもの也",
+      "source_line_end": 186
+    },
+    {
+      "paragraph_id": "P055",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0207",
+      "section_title": "七 一 五方の構の事",
+      "paragraph_index": 55,
+      "source_line_start": 188,
+      "text": "`五方の構は上段 中段 下段 右のわきに構ふる事左のわきに構ふる事是 `五方 `也 `構五ツに分つと云へ共皆人をきらん為也 `構五ツより外はなし `何れの構なり共 `かまふるは思はずきる事也 `と思ふべし `構の大小はことにより利にしたがふべし `上中下は体の構也 `両脇はゆうの構也 `右左の構うへのつまりてわき一方つまりたる所などにての構也 `右左は所によりて分別有 `此道の大事に曰く `構のきはまりは中段と心得べし `中段構の本意也 `兵法大きにして見よ `中段は大将の座也 `大将につきあと四段の構也 `能々吟味すべし",
+      "source_line_end": 190
+    },
+    {
+      "paragraph_id": "P056",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0208",
+      "section_title": "八 一 太刀の道と云事",
+      "paragraph_index": 56,
+      "source_line_start": 192,
+      "text": "`太刀の道を知る `と云事は `常に我さす刀をゆび二ツにて振る時も道すぢ能知りては自由に振もの也 `太刀をはやく振らんとするによつて太刀の道ちがひて振がたし `太刀は振りよき程に静に振る也 `或は扇或は小刀など遣ふ様に `はやく振らん `と思ふによつて太刀の道ちがひて振がたし `夫は `小刀きざみ`といひて太刀にては人のきれざるもの也 `太刀を打さげてはあげよき道にあげ横に振りては横にもどりよき道へもどしいかにも大きにひぢをのべて強く振る事是太刀の道也 `我兵法の五ツの表を遣ひ覚ゆれば太刀の道定まりて振よき所也 `能々鍛錬すべし",
+      "source_line_end": 193
+    },
+    {
+      "paragraph_id": "P057",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0209",
+      "section_title": "九 一 五ツのおもての次第 第一の事",
+      "paragraph_index": 57,
+      "source_line_start": 195,
+      "text": "`第一の構中段 `太刀先を敵の顔へ付て敵に行相時敵太刀打かくる時右へ太刀をはづして乗り又敵打かくる時きつさきかへしにて打うち落したる太刀其儘置又敵の打かくる時下より敵の手はる是第一也 `総別此五ツの表書付る斗にては合点なりがたし `五ツの表のぶんは手にとつて太刀の道稽古する所也 `此五ツの太刀筋にて我太刀の道をも知り如何様にも敵の打太刀知るる所也是 `二刀の太刀の構五ツより外に有らず `と知らする所也 `鍛錬すべきなり",
+      "source_line_end": 197
+    },
+    {
+      "paragraph_id": "P058",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0210",
+      "section_title": "一〇 一 おもての第二の次第の事",
+      "paragraph_index": 58,
+      "source_line_start": 199,
+      "text": "`第二の太刀 `上段に構へ敵打かくる所一度に敵を打也 `敵を打はづしたる太刀其儘置きて又敵の打所を下よりすくひ上て打つ `今一ツ打も同じ事也 `此表の内に於ては様々の心持色々の拍子此表のうちを以て一流の鍛錬をすれば五ツの太刀の道こまやかに知つて如何様にも勝所有 `稽古すべき也",
+      "source_line_end": 201
+    },
+    {
+      "paragraph_id": "P059",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0211",
+      "section_title": "一一 一 おもて第三の次第の事",
+      "paragraph_index": 59,
+      "source_line_start": 203,
+      "text": "`第三の構 `下段に持ひつさげたる心にして敵の打かくる所を下より手をはる也 `手をはる所を亦敵はる太刀を打落さんとする所をこす拍子にて敵打たるあと二のうでを横にきる心也 `下段にて敵の打所を一度に打留る事也 `下段の構道をはこぶにはやき時も遅き時も出合もの也 `太刀を取て鍛錬有るべき也",
+      "source_line_end": 204
+    },
+    {
+      "paragraph_id": "P060",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0212",
+      "section_title": "一二 一 おもて第四の次第の事",
+      "paragraph_index": 60,
+      "source_line_start": 206,
+      "text": "`第四の構 `左の脇に横に構へて敵の打かくる手を下よりはるべし `下よりはるを敵打落さんとするを手をはる心にて其儘太刀の道をうけ我肩の上へすぢかひにきるべし `是太刀の道也 `又敵の打かくる時も太刀の道をうけて勝道也 `能々吟味有べし",
+      "source_line_end": 207
+    },
+    {
+      "paragraph_id": "P061",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0213",
+      "section_title": "一三 一 おもて第五の次第の事",
+      "paragraph_index": 61,
+      "source_line_start": 209,
+      "text": "`第五の次第 `太刀の構 `我右の脇に横に構へて敵打かくる所のくらゐをうけ我太刀の下の横よりすぢかへて上段に振あげ上より直にきるべし `是も太刀の道能知らん為也 `此おもてにてふりつけぬればおもき太刀自由にふらるる所也 `此五ツのおもてに於てこまかに書付る事に非ず `我家の一通太刀の道を知り亦大形拍子をも覚え敵の太刀を見分る事 `先づ此五ツにて不㆑断手をからす所也 `敵と戦ひの内にも此太刀すぢをからして敵の心を受け色々の拍子にて如何様にも勝所也 `能々分別すべし",
+      "source_line_end": 210
+    },
+    {
+      "paragraph_id": "P062",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0214",
+      "section_title": "一四 一 有構無構の数の事",
+      "paragraph_index": 62,
+      "source_line_start": 212,
+      "text": "`有㆑構無㆑構と云ふは太刀を構ふると云事有べき事に非ず `され共五方に置事あれば構へ共成べし `太刀は敵の縁により所によりけいきにしたがひ何れの方に置たり共其敵きりよき様に持心なり `上段も時に随ひ少さがる心なれば中段となり中段を利により少あぐれば上段となる `下段もおりにふれ少あぐれば中段となる `両脇の構もくらゐにより少し中へ出さば中段下段共なる心なり `然るに依て `構は有りて構は無き `と云ふ理也",
+      "source_line_end": 213
+    },
+    {
+      "paragraph_id": "P063",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0214",
+      "section_title": "一四 一 有構無構の数の事",
+      "paragraph_index": 63,
+      "source_line_start": 214,
+      "text": "`先 `太刀を執ては何れにしてなり共敵を切る `と云心也 `若敵の切る 太刀を受る はる あたる ねばる さはるなど云ふ事あれ共皆皆敵を切る縁也と心得べし `受る `と思ひ `はる `と思ひ `あたる `と思ひ `ねばる `と思ひ `さはる `と思ふに依て切る事不足なるべし `何事も切る縁 `と思ふ事肝要也 `能々吟味すべし",
+      "source_line_end": 215
+    },
+    {
+      "paragraph_id": "P064",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0214",
+      "section_title": "一四 一 有構無構の数の事",
+      "paragraph_index": 64,
+      "source_line_start": 216,
+      "text": "`兵法大きにして人数たてと云ふも構也 `皆合戦に勝縁也 `いつくと云ふ事悪し `能々工夫すべし",
+      "source_line_end": 217
+    },
+    {
+      "paragraph_id": "P065",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0215",
+      "section_title": "一五 一 敵を打に一拍子の打の事",
+      "paragraph_index": 65,
+      "source_line_start": 219,
+      "text": "`敵を打つ拍子に `一拍子 `と云ひて敵我あたるほどの位を得て敵のわきまへぬうちを心に得て其身も動かさず心も付ず如何にも早く直ぐに打拍子也 `敵の太刀 `ひかん `はづさん `打たん `と思ふ心のなき内を打拍子是一拍子也 `此拍子能習得て間の拍子を早く打事鍛錬すべし",
+      "source_line_end": 220
+    },
+    {
+      "paragraph_id": "P066",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0216",
+      "section_title": "一六 一 二のこしの拍子の事",
+      "paragraph_index": 66,
+      "source_line_start": 222,
+      "text": "`二のこしの拍子 `我打たんとする時敵はやく引早くはりのくる様なる時は我打と見せて敵のはりてたるむ所を打ひきてたるむ所を打是二のこしの打也 `此書付斗にては中々打得がたかるべし `教受ては忽合点のゆく所也",
+      "source_line_end": 223
+    },
+    {
+      "paragraph_id": "P067",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0217",
+      "section_title": "一七 一 無念無想の打と云事",
+      "paragraph_index": 67,
+      "source_line_start": 225,
+      "text": "`敵も打ださんとし我も打ださんと思ふ時身も打身になり心も打心になつて手はいつとなく空より後ばやにつよく打事是 `無念無想 `とて一大事の打也 `此打度々出合打也 `能く習ひ得て鍛錬有べき儀也",
+      "source_line_end": 226
+    },
+    {
+      "paragraph_id": "P068",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0218",
+      "section_title": "一八 一 流水の打と云事",
+      "paragraph_index": 68,
+      "source_line_start": 228,
+      "text": "`流水の打 `と云て敵相になりてせり合ふ時敵 `早くひかん `早くはづさん `早く太刀をはりのけん `とする時我身も心も大きになつて太刀を我身のあとよりいかほどもゆるゆるとよどみのある様に大きにつよく打事也 `此打習ひ得ては慥に打よきもの也 `敵の位を見分る事肝要也",
+      "source_line_end": 229
+    },
+    {
+      "paragraph_id": "P069",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0219",
+      "section_title": "一九 一 縁のあたりと云事",
+      "paragraph_index": 69,
+      "source_line_start": 231,
+      "text": "`我打出す時敵 `打とめん `はりのけん `とする時我打一ツにしてあたまをも打足をも打太刀の道一ツを以て何れなり共打所是 `縁の打 `也 `此打よくよく打習ひ何時も出合打也 `細々打合ひて分別有べき事也",
+      "source_line_end": 232
+    },
+    {
+      "paragraph_id": "P070",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0220",
+      "section_title": "二〇 一 石火のあたりと云事",
+      "paragraph_index": 70,
+      "source_line_start": 234,
+      "text": "`石火のあたりは敵の太刀と我太刀と付合ほどにて我太刀少もあげずしていかにもつよく打也 `是は足もつよく身もつよく手もつよく三所を以て早く打べき也 `此打度々打習はずしては打がたし`よく鍛錬すれば強くあたるもの也",
+      "source_line_end": 235
+    },
+    {
+      "paragraph_id": "P071",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0221",
+      "section_title": "二一 一 紅葉の打と云事",
+      "paragraph_index": 71,
+      "source_line_start": 237,
+      "text": "`紅葉の打 `敵の太刀を打落し太刀取なをす心也 `敵前に太刀を構へ `打ん `はらん `うけん `と思ふ時我打心は無念無想の打又石火の打にても敵の太刀を強く打其儘あとをねばる心にてきつさきさがりにうてば敵の太刀必ず落るもの也 `此打鍛練すれば打落す事やすし `能々稽古有るべし",
+      "source_line_end": 238
+    },
+    {
+      "paragraph_id": "P072",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0222",
+      "section_title": "二二 一 太刀にかはる身と云事",
+      "paragraph_index": 72,
+      "source_line_start": 240,
+      "text": "`身にかはる太刀 `共いふべし `惣て敵を打身に太刀も身も一度には打ざるもの也 `敵の打縁により身をばさきへうつ身になり太刀は身にかまはず打所也 `若は身はゆるがず太刀にて打事は有れ共大形は身を先へ打太刀をあとより打ものなり `能々吟味して打習ふべき也",
+      "source_line_end": 241
+    },
+    {
+      "paragraph_id": "P073",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0223",
+      "section_title": "二三 一 打とあたると云事",
+      "paragraph_index": 73,
+      "source_line_start": 243,
+      "text": "`打 `と云ふ事 `あたる `と云事二ツ也 `打と云ふ心は何れの打にも思ひうけて慥に打也 `あたる `は `行あたる `程の心にて何と強うあたり忽ち敵の死る程にても是は `あたる `也 `打 `と云ふは `心得て打 `と云所也 `吟味すべし",
+      "source_line_end": 244
+    },
+    {
+      "paragraph_id": "P074",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0223",
+      "section_title": "二三 一 打とあたると云事",
+      "paragraph_index": 74,
+      "source_line_start": 245,
+      "text": "`敵の手にても足にても `あたる `と云ふは先あたる也 `あたりて後を強く打たん為也 `あたる `はさはる程の心 `能習得ては各別の事也 `工夫すべし",
+      "source_line_end": 246
+    },
+    {
+      "paragraph_id": "P075",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0224",
+      "section_title": "二四 一 しうこうの身と云事",
+      "paragraph_index": 75,
+      "source_line_start": 248,
+      "text": "`秋猴の身 `とは `手を出さぬ心也 `敵へ入身に少しも手を出す心なく敵打前身をはやく入心也 `手を出さんと思へば必ず身の遠のくものなるに依て惣身をはやくうつり入心也 `手にて受合する程の間には身も入やすきもの也 `能々吟味すべし",
+      "source_line_end": 249
+    },
+    {
+      "paragraph_id": "P076",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0225",
+      "section_title": "二五 一 しつこうの身と云事",
+      "paragraph_index": 76,
+      "source_line_start": 251,
+      "text": "`漆膠とは入身に能付てはなれぬ心也 `敵の身に入時頭をもつけ 身をもつけ 足をもつけ強く付所也 `人毎に顔足は早く入れども身ののくもの也 `敵の身へ我身をよく付け少しも身のあひのなき様につくもの也 `能々吟味有るべし",
+      "source_line_end": 252
+    },
+    {
+      "paragraph_id": "P077",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0226",
+      "section_title": "二六 一 たけくらべと云事",
+      "paragraph_index": 77,
+      "source_line_start": 254,
+      "text": "`たけくらべ `と云は `何れにても敵へ入込時は我身のちぢまざる様にして足をも延べ腰をものべ首をも延べて強く入敵の顔と顔とをならべ身のたけをくらぶるにくらべ勝と思ふ程高くなつて強く入所肝心也 `能々工夫すべし",
+      "source_line_end": 255
+    },
+    {
+      "paragraph_id": "P078",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0227",
+      "section_title": "二七 一 ねばりをかくると云ふ事",
+      "paragraph_index": 78,
+      "source_line_start": 257,
+      "text": "`敵も打かけ我も太刀打かくるに敵うくる時我太刀敵の太刀に付てねばる心にして入也 `ねばるは太刀はなれがたき心余り強くなき心に入るべし `敵の太刀につけてねばりをかけ入時はいか程も静に入ても苦しからず `ねばる `と云事と `もつるる `と云事 `ねばる `は強く `もつるる `はよわし `此事分別有べし",
+      "source_line_end": 258
+    },
+    {
+      "paragraph_id": "P079",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0228",
+      "section_title": "二八 一 身のあたりと云事",
+      "paragraph_index": 79,
+      "source_line_start": 260,
+      "text": "`身のあたり `は敵のきはへ入込て身にて敵にあたる心也 `少し我顔をそばめ我左の肩を出し敵の胸にあたる事 `我身をいか程も強くなりあたる事いきあい拍子にてはづむ心に入べし`此入る事入習得ては敵二間も三間もはねのく程強きもの也 `敵死入ほどもあたる也 `能々鍛錬有べし",
+      "source_line_end": 261
+    },
+    {
+      "paragraph_id": "P080",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0229",
+      "section_title": "二九 一 三ツのうけの事",
+      "paragraph_index": 80,
+      "source_line_start": 263,
+      "text": "`三ツのうけ `と云は `敵へ入込時敵打出す太刀をうくるに我太刀にて敵の目をつく様にして敵の太刀を我右の肩へ引ながして受るべし `亦 `つきうけ `と云ひて敵打太刀を敵の右の目をつく様にしてくびをはさむ心につきかけて受る所 `又敵の打時短き太刀にて入に受る太刀はさのみかまはず我左の手にて敵のつらをつく様にして入込む `是三ツのうけ也 `左の手をにぎりてこぶしにてつらをつく様に思ふべし `能々鍛錬有べきもの也",
+      "source_line_end": 264
+    },
+    {
+      "paragraph_id": "P081",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0230",
+      "section_title": "三〇 一 面てをさすと云事",
+      "paragraph_index": 81,
+      "source_line_start": 266,
+      "text": "`面をさす `とは `敵太刀相になりて敵の太刀の間我太刀の間に敵の顔を我太刀さきにて突く心に常に思ふ所肝心也 `敵の顔を突く心有れば敵の顔身ものるもの也 `敵をのらする様にしては色々勝ち所の利有 `能々工夫すべし",
+      "source_line_end": 267
+    },
+    {
+      "paragraph_id": "P082",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0230",
+      "section_title": "三〇 一 面てをさすと云事",
+      "paragraph_index": 82,
+      "source_line_start": 268,
+      "text": "`戦の内に敵の身のる心有てははや勝所也 `夫によつて面をさすと云事忘るべからず `兵法稽古の内に此利鍛錬有べきもの也",
+      "source_line_end": 269
+    },
+    {
+      "paragraph_id": "P083",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0231",
+      "section_title": "三一 一 心をさすと云事",
+      "paragraph_index": 83,
+      "source_line_start": 271,
+      "text": "`心をさす `と云は `戦の内にうへつまりわきつまりたる所などにてきる事何れもなりがたき時敵をつく事 `敵の打太刀をはづす心は我太刀のむねを直に敵に見せて太刀を刀先ゆがまざる様に引とりて敵のむねを突く事也 `若我くたびれたる時か又は刀のきれざる時などに此儀専ら用ゐる心也 `能々分別すべし",
+      "source_line_end": 272
+    },
+    {
+      "paragraph_id": "P084",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0232",
+      "section_title": "三二 一 かつとつと云事",
+      "paragraph_index": 84,
+      "source_line_start": 274,
+      "text": "`喝咄 `と云は `何れも我打かけ敵をおつこむ時敵また打かへす様なる所下より敵を突く様にあげて返しにて打事 `何れも早き拍子を以て `喝咄 `と打 `喝 `と突あげ `咄 `と有心也 `此拍子何時も打合の内には専ら出合事なり `喝咄のしやうきつさきあぐる心にして敵を `突 `と思ひあぐると二度に打 `拍子能く稽古して吟味有るべき事也",
+      "source_line_end": 275
+    },
+    {
+      "paragraph_id": "P085",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0233",
+      "section_title": "三三 一 はりうけと云事",
+      "paragraph_index": 85,
+      "source_line_start": 277,
+      "text": "`はりうけ `と云は `敵と打合時 `とたんとたん `と云ふ拍子になるに敵の打所を我太刀にてはり合せ打也 `はり合する心はさのみきつくはるには非ず亦うくるに非ず `敵の打太刀に応じて打太刀をはりてはるより早く敵を打事也 `はるにて先をとりうつにて先をとる所肝要也 `はる拍子能合へば敵何と強く打ても少しはる心有れば太刀先の落る事に非ず `能習得て吟味有べし",
+      "source_line_end": 278
+    },
+    {
+      "paragraph_id": "P086",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0234",
+      "section_title": "三四 一 多敵の位の事",
+      "paragraph_index": 86,
+      "source_line_start": 280,
+      "text": "`多敵の位 `と云ふは `一身にして大勢と戦ふ時の事也 `我刀脇差をぬきて左右へひろく太刀を横にすてて構る也 `敵は四方よりかかる共一方へおひまはす心也 `敵かかる位前後を見分て先へ進む者に早くゆき合ひ大きに目を付て敵打出すくらゐを得て右の太刀も左の太刀も一度にふりちがへて行く太刀にて前の敵を切り戻る太刀にて脇に進む敵を切る心なり `太刀を振り違へて待事悪し `早く両脇の位に構へ敵の出たる所を強く切込みおつくづして其儘又敵の出たる方へかかりふりくづす心也 `いかにもして敵をひとへにうをつなぎにおいなす心にしかけて敵のかさなると見えば其儘間をすかさず強くはらひこむべし `敵あひこむ所ひたと追まはしぬればはかのゆきがたし",
+      "source_line_end": 281
+    },
+    {
+      "paragraph_id": "P087",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0234",
+      "section_title": "三四 一 多敵の位の事",
+      "paragraph_index": 87,
+      "source_line_start": 282,
+      "text": "`又 `敵の出るかた出るかた `と思へば待心有りてはかゆきがたし `敵の拍子をうけてくづるる所を知り勝事也 `折々相手を余り多くよせ追込付て其心を得れば一人の敵も十二十の敵も心やすき事也 `能稽古して吟味有るべき也",
+      "source_line_end": 283
+    },
+    {
+      "paragraph_id": "P088",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0235",
+      "section_title": "三五 一 打あひの利の事",
+      "paragraph_index": 88,
+      "source_line_start": 285,
+      "text": "`此の `打あひの利 `と云事にて兵法太刀にての勝利を弁ふる所也 `こまかに書しるすに非ず `能稽古有りて勝所を知るべきもの也 `大形兵法の実の道をあらはす太刀也",
+      "source_line_end": 286
+    },
+    {
+      "paragraph_id": "P089",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0235",
+      "section_title": "三五 一 打あひの利の事",
+      "paragraph_index": 89,
+      "source_line_start": 287,
+      "text": "`口伝",
+      "source_line_end": 289
+    },
+    {
+      "paragraph_id": "P090",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0236",
+      "section_title": "三六 一 一ツの打と云事",
+      "paragraph_index": 90,
+      "source_line_start": 291,
+      "text": "`此 `一ツの打 `と云心をもつて慥に勝所を得る事也 `兵法能学ばざれば心得がたし `此儀能鍛錬すれば兵法心の儘になつて思ふ儘に勝道也 `能々稽古すべし",
+      "source_line_end": 292
+    },
+    {
+      "paragraph_id": "P091",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0237",
+      "section_title": "三七 一 直通の位と云事",
+      "paragraph_index": 91,
+      "source_line_start": 294,
+      "text": "`直通の心 `二刀一流の実の道をうけて伝ふる所也 `能々鍛錬して此兵法に身を為す事肝要なり",
+      "source_line_end": 295
+    },
+    {
+      "paragraph_id": "P092",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0237",
+      "section_title": "三七 一 直通の位と云事",
+      "paragraph_index": 92,
+      "source_line_start": 296,
+      "text": "`口伝",
+      "source_line_end": 297
+    },
+    {
+      "paragraph_id": "P093",
+      "scroll_id": "0200",
+      "scroll_title": "水の巻",
+      "section_id": "0238",
+      "section_title": "三八 後書",
+      "paragraph_index": 93,
+      "source_line_start": 299,
+      "text": "`右書付る所一流の剣術大形此巻に記し置事也 `兵法太刀を取て人に勝事を覚ゆるは先五ツの表を以て五方の構を知り太刀の道を覚えて惣体自由になり心のきき出て道の拍子を知りおのれと太刀も手さへて身も足も心の儘にほどけたる時に随ひ一人に勝ち二人に勝ち兵法の善悪を知る程になり此一書の内を一ケ条一ケ条と稽古して敵と戦ひ次第次第と道の利を得て不㆑断心に罹いそぐ心なくして折々手に触れては徳を覚え何れの人共打合其心を知つて千里の道も一足づつ運ぶなり `緩々と思ひ `此法を行ふ事武士の役也 `と心得て `今日は昨日の我に勝ちあすは下手に勝ち後は上手に勝 `と思ひ此書物の如くにして少しも脇の道へ心のゆかざる様に思ふべし `縦ひ何程の敵に打勝ても習ひに背く事に於ては実の道に有べからず `此利心にうかびては一身を以て数十人にも勝心の弁へ有べし`然る上は剣術の智力にて大分一分の兵法をも得道すべし `千日の稽古を `鍛 `とし万日の稽古を `錬 `とす `能々吟味有べきもの也\n\n`正保二年五月十三日　　新免武蔵\n`寺尾孫之丞殿\n\n`寛文七年二月五日　　寺尾夢世勝延 花押\n`山本源助殿",
+      "source_line_end": 307
+    },
+    {
+      "paragraph_id": "P094",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0301",
+      "section_title": "一 序",
+      "paragraph_index": 94,
+      "source_line_start": 311,
+      "text": "`二刀一流の兵法戦の事を火に思ひとつて戦勝負の事を `火の巻 `として此巻に書顕す也 `先世間の人毎に兵法の利をちひさく思ひなして或は指先にて手くび五寸三寸の利を知り或は扇を取てひぢより先の先後の勝を弁へ又はしないなどにてわつかのはやき利を覚え手をきかせ習ひ足をきかせ習ひ少の利の早き所を専とする事也 `我兵法に於て数度の勝負に一命をかけて打合生死二ツの理をわけ刀の道をおぼえ敵の打太刀の強弱を知り刀のはむねの道を弁へ敵を打果所の鍛錬を得るにちひさき事弱き事思ひよらざる所也 `殊に六具かためてなどか利にちひさき事思ひ出る事に非ず `更に命をばかりの打合に於て一人して五人十人共戦ひ其勝道を慥に知る事我道の兵法也 `然るによつて一人して十人に勝ち千人を以て万人に勝つ道理何の差別有んや `能々吟味有べし",
+      "source_line_end": 312
+    },
+    {
+      "paragraph_id": "P095",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0301",
+      "section_title": "一 序",
+      "paragraph_index": 95,
+      "source_line_start": 313,
+      "text": "`去ながら常々の稽古の時千人万人を集め此道し習ふ事成事に非ず `独太刀を取ても其敵々の智略をはかり敵の強弱手だてを知り兵法の智徳を以て万人に勝所を極め此道の達者となり我兵法の直道世界に於て `誰か得ん `又 `何れか極めん `と慥に思ひ取つて朝鍛夕錬して磨きおほせて後独自由を得自ら奇特を得通力不思議有所是兵として法をおこのふ息也",
+      "source_line_end": 314
+    },
+    {
+      "paragraph_id": "P096",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0302",
+      "section_title": "二 一 場の次第と云事",
+      "paragraph_index": 96,
+      "source_line_start": 316,
+      "text": "`場の位を見分る所場に於て `日をおふ `と云事有 `日をうしろになして構ふる也 `若所により日をうしろにする事ならざる時は右のわきへ日をなす様にすべし `座敷にてもあかりをうしろ右脇となす事同前也 `うしろの場つまらざる様に左の場をくつろげ右の脇の場を詰めて構度事也 `夜にても敵の見ゆる所にては火をうしろにおひあかりを右脇にする事同前と心得て構ふべきもの也 `敵を見おろす `と云て少しも高き所に構ふる様に心得べし `座敷にては上座を高き所と思ふべし `扨戦になりて敵を追回す事我左の方へ追回す心難所を敵のうしろにさせ何れにても難所へ追懸る事肝要也",
+      "source_line_end": 317
+    },
+    {
+      "paragraph_id": "P097",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0302",
+      "section_title": "二 一 場の次第と云事",
+      "paragraph_index": 97,
+      "source_line_start": 318,
+      "text": "`難所は `敵に場を見せず `と云ひて敵に顔をふらせず油断なくせめ詰る心也 `座敷にても敷居 鴨居 戸 障子 縁など又柱などの方へ追詰るにも場を見せずと云事同前也 `何れも敵を追懸る方足場のわるき所又は脇にかまひの有所何れも場の徳を用ゐて場の勝を得ると云ふ心専にして能々吟味し鍛錬有るべきもの也",
+      "source_line_end": 319
+    },
+    {
+      "paragraph_id": "P098",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "paragraph_index": 98,
+      "source_line_start": 321,
+      "text": "`三ツの先 `一ツは我方より敵へかかるせん `けんの先 `と云ふ也 `又一ツは `敵より我方へかかる時の先 `是は `たいの先`と云也 `又一ツは我もかかり敵もかかりあふ時の先 `体々の先 `と云 `是三ツの先也 `何れの戦ひ始にも此三ツの先より外はなし `先の次第を以て勝事を得るものなれば先と云事兵法の第一也 `此先の子細様々は有りと云へ共其時の理を先とし敵の心を見我兵法の智恵を以て勝事なればこまやかに書分る事に非ず",
+      "source_line_end": 322
+    },
+    {
+      "paragraph_id": "P099",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "paragraph_index": 99,
+      "source_line_start": 323,
+      "text": "`第一 懸の先 `我かからんと思ふ時静かにして居俄かにはやくかかる先 `うへを強くはやくして底を残す心の先 `又我心をいかにも強くして足は常の足に少はやく敵のわきへよると早くもみたつる先 `又心をはなつて初中後同じ事に敵をひしぐ心にて底まで強き心にて勝 `是何れも懸の先也",
+      "source_line_end": 324
+    },
+    {
+      "paragraph_id": "P100",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "paragraph_index": 100,
+      "source_line_start": 325,
+      "text": "`第二 待の先 `敵我方へかかりくる時少しもかまはずよわき様に見せて敵近くなつて `づん `とつよくはなれて飛付様に見せて敵のたるみを見て直に強く勝事是一ツの先 `又敵かかりくる時我も猶強くなつて出る時敵のかかる拍子のかはる間をうけ其儘勝を得る事是待の先の理也",
+      "source_line_end": 326
+    },
+    {
+      "paragraph_id": "P101",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "paragraph_index": 101,
+      "source_line_start": 327,
+      "text": "`第三 体々の先 `敵はやくかかるには我静に強くかかり敵近くなつて `づん `と思ひきる身にして敵のゆとりの見ゆる時直に強く勝 `又敵静かにかかる時我身うきやかに少はやくかかりて敵近くなりてひともみもみ敵の色に随て強く勝事是体々の先也",
+      "source_line_end": 328
+    },
+    {
+      "paragraph_id": "P102",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0303",
+      "section_title": "三 一 三ツの先と云事",
+      "paragraph_index": 102,
+      "source_line_start": 329,
+      "text": "`此儀濃に云分がたし `此書付を以て大形工夫有べし `此三ツの先時に随ひ理に随ひいつにても我方よりかかる事には非るものなれ共同じくは我方よりかかりて敵をまはしたき事也 `何れも先の事兵法の智力を以て必ず勝事を得る心能々鍛錬有べし",
+      "source_line_end": 330
+    },
+    {
+      "paragraph_id": "P103",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0304",
+      "section_title": "四 一 枕をおさふると云事",
+      "paragraph_index": 103,
+      "source_line_start": 332,
+      "text": "`枕をおさふる `とは `かしらをあげさせずと云ふ心也 `兵法勝負の道に限つて人に我身をまはされてあとにつく事悪し `いかにもして敵を自由にまはし度事也 `然るによつて敵も左様に思ひ我も其心あれ共人のする事をうけがはすしては叶がたく兵法に敵の打所をとめつく所をおさへくむ所をもぎはなしなどする事也 `枕をおさふると云ふは我実の道を得て敵にかかりあふ時敵何事にても思ふきざしを敵のせぬ内に見知りて敵の `打 `と云 `うつ `の `う `の字のかしらをおさへて後をさせざる心枕をおさふる心也 `たとへば敵の `かかる `と云 `か `の字をおさへ `とぶ `と云 `と `の字のかしらをおさへ `きる `と云 `き `の字のかしらをおさふる `皆以て同じ心也 `敵我にわざをなす事につけて役にたたざる事を敵にまかせ役にたつ事をばおさへて敵にさせぬ様にする所兵法の専也 `是も敵のする事を `おさへんおさへん `とする心後手也 `先我は何事にても道にまかせてわざをなす内に敵も `わざをせん `と思ふかしらをおさへて何事も役に立せず敵をこなす所是兵法の達者鍛錬の故也 `枕をおさふる事能々吟味有べきなり",
+      "source_line_end": 333
+    },
+    {
+      "paragraph_id": "P104",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0305",
+      "section_title": "五 一 とをこすと云事",
+      "paragraph_index": 104,
+      "source_line_start": 335,
+      "text": "`渡を越す `と云は `たとへば海を渡るに `瀬戸 `と云所も有又は四十里五十里とも長き海を越所を `渡 `と云也 `人間の世を渡るにも一代の内にはとをこすと云所多かるべし `船路にして其との所を知り船の位を知り日なみを知りて友船は出さず共其時の位をうけ或はひらきの風にたより或は追風をも受若し風替りても二里三里はろかぢをもつても港に着を心得て船を乗とり渡を越所也 `其心を得て人の世を渡るにも一大事にかけて `渡を越 `と思ふ心有べし",
+      "source_line_end": 336
+    },
+    {
+      "paragraph_id": "P105",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0305",
+      "section_title": "五 一 とをこすと云事",
+      "paragraph_index": 105,
+      "source_line_start": 337,
+      "text": "`兵法戦のうちにもとをこす事肝要也 `敵の位を受我身の達者を覚え其理を以てとをこす事よき船頭の海路を越と同じ渡を越ては亦心安き所也 `とをこすと云事敵によわみをつけ我身も先になりて大形はや勝所也 `大小の兵法の上にもとをこすと云心肝要也 `能々吟味有べし",
+      "source_line_end": 338
+    },
+    {
+      "paragraph_id": "P106",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0306",
+      "section_title": "六 一 けいきを知ると云事",
+      "paragraph_index": 106,
+      "source_line_start": 340,
+      "text": "`景気を見る `と云は `大分の兵法にして敵の栄え衰へを知り相手の人数の心を知り其場の位を受け敵の景気を能見受け我人数何としかけ此兵法の理にて慥に勝と云所をのみこみて先の位を知て戦所也 `又一分の兵法も敵のながれを弁へ相手の人柄を見うけ人の強き弱き所を見付け敵の気色にちがふ事をしかけ敵のめりかりを知り其間の拍子を能知りて先をしかくる所肝要也 `物事の景気と云事は我智力強ければ必見ゆる所也 `兵法自由の身に成ては敵の心を能計て勝道多かるべき事也 `工夫有べし",
+      "source_line_end": 341
+    },
+    {
+      "paragraph_id": "P107",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0307",
+      "section_title": "七 一 けんをふむと云事",
+      "paragraph_index": 107,
+      "source_line_start": 343,
+      "text": "`剣をふむ `と云心は兵法に専ら用る儀也 `先大きなる兵法にしては弓鉄砲に於ても敵我方へ打かけ何事にてもしかくる時敵の弓鉄砲にてもはなちかけて其あとにかかるによつて又弓をつかひ又鉄砲に薬をこみてかかりこむ時こみ入かたし `弓鉄砲にても敵のはなつ内にはやくかかる心也 `早くかかれば矢もつがひがたし `鉄砲も打得ざる心也 `物毎を敵のしかくると其儘其利を受て敵のする事を踏付て勝心也",
+      "source_line_end": 344
+    },
+    {
+      "paragraph_id": "P108",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0307",
+      "section_title": "七 一 けんをふむと云事",
+      "paragraph_index": 108,
+      "source_line_start": 345,
+      "text": "`又一分の兵法も敵の打出す太刀のあとへ打てば `とたんとたん `となりてはかゆかざる所也 `敵の打出す太刀は足にてふみ付る心にして打出す所をうち二度目を敵の打得ざる様にすべし `踏 `と云は足には限るべからず `身にてもふみ心にてもふみ勿論太刀にてもふみ付て二度目を敵に能させざる様に心得べし `是則物毎の先の心也 `敵と一度にといひてゆきあたる心にてはなし `其儘あとに付心也 `能々吟味有べし",
+      "source_line_end": 346
+    },
+    {
+      "paragraph_id": "P109",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0308",
+      "section_title": "八 一 くづれを知ると云事",
+      "paragraph_index": 109,
+      "source_line_start": 348,
+      "text": "`崩 `と云事は物毎ある物也 `其家のくづるる身のくづるる敵のくづるる事も時のあたりて拍子ちがひになりてくづるる所也 `大分の兵法にしても敵のくづるる拍子を得て其間をぬかさぬ様に追たつる事肝要也 `崩るる所のいきをぬかしてはたてかへす所有べし `又一分の兵法にも戦内に敵の拍子ちがひてくづれ目の付もの也 `其ほどを油断すれば又たちかへり新敷なりてはかゆかざる所也 `其くづれめに付敵のかほたてなほさざる様に慥に追かくる所肝要也",
+      "source_line_end": 349
+    },
+    {
+      "paragraph_id": "P110",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0308",
+      "section_title": "八 一 くづれを知ると云事",
+      "paragraph_index": 110,
+      "source_line_start": 350,
+      "text": "`追かくるは直に強き心也 `敵たてかへさざる様に打はなすもの也 `打はなすと云事能々分別有べし `はなれざればしだるき心有 `工夫すべきもの也",
+      "source_line_end": 351
+    },
+    {
+      "paragraph_id": "P111",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0309",
+      "section_title": "九 一 敵になると云事",
+      "paragraph_index": 111,
+      "source_line_start": 353,
+      "text": "`敵になる `と云は `我身を敵になり替て思ふべきと云所也 `世の中を見るにぬすみなどして家の内へ取籠る様なるものをも敵を強く思なすもの也 `敵になりて思へば世の中の人を皆相手としにげこみてせんかたなき心也 `取籠るものは雉子也 `打果しに入る人は鷹也 `能々工夫有べし `大きなる兵法にしても敵といへば強く思ひて大事にかくるもの也",
+      "source_line_end": 354
+    },
+    {
+      "paragraph_id": "P112",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0309",
+      "section_title": "九 一 敵になると云事",
+      "paragraph_index": 112,
+      "source_line_start": 355,
+      "text": "`よき人数をもち兵法の道理を能知り敵に勝と云所を能うけては気遣すべき道に非ず `一分の兵法も敵になりて思ふべし `兵法能心得て道理強く其道達者なるものに於ては必ず `まくる `と思ふ所也 `能々吟味すべし",
+      "source_line_end": 356
+    },
+    {
+      "paragraph_id": "P113",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0310",
+      "section_title": "一〇 一 四手をはなすと云事",
+      "paragraph_index": 113,
+      "source_line_start": 358,
+      "text": "`四手をはなす `とは `敵も我も同じ心にはりあふ心になつては戦のはかゆかざるもの也 `はりあふ心になると思はば其儘心をすてて別の利にて勝事を知る也 `大分の兵法にしても四手の心にあれば果敢ゆかずひとのそんずる事也 `はやく心をすてて敵の思はざる利にて勝事専也 `亦一分の兵法にても四手になると思はば其儘心をかへて敵の位を得て各別替りたる利を以て勝を弁ふる事肝要也 `能々分別すべし",
+      "source_line_end": 359
+    },
+    {
+      "paragraph_id": "P114",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0311",
+      "section_title": "一一 一 かげをうごかすと云事",
+      "paragraph_index": 114,
+      "source_line_start": 361,
+      "text": "`陰を動かす `と云は `敵の心の見えわかぬ時の事也 `大分の兵法にしても何共敵の位の見わけざる時は我かたより強くしかくる様に見せて敵の手だてを見るもの也 `手だてを見ては各別の利にて勝事やすき所也 `又一分の兵法にしても敵うしろに太刀を構へ脇に構へたる様なる時は `ふつ `と打んとすれば敵思ふ心を太刀に顕す物也 `顕れ知るるに於ては其儘利をうけて慥に勝を知るべきもの也 `油断すれば拍子はぬくるもの也`能々吟味有べし",
+      "source_line_end": 362
+    },
+    {
+      "paragraph_id": "P115",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0312",
+      "section_title": "一二 一 かげをおさふると云事",
+      "paragraph_index": 115,
+      "source_line_start": 364,
+      "text": "`影をおさふる `と云は `敵のかたよりしかくる心の見えたる時の事也 `大分の兵法にしては敵のわざをせんとする所を `おさふる `と云ひて我方より其利をおさふる所を敵に強く見すれば強きにおされて敵の心替る事也 `我も心をちがへて空なる心より先をしかけて勝所也 `一分の兵法にしても敵のおこる強き気ざしを利の拍子を以てやめさせやみたる拍子に我は勝利をうけて先をしかくるもの也 `能々工夫有べし",
+      "source_line_end": 365
+    },
+    {
+      "paragraph_id": "P116",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0313",
+      "section_title": "一三 一 うつらかすと云事",
+      "paragraph_index": 116,
+      "source_line_start": 367,
+      "text": "`移らかす `と云は `物毎に有もの也 `或はねむりなども移り或はあくびなどのうつるもの也 `時のうつるも有 `大分の兵法にして敵うはきにしてことをいそぐ心の見ゆる時は少しも夫にかまはざる様にしていかにもゆるりとなりて見すれば敵も我事に受てきざしたるむ物なり `其 `うつりたる `と思ふ時我方より空の心にしてはやく強くしかけて勝利を得るもの也 `一分の兵法にしても我身も心もゆるりとして敵のたるみの間をうけて強く早く先にしかけて勝所専也",
+      "source_line_end": 368
+    },
+    {
+      "paragraph_id": "P117",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0313",
+      "section_title": "一三 一 うつらかすと云事",
+      "paragraph_index": 117,
+      "source_line_start": 369,
+      "text": "`亦 `よわする `と云て是に似たる事有\n\n`一ツはたいくつの心\n`一ツはうかつく心\n`一ツはよわくなる心\n\n`能々工夫有べし",
+      "source_line_end": 376
+    },
+    {
+      "paragraph_id": "P118",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0314",
+      "section_title": "一四 一 むかつかすると云事",
+      "paragraph_index": 118,
+      "source_line_start": 378,
+      "text": "`むかつかする `と云は `物毎に有\n\n`一ツにはきはどき心\n`二ツにはむりなる心\n`三ツには思はざる心\n\n`能吟味有べし",
+      "source_line_end": 385
+    },
+    {
+      "paragraph_id": "P119",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0314",
+      "section_title": "一四 一 むかつかすると云事",
+      "paragraph_index": 119,
+      "source_line_start": 386,
+      "text": "`大分の兵法にしてむかつかする事肝要也 `敵の思はざる所へいきどふしくしかけて敵の心のきはまらざる内に我利を以て先をしかけて勝事肝要也 `又一分の兵法にしてもはじめゆるりと見せて俄に強くかかり敵の心のめりかり働くにしたがひいきをぬかさず其儘利をうけて勝を弁ふる事肝要なり `能々吟味有べき也",
+      "source_line_end": 387
+    },
+    {
+      "paragraph_id": "P120",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0315",
+      "section_title": "一五 一 おびやかすと云事",
+      "paragraph_index": 120,
+      "source_line_start": 389,
+      "text": "`おびゆる `と云事 `物毎に有事也 `思ひよらぬ事におびゆる心也 `大分の兵法にしても敵をおびやかす事眼前の事に非ず `或は物の声にてもおびやかし或は小を大にしておびやかし又かたわきより不斗おびやかす事是おびゆる所也 `其おびゆる拍子を得て其利を以て勝べし `一分の兵法にしても身を以ておびやかし太刀を以ておびやかし声を以ておびやかし敵の心になき事をしかけておびゆる所の利を受て其儘勝を得る事肝要也 `能々吟味有べし",
+      "source_line_end": 390
+    },
+    {
+      "paragraph_id": "P121",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0316",
+      "section_title": "一六 一 まぶるると云事",
+      "paragraph_index": 121,
+      "source_line_start": 392,
+      "text": "`まぶるる `と云は `敵我手近くなつて互に強くはりあひて果敢ゆかざると見れば其儘敵と一ツにまぶれあひてまぶれあひたる其内に利を以て勝事肝要也 `大分小分の兵法にも敵我方わけては互に心はりあひて勝のつかざる時は其儘敵にまぶれて互にわけなくなる様にして其内の徳を得其内の勝を知りて強く勝事専也 `能々吟味有べし",
+      "source_line_end": 393
+    },
+    {
+      "paragraph_id": "P122",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0317",
+      "section_title": "一七 一 かどにさはると云事",
+      "paragraph_index": 122,
+      "source_line_start": 395,
+      "text": "`角にさはる `と云は `物事強き物をおすに其儘直におしこみがたきもの也 `大分の兵法にしても敵の人数を見てはり出強き所の角にあたりて其利を得べし `角のめるに随ひ惣もみなめる心有 `其める内にもかどかどに心得て勝利を受る事肝要也 `一分の兵法にしても敵の体のかどにいたみをつけ其体少しもよわくなりくづるる体になりては勝事やすきもの也 `此事能々吟味して勝所を弁ふる事専也",
+      "source_line_end": 396
+    },
+    {
+      "paragraph_id": "P123",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0318",
+      "section_title": "一八 一 うろめかすと云事",
+      "paragraph_index": 123,
+      "source_line_start": 398,
+      "text": "`うろめかす `と云は `敵に慥なる心をもたせざるやうにする所也 `大分の兵法にしても戦の場に於て敵の心を計り我兵法の智力を以て敵の心をそここことなし `との `かうの `と思はせ `おそし `はやし `と思はせ敵うろめく心になる拍子を得て慥に勝所を弁ふる事也 `又一分の兵法にして我時にあたりて色々のわざをしかけ或は `打 `と見せ `或は `つく `と見せ `又は `入込 `と思はせ敵のうろめく気ざしを得て自由に勝所是戦の専也`能々吟味有べし",
+      "source_line_end": 399
+    },
+    {
+      "paragraph_id": "P124",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0319",
+      "section_title": "一九 一 三ツの声と云事",
+      "paragraph_index": 124,
+      "source_line_start": 401,
+      "text": "`三ツの声 `とは `初中後の声 `と云て `三ツにかけ分る事也 `所により声をかくると云事専也 `声はいきほひなるによつて火事などにもかけ風波にもかけ声は勢力を見するもの也 `大分の兵法にしても戦より初めにかくる声はいか程もかさをかけて声をかけ又戦ふ間の声は調子をひきて底より出る声にてかかり勝て後あとに大きに強くかくる是三ツの声也",
+      "source_line_end": 402
+    },
+    {
+      "paragraph_id": "P125",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0319",
+      "section_title": "一九 一 三ツの声と云事",
+      "paragraph_index": 125,
+      "source_line_start": 403,
+      "text": "`又一分の兵法にしても敵をうごかさん為打と見せて頭より `ゑい `と声をかけ声の跡より太刀を打出すもの也 `亦敵を打て跡に声をかくる事勝を知らする声也 `是を `先後の声 `と云 `太刀と一度に大きに声をかくる事なし `若戦の内にかくるは拍子にのる声ひきてかくるなり `能々吟味有べし",
+      "source_line_end": 404
+    },
+    {
+      "paragraph_id": "P126",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0320",
+      "section_title": "二〇 一 まぎるると云事",
+      "paragraph_index": 126,
+      "source_line_start": 406,
+      "text": "`まぎるる `と云は `大分の戦にしては人数を互にたて合敵の強き時 `まぎるる `と云て敵の一方へかかり敵くづるるを見ばすてて又強き方へかかる大形つづらをりにかかる心也 `一分の兵法にして敵を大勢よするも此心専也 `方々へかからず方々にげば又強き方へかかり敵の拍子を得てよき拍子に `左 `右 `とつづらをりの心におもひて敵の色を見合てかかるもの也`其敵の位を得打とほるに於ては少も引心なく強くかつ利也 `一分入身の時も敵の強きには其心あり `まぎるると云事一足も引事をしらずまぎれゆくと云心 `能々分別すべし",
+      "source_line_end": 407
+    },
+    {
+      "paragraph_id": "P127",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0321",
+      "section_title": "二一 一 ひしぐと云事",
+      "paragraph_index": 127,
+      "source_line_start": 409,
+      "text": "`ひしぐ `と云は `縦ば敵をよわく見なして我つよめになつてひしぐと云ふ心専也 `大分の兵法にしても敵に人数のくらゐを見こなし又は大勢なり共敵うろめきてよわみつく所なれば `ひしぐ `と云てかしらよりかさをかけておつぴしぐ心なり `ひしぐ事よわければもてかへす事有 `手の内ににぎつてひしぐ心能々分別すべし",
+      "source_line_end": 410
+    },
+    {
+      "paragraph_id": "P128",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0321",
+      "section_title": "二一 一 ひしぐと云事",
+      "paragraph_index": 128,
+      "source_line_start": 411,
+      "text": "`又一分の兵法の時も我手にふそくのもの又は敵の拍子ちがひすさりめになる時少しもいきをくれず目を見合ざる様になし真直にひしぎつくる事肝要也 `少しもおきたてさせぬ所第一也`能々吟味有べし",
+      "source_line_end": 412
+    },
+    {
+      "paragraph_id": "P129",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0322",
+      "section_title": "二二 一 さんかいのかはりと云事",
+      "paragraph_index": 129,
+      "source_line_start": 414,
+      "text": "`山海の心 `と云は `敵我戦の内に同じ事を度々する事悪き所也 `同じ事二度は是非に及ばず三度するに非ず `敵にわざをしかくるに一度にて用ひずば今一ツもせきかけて其利におよばず `各別替りたる事を `ふつ `としかけそれにもはかゆかずば又各別の事をしかくべし `然るによつて `敵 `山 `と思はば `海 `としかけ `海 `と思はば `山 `としかくる心兵法の道なり `能々吟味有べき事也",
+      "source_line_end": 415
+    },
+    {
+      "paragraph_id": "P130",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0323",
+      "section_title": "二三 一 そこをぬくと云事",
+      "paragraph_index": 130,
+      "source_line_start": 417,
+      "text": "`底を抜 `と云は `敵と戦ふに其道の利を以て上は勝と見ゆれ共心をたやさざるによつて上にてはまけ下の心はまけぬ事有`其儀に於ては我俄に替りたる心になつて敵の心をたやし底よりまくる心に敵のなる所を見る事専也 `此底を抜く事太刀にても抜又身にてもぬき心にてもぬく所有 `一道には弁ふべからず`底より崩れたるは我心残すに及ばず `さなき時は残す心也 `残す心あれば敵くづれがたき事也 `大分小分の兵法にしても底をぬく所能々鍛錬有べし",
+      "source_line_end": 418
+    },
+    {
+      "paragraph_id": "P131",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0324",
+      "section_title": "二四 一 あらたになると云事",
+      "paragraph_index": 131,
+      "source_line_start": 420,
+      "text": "`新たになる `とは `敵我戦ふ時もつるる心になつてはかゆかざる時我気を振捨て物毎をあたらしくはじむる心に思ひて其拍子を受て勝を弁ふる所なり `新になる事は何時も `敵と我きしむ心になる `と思はば其儘心を替て各別の利を以て勝べき也`大分の兵法に於ても新たになると云所弁ふる事肝要也 `兵法の智力にては忽ち見ゆる所也 `能々吟味有べし",
+      "source_line_end": 421
+    },
+    {
+      "paragraph_id": "P132",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0325",
+      "section_title": "二五 一 そとうごしゆと云事",
+      "paragraph_index": 132,
+      "source_line_start": 423,
+      "text": "`鼠頭午（牛）首 `と云ふは `敵と戦のうちに互にこまかなる所を思ひ合てもつるる心になる時兵法の道を常に `鼠頭午（牛）首鼠頭午（牛）首 `と思ひていかにもこまかなる内に俄に大きなる心にして大小にかはる事 `兵法一ツの心だて也 `平生 `人の心も鼠頭午（牛）首 `と思ふべき所武士の肝心也 `兵法大分小分にしても此心をはなるべからず `此事能々吟味有るべきもの也",
+      "source_line_end": 424
+    },
+    {
+      "paragraph_id": "P133",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0326",
+      "section_title": "二六 一 しやうそつをしると云事",
+      "paragraph_index": 133,
+      "source_line_start": 426,
+      "text": "`将卒を知る `とは `いづれも戦に及ぶ時わが思ふ道に至てはたえず此法を行ひ兵法の智力を得て我敵たるものをば `皆我卒なり `と思ひとつて `なしたき様になすべし `と心得 `敵を自由にまはさん `と思ふ所我は将也 `敵は卒也 `工夫有べし",
+      "source_line_end": 427
+    },
+    {
+      "paragraph_id": "P134",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0327",
+      "section_title": "二七 一 つかをはなすと云事",
+      "paragraph_index": 134,
+      "source_line_start": 429,
+      "text": "`束をはなす `と云に色々心有事也 `無刀にて勝心有 `又太刀にてかたざる心有 `さまざま心のゆく所書付るに非ず `能々鍛錬すべし",
+      "source_line_end": 430
+    },
+    {
+      "paragraph_id": "P135",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0328",
+      "section_title": "二八 一 いはほの身と云事",
+      "paragraph_index": 135,
+      "source_line_start": 432,
+      "text": "`岩尾の身 `と云事 `兵法を得道して忽ち岩尾の如くに成て万事あたらざる所 `うごかざる所",
+      "source_line_end": 433
+    },
+    {
+      "paragraph_id": "P136",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0328",
+      "section_title": "二八 一 いはほの身と云事",
+      "paragraph_index": 136,
+      "source_line_start": 434,
+      "text": "`口伝",
+      "source_line_end": 435
+    },
+    {
+      "paragraph_id": "P137",
+      "scroll_id": "0300",
+      "scroll_title": "火の巻",
+      "section_id": "0329",
+      "section_title": "二九 後書",
+      "paragraph_index": 137,
+      "source_line_start": 437,
+      "text": "`右書付る所一流剣術の場にしてたえず思ひよる事のみ云顕し置もの也 `今初て此利を書記物なればあとさきと書まぎるる心有てこまやかに云わけがたし `乍㆑去此道を学ぶべき人の為には心しるしに成るべきもの也 `我若年より以来兵法の道に心をかけて剣術一通りの事にも手をからし身をからし色々様々の心に成り他の流々をも尋見るに或は口にていひかこつけ或は手にてこまかなるわざをし人目によき様に見すると云ても一ツも実の心に有べからず `勿論かやうの事しならひても身をきかせならひ心をきかせつくる事と思へ共皆是道のやまひとなりて後々までもうせがたくして兵法の直道世にくちて道のすたる基也 `剣術実の道になつて敵と戦ひ勝事此法と聊替事有べからず `我兵法の智力を得て直なる所を行ふに於ては勝事うたがひ有べからざるもの也\n\n`正保二年五月十二日　　新免武蔵\n`寺尾孫之丞殿\n\n`寛文七年二月五日　　寺尾夢世勝延 花押\n`山本源介殿",
+      "source_line_end": 445
+    },
+    {
+      "paragraph_id": "P138",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0401",
+      "section_title": "一 兵法他流の道を知る事",
+      "paragraph_index": 138,
+      "source_line_start": 448,
+      "text": "`他の兵法の流々を書付 `風の巻 `として此巻に顕す所也 `他流の道を知らずしては我一流の道慥に弁へがたく他の兵法を尋見るに大きなる太刀をとつて強き事を専らにして其わざをなすながれ有 `或は小太刀と云ひて短き太刀を以て道を勤るながれ有 `或は太刀かず多くくみ太刀の構を以て `おもて `と云ひ `奥 `として道をつたふる流も有 `是皆実の道に非る事此巻の奥に慥に書顕し善悪理非を知らする也 `我一流の道理各別の儀也 `他の流芸にわたつて身すぎの為にして色をかざり花をさかせうりものにこしらへたるによつて実の道に非る事歟 `亦世の中の兵法剣術斗にちひさく見たてて太刀をふり習ひ身をきかせて手のかるる所を以て勝事を弁へたるものか何れも慥なる道に非ず `他流の不足成所一々此書に書顕す也 `能々吟味して二刀一流の利を弁ふべきもの也",
+      "source_line_end": 449
+    },
+    {
+      "paragraph_id": "P139",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0402",
+      "section_title": "二 一 他流に大きなる太刀を持事",
+      "paragraph_index": 139,
+      "source_line_start": 451,
+      "text": "`他に大きなる太刀をこのむ流有 `我兵法よりして是をよわき流と見立る也 `其故は他の兵法いかさまにも人に勝と云理を知らずして太刀の長きを徳として敵相遠き所より勝度と思ふによつて長き太刀このむ心有べし `世の中にいふ `一寸手まさり `とて兵法知らぬものの沙汰也 `然るによつて兵法の利なくして長きを以て遠く勝んとするそれは心のよわき故なるによつてよわき兵法と見立る也",
+      "source_line_end": 452
+    },
+    {
+      "paragraph_id": "P140",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0402",
+      "section_title": "二 一 他流に大きなる太刀を持事",
+      "paragraph_index": 140,
+      "source_line_start": 453,
+      "text": "`若敵相近く組合ほどの時は太刀長き程打事もきかず太刀のもとをりすくなく太刀をににして小脇差手振の人におとるもの也 `長き太刀好む身にしては其云わけは有ものなれ共夫は其身ひとりの理也 `世の中の実の道より見る時は道理なき事也 `長き太刀もたずして短き太刀にては必まくべき事歟 `或は其場によりうへしたわきなどのつまりたる所或は脇差斗の座にても長きを好む心 `兵法のうたがひ `とてあしき心也",
+      "source_line_end": 454
+    },
+    {
+      "paragraph_id": "P141",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0402",
+      "section_title": "二 一 他流に大きなる太刀を持事",
+      "paragraph_index": 141,
+      "source_line_start": 455,
+      "text": "`人により少力なるものも有其身により長かたなさす事ならざる身も有 `昔より `大は小をかなふる `と云へばむざと長きをきらふには非ず `長きとかたよる心を嫌ふ儀也 `大分の兵法にして長太刀は大人数也 `短きは小人数也 `小人数と大人数にて合戦はなるまじきものか `小人数にて大人数に勝たる例多し `我一流に於て左やうにかたつくせまき心嫌ふ事也 `能々吟味有べし",
+      "source_line_end": 456
+    },
+    {
+      "paragraph_id": "P142",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0403",
+      "section_title": "三 一 他流に於てつよみの太刀と云事",
+      "paragraph_index": 142,
+      "source_line_start": 458,
+      "text": "`太刀に `つよき太刀 `よわき太刀 `と云事は有べからず `つよき心にてふる太刀はあらきもの也 `あらき斗にては勝がたし `又 `つよき太刀 `と云て人をきる時にしてむりにつよくきらんとすればきれざる心也 `ためしものなどにきる心にもつよくきらんとする事あしし `誰に於てもかたきときりあふに `よわくきらん `つよくきらん `と思ふものなし `唯人を `きりころさん `と思ふ時はつよき心もあらず勿論よわき心にもあらず `敵のしぬる程 `と思ふ儀也 `若はつよみの太刀にて人の太刀つよくはればはりあまりて必あしき心也 `人の太刀に強くあたれば我太刀もおれくだくる所也 `然るによつてつよみの太刀などど云事なき事也",
+      "source_line_end": 459
+    },
+    {
+      "paragraph_id": "P143",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0403",
+      "section_title": "三 一 他流に於てつよみの太刀と云事",
+      "paragraph_index": 143,
+      "source_line_start": 460,
+      "text": "`大分の兵法にしてもつよき人数を持合戦に於て `つよくかたん `と思へば敵もつよき人を持戦も `つよくせん `と思ふ `それはいづれも同じ事也 `物毎に勝と云事道理なくしては勝事あたはず `我道に於ては少も無理なる事を思はず兵法の智力を以て如何様にも勝所を得る心也 `能々工夫有べし",
+      "source_line_end": 461
+    },
+    {
+      "paragraph_id": "P144",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0404",
+      "section_title": "四 一 他流に短き太刀を用ゐる事",
+      "paragraph_index": 144,
+      "source_line_start": 463,
+      "text": "`短き太刀斗にて `勝ん `と思ふ所実の道に非ず `昔より `太刀 `かたな `と云て `長き `と `短き `と云ふ事を顕し置也 `世の中に強力なる者は大きなる太刀をもかろく振なればむりに短きを好む所にあらず `其故は長きを用て槍長太刀をも持物也 `短き太刀を以て人の振太刀の透間を `きらん `飛いらん `つかまん `などと思ふ心かたつきて悪し",
+      "source_line_end": 464
+    },
+    {
+      "paragraph_id": "P145",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0404",
+      "section_title": "四 一 他流に短き太刀を用ゐる事",
+      "paragraph_index": 145,
+      "source_line_start": 465,
+      "text": "`又すきまをねらふ所万事後手に見えもつると云心有て嫌事也 `若は短かき物にて `敵へ入くまん `とらん `とする事大敵の中にて役に立ざる心也 `短きにてし得たるものは `大勢をもきりはらはん `自由に飛ばん `くるはん `と思ふ共皆 `うけ太刀 `と云物になりてとりまぎるる心有て慥成道にてはなき事也 `同くは我身は強く直にして人を追回し人に飛はねさせ人のうろめく様にしかけて慥に勝所を専とする道也 `大分の兵法に於ても其理有 `同じくは人数かさを以て敵を矢場にしほし即時にせめつぶす心兵法の専也",
+      "source_line_end": 466
+    },
+    {
+      "paragraph_id": "P146",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0404",
+      "section_title": "四 一 他流に短き太刀を用ゐる事",
+      "paragraph_index": 146,
+      "source_line_start": 467,
+      "text": "`世の中人の物をしならふ事へいぜいもうけつかはしつぬけつくぐりつしならへば心道にひかされて人にまはさるる心有 `兵法の道直にただしき所なれば正理を以て人を追回し人をしたがふる心肝要也 `能く吟味有べし",
+      "source_line_end": 468
+    },
+    {
+      "paragraph_id": "P147",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0405",
+      "section_title": "五 一 他流に太刀かず多き事",
+      "paragraph_index": 147,
+      "source_line_start": 470,
+      "text": "`太刀の数余多にして人に伝ふる事道をうり物にしたてて太刀数多くしりたるを初心のものに深く思はせん為成べし `兵法に嫌ふ心也 `其故は `人をきる事色々ある `と思ふ所まよふ心也 `世の中に於て人をきる事替る道なし `知る者も知らざる者も女童子も打たたききると云道は多くなき所也 `若かはりては `つくぞ `なぐぞ `と云外はなし `先きる所の道なれば数の多かるべき子細にあらず",
+      "source_line_end": 471
+    },
+    {
+      "paragraph_id": "P148",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0405",
+      "section_title": "五 一 他流に太刀かず多き事",
+      "paragraph_index": 148,
+      "source_line_start": 472,
+      "text": "`され共場により道に随ひ上わきなどのつまりたる所などいはば太刀のつかへざるやうに持道なれば `五方 `とて五ツの数は有べきもの也 `夫より外にとりつけて手をねぢ身をひねりて飛ひらき人をきる事実の道に非ず `人をきるにねぢてきられずひねりてきられず飛てきられずひらいてきれずかつて役に立ざる事也 `我兵法に於ては身なりも心も直にして敵をひずませゆがませて敵の心のねぢひねる所を勝事肝心也 `能々吟味有べし",
+      "source_line_end": 473
+    },
+    {
+      "paragraph_id": "P149",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0406",
+      "section_title": "六 一 他流に太刀の構を用る事",
+      "paragraph_index": 149,
+      "source_line_start": 475,
+      "text": "`太刀の構へを専らにする所ひが事也 `世の中に構のあらん事は敵のなき時の事なるべし `其子細は昔よりの例今の世の法などとして法例をたつる事は勝負の道には有べからず `其あいてのあしき様にたくむ事也 `物毎に構と云事はゆるがぬ所を用る心也 `或は城をかまふる或は陣をかまふるなどは人にしかけられてもつよくうごかぬ心是常の儀也 `兵法勝負の道に於ては何事も先手先手と心懸る事也 `かまふると云心は先手を待心也 `能々工夫有べし",
+      "source_line_end": 476
+    },
+    {
+      "paragraph_id": "P150",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0406",
+      "section_title": "六 一 他流に太刀の構を用る事",
+      "paragraph_index": 150,
+      "source_line_start": 477,
+      "text": "`兵法勝負の道人の構をうごかせ敵の心になき事をしかけ或は敵をうろめかせ或はむかつかせ又はおびやかし敵のまぎるる所の拍子の利をうけて勝事なれば構と云後手の心を嫌ふ也 `然る故に我道に `有構無構 `といひて `構は有りて構は無き `と云所也",
+      "source_line_end": 478
+    },
+    {
+      "paragraph_id": "P151",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0406",
+      "section_title": "六 一 他流に太刀の構を用る事",
+      "paragraph_index": 151,
+      "source_line_start": 479,
+      "text": "`大分の兵法にも敵の人数の多少を覚え其戦場の所を受我人数の位を知り其徳を得て人数をたて戦をはじむる事それ合戦の専也 `人に先をしかけられたる事と我人にしかくる時は一倍もかはる心也 `太刀を能構へ敵の太刀を能受能はるとおぼゆるは槍長太刀を持てさくにふりたると同じ `敵を打時は又さく木をぬきて槍長太刀につかふ程の心也 `能々可㆑有㆓吟味㆒事也",
+      "source_line_end": 480
+    },
+    {
+      "paragraph_id": "P152",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0407",
+      "section_title": "七 一 他流に目付と云事",
+      "paragraph_index": 152,
+      "source_line_start": 482,
+      "text": "`目付 `と云ひて其流により敵の太刀に目を付るも有又は手に目を付る流も有 `或は顔に目を付或は足などに目を付るも有 `其ごとくとりわけて目を付んとしてはまぎるる心有て兵法のやまひといふ物になるなり `其子細は鞠をける人は鞠に能目を付ね共びんずりをけおひまりをしながしてもけまはりてもける事 `物になるると云所あれば慥に目に見るに及ばず `又はうかなどするもののわざにも其道になれては戸びらを鼻にたて刀を幾腰もたまなどにとる事 `是皆慥に目付とはなけれ共不㆑断手にふれぬればおのづから見ゆる所也 `兵法の道に於ても其敵其敵としなれ人の心の軽重を覚え道を行得ては太刀の遠近遅速迄も皆見ゆる儀也",
+      "source_line_end": 483
+    },
+    {
+      "paragraph_id": "P153",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0407",
+      "section_title": "七 一 他流に目付と云事",
+      "paragraph_index": 153,
+      "source_line_start": 484,
+      "text": "`兵法の目付は大形其人の心に付たる眼也 `大分の兵法に至ても其敵の人数の位に付たる眼也 `観 `見 `二ツの見やう観の目つよくして敵の心を見其場の位を見大きに目を付て其戦のけいきを見其折ふしの強弱を見てまさしく勝事を得る事専也 `大小兵法に於てちひさく目を付る事なし `前にもしるす如く濃にちひさく目を付るによつて大きなる事をとりわすれまよふ心出きて慥なる勝をぬかすもの也 `此利能々吟味して鍛錬有べき也",
+      "source_line_end": 485
+    },
+    {
+      "paragraph_id": "P154",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0408",
+      "section_title": "八 一 他流に足つかひ有事",
+      "paragraph_index": 154,
+      "source_line_start": 487,
+      "text": "`足のふみ様に `浮足 `飛足 `はぬる足 `ふみつむる足 `からす足 `などと云て色々さつそくをふむ事有是皆我兵法より見ては不足に思ふ所也 `浮足を嫌ふ事 `其故は戦になりては必ず足の浮たがるものなればいかにも慥にふむ道也 `又飛足を好まざる事 `飛足はとぶおこり有て飛びていつく心有 `幾飛も飛と云理のなきによつて飛足悪し `亦はぬる足 `はぬると云心にてはかの行かざるもの也 `踏つむる足 `待の足とて殊に嫌ふ事也 `其外からす足色々のさつそくなど有 `或は沼ふけ或は山 川 石原 細道にても敵ときり合ものなれば所により飛はぬる事もならずさつそくのふまれざる所有もの也",
+      "source_line_end": 488
+    },
+    {
+      "paragraph_id": "P155",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0408",
+      "section_title": "八 一 他流に足つかひ有事",
+      "paragraph_index": 155,
+      "source_line_start": 489,
+      "text": "`我兵法に於て足に替る事なし `常の道をあゆむが如し `敵の拍子に随ひいそぐ時静なる時の身の位を得てたらずあまらず足のしどろになき様に有べき也 `大分の兵法にしても足をはこぶ事肝要也 `其故は敵の心を知ずむざとはやくかかれば拍子ちがひ勝がたきもの也 `又足ふみ静にては敵うろめきありてくづるると云所を見つけずして勝事をぬかしてはやく勝負つけ得ざるもの也 `うろめきくづるる場を見わけて少も敵をくつろがせざる様に勝事肝要也 `能々鍛錬有べし",
+      "source_line_end": 490
+    },
+    {
+      "paragraph_id": "P156",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0409",
+      "section_title": "九 一 他の兵法にはやきを用る事",
+      "paragraph_index": 156,
+      "source_line_start": 492,
+      "text": "`兵法の `はやき `と云所実の道に非ず `はやき `と云事は物毎の拍子の間にあはざるによつて `はやき `おそき `と云ふ心也 `其道上手になりてははやく見えざるもの也",
+      "source_line_end": 493
+    },
+    {
+      "paragraph_id": "P157",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0409",
+      "section_title": "九 一 他の兵法にはやきを用る事",
+      "paragraph_index": 157,
+      "source_line_start": 494,
+      "text": "`縦人に `はや道 `と云て四十里五十里行ものも有 `是も朝より晩迄はやくはしるにではなし `道のふかんなるものは一日はしる様なれ共はかゆかざるもの也 `乱舞の道に上手の謡ふうたひに下手のつけてうたへば後るる心有ていそがしきもの也 `又鼓太鼓に `老松 `をうつに静なる位なれ共下手は是にもおくれさきたつ心有 `高砂 `は急なる位なれ共はやきと云事悪し `はやきはこける `と云て間に合ず `勿論おそきも悪し `是も上手のする事は緩々と見えて間のぬけざる所也 `諸事しつけたるもののする事はいそがしく見えざるもの也",
+      "source_line_end": 495
+    },
+    {
+      "paragraph_id": "P158",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0409",
+      "section_title": "九 一 他の兵法にはやきを用る事",
+      "paragraph_index": 158,
+      "source_line_start": 496,
+      "text": "`此たとへを以て道の理を知るべし `殊に兵法の道に於てはやきと云事悪し `其子細は是も所によりて沼ふけなどにて身足共に早くゆきがたし `太刀はいよいよはやくきる事なし `早くきらんとすれば扇小刀の様にはあらでちやくときれば少もきれざるもの也 `能々分別すべし",
+      "source_line_end": 497
+    },
+    {
+      "paragraph_id": "P159",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0409",
+      "section_title": "九 一 他の兵法にはやきを用る事",
+      "paragraph_index": 159,
+      "source_line_start": 498,
+      "text": "`大分の兵法にしても `はやくいそぐ心悪し `枕をおさふる `と云心にては少もおそき事はなき事也 `人のむざとはやき事などには `そむく `と云て静になり人につかざる所肝要也 `此心の工夫鍛錬有べき事也",
+      "source_line_end": 499
+    },
+    {
+      "paragraph_id": "P160",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0410",
+      "section_title": "一〇 一 他流に奥表と云事",
+      "paragraph_index": 160,
+      "source_line_start": 501,
+      "text": "`兵法の事に於て `何れを `表 `といひ何れを `奥 `と云ん `芸によりことにふれて `極意 `秘伝 `などいひて奥口あれ共敵と打合時の理に於ては表にて戦ひ奥をもつてきると云事に非ず `我兵法のおしへ様は始て道を学ぶ人には其わざのなりよき所をさせならはせ合点の早くゆく理を先に教へ心の及がたき事をば其人の心をほどくる所を見分て次第次第に深き所の理を後に教る心也 `され共大形は其事に対したる事様を覚えさするによつて `奥 `口 `と云所なき事也 `されば世の中に山の奥を尋るに `猶奥へ行ん `と思へば又口に出るもの也 `何事の道に於ても奥の出合所も有口を出してよき事も有 `此戦の理に於て何をかかくし何をか顕さん",
+      "source_line_end": 502
+    },
+    {
+      "paragraph_id": "P161",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0410",
+      "section_title": "一〇 一 他流に奥表と云事",
+      "paragraph_index": 161,
+      "source_line_start": 503,
+      "text": "`然によつて我道を伝るに誓紙罰文など云事を好まず `此道を学ぶ人の智力をうかがひ直なる道を教へ兵法の五道六道の悪しき所をすてさせおのづから武士の法の実の道に入うたがひなき心になす事我兵法の教への道也 `能々鍛錬有べし",
+      "source_line_end": 504
+    },
+    {
+      "paragraph_id": "P162",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0411",
+      "section_title": "一一 後書",
+      "paragraph_index": 162,
+      "source_line_start": 506,
+      "text": "`右他流の兵法を九ケ条として `風の巻 `に有増書付る所一々流々口より奥に至るまでさだかに書顕すべき事なれ共わざと `何流の何の大事 `共名を書しるさず `其故は一流一流の見たて其道其道のいひわけ人により心に任せてそれぞれの存分有ものなれば同じ流にも少々の替るものなれば後々までの為に `ながれ筋 `共書のせず `他流の大体九ツに云分て世の中の道人の直なる道理より見せば長さにかたつき短きを理にし強き弱きもかたつきあらきこまかなると云事も皆へんなる道なれば `他流の口奥 `と顕はさず共皆人の知るべき儀也",
+      "source_line_end": 507
+    },
+    {
+      "paragraph_id": "P163",
+      "scroll_id": "0400",
+      "scroll_title": "風の巻",
+      "section_id": "0411",
+      "section_title": "一一 後書",
+      "paragraph_index": 163,
+      "source_line_start": 508,
+      "text": "`我一流に於て太刀に奥口なし `構に極りなし `唯心を以て其徳を弁ふる事是兵法の肝心也\n\n`正保二年五月十二目　　新免武蔵\n`寺尾孫之丞殿\n\n`寛文七年二月五日　　寺尾夢世勝延 花押\n`山本源介殿",
+      "source_line_end": 516
+    },
+    {
+      "paragraph_id": "P164",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_id": "0501",
+      "section_title": "一 （段）",
+      "paragraph_index": 164,
+      "source_line_start": 520,
+      "text": "`二刀一流の兵法の道 `空の巻 `として書顕はす事 `空 `と云心は物毎のなき所しれざる事を `空 `と見たつる也 `勿論 `空`は `なき `也 `有所を知りて無所を知る是則空也",
+      "source_line_end": 521
+    },
+    {
+      "paragraph_id": "P165",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_id": "0501",
+      "section_title": "一 （段）",
+      "paragraph_index": 165,
+      "source_line_start": 522,
+      "text": "`世の中に於てあしく見れば物を弁へざる所を空と見る所実の空には非ず皆迷ふ心也 `此兵法の道に於ても武士として道を行ふに士の法を知らざる所空には非ずして色々迷有りてせんかたなき所を `空 `と云なれ共是実の空にはあらざる也`武士は兵法の道を慥に覚え其外武芸を能つとめ武士の行ふ道少しもくらからず心の迷ふ所なく朝々時々におこたらず心意二ツの心をみがき観見二ツの眼をとぎ少もくもりなく迷ひの雲の晴たる所こそ実の空と知るべき也",
+      "source_line_end": 523
+    },
+    {
+      "paragraph_id": "P166",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_id": "0501",
+      "section_title": "一 （段）",
+      "paragraph_index": 166,
+      "source_line_start": 524,
+      "text": "`実の道を知らざる間は仏法によらず世法によらずおのれおのれは `慥なる道 `と思ひ `よき事 `と思へ共心の直道よりして世の大かねにあはせて見る時は其身其身の心のひいき其目其目のひずみによつて実の道にはそむくもの也 `其心をしつて直なる所を本とし実の心を道として兵法を広く行ひ正しく明らかに大きなる所を思ひとつて空を道とし道を空と見るべき也",
+      "source_line_end": 525
+    },
+    {
+      "paragraph_id": "P167",
+      "scroll_id": "0500",
+      "scroll_title": "空の巻",
+      "section_id": "0501",
+      "section_title": "一 （段）",
+      "paragraph_index": 167,
+      "source_line_start": 526,
+      "text": "`空有㆑善無㆑悪 `智は有也 `利は有也 `道は有也 `心は空也\n\n`正保二年五月十二日　　新免武蔵\n`寺尾孫之丞殿\n\n`寛文七年二月五日　　寺尾夢世勝延 花押\n`山本源介殿",
+      "source_line_end": 532
+    }
+  ]
+}

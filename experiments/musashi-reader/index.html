@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Musashi Reader</title>
+  <meta name="description" content="A paragraph-level reader for Miyamoto Musashi's Book of Five Rings.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="reader-shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-hidden="true"><span>五</span><span>輪</span></div>
+      <div><p class="eyebrow">Foundry experiment · 168 records</p><h1>Musashi Reader</h1><p class="subtitle">五輪書 · The Book of Five Rings</p></div>
+      <div class="folio"><span id="folio">P000</span><small>master text</small></div>
+    </header>
+    <nav class="scroll-nav" id="scroll-nav" aria-label="Scrolls"></nav>
+    <section class="workspace">
+      <aside class="index-panel">
+        <div class="search-wrap"><label for="search">Search the original text</label><input id="search" placeholder="Japanese, section, or P047…"><p id="result-count">Loading corpus…</p></div>
+        <div class="paragraph-index" id="paragraph-index"></div>
+      </aside>
+      <article class="reading-panel" id="reading-panel" aria-live="polite"></article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
