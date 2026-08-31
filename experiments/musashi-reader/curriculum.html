@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Musashi Curriculum Analyzer</title>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f4f0e8; color: #1d1b18; }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 56px; }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 6vw, 3.2rem); }
+    h2 { margin-top: 28px; }
+    .sub { color: #615c54; max-width: 760px; line-height: 1.5; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+    button, select { font: inherit; border-radius: 10px; border: 1px solid #b9b0a3; padding: 10px 14px; background: #fffaf2; color: #1d1b18; }
+    button { cursor: pointer; font-weight: 700; }
+    button.primary { background: #25231f; color: white; border-color: #25231f; }
+    .status { min-height: 1.5em; color: #615c54; margin-bottom: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+    .card { background: #fffaf2; border: 1px solid #d7cfc3; border-radius: 14px; padding: 14px; }
+    .metric { font-size: 2rem; font-weight: 800; margin-top: 4px; }
+    .label { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: #6f685f; }
+    .panel { background: #fffaf2; border: 1px solid #d7cfc3; border-radius: 14px; padding: 16px; margin-top: 14px; }
+    .paragraph-text { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9; font-size: 1.08rem; white-space: pre-wrap; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+    .chip { border: 1px solid #d7cfc3; border-radius: 999px; padding: 5px 9px; background: #fff; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+    .chip.new { font-weight: 800; border-color: #6e6a63; }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    th, td { border-bottom: 1px solid #ddd5ca; padding: 8px 6px; text-align: left; vertical-align: top; }
+    th { position: sticky; top: 0; background: #fffaf2; }
+    .table-wrap { overflow: auto; max-height: 540px; border: 1px solid #d7cfc3; border-radius: 12px; }
+    .note { color: #6b655d; font-size: .9rem; line-height: 1.5; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #151412; color: #eee9df; }
+      .sub, .status, .label, .note { color: #aaa398; }
+      .card, .panel, th { background: #211f1b; border-color: #3d3932; }
+      button, select { background: #27241f; color: #eee9df; border-color: #514a40; }
+      .chip { background: #2b2823; border-color: #514a40; }
+      th, td { border-color: #3d3932; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Musashi Curriculum Analyzer</h1>
+  <p class="sub">A browser-only first pass over the existing paragraph corpus. It reads <code>data/corpus.json</code>, identifies hiragana, katakana, and kanji in P000–P167, and shows what is new versus previously encountered. It does not modify the corpus.</p>
+  <div class="toolbar">
+    <button class="primary" id="runBtn">Run Corpus Analysis</button>
+    <select id="paragraphSelect" disabled aria-label="Select paragraph"></select>
+  </div>
+  <div class="status" id="status">Ready.</div>
+  <section id="summary" hidden><div class="cards" id="summaryCards"></div></section>
+  <section id="detail" hidden>
+    <h2 id="paragraphHeading">Paragraph</h2>
+    <div class="panel"><div class="paragraph-text" id="paragraphText"></div></div>
+    <div class="cards" id="paragraphCards" style="margin-top:12px"></div>
+    <div class="panel">
+      <h3>New in this paragraph</h3>
+      <div class="note">“New” means first appearance in corpus order, not necessarily the recommended pedagogical order.</div>
+      <h4>Hiragana</h4><div class="chips" id="newHiragana"></div>
+      <h4>Katakana</h4><div class="chips" id="newKatakana"></div>
+      <h4>Kanji</h4><div class="chips" id="newKanji"></div>
+    </div>
+    <div class="panel">
+      <h3>All characters present</h3>
+      <h4>Hiragana</h4><div class="chips" id="allHiragana"></div>
+      <h4>Katakana</h4><div class="chips" id="allKatakana"></div>
+      <h4>Kanji</h4><div class="chips" id="allKanji"></div>
+    </div>
+  </section>
+  <section id="timeline" hidden>
+    <h2>Paragraph learning-load timeline</h2>
+    <p class="note">This table is deliberately character-level only. A visible は, の, と, etc. is not automatically being classified as a grammatical particle here.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Paragraph</th><th>New hira.</th><th>New kata.</th><th>New kanji</th><th>Cumulative hira.</th><th>Cumulative kanji</th></tr></thead>
+      <tbody id="timelineBody"></tbody>
+    </table></div>
+  </section>
+</main>
+<script src="curriculum.js"></script>
+</body>
+</html>
