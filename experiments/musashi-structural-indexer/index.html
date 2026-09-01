@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Musashi Structural Indexer</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f4f1ea}
+    body{margin:0;padding:24px}
+    main{max-width:1100px;margin:0 auto}
+    h1{margin:.2rem 0}.sub{color:#666;margin:0 0 20px}
+    .card{background:#fff;border:1px solid #d8d2c7;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    button,select{font:inherit;padding:9px 12px;border:1px solid #aaa;border-radius:9px;background:#fff}
+    button.active{font-weight:700;border-color:#333}
+    .source{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.3rem;line-height:1.8;word-break:break-all}
+    .stats{display:flex;gap:18px;flex-wrap:wrap}.stat strong{display:block;font-size:1.25rem}
+    .table-wrap{overflow:auto;max-height:62vh;border:1px solid #ddd;border-radius:10px}
+    table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem}
+    th,td{padding:8px 10px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}
+    th{position:sticky;top:0;background:#eee9df;z-index:1}
+    td.char{font-size:1.25rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+    .note{font-size:.9rem;color:#666}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Musashi Structural Indexer</h1>
+  <p class="sub">Pilot: section 0000 · P000–P003 · character-level structural coordinates only</p>
+
+  <section class="card controls">
+    <label>Paragraph <select id="paragraphSelect"></select></label>
+    <button data-filter="all" class="filter active">All Characters</button>
+    <button data-filter="hiragana" class="filter">Hiragana</button>
+    <button data-filter="kanji" class="filter">Kanji</button>
+    <button data-filter="katakana" class="filter">Katakana</button>
+    <button id="exportJson">Export JSON</button>
+    <button id="exportCsv">Export CSV</button>
+  </section>
+
+  <section class="card">
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="card">
+    <strong id="sourceLabel"></strong>
+    <div class="source" id="sourceText"></div>
+    <p class="note">Only hiragana, katakana, and kanji receive indexed records. Backticks, spaces, punctuation, Latin text, and labels are ignored.</p>
+  </section>
+
+  <section class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Global Char</th><th>Section</th><th>Paragraph</th><th>Para Char</th><th>Script</th><th>Script Seq</th><th>Character</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
