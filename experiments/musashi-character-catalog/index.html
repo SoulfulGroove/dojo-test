@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Musashi Unique Character Catalog</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f4f1ea}
+body{margin:0;padding:24px}main{max-width:1180px;margin:0 auto}h1{margin:.2rem 0}.sub{color:#666;margin:0 0 20px}
+.card{background:#fff;border:1px solid #d8d2c7;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}button,select,input{font:inherit;padding:9px 12px;border:1px solid #aaa;border-radius:9px;background:#fff}button.active{font-weight:700;border-color:#333}.status{font-size:.9rem;color:#666;margin-left:auto}
+.stats{display:flex;gap:20px;flex-wrap:wrap}.stat strong{display:block;font-size:1.3rem}.table-wrap{overflow:auto;max-height:62vh;border:1px solid #ddd;border-radius:10px}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.9rem}th,td{padding:8px 10px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}th{position:sticky;top:0;background:#eee9df;z-index:1}td.char{font-size:1.35rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}.detail-char{font-size:3rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}.note{font-size:.9rem;color:#666}.occurrences{display:flex;gap:6px;flex-wrap:wrap;max-height:240px;overflow:auto}.chip{border:1px solid #ddd;border-radius:8px;padding:5px 7px;background:#faf9f6;font-size:.84rem}.hidden{display:none}
+</style>
+</head>
+<body><main>
+<h1>Musashi Unique Character Catalog</h1>
+<p class="sub">Derived reference layer · one record per unique hiragana, katakana, or kanji character</p>
+<section class="card controls">
+<button data-filter="all" class="filter active">All</button><button data-filter="hiragana" class="filter">Hiragana</button><button data-filter="kanji" class="filter">Kanji</button><button data-filter="katakana" class="filter">Katakana</button>
+<input id="search" placeholder="Search character or ID" aria-label="Search character or ID" />
+<select id="sort"><option value="first">First appearance</option><option value="frequency">Frequency</option><option value="character">Character</option></select>
+<button id="exportJson" disabled>Export Catalog JSON</button><button id="exportCsv" disabled>Export Catalog CSV</button><span class="status" id="status">Loading corpus…</span>
+</section>
+<section class="card"><div class="stats" id="stats"></div></section>
+<section class="card"><div class="table-wrap"><table><thead><tr><th>Unique ID</th><th>Script ID</th><th>Character</th><th>Script</th><th>First Global</th><th>First Section</th><th>First Paragraph</th><th>Para Char</th><th>Occurrences</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="card hidden" id="detail"><div class="detail-char" id="detailChar"></div><div id="detailMeta"></div><h3>Occurrence addresses</h3><div class="occurrences" id="occurrences"></div><p class="note">Each occurrence points back to the structural coordinate system: section, paragraph, paragraph-local character, global character, and script sequence.</p></section>
+</main><script src="app.js"></script></body></html>
