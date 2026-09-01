@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Musashi Relational Corpus Explorer — Section 0000 Prototype</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f4f1ea}
+body{margin:0;padding:22px}main{max-width:1180px;margin:0 auto}h1{margin:.2rem 0}.sub{color:#666;margin:.25rem 0 1.2rem}.card{background:#fff;border:1px solid #d8d2c7;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}input,button{font:inherit;padding:9px 12px;border:1px solid #aaa;border-radius:9px;background:#fff}input{min-width:220px}.status{margin-left:auto;color:#666;font-size:.9rem}.examples button{font-size:.9rem}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.stat{background:#f7f5ef;border-radius:10px;padding:12px}.stat strong{display:block;font-size:1.4rem}.jp{font-family:"Yu Mincho","Hiragino Mincho ProN",serif}.query{font-size:2rem}.table-wrap{overflow:auto;max-height:360px;border:1px solid #e2ddd4;border-radius:10px}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:8px 9px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}th{position:sticky;top:0;background:#eee9df}.context{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.05rem}.hit{font-weight:700;text-decoration:underline}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{padding:6px 8px;background:#faf9f6;border:1px solid #ddd;border-radius:8px}.muted{color:#666}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}.small{font-size:.88rem}.warn{background:#fff8dc}.empty{color:#777;font-style:italic}
+</style>
+</head>
+<body><main>
+<h1>Musashi Relational Corpus Explorer</h1>
+<p class="sub">Section 0000 prototype · P000–P003 only · mechanical evidence for exact sequences, components, neighbors, expansions, and exceptions</p>
+<section class="card controls">
+<input id="query" value="兵法" aria-label="Japanese sequence" />
+<button id="analyze">Analyze</button>
+<div class="examples"><button data-q="兵法">兵法</button><button data-q="道">道</button><button data-q="の道">の道</button><button data-q="兵法の道">兵法の道</button></div>
+<span class="status" id="status">Loading corpus…</span>
+</section>
+<section class="card warn small"><strong>What this prototype does:</strong> it does not decide that a sequence is a word or phrase. It measures what Section 0000 itself shows: exact recurrence, component recurrence, adjacency, surrounding characters, larger recurring strings, and exact addresses.</section>
+<section class="card"><div class="jp query" id="queryDisplay">—</div><div class="stats" id="stats"></div></section>
+<div class="grid2">
+<section class="card"><h3>Component evidence</h3><div id="components"></div></section>
+<section class="card"><h3>Immediate neighbors</h3><div id="neighbors"></div></section>
+</div>
+<div class="grid2">
+<section class="card"><h3>Common expansions</h3><div id="expansions"></div></section>
+<section class="card"><h3>Exceptions / alternate contexts</h3><div id="exceptions"></div></section>
+</div>
+<section class="card"><h3>Exact sequence occurrences</h3><div class="table-wrap"><table><thead><tr><th>#</th><th>Paragraph</th><th>Section</th><th>Global span</th><th>Paragraph span</th><th>Context</th></tr></thead><tbody id="occurrences"></tbody></table></div></section>
+<section class="card"><h3>Prototype scope</h3><p class="muted">This page currently analyzes only Section 0000 (P000–P003). If the interaction model is useful, the same engine can be promoted to the full corpus without changing the source text or the existing structural tools.</p></section>
+</main><script src="app.js"></script></body></html>
