@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Musashi Lexical Chunker — Section 0000 Prototype</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#171717;background:#f4f1ea}
+body{margin:0;padding:22px}main{max-width:1180px;margin:0 auto}h1{margin:.2rem 0}.sub{color:#666;margin:.25rem 0 1.2rem}.card{background:#fff;border:1px solid #d8d2c7;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}button,select{font:inherit;padding:9px 12px;border:1px solid #aaa;border-radius:9px;background:#fff}button.active{font-weight:700;border-color:#222}.status{margin-left:auto;color:#666;font-size:.9rem}.source{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.35rem;line-height:2;word-break:break-all}.chunks{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start}.chunk{border:1px solid #bbb;border-radius:10px;padding:8px 10px;background:#faf9f6;cursor:pointer;min-width:2rem}.chunk.lexical{border-bottom:4px solid #444}.chunk.grammar{border-bottom:4px dotted #777}.chunk.mixed{border-bottom:4px double #777}.chunk.selected{outline:3px solid #aaa}.jp{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:1.35rem}.kind{display:block;font-size:.68rem;color:#666;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:12px}.meta div{background:#f7f5ef;border-radius:9px;padding:10px}.meta strong{display:block;font-size:.72rem;color:#666;text-transform:uppercase;margin-bottom:3px}.legend{font-size:.9rem;color:#555}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.88rem}th,td{padding:8px 9px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}th{background:#eee9df;position:sticky;top:0}.warning{background:#fff3cd;border-color:#e4c75a}.ok{color:#42643d}.bad{color:#8a2b2b}
+</style>
+</head>
+<body><main>
+<h1>Musashi Lexical Chunker</h1>
+<p class="sub">Section 0000 prototype · P000–P003 · proposed meaningful spans anchored to the existing structural coordinate system</p>
+<section class="card toolbar">
+<div id="paragraphButtons"></div>
+<button id="exportJson" disabled>Export Prototype JSON</button><button id="exportCsv" disabled>Export Prototype CSV</button>
+<span class="status" id="status">Loading corpus…</span>
+</section>
+<section class="card"><strong>Prototype rule:</strong> the source text remains untouched. These are proposed higher-level spans only. <span class="legend">Solid underline = lexical · dotted = grammar · double = mixed/bound form. Click a chunk to inspect its exact coordinates.</span></section>
+<section class="card"><h2 id="heading">—</h2><div class="source" id="source"></div></section>
+<section class="card"><h3>Proposed meaningful chunks</h3><div class="chunks" id="chunks"></div></section>
+<section class="card" id="detail"><h3>Selected span</h3><div class="jp" id="detailText">Select a chunk.</div><div class="meta" id="detailMeta"></div></section>
+<section class="card"><h3>Addressable span records</h3><div class="table-wrap"><table><thead><tr><th>Span ID</th><th>Paragraph</th><th>Chunk</th><th>Type</th><th>Global Start</th><th>Global End</th><th>Paragraph Start</th><th>Paragraph End</th><th>Characters</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+</main><script src="app.js"></script></body></html>
