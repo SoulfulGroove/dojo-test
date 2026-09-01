@@ -20,22 +20,23 @@
     th,td{padding:8px 10px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}
     th{position:sticky;top:0;background:#eee9df;z-index:1}
     td.char{font-size:1.25rem;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
-    .note{font-size:.9rem;color:#666}
+    .note,.status{font-size:.9rem;color:#666}.status{margin-left:auto}
   </style>
 </head>
 <body>
 <main>
   <h1>Musashi Structural Indexer</h1>
-  <p class="sub">Pilot: section 0000 · P000–P003 · character-level structural coordinates only</p>
+  <p class="sub">Full corpus · P000–P167 · character-level structural coordinates only</p>
 
   <section class="card controls">
-    <label>Paragraph <select id="paragraphSelect"></select></label>
+    <label>Paragraph <select id="paragraphSelect" disabled></select></label>
     <button data-filter="all" class="filter active">All Characters</button>
     <button data-filter="hiragana" class="filter">Hiragana</button>
     <button data-filter="kanji" class="filter">Kanji</button>
     <button data-filter="katakana" class="filter">Katakana</button>
-    <button id="exportJson">Export JSON</button>
-    <button id="exportCsv">Export CSV</button>
+    <button id="exportJson" disabled>Export Master JSON</button>
+    <button id="exportCsv" disabled>Export Master CSV</button>
+    <span class="status" id="status">Loading corpus…</span>
   </section>
 
   <section class="card">
@@ -45,7 +46,7 @@
   <section class="card">
     <strong id="sourceLabel"></strong>
     <div class="source" id="sourceText"></div>
-    <p class="note">Only hiragana, katakana, and kanji receive indexed records. Backticks, spaces, punctuation, Latin text, and labels are ignored.</p>
+    <p class="note">Only hiragana, katakana, and kanji receive indexed records. Backticks, spaces, punctuation, Latin text, headings, labels, and other symbols are ignored.</p>
   </section>
 
   <section class="card">
