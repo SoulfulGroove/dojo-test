@@ -1,45 +1,23 @@
-const SECTION = "0000";
+const CORPUS_URL = "../musashi-reader/data/corpus.json";
+const SCRIPTS = ["hiragana", "katakana", "kanji"];
 
-const PARAGRAPHS = [
-  {
-    id: "P000",
-    text: "`兵法の道 `二天一流 `と号し数年鍛錬の事初て書物に書き顕はさんと思ふ"
-  },
-  {
-    id: "P001",
-    text: "`時に寛永二十年十月上旬の頃九州肥後の地巌殿山に上り天を拝し観音を礼し仏前に向ひ生国播磨の武士新免武蔵藤原玄信年つもりて六十 `我若年のむかしより兵法の道に心をかけ十三歳にして初て勝負を為す `その相手新当流の有馬喜兵衛といふ `兵法者に打勝ち十六歳にして但馬国秋山といふ強力の兵法者に打ち勝ち二十一歳にして都に上り天下の兵法者に逢ひて数度の勝負を決すといへども勝利を得ずといふことなし `その後国々所々に至り諸流の兵法者に行逢ひ六十余度まで勝負すといへども一度もその利を失はず `その程年十三より二十八九までのことなり"
-  },
-  {
-    id: "P002",
-    text: "`三十を越えて跡をおもひ見るに兵法至極して勝つにはあらず `おのづから道の器用ありて天理を離れざるが故か `又は他流の兵法不足なる所にや `その後猶も深き道理を得んと朝鍛夕錬して見ればおのづから兵法の道にあふこと我五十歳のころなり `それより以来は尋ね入るべき道なくして光陰をおくる"
-  },
-  {
-    id: "P003",
-    text: "`兵法の利にまかせて諸芸諸能の道となせば万事に於て我に師匠なし `今この書を作るといへども仏法儒道の古語をもからず軍記軍法の古きことをも用ゐずこの一流の見立実の心をあらはすこと天道と観世音とを鏡として十月十日の夜寅の一点に筆を把りて書き初るものなり"
-  }
-];
-
-const SCRIPT_TESTS = [
-  ["hiragana", /\p{Script=Hiragana}/u],
-  ["katakana", /\p{Script=Katakana}/u],
-  ["kanji", /\p{Script=Han}/u]
-];
-
-function classify(char) {
-  for (const [script, rx] of SCRIPT_TESTS) {
-    if (rx.test(char)) return script;
-  }
+function classify(ch) {
+  const cp = ch.codePointAt(0);
+  if (cp >= 0x3040 && cp <= 0x309f) return "hiragana";
+  if ((cp >= 0x30a0 && cp <= 0x30ff) || (cp >= 0x31f0 && cp <= 0x31ff) || (cp >= 0xff66 && cp <= 0xff9d)) return "katakana";
+  if ((cp >= 0x3400 && cp <= 0x4dbf) || (cp >= 0x4e00 && cp <= 0x9fff) || (cp >= 0xf900 && cp <= 0xfaff) || (cp >= 0x20000 && cp <= 0x2ebef) || (cp >= 0x30000 && cp <= 0x323af)) return "kanji";
   return null;
 }
 
-function buildIndex() {
-  const counters = { hiragana: 0, katakana: 0, kanji: 0 };
+function buildIndex(corpus) {
+  const counters = Object.fromEntries(SCRIPTS.map(s => [s, 0]));
   let globalCharacter = 0;
   const records = [];
+  const paragraphs = corpus.paragraphs || [];
 
-  for (const paragraph of PARAGRAPHS) {
+  for (const paragraph of paragraphs) {
     let paragraphCharacter = 0;
-    for (const character of [...paragraph.text]) {
+    for (const character of paragraph.text || "") {
       const script = classify(character);
       if (!script) continue;
 
@@ -48,8 +26,8 @@ function buildIndex() {
       counters[script] += 1;
 
       records.push({
-        section: SECTION,
-        paragraph: paragraph.id,
+        section: paragraph.section_id,
+        paragraph: paragraph.paragraph_id,
         global_character: globalCharacter,
         paragraph_character: paragraphCharacter,
         script,
@@ -59,24 +37,52 @@ function buildIndex() {
     }
   }
 
-  return { records, counters, globalCharacter };
+  return { records, counters, globalCharacter, paragraphs };
 }
 
-const INDEX = buildIndex();
+let CORPUS = null;
+let INDEX = null;
 let activeFilter = "all";
-let activeParagraph = PARAGRAPHS[0].id;
+let activeParagraph = null;
 
 const paragraphSelect = document.getElementById("paragraphSelect");
 const rows = document.getElementById("rows");
 const sourceText = document.getElementById("sourceText");
 const sourceLabel = document.getElementById("sourceLabel");
 const stats = document.getElementById("stats");
+const statusEl = document.getElementById("status");
+const exportJson = document.getElementById("exportJson");
+const exportCsv = document.getElementById("exportCsv");
 
-for (const p of PARAGRAPHS) {
-  const option = document.createElement("option");
-  option.value = p.id;
-  option.textContent = p.id;
-  paragraphSelect.appendChild(option);
+async function init() {
+  try {
+    const response = await fetch(CORPUS_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Could not load corpus.json (${response.status})`);
+    CORPUS = await response.json();
+    INDEX = buildIndex(CORPUS);
+    if (!INDEX.paragraphs.length) throw new Error("Corpus contains no paragraphs");
+
+    activeParagraph = INDEX.paragraphs[0].paragraph_id;
+    populateParagraphSelect();
+    paragraphSelect.disabled = false;
+    exportJson.disabled = false;
+    exportCsv.disabled = false;
+    statusEl.textContent = `${INDEX.paragraphs.length} paragraphs indexed`;
+    render();
+  } catch (err) {
+    console.error(err);
+    statusEl.textContent = `Load failed: ${err.message}`;
+  }
+}
+
+function populateParagraphSelect() {
+  paragraphSelect.innerHTML = "";
+  for (const p of INDEX.paragraphs) {
+    const option = document.createElement("option");
+    option.value = p.paragraph_id;
+    option.textContent = `${p.paragraph_id} — ${p.section_id} — ${p.section_title}`;
+    paragraphSelect.appendChild(option);
+  }
 }
 
 paragraphSelect.addEventListener("change", () => {
@@ -113,13 +119,17 @@ function renderStats() {
     <div class="stat"><span>Hiragana</span><strong>${counts.hiragana}</strong></div>
     <div class="stat"><span>Kanji</span><strong>${counts.kanji}</strong></div>
     <div class="stat"><span>Katakana</span><strong>${counts.katakana}</strong></div>
-    <div class="stat"><span>Pilot global chars</span><strong>${INDEX.globalCharacter}</strong></div>
+    <div class="stat"><span>Corpus chars</span><strong>${INDEX.globalCharacter}</strong></div>
+    <div class="stat"><span>Corpus hiragana</span><strong>${INDEX.counters.hiragana}</strong></div>
+    <div class="stat"><span>Corpus kanji</span><strong>${INDEX.counters.kanji}</strong></div>
+    <div class="stat"><span>Corpus katakana</span><strong>${INDEX.counters.katakana}</strong></div>
   `;
 }
 
 function render() {
-  const paragraph = PARAGRAPHS.find(p => p.id === activeParagraph);
-  sourceLabel.textContent = `${SECTION} · ${activeParagraph}`;
+  if (!INDEX) return;
+  const paragraph = INDEX.paragraphs.find(p => p.paragraph_id === activeParagraph);
+  sourceLabel.textContent = `${paragraph.section_id} · ${activeParagraph}`;
   sourceText.textContent = paragraph.text;
   renderStats();
 
@@ -158,19 +168,26 @@ function download(filename, mime, content) {
   URL.revokeObjectURL(url);
 }
 
-document.getElementById("exportJson").addEventListener("click", () => {
+exportJson.addEventListener("click", () => {
   const payload = {
-    format: "musashi-structural-index-pilot-v0.1",
-    section: SECTION,
-    paragraphs: PARAGRAPHS.map(p => p.id),
+    format: "musashi-structural-index-v1.0",
+    source: CORPUS.source || null,
+    paragraphs: INDEX.paragraphs.map(p => ({
+      paragraph_id: p.paragraph_id,
+      section_id: p.section_id,
+      section_title: p.section_title,
+      scroll_id: p.scroll_id,
+      scroll_title: p.scroll_title
+    })),
     indexing_rules: {
       included: ["hiragana", "katakana", "kanji"],
-      excluded: ["punctuation", "spaces", "backticks", "labels", "other symbols"],
+      excluded: ["punctuation", "spaces", "backticks", "labels", "headings", "other symbols"],
       paragraph_character_resets_each_paragraph: true,
       global_character_continues_across_paragraphs: true,
       script_sequence_continues_across_paragraphs: true
     },
     totals: {
+      paragraphs: INDEX.paragraphs.length,
       characters: INDEX.globalCharacter,
       hiragana: INDEX.counters.hiragana,
       katakana: INDEX.counters.katakana,
@@ -178,16 +195,16 @@ document.getElementById("exportJson").addEventListener("click", () => {
     },
     records: INDEX.records
   };
-  download("musashi-structural-index-0000-pilot.json", "application/json;charset=utf-8", JSON.stringify(payload, null, 2));
+  download("musashi-structural-index-master.json", "application/json;charset=utf-8", JSON.stringify(payload, null, 2));
 });
 
-document.getElementById("exportCsv").addEventListener("click", () => {
+exportCsv.addEventListener("click", () => {
   const headers = ["section","paragraph","global_character","paragraph_character","script","script_sequence","character"];
   const lines = [headers.join(",")];
   for (const record of INDEX.records) {
     lines.push(headers.map(h => csvCell(record[h])).join(","));
   }
-  download("musashi-structural-index-0000-pilot.csv", "text/csv;charset=utf-8", "\uFEFF" + lines.join("\n"));
+  download("musashi-structural-index-master.csv", "text/csv;charset=utf-8", "\uFEFF" + lines.join("\n"));
 });
 
 function csvCell(value) {
@@ -195,4 +212,4 @@ function csvCell(value) {
   return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
 }
 
-render();
+init();
