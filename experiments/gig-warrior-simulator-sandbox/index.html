@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Gig Warrior Simulator v0.1</title>
+  <title>Gig Warrior Simulator v0.1 — Sandbox</title>
   <style>
     :root{
       --bg:#d7e8c6;--road:#f4f1e8;--road-edge:#c8c8c8;--panel:#f7f7f5;--card:#fff;
@@ -15,15 +15,22 @@
     .map{position:absolute;inset:0 0 var(--nav-h) 0;background:radial-gradient(circle at 25% 12%,#e6efcf 0 8%,transparent 8.5%),radial-gradient(circle at 75% 18%,#e8efd8 0 7%,transparent 7.5%),linear-gradient(155deg,#c8e7aa 0 28%,#a9d88b 28% 58%,#cce7ac 58% 100%)}
     .road{position:absolute;background:var(--road);box-shadow:0 0 0 2px var(--road-edge);border-radius:999px}.road.r1{width:120%;height:18px;left:-10%;top:18%;transform:rotate(-7deg)}.road.r2{width:20px;height:96%;left:68%;top:0;transform:rotate(3deg)}.road.r3{width:88%;height:14px;left:-5%;top:67%;transform:rotate(1deg)}.road.r4{width:64%;height:12px;left:30%;top:42%;transform:rotate(-45deg)}
     .label{position:absolute;font-size:12px;color:#646464;background:rgba(255,255,255,.72);padding:2px 5px;border-radius:6px;font-weight:600}.label.one{left:62%;top:37%}.label.two{left:13%;top:61%}.label.three{left:70%;top:71%}
-    .dojo-pin{position:absolute;left:48%;top:44%;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.2);border:2px solid #d8dce2;color:var(--accent);font-size:23px}.zone-btn{position:absolute;left:18px;bottom:28px;border:1px solid #bec5d0;background:rgba(255,255,255,.94);padding:10px 18px;border-radius:999px;color:#586276;font-size:15px}.trainer-badge{position:absolute;top:16px;left:16px;background:rgba(31,42,55,.88);color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.06em;font-weight:700}
-    .sheet{position:absolute;left:0;right:0;bottom:var(--nav-h);top:var(--sheet-top);background:var(--panel);border-radius:18px 18px 0 0;box-shadow:0 -4px 18px rgba(0,0,0,.12);display:flex;flex-direction:column;transition:top .22s ease;overscroll-behavior:contain}
+    .dojo-pin{position:absolute;left:48%;top:44%;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.2);border:2px solid #d8dce2;color:var(--accent);font-size:23px}
+    .trainer-badge{position:absolute;top:16px;left:16px;background:rgba(31,42,55,.88);color:#fff;padding:8px 12px;border-radius:999px;font-size:12px;letter-spacing:.06em;font-weight:700}
+    .map-controls{position:absolute;inset:0 0 var(--nav-h) 0;z-index:4;pointer-events:none}
+    .zone-btn,.map-tools{opacity:0;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+    .map-controls.visible .zone-btn,.map-controls.visible .map-tools{opacity:1;transform:translateY(0);pointer-events:auto}
+    .zone-btn{position:absolute;left:18px;bottom:28px;border:1px solid #bec5d0;background:rgba(255,255,255,.94);padding:10px 18px;border-radius:999px;color:#586276;font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+    .map-tools{position:absolute;right:18px;bottom:24px;display:grid;gap:9px}
+    .map-tool{width:46px;height:46px;border:1px solid #d4d8de;background:rgba(255,255,255,.96);border-radius:11px;color:#5b6474;display:grid;place-items:center;font-size:21px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .sheet{position:absolute;left:0;right:0;bottom:var(--nav-h);top:var(--sheet-top);background:var(--panel);border-radius:18px 18px 0 0;box-shadow:0 -4px 18px rgba(0,0,0,.12);display:flex;flex-direction:column;transition:top .22s ease;overscroll-behavior:contain;z-index:6}
     .grab-area{min-height:48px;padding:18px 0 13px;text-align:center;cursor:grab;touch-action:none;flex:0 0 auto}.grab-area:active{cursor:grabbing}.grab{width:52px;height:5px;background:#b8bdc6;border-radius:99px;margin:auto}
     .offer-head{display:flex;justify-content:flex-end;align-items:center;padding:10px 18px 14px;border-bottom:1px solid var(--line);font-size:16px;gap:8px;flex:0 0 auto}.time-pill{border:1px solid #b8bec7;border-radius:999px;padding:7px 11px;background:#fff;color:var(--ink)}
     .cards{overflow:auto;-webkit-overflow-scrolling:touch;padding:12px 14px 28px;touch-action:pan-y;overscroll-behavior:contain;min-height:0;flex:1 1 auto}.sheet.is-collapsed .state-content{visibility:hidden;pointer-events:none}
     .card{background:var(--card);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:16px;margin-bottom:14px}.pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.pay{font-size:31px;font-weight:800;letter-spacing:-.03em}.estimate{font-size:16px;font-weight:500;color:var(--muted)}.chev{font-size:34px;color:#3d4658;line-height:1}.include{background:#f6f7f7;border-radius:12px;padding:12px 13px;margin:13px 0;color:#697184;font-size:15px}.chip{display:inline-block;background:#fff;border-radius:999px;padding:7px 10px;margin-top:8px;color:#30384a;font-size:14px}.chip::before{content:"◆";color:#77b95b;margin-right:7px;font-size:11px}.rule{height:1px;background:#eceef1;margin:13px 0}.facts{font-size:17px;line-height:1.45}.facts strong{font-size:20px}.meta{display:grid;grid-template-columns:28px 1fr;gap:10px;margin-top:13px;align-items:start}.ico{width:26px;height:26px;border-radius:50%;background:#667084;color:#fff;display:grid;place-items:center;font-size:14px}.ico.store{background:#506a9a}.sub{color:#6f7788;margin-top:2px;font-size:15px}.tag{display:inline-block;margin-top:13px;border:1px solid #c9a33f;background:#fff9df;border-radius:5px;padding:6px 9px;font-size:14px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
     button{font:inherit}.reject,.accept{border:none;border-radius:999px;padding:13px 10px;font-size:17px;min-height:48px}.reject{background:#ececec;color:#294d7f}.accept{background:var(--accent);color:#fff}
     .offline{overflow:auto;-webkit-overflow-scrolling:touch;padding:10px 14px 24px;min-height:0;flex:1 1 auto}.spark-now{width:100%;border:0;border-radius:999px;background:var(--accent);color:#fff;padding:15px;font-size:18px;margin:8px 0 18px}.popular{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 9px rgba(0,0,0,.06)}.popular h3{margin:0 0 4px;font-size:18px}.popular p{margin:0;color:var(--muted);font-size:14px}.bars{height:70px;display:flex;align-items:flex-end;gap:5px;border-bottom:1px solid #aeb5c0;margin:16px 0 12px}.bar{flex:1;border-radius:8px 8px 0 0;background:#d9dde3}.bar.hot{background:#7aa6dd}.incentive{border-left:4px solid var(--ink);padding-left:9px;color:var(--ink);line-height:1.35}
-    .nav{position:absolute;left:0;right:0;bottom:0;height:var(--nav-h);background:#fff;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px max(8px,env(safe-area-inset-bottom));z-index:5}.tab{border:none;background:transparent;color:#909090;font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}.tab .tab-ico{font-size:24px;line-height:1}.tab.active{color:#2d6fa6}
+    .nav{position:absolute;left:0;right:0;bottom:0;height:var(--nav-h);background:#fff;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px max(8px,env(safe-area-inset-bottom));z-index:10}.tab{border:none;background:transparent;color:#909090;font-size:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}.tab .tab-ico{font-size:24px;line-height:1}.tab.active{color:#2d6fa6}
     .hud-toast{position:absolute;left:50%;top:18%;transform:translateX(-50%) translateY(-10px);background:#1f2937;color:#fff;padding:10px 15px;border-radius:999px;font-weight:700;font-size:14px;opacity:0;pointer-events:none;transition:.18s;z-index:50;white-space:nowrap}.hud-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
     .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.46);z-index:30;display:none}.backdrop.show{display:block}.selector{position:absolute;left:0;right:0;top:14%;bottom:0;background:#fff;z-index:40;border-radius:20px 20px 0 0;display:none;flex-direction:column;padding:18px}.selector.show{display:flex}.selector-top{display:flex;justify-content:space-between;align-items:flex-start}.selector-brand{font-size:32px;color:var(--accent);line-height:1}.selector-title{font-size:31px;color:var(--accent);margin:8px 0 0}.close{border:0;background:transparent;color:var(--accent);font-size:36px;line-height:1;padding:0 4px}.selector-copy{font-size:20px;line-height:1.35;color:#5f687a;margin:18px 0 10px}.slots{overflow:auto;-webkit-overflow-scrolling:touch;min-height:0;flex:1;border-top:1px solid #ddd;border-bottom:1px solid #ddd}.slot{width:100%;display:flex;align-items:center;gap:15px;min-height:72px;border:0;border-bottom:1px solid #ddd;background:#fff;text-align:left;color:var(--ink);font-size:19px;padding:0 4px}.radio{width:26px;height:26px;border:2px solid #9099aa;border-radius:50%;display:grid;place-items:center;flex:0 0 auto}.slot.selected .radio{border:3px solid var(--accent)}.slot.selected .radio::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--accent)}.selector-actions{display:grid;gap:10px;padding-top:14px}.turn-off,.turn-on{min-height:58px;border:0;border-radius:999px;font-size:18px}.turn-off{background:#f0f0f0;color:#91a6ca}.turn-on{background:#cad4e6;color:#fff}.turn-on.enabled{background:var(--accent)}
     .hidden{display:none!important}
@@ -32,7 +39,15 @@
 </head>
 <body>
   <main id="phone" class="phone" aria-label="Gig Warrior Simulator training shell">
-    <section class="map" aria-label="Static training map background"><div class="trainer-badge">GIG WARRIOR • TRAINING</div><div class="road r1"></div><div class="road r2"></div><div class="road r3"></div><div class="road r4"></div><span class="label one">Silver Pkwy</span><span class="label two">Training Zone</span><span class="label three">Main Rd</span><div class="dojo-pin" title="Training hub">⛩</div><button class="zone-btn" type="button">Change zone</button></section>
+    <section class="map" aria-label="Static training map background"><div class="trainer-badge">GIG WARRIOR • TRAINING</div><div class="road r1"></div><div class="road r2"></div><div class="road r3"></div><div class="road r4"></div><span class="label one">Silver Pkwy</span><span class="label two">Training Zone</span><span class="label three">Main Rd</span><div class="dojo-pin" title="Training hub">⛩</div></section>
+    <div id="mapControls" class="map-controls" aria-label="Map overlay controls">
+      <button class="zone-btn" type="button">Change zone</button>
+      <div class="map-tools">
+        <button class="map-tool" type="button" aria-label="Map layers">▥</button>
+        <button class="map-tool" type="button" aria-label="Map information">ⓘ</button>
+        <button class="map-tool" type="button" aria-label="Center map">◎</button>
+      </div>
+    </div>
     <div id="toast" class="hud-toast" aria-live="polite">Training action</div>
 
     <section id="sheet" class="sheet" aria-label="Gig Warrior activity tray">
@@ -66,13 +81,15 @@
 
   <script>
     (()=>{
-      const phone=document.getElementById('phone'),sheet=document.getElementById('sheet'),grabArea=document.getElementById('grabArea'),toast=document.getElementById('toast');
+      const phone=document.getElementById('phone'),sheet=document.getElementById('sheet'),grabArea=document.getElementById('grabArea'),toast=document.getElementById('toast'),mapControls=document.getElementById('mapControls');
       const offlineState=document.getElementById('offlineState'),activeState=document.getElementById('activeState'),sparkNowBtn=document.getElementById('sparkNowBtn'),editTimeBtn=document.getElementById('editTimeBtn');
       const backdrop=document.getElementById('backdrop'),selector=document.getElementById('selector'),closeSelector=document.getElementById('closeSelector'),slots=document.getElementById('slots'),turnOnBtn=document.getElementById('turnOnBtn'),turnOffBtn=document.getElementById('turnOffBtn');
       let startY=0,startTop=0,dragging=false,pointerId=null,isActive=false,selectedTime=null;
       const showToast=text=>{toast.textContent=text;toast.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>toast.classList.remove('show'),900)};
       const stops=()=>{const h=phone.clientHeight,nav=86;return{expanded:Math.round(h*.07),mid:Math.round(h*.29),collapsed:Math.max(Math.round(h*.65),h-nav-48)}};
-      const setSheetTop=(top,animate=true)=>{const s=stops(),next=Math.max(s.expanded,Math.min(s.collapsed,top));sheet.style.transition=animate?'top .22s ease':'none';sheet.style.top=next+'px';sheet.classList.toggle('is-collapsed',next>=s.collapsed-2)};
+      const overlayThreshold=()=>{const s=stops();return s.mid+(s.collapsed-s.mid)*.52};
+      const updateMapControls=top=>mapControls.classList.toggle('visible',top>=overlayThreshold());
+      const setSheetTop=(top,animate=true)=>{const s=stops(),next=Math.max(s.expanded,Math.min(s.collapsed,top));sheet.style.transition=animate?'top .22s ease':'none';sheet.style.top=next+'px';sheet.classList.toggle('is-collapsed',next>=s.collapsed-2);updateMapControls(next)};
       const snapTarget=(current,delta)=>{const s=stops();if(delta<-18){if(current>s.mid+40)return s.mid;return s.expanded}if(delta>18){if(current<s.mid-40)return s.mid;return s.collapsed}return[s.expanded,s.mid,s.collapsed].reduce((best,c)=>Math.abs(c-current)<Math.abs(best-current)?c:best)};
       setSheetTop(stops().mid,false);
       grabArea.addEventListener('pointerdown',e=>{dragging=true;pointerId=e.pointerId;startY=e.clientY;startTop=parseFloat(sheet.style.top)||stops().mid;sheet.style.transition='none';grabArea.setPointerCapture(pointerId)});
@@ -90,7 +107,10 @@
       turnOffBtn.addEventListener('click',()=>{if(!isActive)return;isActive=false;activeState.classList.add('hidden');offlineState.classList.remove('hidden');closeModal();setSheetTop(stops().mid,true)});
 
       document.querySelectorAll('.accept').forEach(btn=>btn.addEventListener('click',()=>showToast('ACCEPTED • TRAINING')));document.querySelectorAll('.reject').forEach(btn=>btn.addEventListener('click',()=>showToast('PASSED • TRAINING')));
-      document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');if(tab.textContent.trim()!=='Home')showToast(tab.textContent.trim()+' • shell only')}));document.querySelector('.zone-btn').addEventListener('click',()=>showToast('Zone selector • shell only'));
+      document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));tab.classList.add('active');if(tab.textContent.trim()!=='Home')showToast(tab.textContent.trim()+' • shell only')}));
+      document.querySelector('.zone-btn').addEventListener('click',()=>showToast('Zone selector • sandbox shell'));
+      document.querySelectorAll('.map-tool').forEach((btn,i)=>btn.addEventListener('click',()=>showToast(['Map layers','Map info','Center map'][i]+' • sandbox shell')));
+      window.addEventListener('resize',()=>setSheetTop(stops().mid,false));
     })();
   </script>
 </body>
