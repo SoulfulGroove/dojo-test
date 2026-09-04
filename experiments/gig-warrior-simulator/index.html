@@ -58,15 +58,16 @@
       box-shadow:0 -4px 18px rgba(0,0,0,.12);
       display:flex;flex-direction:column;
       transition:top .22s ease;
-      touch-action:none;
+      touch-action:pan-y;
+      overscroll-behavior:contain;
     }
     .sheet.collapsed{top:78vh}
     .sheet.expanded{top:7vh}
-    .grab-area{padding:12px 0 6px;text-align:center;cursor:grab}
-    .grab{width:44px;height:5px;background:#b8bdc6;border-radius:99px;margin:auto}
-    .offer-head{display:flex;justify-content:flex-end;align-items:center;padding:12px 18px 14px;border-bottom:1px solid var(--line);font-size:16px;gap:8px}
+    .grab-area{min-height:48px;padding:18px 0 13px;text-align:center;cursor:grab;touch-action:none}
+    .grab{width:52px;height:5px;background:#b8bdc6;border-radius:99px;margin:auto}
+    .offer-head{display:flex;justify-content:flex-end;align-items:center;padding:10px 18px 14px;border-bottom:1px solid var(--line);font-size:16px;gap:8px;touch-action:pan-y}
     .time-pill{border:1px solid #b8bec7;border-radius:999px;padding:7px 11px;background:#fff}
-    .cards{overflow:auto;padding:12px 14px 28px;touch-action:pan-y}
+    .cards{overflow:auto;-webkit-overflow-scrolling:touch;padding:12px 14px 28px;touch-action:pan-y;overscroll-behavior:contain}
     .card{background:var(--card);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:16px;margin-bottom:14px}
     .pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .pay{font-size:31px;font-weight:800;letter-spacing:-.03em}.estimate{font-size:16px;font-weight:500;color:var(--muted)}
@@ -111,7 +112,7 @@
     <section id="sheet" class="sheet" aria-label="Offer tray">
       <div id="grabArea" class="grab-area" aria-label="Drag offer tray"><div class="grab"></div></div>
       <div class="offer-head">Get offers until <span class="time-pill">1:30 PM</span></div>
-      <div class="cards">
+      <div id="cards" class="cards">
         <article class="card">
           <div class="pay-row"><div><span class="pay">$39.67</span> <span class="estimate">estimate</span></div><div class="chev">›</div></div>
           <div class="include">Total includes<br><span class="chip">$6.18 estimated tip</span><br><span class="chip">$4 incentive</span></div>
@@ -157,9 +158,12 @@
     (() => {
       const sheet = document.getElementById('sheet');
       const grabArea = document.getElementById('grabArea');
+      const cards = document.getElementById('cards');
       const toast = document.getElementById('toast');
       let startY = 0;
       let dragging = false;
+      let touchStartY = 0;
+      let touchStartedInButton = false;
 
       const showToast = (text) => {
         toast.textContent = text;
@@ -173,6 +177,7 @@
         if (state) sheet.classList.add(state);
       };
 
+      /* Larger dedicated grab zone for precise dragging */
       grabArea.addEventListener('pointerdown', (e) => {
         dragging = true;
         startY = e.clientY;
@@ -182,10 +187,38 @@
         if (!dragging) return;
         dragging = false;
         const delta = e.clientY - startY;
-        if (delta < -45) setState('expanded');
-        else if (delta > 45) setState('collapsed');
+        if (delta < -28) setState('expanded');
+        else if (delta > 28) setState('collapsed');
         else setState('');
       });
+
+      /* Broad swipe zone: almost the entire white offer sheet can promote/collapse it.
+         Once expanded, the offer list keeps normal native vertical scrolling. */
+      sheet.addEventListener('touchstart', (e) => {
+        if (!e.touches.length) return;
+        touchStartY = e.touches[0].clientY;
+        touchStartedInButton = !!e.target.closest('button');
+      }, {passive:true});
+
+      sheet.addEventListener('touchend', (e) => {
+        if (touchStartedInButton || !e.changedTouches.length) return;
+        const delta = e.changedTouches[0].clientY - touchStartY;
+        const threshold = 30;
+
+        if (delta < -threshold && !sheet.classList.contains('expanded')) {
+          setState('expanded');
+          return;
+        }
+
+        if (delta > threshold) {
+          if (sheet.classList.contains('expanded')) {
+            if (cards.scrollTop <= 2) setState('');
+          } else {
+            setState('collapsed');
+          }
+        }
+      }, {passive:true});
+
       grabArea.addEventListener('dblclick', () => {
         if (sheet.classList.contains('expanded')) setState('');
         else setState('expanded');
