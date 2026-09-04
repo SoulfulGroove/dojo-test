@@ -58,16 +58,16 @@
       box-shadow:0 -4px 18px rgba(0,0,0,.12);
       display:flex;flex-direction:column;
       transition:top .22s ease;
-      touch-action:pan-y;
       overscroll-behavior:contain;
     }
-    .sheet.collapsed{top:78vh}
-    .sheet.expanded{top:7vh}
-    .grab-area{min-height:48px;padding:18px 0 13px;text-align:center;cursor:grab;touch-action:none}
+    .grab-area{min-height:48px;padding:18px 0 13px;text-align:center;cursor:grab;touch-action:none;flex:0 0 auto}
+    .grab-area:active{cursor:grabbing}
     .grab{width:52px;height:5px;background:#b8bdc6;border-radius:99px;margin:auto}
-    .offer-head{display:flex;justify-content:flex-end;align-items:center;padding:10px 18px 14px;border-bottom:1px solid var(--line);font-size:16px;gap:8px;touch-action:pan-y}
+    .offer-head{display:flex;justify-content:flex-end;align-items:center;padding:10px 18px 14px;border-bottom:1px solid var(--line);font-size:16px;gap:8px;flex:0 0 auto}
     .time-pill{border:1px solid #b8bec7;border-radius:999px;padding:7px 11px;background:#fff}
-    .cards{overflow:auto;-webkit-overflow-scrolling:touch;padding:12px 14px 28px;touch-action:pan-y;overscroll-behavior:contain}
+    .cards{overflow:auto;-webkit-overflow-scrolling:touch;padding:12px 14px 28px;touch-action:pan-y;overscroll-behavior:contain;min-height:0;flex:1 1 auto}
+    .sheet.is-collapsed .offer-head,
+    .sheet.is-collapsed .cards{visibility:hidden;pointer-events:none}
     .card{background:var(--card);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);padding:16px;margin-bottom:14px}
     .pay-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .pay{font-size:31px;font-weight:800;letter-spacing:-.03em}.estimate{font-size:16px;font-weight:500;color:var(--muted)}
@@ -98,7 +98,7 @@
   </style>
 </head>
 <body>
-  <main class="phone" aria-label="Gig Warrior Simulator training shell">
+  <main id="phone" class="phone" aria-label="Gig Warrior Simulator training shell">
     <section class="map" aria-label="Static training map background">
       <div class="trainer-badge">GIG WARRIOR • TRAINING</div>
       <div class="road r1"></div><div class="road r2"></div><div class="road r3"></div><div class="road r4"></div>
@@ -156,14 +156,14 @@
 
   <script>
     (() => {
+      const phone = document.getElementById('phone');
       const sheet = document.getElementById('sheet');
       const grabArea = document.getElementById('grabArea');
-      const cards = document.getElementById('cards');
       const toast = document.getElementById('toast');
       let startY = 0;
+      let startTop = 0;
       let dragging = false;
-      let touchStartY = 0;
-      let touchStartedInButton = false;
+      let pointerId = null;
 
       const showToast = (text) => {
         toast.textContent = text;
@@ -172,56 +172,73 @@
         showToast.t = setTimeout(() => toast.classList.remove('show'), 900);
       };
 
-      const setState = (state) => {
-        sheet.classList.remove('collapsed','expanded');
-        if (state) sheet.classList.add(state);
+      const stops = () => {
+        const h = phone.clientHeight;
+        const nav = 86;
+        return {
+          expanded: Math.round(h * 0.07),
+          mid: Math.round(h * 0.29),
+          collapsed: Math.max(Math.round(h * 0.65), h - nav - 48)
+        };
       };
 
-      /* Larger dedicated grab zone for precise dragging */
+      const setSheetTop = (top, animate = true) => {
+        const s = stops();
+        const next = Math.max(s.expanded, Math.min(s.collapsed, top));
+        sheet.style.transition = animate ? 'top .22s ease' : 'none';
+        sheet.style.top = next + 'px';
+        sheet.classList.toggle('is-collapsed', next >= s.collapsed - 2);
+      };
+
+      const snapTarget = (current, delta) => {
+        const s = stops();
+        if (delta < -18) {
+          if (current > s.mid + 40) return s.mid;
+          return s.expanded;
+        }
+        if (delta > 18) {
+          if (current < s.mid - 40) return s.mid;
+          return s.collapsed;
+        }
+        return [s.expanded, s.mid, s.collapsed].reduce((best, candidate) =>
+          Math.abs(candidate - current) < Math.abs(best - current) ? candidate : best
+        );
+      };
+
+      setSheetTop(stops().mid, false);
+
       grabArea.addEventListener('pointerdown', (e) => {
         dragging = true;
+        pointerId = e.pointerId;
         startY = e.clientY;
-        grabArea.setPointerCapture(e.pointerId);
+        startTop = parseFloat(sheet.style.top) || stops().mid;
+        sheet.style.transition = 'none';
+        grabArea.setPointerCapture(pointerId);
       });
-      grabArea.addEventListener('pointerup', (e) => {
-        if (!dragging) return;
+
+      grabArea.addEventListener('pointermove', (e) => {
+        if (!dragging || e.pointerId !== pointerId) return;
+        setSheetTop(startTop + (e.clientY - startY), false);
+      });
+
+      const finishDrag = (e) => {
+        if (!dragging || e.pointerId !== pointerId) return;
         dragging = false;
         const delta = e.clientY - startY;
-        if (delta < -28) setState('expanded');
-        else if (delta > 28) setState('collapsed');
-        else setState('');
-      });
+        const current = parseFloat(sheet.style.top) || stops().mid;
+        setSheetTop(snapTarget(current, delta), true);
+      };
 
-      /* Broad swipe zone: almost the entire white offer sheet can promote/collapse it.
-         Once expanded, the offer list keeps normal native vertical scrolling. */
-      sheet.addEventListener('touchstart', (e) => {
-        if (!e.touches.length) return;
-        touchStartY = e.touches[0].clientY;
-        touchStartedInButton = !!e.target.closest('button');
-      }, {passive:true});
+      grabArea.addEventListener('pointerup', finishDrag);
+      grabArea.addEventListener('pointercancel', finishDrag);
 
-      sheet.addEventListener('touchend', (e) => {
-        if (touchStartedInButton || !e.changedTouches.length) return;
-        const delta = e.changedTouches[0].clientY - touchStartY;
-        const threshold = 30;
-
-        if (delta < -threshold && !sheet.classList.contains('expanded')) {
-          setState('expanded');
-          return;
-        }
-
-        if (delta > threshold) {
-          if (sheet.classList.contains('expanded')) {
-            if (cards.scrollTop <= 2) setState('');
-          } else {
-            setState('collapsed');
-          }
-        }
-      }, {passive:true});
-
-      grabArea.addEventListener('dblclick', () => {
-        if (sheet.classList.contains('expanded')) setState('');
-        else setState('expanded');
+      window.addEventListener('resize', () => {
+        const current = parseFloat(sheet.style.top) || stops().mid;
+        const s = stops();
+        const nearest = [s.expanded, s.mid, s.collapsed].reduce((best, candidate) =>
+          Math.abs(candidate - current) < Math.abs(best - current) ? candidate : best
+        );
+        setSheetTop(nearest, false);
       });
 
       document.querySelectorAll('.accept').forEach(btn => btn.addEventListener('click', () => showToast('ACCEPTED • TRAINING')));
