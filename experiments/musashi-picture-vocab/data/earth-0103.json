@@ -1,0 +1,378 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "Koten V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "section_id": "0103",
+    "section_title": "兵法の道大工にたとへたる事",
+    "paragraph_ids": [
+      "P013"
+    ],
+    "text_excerpt": "大将は大工の統領として天下のかねを弁へ其国のかねを糾し其家のかねを知る事統領の道也 大工の統領は堂塔伽藍のすみかねを覚えくうでんろうかくのさしづを知り人々をつかひ家々を取立る事 大工の統領も武家の統領も同じ事也 家を立るに木配りをする事 直にして節もなく見つきのよきを表の柱とし少し節有り共直につよきをうちの柱としたとひかよわくとも節なき木の見ざまよきをば敷居 鴨居 戸 障子と夫々に遣ひ節有り共ゆがみたり共強き木をば其家の強み強みを見分て能吟味して遣ふに於ては其家久しくくづれがたし 又材木のうちにしても節多くゆがみて弱きをばあししろ共なし後には薪共なすべき也",
+    "alignment_note": "surface_form is an exact contiguous written form in V4 P013, except 道 which also appears in section heading; representative substring matching does not establish syntactic word boundaries"
+  },
+  "image_policy": "Locally stored WebP where available, otherwise openly labeled remote placeholder; replace later",
+  "entries": [
+    {
+      "id": "earth-0103-daiku",
+      "surface_form": "大工",
+      "kana": "だいく",
+      "romaji": "daiku",
+      "english_gloss": "carpenter",
+      "visual_concept": "Carpenter or builder",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/carpenter.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-ki",
+      "surface_form": "木",
+      "kana": "き",
+      "romaji": "ki",
+      "english_gloss": "wood / tree",
+      "visual_concept": "Wood, timber or tree",
+      "concept_families": [
+        "materials"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-hashira",
+      "surface_form": "柱",
+      "kana": "はしら",
+      "romaji": "hashira",
+      "english_gloss": "pillar / post",
+      "visual_concept": "Structural wooden post",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/pillar.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-ie",
+      "surface_form": "家",
+      "kana": "いえ",
+      "romaji": "ie",
+      "english_gloss": "house / home",
+      "visual_concept": "Dwelling or house",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/house.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-fushi",
+      "surface_form": "節",
+      "kana": "ふし",
+      "romaji": "fushi",
+      "english_gloss": "knot (in wood)",
+      "visual_concept": "Knot in timber grain",
+      "concept_families": [
+        "materials"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/knot.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-shoji",
+      "surface_form": "障子",
+      "kana": "しょうじ",
+      "romaji": "shōji",
+      "english_gloss": "shoji screen",
+      "visual_concept": "Translucent sliding screen",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/shoji.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-takigi",
+      "surface_form": "薪",
+      "kana": "たきぎ",
+      "romaji": "takigi",
+      "english_gloss": "firewood",
+      "visual_concept": "Wood for burning",
+      "concept_families": [
+        "materials"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/firewood.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-michi",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "way / path",
+      "visual_concept": "Way or path; from section heading and paragraph",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "original_generated",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-toryo",
+      "surface_form": "統領",
+      "kana": "とうりょう",
+      "romaji": "tōryō",
+      "english_gloss": "master builder / chief",
+      "visual_concept": "Foreman overseeing craftsmen",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=t%C5%8Dry%C5%8D",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-taisho",
+      "surface_form": "大将",
+      "kana": "たいしょう",
+      "romaji": "taishō",
+      "english_gloss": "commander / general",
+      "visual_concept": "Leader directing others",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=taish%C5%8D",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-kuni",
+      "surface_form": "国",
+      "kana": "くに",
+      "romaji": "kuni",
+      "english_gloss": "country / domain",
+      "visual_concept": "Domain or country",
+      "concept_families": [
+        "places"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kuni",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-hitobito",
+      "surface_form": "人々",
+      "kana": "ひとびと",
+      "romaji": "hitobito",
+      "english_gloss": "people",
+      "visual_concept": "A group of people",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=hitobito",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-shikii",
+      "surface_form": "敷居",
+      "kana": "しきい",
+      "romaji": "shikii",
+      "english_gloss": "door sill / threshold",
+      "visual_concept": "Lower sliding-door track",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=shikii",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-kamoi",
+      "surface_form": "鴨居",
+      "kana": "かもい",
+      "romaji": "kamoi",
+      "english_gloss": "upper door rail",
+      "visual_concept": "Upper track of sliding door",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kamoi",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-to",
+      "surface_form": "戸",
+      "kana": "と",
+      "romaji": "to",
+      "english_gloss": "door",
+      "visual_concept": "Traditional doorway or door",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=to",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-zaimoku",
+      "surface_form": "材木",
+      "kana": "ざいもく",
+      "romaji": "zaimoku",
+      "english_gloss": "timber / lumber",
+      "visual_concept": "Cut wood ready for building",
+      "concept_families": [
+        "materials"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=zaimoku",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-kidori",
+      "surface_form": "木配り",
+      "kana": "きくばり",
+      "romaji": "kikubari",
+      "english_gloss": "allocating timber",
+      "visual_concept": "Choosing/assigning timber for construction",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kikubari",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-buke",
+      "surface_form": "武家",
+      "kana": "ぶけ",
+      "romaji": "buke",
+      "english_gloss": "warrior household",
+      "visual_concept": "Household of warriors",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=buke",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-omote",
+      "surface_form": "表",
+      "kana": "おもて",
+      "romaji": "omote",
+      "english_gloss": "front / outer side",
+      "visual_concept": "Visible front side of structure",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=omote",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-tsuyoki",
+      "surface_form": "強き",
+      "kana": "つよき",
+      "romaji": "tsuyoki",
+      "english_gloss": "strong",
+      "visual_concept": "Strong timber; classical attributive form",
+      "concept_families": [
+        "qualities"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P013",
+      "source_match": true,
+      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=tsuyoki",
+      "image_status": "temporary_label",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
