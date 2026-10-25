@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111d26">
+<title>Hiragana Dojo · First Playable Rep</title>
+<meta name="description" content="A small playable Hiragana Dojo experiment: reconstruct a kana row, then retrieve each sound without hints.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Noto+Serif+JP:wght@400;600;700&display=swap');
+:root{--ink:#152431;--night:#101b24;--navy:#1e3240;--blue:#294557;--gold:#d8b77b;--paper:#f3eddc;--paper2:#e4d9c3;--muted:#aab6b8;--good:#68ab91;--bad:#bd7768;--line:rgba(219,191,137,.24)}
+*{box-sizing:border-box}html{font-size:16px}body{margin:0;color:var(--paper);background:radial-gradient(ellipse at 75% -15%,#38566a 0%,transparent 43%),linear-gradient(160deg,#101c26,#14232b 55%,#0d171f);min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.11;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(227,214,180,.09) 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(227,214,180,.06) 40px)}
+button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #edcc91;outline-offset:3px}
+a{color:var(--gold)}.wrap{width:min(1120px,calc(100% - 32px));margin:0 auto;position:relative}.top{border-bottom:1px solid var(--line);background:rgba(7,15,19,.3)}
+.topin{display:flex;gap:16px;justify-content:space-between;align-items:center;min-height:67px}.brand{font-family:Cinzel,Georgia,serif;font-weight:700;letter-spacing:.13em;font-size:clamp(.83rem,2vw,1.08rem)}.brand .mark{color:var(--gold);font-size:1.35rem;margin-right:10px}.topnote{color:var(--muted);font-size:.75rem;letter-spacing:.13em;text-transform:uppercase}
+.intro{padding:36px 0 25px}.eyebrow{color:var(--gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;font-weight:700}.intro h1{font-family:Cinzel,Georgia,serif;font-size:clamp(2rem,5vw,3.3rem);font-weight:600;line-height:1.2;margin:10px 0}.intro p{color:#c9d0ce;max-width:56ch;line-height:1.65;margin:0}
+.shell{display:grid;grid-template-columns:minmax(230px,285px) minmax(0,1fr);gap:18px;padding-bottom:55px}.sidebar,.workspace{border:1px solid var(--line);border-radius:15px;box-shadow:0 18px 45px #0003;overflow:hidden}
+.sidebar{align-self:start;background:rgba(9,19,25,.52);padding:23px}.sidebar h2{font-size:1.05rem;font-family:Cinzel,serif;margin:8px 0 11px}.smallcap{color:var(--gold);font-size:.69rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.sidecopy{font-size:.91rem;line-height:1.6;color:#c6d0cd;margin:0}.divider{height:1px;background:var(--line);margin:22px 0}
+.nextrep{border-left:3px solid var(--gold);padding:10px 0 10px 13px;color:var(--paper);font-weight:600;line-height:1.55;min-height:66px}.steps{display:grid;gap:11px;margin-top:13px}.step{display:flex;gap:10px;align-items:center;color:#aebcba;font-size:.87rem}.step span{border:1px solid #547083;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;font-size:.77rem}.step.active{color:#f2dbaf}.step.active span{border-color:var(--gold);color:var(--gold)}.step.done span{color:#b9f2d5;border-color:#68ab91}.xp{margin-top:18px;display:flex;align-items:baseline;gap:10px}.xp strong{font:700 1.7rem Cinzel,serif;color:var(--gold)}.xp span{color:var(--muted);font-size:.8rem}
+.workspace{background:var(--paper);color:var(--ink)}.workhead{background:#e4dac5;padding:17px 22px;display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid #d2c29f}.workhead strong{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.03em}.phase{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#526677}
+.workbody{padding:clamp(18px,4vw,34px)}.prompt{text-align:center;margin:8px auto 20px;max-width:56ch}.prompt h2{font:600 clamp(1.55rem,3.2vw,2.3rem) Georgia,serif;margin:8px 0}.prompt p{line-height:1.58;color:#53616a;font-size:.97rem}.mini{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:#72818a;font-weight:750}
+.slots,.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(5px,1.2vw,12px);max-width:670px;margin:0 auto}
+.slots{margin-bottom:25px}.target,.tile{width:100%;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:background .16s,transform .16s,border-color .16s}
+.target{min-height:clamp(93px,11vw,122px);border:2px dashed #b5a78c;background:#f9f5eb}.target strong{font-size:clamp(.78rem,2.3vw,1.1rem);color:#556472}.target .symbol{font-family:'Noto Serif JP',serif;font-size:clamp(1.8rem,4.8vw,3rem);line-height:1.5;color:#183a44}
+.target.filled{border:2px solid #78a68c;background:#e9f0e7}.target.selected{border-color:#bb8a36}.tile{min-height:clamp(65px,9vw,88px);border:2px solid #ad946a;background:#e4d3b0;font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,4vw,2.6rem);color:#223944;box-shadow:inset 0 2px #fff8,0 4px 0 #c5b38e}.tile:hover:not(:disabled){transform:translateY(-2px)}.tile.selected{background:#f1c771;border-color:#986e31;box-shadow:0 0 0 3px #e6c77880}.tile.used{opacity:.28}.tray-label{max-width:670px;margin:0 auto 9px;color:#66747a;font-size:.77rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.message{max-width:670px;min-height:44px;margin:20px auto 0;line-height:1.4;text-align:center;font-weight:650;color:#34556b}.message.bad{color:#9a4a3e}.message.good{color:#2f7359}.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px}
+.primary,.secondary{border-radius:8px;padding:13px 20px;min-height:48px;font-weight:750}.primary{border:1px solid #153246;background:#244252;color:#fff5df}.primary:hover{background:#33566a}.secondary{background:transparent;border:1px solid #b7a68c;color:#31434d}.secondary:hover{background:#e4d8c5}
+.recallglyph{font-family:'Noto Serif JP',serif;font-size:clamp(6rem,18vw,10.5rem);line-height:1.4;text-align:center;margin:8px 0 10px}.entry{display:flex;justify-content:center;gap:9px;margin:12px auto;max-width:440px}.entry input{background:#fffefa;border:2px solid #b8a887;border-radius:9px;min-width:0;flex:1;padding:12px 15px;font-size:1.15rem;letter-spacing:.05em;color:#213943}.entry input:focus{border-color:#2b6278}.entry button{white-space:nowrap}.progress{display:flex;justify-content:center;gap:7px;margin:14px auto 0}.dot{height:9px;width:9px;border-radius:50%;background:#cfc2ab}.dot.on{background:#3c7f64}.dot.current{outline:2px solid #9b7d4a;outline-offset:2px}.score{font:700 clamp(2.2rem,7vw,4rem) Cinzel,serif;color:#275b56;text-align:center;margin:20px 0 3px}.summary{max-width:500px;margin:17px auto;background:#e8dec9;border-radius:10px;padding:16px 18px;line-height:1.8}
+.notes{border-top:1px solid #d1c19f;padding:16px 25px;background:#efe4cf;font-size:.89rem;color:#52616a}.notes summary{cursor:pointer;font-weight:700;color:#435562}.notes p{line-height:1.55;margin-bottom:0}.foot{font-size:.78rem;color:#98aab1;padding:4px 0 36px;line-height:1.6}
+@media(max-width:760px){.shell{grid-template-columns:1fr;gap:12px}.intro{padding:24px 0 19px}.sidebar{display:grid;grid-template-columns:1fr auto;align-items:start;gap:6px 15px;padding:15px 17px}.sidebar h2{margin:5px 0}.sidebar .sidecopy,.sidebar .divider,.sidebar .steps{display:none}.sidebar .smallcap{grid-column:1}.nextrep{grid-column:1;padding:5px 0 5px 10px;min-height:auto;font-size:.9rem}.xp{grid-column:2;grid-row:1/3;margin:0;align-self:center;display:block;text-align:right}.xp strong{display:block}.workspace{border-radius:12px}.workbody{padding:17px 12px 22px}.workhead{padding:13px 15px}.topin{min-height:57px}.topnote{font-size:.65rem}.prompt h2{font-size:1.68rem}.prompt{margin-bottom:17px}.target{min-height:94px}.tile{min-height:78px}.entry{padding:0 5px}.notes{padding:15px}}
+@media(max-width:390px){.wrap{width:calc(100% - 18px)}.brand{letter-spacing:.06em}.topnote{display:none}.slots,.tiles{gap:4px}.target{min-height:85px}.tile{min-height:67px}.target .symbol{font-size:2rem}.workbody{padding:16px 9px}.primary,.secondary{padding:11px 12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topin"><div class="brand"><span class="mark">◈</span>ADHD DOJO</div><div class="topnote">Japanese Training · Experimental Build 01</div></div></header>
+<div class="wrap">
+<section class="intro"><div class="eyebrow">Training ground / ひらがな</div><h1>Hiragana Dojo</h1><p>One quest. One next rep. Build the sound chart, then retrieve the answers without help. A first playable slice of the learning sequence, not a finished curriculum.</p></section>
+<div class="shell">
+<aside class="sidebar" aria-label="Quest status"><div class="smallcap">Active Quest</div><h2 id="questTitle">Rebuild the K-row</h2><p class="sidecopy">Reconstruct the scattered characters, then recall each sound from memory.</p><div class="divider"></div><div class="smallcap">Next Rep</div><div class="nextrep" id="nextRep">Choose a tile and place it under its sound.</div><div class="divider"></div><div class="steps"><div class="step active" id="stageRebuild"><span>1</span> Reconstruct the row</div><div class="step" id="stageRecall"><span>2</span> Retrieve sounds without choices</div></div><div class="xp"><strong id="xp">0</strong><span>session XP</span></div></aside>
+<main class="workspace" id="game" tabindex="-1"><div class="workhead"><strong id="sectionTitle">Scattered Tiles</strong><span class="phase" id="phaseTitle">Rep 1 / 2</span></div><div class="workbody" id="screen" aria-live="off"><p>Loading training data…</p></div><div class="notes"><details><summary>How this rep works · scoring and support</summary><p>Reconstruction trains recognition and chart organization; it is not the same as unaided recall. In the second rep, see a kana and type its sound without choices. An accurate first-try recall earns 10 session XP, a corrected response earns 2, and a revealed answer earns 0. Rebuilding a placement earns 2 only on the first attempt. XP is feedback for this run, not a mastery certification. No unreliable audio is presented.</p></details></div></main>
+</div>
+<div class="foot">Built from the existing ADHD Dojo quest / next-rep system and the documented base-hiragana learning experiment. Local progress is saved in this browser only. No login, analytics, or user account is required. <a href="https://theadhddojo.com/">The ADHD Dojo</a></div>
+</div>
+<script>
+'use strict';
+let model=null,state=null;
+const $=id=>document.getElementById(id);
+const storageKey='adhd-dojo-hiragana-k-row-v01';
+const shuffled=(a)=>{const v=[...a];for(let i=v.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[v[i],v[j]]=[v[j],v[i]]}return v};
+function fresh(){return {phase:'rebuild',selected:null,placed:{},misses:{},tiles:shuffled(model.row.items.map(x=>x.id)),xp:0,order:[],index:0,attempts:0,assisted:false,locked:false,feedback:'',results:[],rewarded:[],rebuildDone:false,summary:false}};
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(state))}catch(e){}}
+function restore(){try{const x=JSON.parse(localStorage.getItem(storageKey)||'null');if(x&&['rebuild','recall','done'].includes(x.phase)&&Array.isArray(x.tiles)&&typeof x.placed==='object'&&Number.isFinite(x.xp)){return {...fresh(),...x,selected:null}}}catch(e){}return fresh()}
+function item(id){return model.row.items.find(x=>x.id===id)}
+function countPlaced(){return Object.keys(state.placed).length}
+function setFeedback(t,type){state.feedback=t;state.feedbackType=type||''}
+function updateRail(){
+ $('xp').textContent=state.xp;
+ $('stageRebuild').className='step '+(state.phase==='rebuild'?'active':'done');
+ $('stageRecall').className='step '+(state.phase==='recall'?'active':state.phase==='done'?'done':'');
+ $('nextRep').textContent=state.phase==='rebuild'?'Select a kana tile, then place it under its sound.':state.phase==='recall'?'Look at the kana and type its sound from memory.':(state.results.some(x=>!x.firstTry)?'Repeat the difficult sounds.':'Choose another rep when ready.');
+ $('sectionTitle').textContent=state.phase==='rebuild'?'Scattered Tiles':state.phase==='recall'?'Memory Flash':'Rep Complete';
+ $('phaseTitle').textContent=state.phase==='rebuild'?'Rep 1 / 2':state.phase==='recall'?'Rep 2 / 2':'Training Report';
+}
+function draw(){
+ updateRail();
+ if(state.phase==='rebuild')drawRebuild();
+ else if(state.phase==='recall')drawRecall();
+ else drawEnd();
+}
+function drawRebuild(){
+ let done=countPlaced()===model.row.items.length;
+ let slots=model.row.items.map(x=>'<button type="button" class="target '+(state.placed[x.id]?'filled':'')+'" data-target="'+x.id+'" aria-label="Position '+x.romaji+(state.placed[x.id]?', filled':'')+'" '+(state.placed[x.id]?'disabled':'')+'><strong>'+x.romaji+'</strong><span class="symbol" lang="ja">'+(state.placed[x.id]?item(state.placed[x.id]).glyph:'·')+'</span></button>').join('');
+ let tiles=state.tiles.map(id=>{let x=item(id),used=Object.values(state.placed).includes(id);return '<button type="button" class="tile '+(used?'used':state.selected===id?'selected':'')+'" data-tile="'+id+'" '+(used?'disabled':'')+' aria-pressed="'+(state.selected===id)+'" aria-label="Kana '+x.glyph+'"><span lang="ja">'+x.glyph+'</span></button>'}).join('');
+ $('screen').innerHTML='<div class="prompt"><div class="mini">Quest 01 · sound and symbol</div><h2>Rebuild the K-row</h2><p>Match the scattered kana to their five sound positions. Select a tile, then a slot.</p></div><div class="slots" role="group" aria-label="K row positions">'+slots+'</div><div class="tray-label">Scattered characters · '+countPlaced()+' / 5 placed</div><div class="tiles" role="group" aria-label="Available kana tiles">'+tiles+'</div><div class="message '+(state.feedbackType||'')+'" role="status">'+(done?'Chart reconstructed. Ready for unaided sound recall.':state.feedback||'Choose any tile to start.')+'</div><div class="actions">'+(done?'<button class="primary" id="startRecall">Begin recall →</button>':'')+'<button class="secondary" id="resetAll">Start over</button></div>';
+ document.querySelectorAll('[data-tile]').forEach(b=>b.addEventListener('click',()=>{state.selected=b.dataset.tile;setFeedback('Tile selected. Now choose its position.');save();draw()}));
+ document.querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>place(b.dataset.target)));
+ const next=$('startRecall');if(next)next.addEventListener('click',()=>{state.phase='recall';state.order=shuffled(model.row.items.map(x=>x.id));state.index=0;state.attempts=0;state.assisted=false;state.locked=false;setFeedback('');save();draw();focusAnswer()});
+ $('resetAll').addEventListener('click',restart);
+}
+function place(target){
+ if(!state.selected||state.placed[target])return;
+ const id=state.selected;
+ if(id===target){
+  state.placed[target]=id;
+  if(!state.misses[target])state.xp+=model.scoring.reconstruction_first_try;
+  state.selected=null;
+  setFeedback('Correct placement.','good');
+ }else{
+  state.misses[target]=(state.misses[target]||0)+1;
+  setFeedback('That sound belongs to a different character. Try again.','bad');
+ }
+ save();draw();
+}
+function focusAnswer(){const el=$('answer');if(el)el.focus()}
+function drawRecall(){
+ const id=state.order[state.index],x=item(id);
+ if(!x){state.phase='done';save();return draw()}
+ $('screen').innerHTML='<div class="prompt"><div class="mini">Unaided recall · '+(state.index+1)+' / '+state.order.length+'</div><h2>What sound is this?</h2><p>Type the sound using romaji. No multiple-choice answers.</p></div><div class="recallglyph" lang="ja">'+x.glyph+'</div><form class="entry" id="recallForm" autocomplete="off"><label for="answer" class="mini" style="position:absolute;clip-path:inset(50%);height:1px;width:1px;overflow:hidden">Romaji reading</label><input id="answer" type="text" inputmode="text" enterkeyhint="done" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" maxlength="8" placeholder="Type the sound" '+(state.locked?'disabled':'')+'><button type="submit" class="primary" '+(state.locked?'disabled':'')+'>Check</button></form><div class="progress">'+state.order.map((n,i)=>'<span class="dot '+(i<state.index?'on':i===state.index?'current':'')+'"></span>').join('')+'</div><div class="message '+(state.feedbackType||'')+'" role="status">'+(state.feedback||'Retrieve it before checking.')+'</div><div class="actions">'+(state.locked?'<button class="primary" id="nextItem">'+(state.index===state.order.length-1?'Finish rep':'Next kana →')+'</button>':'<button class="secondary" id="reveal">Reveal answer (no recall XP)</button>')+'</div>';
+ $('recallForm').addEventListener('submit',e=>{e.preventDefault();checkAnswer()});
+ const rev=$('reveal');if(rev)rev.addEventListener('click',()=>resolve(false,true));
+ const next=$('nextItem');if(next)next.addEventListener('click',()=>{state.index++;state.attempts=0;state.assisted=false;state.locked=false;setFeedback('');if(state.index>=state.order.length)state.phase='done';save();draw();if(state.phase==='recall')focusAnswer()});
+}
+function checkAnswer(){
+ if(state.locked)return;
+ let id=state.order[state.index],x=item(id),value=$('answer').value.trim().toLowerCase().replace(/\s+/g,'');
+ if(!value){setFeedback('Type a sound before checking.','bad');draw();focusAnswer();return}
+ if(value===x.romaji){resolve(true,false)}
+ else{state.attempts++;setFeedback('Not quite. Try again, or reveal the answer.','bad');save();draw();focusAnswer()}
+}
+function resolve(correct,assisted){
+ const id=state.order[state.index],x=item(id);
+ const firstTry=correct&&state.attempts===0&&!state.assisted;
+ if(correct&&!state.rewarded.includes(id)){state.xp+=firstTry?model.scoring.recall_first_try:model.scoring.recall_corrected;state.rewarded.push(id)}
+ state.results.push({id,firstTry,correct,assisted:!!assisted,wrongTries:state.attempts});
+ state.locked=true;
+ setFeedback((assisted?'Answer revealed: ':firstTry?'First-try recall! ':'Correct after another attempt. ')+x.romaji+(firstTry?' · +10 XP':correct?' · +2 XP':' · 0 recall XP'),assisted?'': 'good');
+ save();draw();
+}
+function drawEnd(){
+ const got=state.results.filter(x=>x.firstTry).length;
+ const assisted=state.results.filter(x=>x.assisted).length;
+ const weak=state.results.filter(x=>!x.firstTry).map(x=>x.id);
+ $('screen').innerHTML='<div class="prompt"><div class="mini">Quest complete · reflection</div><h2>The K-row is assembled</h2><p>You performed chart reconstruction and a separate unaided-sound recall check. These results describe this run, not permanent mastery.</p></div><div class="score">'+got+' / '+state.results.length+'</div><div class="prompt"><p>First-try sound recalls</p></div><div class="summary"><strong>Session XP:</strong> '+state.xp+'<br><strong>First-try:</strong> '+got+'<br><strong>Assisted reveals:</strong> '+assisted+'<br><strong>Needs another rep:</strong> '+(weak.length?weak.map(x=>item(x).glyph).join(' · '):'No misses this run')+'</div><div class="actions">'+(weak.length?'<button class="primary" id="retryWeak">Next rep: revisit weak sounds</button>':'<button class="primary" id="repeatRecall">Repeat the recall round</button>')+'<button class="secondary" id="resetAll">Rebuild from start</button></div>';
+ const retry=$('retryWeak')||$('repeatRecall');
+ retry.addEventListener('click',()=>{state.phase='recall';state.order=shuffled(weak.length?weak:model.row.items.map(x=>x.id));state.index=0;state.attempts=0;state.assisted=false;state.locked=false;state.results=[];setFeedback('');save();draw();focusAnswer()});
+ $('resetAll').addEventListener('click',restart);
+}
+function restart(){state=fresh();save();draw()}
+async function load(){
+ try{
+  const r=await fetch('./data/kana.json',{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
+  model=await r.json();
+  if(!model.row||!Array.isArray(model.row.items)||model.row.items.length!==5||new Set(model.row.items.map(x=>x.id)).size!==5)throw Error('Invalid kana data');
+  state=restore();$('questTitle').textContent=model.quest.title;draw();
+ }catch(e){$('screen').innerHTML='<div class="prompt"><h2>Training data unavailable</h2><p>The kana JSON could not load. Open this page through GitHub Pages or a local web server. '+e.message+'</p></div>'}
+}
+load();
+</script>
+</body>
+</html>
