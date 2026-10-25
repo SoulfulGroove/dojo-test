@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "module": "Hiragana Dojo",
+  "quest": {
+    "id": "kana-k-foundation",
+    "title": "Rebuild the K-row",
+    "description": "Reconstruct the row, then retrieve every sound from memory.",
+    "skills": [
+      "kana-recognition",
+      "sound-recall"
+    ]
+  },
+  "row": {
+    "id": "k",
+    "title": "K-row",
+    "note": "Five sound–character relationships: ka, ki, ku, ke, ko.",
+    "items": [
+      {
+        "id": "ka",
+        "glyph": "か",
+        "romaji": "ka"
+      },
+      {
+        "id": "ki",
+        "glyph": "き",
+        "romaji": "ki"
+      },
+      {
+        "id": "ku",
+        "glyph": "く",
+        "romaji": "ku"
+      },
+      {
+        "id": "ke",
+        "glyph": "け",
+        "romaji": "ke"
+      },
+      {
+        "id": "ko",
+        "glyph": "こ",
+        "romaji": "ko"
+      }
+    ]
+  },
+  "scoring": {
+    "reconstruction_first_try": 2,
+    "recall_first_try": 10,
+    "recall_corrected": 2,
+    "assisted": 0,
+    "notes": "XP is session feedback only, not proof of mastery. First-try scores reward accurate unassisted responses."
+  },
+  "source_note": "Based on the user's October 2026 documented base-hiragana experiment: sound framework, scrambled-tile reconstruction, active retrieval and writing production. This prototype tests one row and two connected reps; handwritten production and delayed retention are not yet implemented."
+}
