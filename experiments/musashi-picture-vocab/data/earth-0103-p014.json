@@ -1,0 +1,287 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "Koten V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "section_id": "0103",
+    "section_title": "兵法の道大工にたとへたる事",
+    "paragraph_ids": [
+      "P014"
+    ],
+    "text_excerpt": "統領に於て大工を遣ふ事 其上中下を知り或はとこまはり或は戸 障子或は敷居 鴨居 天井以下夫々に遣ひてあしきは根太をはらせ猶悪きにはくさびをけづらせ人を見分て遣へば其はか行て手際よきもの也 果敢の行き手際よきを云ふ所 物毎をゆるさざる事 たいゆう知事 気の上中下を知る事 いさみを付ると云事 むたいを知るといふ事 箇様の事共統領の心持に有事也"
+  },
+  "entry_selection": "Written lexical chunks occurring in V4 P014. Repeat items from P013 deliberately retained in paragraph view; readings are tentative; some historical orthography is preserved.",
+  "entries": [
+    {
+      "id": "earth-0103-p014-toryo",
+      "surface_form": "統領",
+      "kana": "とうりょう",
+      "romaji": "tōryō",
+      "english_gloss": "master builder",
+      "visual_concept": "master builder",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-daiku",
+      "surface_form": "大工",
+      "kana": "だいく",
+      "romaji": "daiku",
+      "english_gloss": "carpenter",
+      "visual_concept": "carpenter",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "assets/carpenter.webp",
+      "image_status": "reused_local_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-to",
+      "surface_form": "戸",
+      "kana": "と",
+      "romaji": "to",
+      "english_gloss": "door",
+      "visual_concept": "door",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "assets/shoji.webp",
+      "image_status": "reused_local_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-shoji",
+      "surface_form": "障子",
+      "kana": "しょうじ",
+      "romaji": "shōji",
+      "english_gloss": "sliding paper screen",
+      "visual_concept": "sliding paper screen",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "assets/shoji.webp",
+      "image_status": "reused_local_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-shikii",
+      "surface_form": "敷居",
+      "kana": "しきい",
+      "romaji": "shikii",
+      "english_gloss": "door sill",
+      "visual_concept": "door sill",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "assets/shoji.webp",
+      "image_status": "reused_local_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-kamoi",
+      "surface_form": "鴨居",
+      "kana": "かもい",
+      "romaji": "kamoi",
+      "english_gloss": "upper sliding-door rail",
+      "visual_concept": "upper sliding-door rail",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "assets/shoji.webp",
+      "image_status": "reused_local_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-tenjo",
+      "surface_form": "天井",
+      "kana": "てんじょう",
+      "romaji": "tenjō",
+      "english_gloss": "ceiling",
+      "visual_concept": "ceiling",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20a%20traditional%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-neda",
+      "surface_form": "根太",
+      "kana": "ねだ",
+      "romaji": "neda",
+      "english_gloss": "floor joist",
+      "visual_concept": "floor joist",
+      "concept_families": [
+        "architecture"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Floor%20joist%20with%20mortise%20and%20tenon.jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-kusabi",
+      "surface_form": "くさび",
+      "kana": "くさび",
+      "romaji": "kusabi",
+      "english_gloss": "wooden wedge",
+      "visual_concept": "wooden wedge",
+      "concept_families": [
+        "tools"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Floor%20joist%20with%20mortise%20and%20tenon.jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-hito",
+      "surface_form": "人",
+      "kana": "ひと",
+      "romaji": "hito",
+      "english_gloss": "person",
+      "visual_concept": "person",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-tegiwa",
+      "surface_form": "手際",
+      "kana": "てぎわ",
+      "romaji": "tegiwa",
+      "english_gloss": "skillful handling",
+      "visual_concept": "skillful handling",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20A%20carpenter%20working%2C%20Japan.%20(10796473724).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-miwakete",
+      "surface_form": "見分て",
+      "kana": "みわけて",
+      "romaji": "miwakete",
+      "english_gloss": "distinguishing / sorting",
+      "visual_concept": "distinguishing / sorting",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stacks%20of%20timber.png?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-mono",
+      "surface_form": "物毎",
+      "kana": "ものごと",
+      "romaji": "monogoto",
+      "english_gloss": "every matter / thing",
+      "visual_concept": "every matter / thing",
+      "concept_families": [
+        "concepts"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stacks%20of%20timber.png?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-ki",
+      "surface_form": "気",
+      "kana": "き",
+      "romaji": "ki",
+      "english_gloss": "spirit / disposition",
+      "visual_concept": "spirit / disposition",
+      "concept_families": [
+        "concepts"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-0103-p014-kokoromochi",
+      "surface_form": "心持",
+      "kana": "こころもち",
+      "romaji": "kokoromochi",
+      "english_gloss": "attitude / disposition",
+      "visual_concept": "attitude / disposition",
+      "concept_families": [
+        "concepts"
+      ],
+      "scroll": "Earth",
+      "section_id": "0103",
+      "paragraph_id": "P014",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20A%20carpenter%20working%2C%20Japan.%20(10796473724).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
