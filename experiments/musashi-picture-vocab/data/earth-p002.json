@@ -1,0 +1,321 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "section_id": "0000",
+    "section_title": "序",
+    "paragraph_id": "P002",
+    "original_raw": "`三十を越えて跡をおもひ見るに兵法至極して勝つにはあらず `おのづから道の器用ありて天理を離れざるが故か `又は他流の兵法不足なる所にや `その後猶も深き道理を得んと朝鍛夕錬して見ればおのづから兵法の道にあふこと我五十歳のころなり `それより以来は尋ね入るべき道なくして光陰をおくる"
+  },
+  "selection": "Core kanji-bearing lexical chunks preserving V4 writing; abstract terms receive explicitly contextual temporary imagery; modern readings are provisional.",
+  "entries": [
+    {
+      "id": "earth-p002-001",
+      "surface_form": "三十",
+      "kana": "さんじゅう",
+      "romaji": "sanjū",
+      "english_gloss": "thirty",
+      "visual_concept": "thirty",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-002",
+      "surface_form": "跡",
+      "kana": "あと",
+      "romaji": "ato",
+      "english_gloss": "past / traces",
+      "visual_concept": "past / traces",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-003",
+      "surface_form": "兵法",
+      "kana": "ひょうほう",
+      "romaji": "hyōhō",
+      "english_gloss": "martial strategy",
+      "visual_concept": "martial strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-004",
+      "surface_form": "至極",
+      "kana": "しごく",
+      "romaji": "shigoku",
+      "english_gloss": "ultimate attainment",
+      "visual_concept": "ultimate attainment",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-005",
+      "surface_form": "勝つ",
+      "kana": "かつ",
+      "romaji": "katsu",
+      "english_gloss": "to win",
+      "visual_concept": "to win",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-006",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "way / path",
+      "visual_concept": "way / path",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-007",
+      "surface_form": "器用",
+      "kana": "きよう",
+      "romaji": "kiyō",
+      "english_gloss": "ability / aptitude",
+      "visual_concept": "ability / aptitude",
+      "concept_families": [
+        "qualities"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/carpenter.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-008",
+      "surface_form": "天理",
+      "kana": "てんり",
+      "romaji": "tenri",
+      "english_gloss": "heavenly principle",
+      "visual_concept": "heavenly principle",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-009",
+      "surface_form": "他流",
+      "kana": "たりゅう",
+      "romaji": "taryū",
+      "english_gloss": "other schools",
+      "visual_concept": "other schools",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-010",
+      "surface_form": "不足",
+      "kana": "ふそく",
+      "romaji": "fusoku",
+      "english_gloss": "insufficiency",
+      "visual_concept": "insufficiency",
+      "concept_families": [
+        "qualities"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/carpenter.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-011",
+      "surface_form": "所",
+      "kana": "ところ",
+      "romaji": "tokoro",
+      "english_gloss": "place / point",
+      "visual_concept": "place / point",
+      "concept_families": [
+        "concepts"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/house.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-012",
+      "surface_form": "道理",
+      "kana": "どうり",
+      "romaji": "dōri",
+      "english_gloss": "principle / reason",
+      "visual_concept": "principle / reason",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-013",
+      "surface_form": "朝鍛夕錬",
+      "kana": "ちょうたんせきれん",
+      "romaji": "chōtan sekiren",
+      "english_gloss": "morning and evening training",
+      "visual_concept": "morning and evening training",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/carpenter.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-014",
+      "surface_form": "我",
+      "kana": "われ",
+      "romaji": "ware",
+      "english_gloss": "I / myself",
+      "visual_concept": "I / myself",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-015",
+      "surface_form": "五十歳",
+      "kana": "ごじゅっさい",
+      "romaji": "gojussai",
+      "english_gloss": "fifty years old",
+      "visual_concept": "fifty years old",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-016",
+      "surface_form": "以来",
+      "kana": "いらい",
+      "romaji": "irai",
+      "english_gloss": "since then",
+      "visual_concept": "since then",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p002-017",
+      "surface_form": "光陰",
+      "kana": "こういん",
+      "romaji": "kōin",
+      "english_gloss": "passing time",
+      "visual_concept": "passing time",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P002",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "contextual_temporary",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
