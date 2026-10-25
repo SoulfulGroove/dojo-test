@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "Koten V4 Book of Five Rings Japanese Versions.txt",
+    "scroll_display": "Earth Scroll — opening preface",
+    "section_id": "0000",
+    "section_title": "序 (Preface)",
+    "paragraph_ids": [
+      "P000"
+    ],
+    "raw_text": "[P000] `兵法の道 `二天一流 `と号し数年鍛錬の事初て書物に書き顕はさんと思ふ",
+    "hierarchy_note": "V4 formally labels P000-P003 as separate Preface [0000] before Earth Scroll [0100]. Displayed with Earth opening per user preference, preserving canonical IDs."
+  },
+  "entry_selection": "First-pass kanji-bearing lexical chunks from P000, including inflected surface forms. Readings contextual working suggestions; exact V4 spelling preserved.",
+  "entries": [
+    {
+      "id": "earth-p000-hyh",
+      "surface_form": "兵法",
+      "kana": "ひょうほう",
+      "romaji": "hyōhō",
+      "english_gloss": "strategy / martial method",
+      "visual_concept": "strategy / martial method",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "reused_local",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-michi",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "way / path",
+      "visual_concept": "way / path",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "reused_local",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-nitenichiry",
+      "surface_form": "二天一流",
+      "kana": "にてんいちりゅう",
+      "romaji": "Niten Ichi-ryū",
+      "english_gloss": "Two Heavens as One school (name)",
+      "visual_concept": "Two Heavens as One school (name)",
+      "concept_families": [
+        "names"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Katana%20and%20shi%20ken.png?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-gshi",
+      "surface_form": "号し",
+      "kana": "ごうし",
+      "romaji": "gō shi",
+      "english_gloss": "to call / name oneself",
+      "visual_concept": "to call / name oneself",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-snen",
+      "surface_form": "数年",
+      "kana": "すうねん",
+      "romaji": "sūnen",
+      "english_gloss": "several years",
+      "visual_concept": "several years",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-tanren",
+      "surface_form": "鍛錬",
+      "kana": "たんれん",
+      "romaji": "tanren",
+      "english_gloss": "training / discipline",
+      "visual_concept": "training / discipline",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20A%20carpenter%20working%2C%20Japan.%20(10796473724).jpg?width=720",
+      "image_status": "remote_commons_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-koto",
+      "surface_form": "事",
+      "kana": "こと",
+      "romaji": "koto",
+      "english_gloss": "matter / thing",
+      "visual_concept": "matter / thing",
+      "concept_families": [
+        "concepts"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-hajimete",
+      "surface_form": "初て",
+      "kana": "はじめて",
+      "romaji": "hajimete",
+      "english_gloss": "for the first time",
+      "visual_concept": "for the first time",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-shomotsu",
+      "surface_form": "書物",
+      "kana": "しょもつ",
+      "romaji": "shomotsu",
+      "english_gloss": "book / written work",
+      "visual_concept": "book / written work",
+      "concept_families": [
+        "objects"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-kaki",
+      "surface_form": "書き",
+      "kana": "かき",
+      "romaji": "kaki",
+      "english_gloss": "writing (continuative form)",
+      "visual_concept": "writing (continuative form)",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-arawasa",
+      "surface_form": "顕はさ",
+      "kana": "あらわさ",
+      "romaji": "arawasa",
+      "english_gloss": "set forth / make manifest (inflected form)",
+      "visual_concept": "set forth / make manifest (inflected form)",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p000-omou",
+      "surface_form": "思ふ",
+      "kana": "おもう",
+      "romaji": "omou",
+      "english_gloss": "think / intend",
+      "visual_concept": "think / intend",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth (opening preface)",
+      "section_id": "0000",
+      "paragraph_id": "P000",
+      "source_match": true,
+      "image_url": null,
+      "image_status": "needs_picture",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
