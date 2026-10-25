@@ -1,0 +1,560 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "section_id": "0000",
+    "section_title": "序",
+    "paragraph_id": "P001",
+    "original_raw": "`時に寛永二十年十月上旬の頃九州肥後の地巌殿山に上り天を拝し観音を礼し仏前に向ひ生国播磨の武士新免武蔵藤原玄信年つもりて六十 `我若年のむかしより兵法の道に心をかけ十三歳にして初て勝負を為す `その相手新当流の有馬喜兵衛といふ `兵法者に打勝ち十六歳にして但馬国秋山といふ強力の兵法者に打ち勝ち二十一歳にして都に上り天下の兵法者に逢ひて数度の勝負を決すといへども勝利を得ずといふことなし `その後国々所々に至り諸流の兵法者に行逢ひ六十余度まで勝負すといへども一度もその利を失はず `その程年十三より二十八九までのことなり",
+    "editorial_marker": "Backticks retained verbatim in original_raw"
+  },
+  "selection": "First-pass core kanji-bearing chunks with concrete entities, named places, people and major battle vocabulary. Readings provisional, especially proper names. Wikimedia URLs are replaceable contextual imagery; availability and fitness not validated.",
+  "entries": [
+    {
+      "id": "earth-p001-001",
+      "surface_form": "寛永二十年",
+      "kana": "かんえいにじゅうねん",
+      "romaji": "Kan'ei nijūnen",
+      "english_gloss": "Kan'ei year twenty (1643)",
+      "concept_families": [
+        "time"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Calendar%20icon.svg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-002",
+      "surface_form": "十月",
+      "kana": "じゅうがつ",
+      "romaji": "jūgatsu",
+      "english_gloss": "October",
+      "concept_families": [
+        "time"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Calendar%20icon.svg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-003",
+      "surface_form": "上旬",
+      "kana": "じょうじゅん",
+      "romaji": "jōjun",
+      "english_gloss": "first third of a month",
+      "concept_families": [
+        "time"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Calendar%20icon.svg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-004",
+      "surface_form": "九州",
+      "kana": "きゅうしゅう",
+      "romaji": "Kyūshū",
+      "english_gloss": "Kyushu region",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-005",
+      "surface_form": "肥後",
+      "kana": "ひご",
+      "romaji": "Higo",
+      "english_gloss": "Higo province",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-006",
+      "surface_form": "地",
+      "kana": "ち",
+      "romaji": "chi",
+      "english_gloss": "land / ground",
+      "concept_families": [
+        "nature"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-007",
+      "surface_form": "巌殿山",
+      "kana": "いわとのやま",
+      "romaji": "Iwato no yama",
+      "english_gloss": "Mount Iwato (place name; reading to confirm)",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Fuji%20from%20Lake%20Kawaguchi.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "needs_verification"
+    },
+    {
+      "id": "earth-p001-008",
+      "surface_form": "天",
+      "kana": "てん",
+      "romaji": "ten",
+      "english_gloss": "heaven / sky",
+      "concept_families": [
+        "nature"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Blue%20sky.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-009",
+      "surface_form": "観音",
+      "kana": "かんのん",
+      "romaji": "Kannon",
+      "english_gloss": "Kannon, Buddhist bodhisattva",
+      "concept_families": [
+        "religion"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kannon%20Bosatsu.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-010",
+      "surface_form": "仏前",
+      "kana": "ぶつぜん",
+      "romaji": "butsuzen",
+      "english_gloss": "before the Buddha / Buddhist altar",
+      "concept_families": [
+        "religion"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20a%20traditional%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-011",
+      "surface_form": "生国",
+      "kana": "しょうごく",
+      "romaji": "shōgoku",
+      "english_gloss": "province of birth (reading to confirm)",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "needs_verification"
+    },
+    {
+      "id": "earth-p001-012",
+      "surface_form": "播磨",
+      "kana": "はりま",
+      "romaji": "Harima",
+      "english_gloss": "Harima province",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-013",
+      "surface_form": "武士",
+      "kana": "ぶし",
+      "romaji": "bushi",
+      "english_gloss": "warrior / samurai",
+      "concept_families": [
+        "people"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-014",
+      "surface_form": "新免武蔵藤原玄信",
+      "kana": "しんめんむさしふじわらのはるのぶ",
+      "romaji": "Shinmen Musashi Fujiwara no Harunobu",
+      "english_gloss": "Musashi's formal name (reading requires verification)",
+      "concept_families": [
+        "names"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "needs_verification"
+    },
+    {
+      "id": "earth-p001-015",
+      "surface_form": "若年",
+      "kana": "じゃくねん",
+      "romaji": "jakunen",
+      "english_gloss": "youth / early years",
+      "concept_families": [
+        "time"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-016",
+      "surface_form": "兵法",
+      "kana": "ひょうほう",
+      "romaji": "hyōhō",
+      "english_gloss": "martial strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-017",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "way / path",
+      "concept_families": [
+        "principles"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meadow%20Trail%20Wunderlich%20Park.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-018",
+      "surface_form": "心",
+      "kana": "こころ",
+      "romaji": "kokoro",
+      "english_gloss": "heart / mind",
+      "concept_families": [
+        "mind"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-019",
+      "surface_form": "十三歳",
+      "kana": "じゅうさんさい",
+      "romaji": "jūsansai",
+      "english_gloss": "thirteen years old",
+      "concept_families": [
+        "time"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-020",
+      "surface_form": "勝負",
+      "kana": "しょうぶ",
+      "romaji": "shōbu",
+      "english_gloss": "contest / match",
+      "concept_families": [
+        "combat"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-021",
+      "surface_form": "相手",
+      "kana": "あいて",
+      "romaji": "aite",
+      "english_gloss": "opponent",
+      "concept_families": [
+        "people"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-022",
+      "surface_form": "新当流",
+      "kana": "しんとうりゅう",
+      "romaji": "Shintō-ryū",
+      "english_gloss": "Shintō-ryū martial school",
+      "concept_families": [
+        "names"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-023",
+      "surface_form": "有馬喜兵衛",
+      "kana": "ありまきへえ",
+      "romaji": "Arima Kihei",
+      "english_gloss": "Arima Kihei, opponent",
+      "concept_families": [
+        "names"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-024",
+      "surface_form": "兵法者",
+      "kana": "ひょうほうしゃ",
+      "romaji": "hyōhōsha",
+      "english_gloss": "practitioner of martial strategy",
+      "concept_families": [
+        "people"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-025",
+      "surface_form": "但馬国",
+      "kana": "たじまのくに",
+      "romaji": "Tajima no kuni",
+      "english_gloss": "Tajima Province",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-026",
+      "surface_form": "秋山",
+      "kana": "あきやま",
+      "romaji": "Akiyama",
+      "english_gloss": "Akiyama, opponent",
+      "concept_families": [
+        "names"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-027",
+      "surface_form": "都",
+      "kana": "みやこ",
+      "romaji": "miyako",
+      "english_gloss": "capital / city",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyoto%20City%20Skyline.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-028",
+      "surface_form": "天下",
+      "kana": "てんか",
+      "romaji": "tenka",
+      "english_gloss": "realm / under heaven",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-029",
+      "surface_form": "諸流",
+      "kana": "しょりゅう",
+      "romaji": "shoryū",
+      "english_gloss": "various schools",
+      "concept_families": [
+        "principles"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-030",
+      "surface_form": "勝利",
+      "kana": "しょうり",
+      "romaji": "shōri",
+      "english_gloss": "victory",
+      "concept_families": [
+        "combat"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samurai%20with%20sword.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-031",
+      "surface_form": "国々",
+      "kana": "くにぐに",
+      "romaji": "kuniguni",
+      "english_gloss": "various countries / provinces",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p001-032",
+      "surface_form": "所々",
+      "kana": "ところどころ",
+      "romaji": "tokorodokoro",
+      "english_gloss": "various places",
+      "concept_families": [
+        "places"
+      ],
+      "paragraph_id": "P001",
+      "section_id": "0000",
+      "scroll": "Earth",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
