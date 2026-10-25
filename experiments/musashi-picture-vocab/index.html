@@ -15,29 +15,37 @@ const words=[
 {jp:'障子',kana:'しょうじ',roman:'shōji',gloss:'shoji screen',cue:'paper sliding screen or partition',img:'shoji'},
 {jp:'薪',kana:'たきぎ',roman:'takigi',gloss:'firewood',cue:'split wood for burning',img:'firewood'},
 {jp:'道',kana:'みち',roman:'michi',gloss:'way / path',cue:'path, road, way, course',img:'path'}];
-let activeUtterance=null,voiceCache=[];
-function refreshVoices(){if('speechSynthesis' in window)voiceCache=window.speechSynthesis.getVoices()||[];}
-if('speechSynthesis' in window){refreshVoices();window.speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);}
-function playJapanese(kana){
- if(!('speechSynthesis' in window)){status.textContent='Speech playback is not supported in this browser. Open the page in Safari or Chrome.';return;}
- const synth=window.speechSynthesis;refreshVoices();
- const japaneseVoice=voiceCache.find(v=>/^ja(?:-|$)/i.test(v.lang));
- // Some mobile browsers require the speech request inside the user's tap handler.
- try{
-  if(synth.speaking||synth.pending)synth.cancel();
-  const u=new SpeechSynthesisUtterance(kana);u.lang='ja-JP';u.rate=0.88;u.pitch=1;u.volume=1;
-  if(japaneseVoice)u.voice=japaneseVoice;
-  u.onstart=()=>{status.textContent='Playing: '+kana;};
-  u.onend=()=>{status.textContent='';activeUtterance=null;};
-  u.onerror=e=>{status.textContent='Audio could not play ('+(e.error||'voice error')+'). Try Safari with sound enabled, or install a Japanese voice in device settings.';activeUtterance=null;};
-  activeUtterance=u;
-  status.textContent=japaneseVoice?'Starting Japanese pronunciation…':'Starting pronunciation… If silent, check device volume and Japanese voice availability.';
-  synth.speak(u);
-  if(synth.paused)synth.resume();
- }catch(e){status.textContent='Audio unavailable on this browser. Try opening the site in Safari with sound enabled.';}
+let currentAudio=null, audioAttempt=0;
+function playJapanese(kana,kanji){
+  if(currentAudio){currentAudio.pause();currentAudio.removeAttribute('src');currentAudio.load();currentAudio=null;}
+  // Use streamed actual audio, not the browser's speechSynthesis (which can be silent on iOS).
+  const sources=[
+    'https://assets.languagepod101.com/dictionary/japanese/audiomp3.php?kanji='+encodeURIComponent(kanji)+'&kana='+encodeURIComponent(kana),
+    'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(kana)
+  ];
+  const token=++audioAttempt;
+  function trySource(i){
+    if(token!==audioAttempt)return;
+    if(i>=sources.length){status.textContent='Audio could not load from either pronunciation source. Please check your connection and try again.';return;}
+    const audio=new Audio();
+    audio.preload='auto';
+    audio.setAttribute('playsinline','');
+    audio.referrerPolicy='no-referrer';
+    currentAudio=audio;
+    let failed=false;
+    function next(){if(failed||token!==audioAttempt)return;failed=true;audio.pause();audio.removeAttribute('src');audio.load();trySource(i+1);}
+    audio.addEventListener('playing',()=>{if(token===audioAttempt)status.textContent='Pronouncing '+kana;});
+    audio.addEventListener('ended',()=>{if(token===audioAttempt)status.textContent='';});
+    audio.addEventListener('error',next);
+    audio.src=sources[i];
+    status.textContent='Loading pronunciation for '+kana+'…';
+    const p=audio.play();
+    if(p&&typeof p.catch==='function')p.catch(next);
+  }
+  trySource(0);
 }
 const grid=document.querySelector('#grid'),search=document.querySelector('#search'),status=document.querySelector('#status');
-function draw(){const q=search.value.toLocaleLowerCase().trim();let matches=words.filter(w=>[w.jp,w.kana,w.roman,w.gloss,w.cue].some(t=>t.toLowerCase().includes(q)));grid.innerHTML=matches.map((w)=>'<article class="card"><div class="illustration"><img class="pic" src="assets/'+w.img+'.webp" alt="Illustration: '+w.gloss+'"></div><div class="jp" lang="ja">'+w.jp+'</div><div class="kana" lang="ja">'+w.kana+'</div><div class="roman">'+w.roman+'</div><div class="gloss">'+w.gloss+'</div><div class="cue">'+w.cue+'</div><button class="play" data-kana="'+w.kana+'">▶ Play sound</button></article>').join('')||'<p class="empty">No vocabulary matches your search.</p>'}
-grid.addEventListener('click',event=>{const b=event.target.closest('button[data-kana]');if(b)playJapanese(b.dataset.kana);});
+function draw(){const q=search.value.toLocaleLowerCase().trim();let matches=words.filter(w=>[w.jp,w.kana,w.roman,w.gloss,w.cue].some(t=>t.toLowerCase().includes(q)));grid.innerHTML=matches.map((w)=>'<article class="card"><div class="illustration"><img class="pic" src="assets/'+w.img+'.webp" alt="Illustration: '+w.gloss+'"></div><div class="jp" lang="ja">'+w.jp+'</div><div class="kana" lang="ja">'+w.kana+'</div><div class="roman">'+w.roman+'</div><div class="gloss">'+w.gloss+'</div><div class="cue">'+w.cue+'</div><button class="play" data-kana="'+w.kana+'" data-kanji="'+w.jp+'">▶ Play sound</button></article>').join('')||'<p class="empty">No vocabulary matches your search.</p>'}
+grid.addEventListener('click',event=>{const b=event.target.closest('button[data-kana]');if(b)playJapanese(b.dataset.kana,b.dataset.kanji);});
 search.addEventListener('input',draw);draw();
 </script></body></html>
