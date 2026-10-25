@@ -1,0 +1,624 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "scroll_id": "0100",
+    "section_id": "0101",
+    "section_title": "一 序",
+    "paragraph_id": "P004",
+    "original_raw": "`夫兵法と云事武家の法也 `将たる者はとりわき此法を行なひ卒たる者も此道を知るべき事なり `今世の中に兵法の道慥に弁まへたるといふ武士なし `先道を顕して有は仏法として人をたすくる道 `又儒道として文の道を糾し医者といひて諸病を治する道 `或は歌道者とて和歌の道ををしへ或は数寄者 弓法者 其外諸芸諸能までも思ひ思ひに稽古しこころこころにすくものなり `兵法の道にはすく人まれ也"
+  },
+  "selection": "32 exact V4 surface-string matches. Historical written forms retained, conventional kana/romaji readings provisional. Local images are contextual placeholders pending representative illustrations.",
+  "entries": [
+    {
+      "id": "earth-p004-001",
+      "surface_form": "兵法",
+      "kana": "へいほう",
+      "romaji": "heihō",
+      "english_gloss": "military strategy",
+      "visual_concept": "military strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-002",
+      "surface_form": "武家",
+      "kana": "ぶけ",
+      "romaji": "buke",
+      "english_gloss": "warrior houses / military families",
+      "visual_concept": "warrior houses / military families",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-003",
+      "surface_form": "法",
+      "kana": "ほう",
+      "romaji": "hō",
+      "english_gloss": "method / law",
+      "visual_concept": "method / law",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-004",
+      "surface_form": "将たる者",
+      "kana": "しょうたるもの",
+      "romaji": "shō taru mono",
+      "english_gloss": "one who is a commander",
+      "visual_concept": "one who is a commander",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-005",
+      "surface_form": "此法",
+      "kana": "このほう",
+      "romaji": "kono hō",
+      "english_gloss": "this method",
+      "visual_concept": "this method",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-006",
+      "surface_form": "行なひ",
+      "kana": "おこない",
+      "romaji": "okonai",
+      "english_gloss": "putting into practice",
+      "visual_concept": "putting into practice",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-007",
+      "surface_form": "卒たる者",
+      "kana": "そつたるもの",
+      "romaji": "sotsu taru mono",
+      "english_gloss": "one who is a soldier",
+      "visual_concept": "one who is a soldier",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-008",
+      "surface_form": "此道",
+      "kana": "このみち",
+      "romaji": "kono michi",
+      "english_gloss": "this Way",
+      "visual_concept": "this Way",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-009",
+      "surface_form": "知るべき",
+      "kana": "しるべき",
+      "romaji": "shiru beki",
+      "english_gloss": "ought to know",
+      "visual_concept": "ought to know",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-010",
+      "surface_form": "世の中",
+      "kana": "よのなか",
+      "romaji": "yo no naka",
+      "english_gloss": "the world / society",
+      "visual_concept": "the world / society",
+      "concept_families": [
+        "places"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-011",
+      "surface_form": "兵法の道",
+      "kana": "へいほうのみち",
+      "romaji": "heihō no michi",
+      "english_gloss": "the Way of strategy",
+      "visual_concept": "the Way of strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-012",
+      "surface_form": "慥に弁まへたる",
+      "kana": "たしかにわきまえたる",
+      "romaji": "tashika ni wakimaetaru",
+      "english_gloss": "properly understood / discerned",
+      "visual_concept": "properly understood / discerned",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-013",
+      "surface_form": "武士",
+      "kana": "ぶし",
+      "romaji": "bushi",
+      "english_gloss": "warrior / samurai",
+      "visual_concept": "warrior / samurai",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-014",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "Way / path",
+      "visual_concept": "Way / path",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-015",
+      "surface_form": "仏法",
+      "kana": "ぶっぽう",
+      "romaji": "buppō",
+      "english_gloss": "Buddhist teachings",
+      "visual_concept": "Buddhist teachings",
+      "concept_families": [
+        "religion"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-016",
+      "surface_form": "人",
+      "kana": "ひと",
+      "romaji": "hito",
+      "english_gloss": "person / people",
+      "visual_concept": "person / people",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-017",
+      "surface_form": "たすくる",
+      "kana": "たすくる",
+      "romaji": "tasukuru",
+      "english_gloss": "to help / save",
+      "visual_concept": "to help / save",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-018",
+      "surface_form": "儒道",
+      "kana": "じゅどう",
+      "romaji": "judō",
+      "english_gloss": "Confucian Way",
+      "visual_concept": "Confucian Way",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-019",
+      "surface_form": "文の道",
+      "kana": "ぶんのみち",
+      "romaji": "bun no michi",
+      "english_gloss": "Way of letters / learning",
+      "visual_concept": "Way of letters / learning",
+      "concept_families": [
+        "language"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-020",
+      "surface_form": "糾し",
+      "kana": "ただし",
+      "romaji": "tadashi",
+      "english_gloss": "to correct / put in order",
+      "visual_concept": "to correct / put in order",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-021",
+      "surface_form": "医者",
+      "kana": "いしゃ",
+      "romaji": "isha",
+      "english_gloss": "physician",
+      "visual_concept": "physician",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-022",
+      "surface_form": "諸病",
+      "kana": "しょびょう",
+      "romaji": "shobyō",
+      "english_gloss": "various illnesses",
+      "visual_concept": "various illnesses",
+      "concept_families": [
+        "health"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-023",
+      "surface_form": "治する",
+      "kana": "じする",
+      "romaji": "jisuru",
+      "english_gloss": "to treat / cure",
+      "visual_concept": "to treat / cure",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-024",
+      "surface_form": "歌道者",
+      "kana": "かどうしゃ",
+      "romaji": "kadōsha",
+      "english_gloss": "practitioner of the poetic Way",
+      "visual_concept": "practitioner of the poetic Way",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-025",
+      "surface_form": "和歌",
+      "kana": "わか",
+      "romaji": "waka",
+      "english_gloss": "Japanese poetry",
+      "visual_concept": "Japanese poetry",
+      "concept_families": [
+        "language"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-026",
+      "surface_form": "数寄者",
+      "kana": "すきしゃ",
+      "romaji": "sukisha",
+      "english_gloss": "devotee of refined arts",
+      "visual_concept": "devotee of refined arts",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-027",
+      "surface_form": "弓法者",
+      "kana": "きゅうほうしゃ",
+      "romaji": "kyūhōsha",
+      "english_gloss": "practitioner of archery",
+      "visual_concept": "practitioner of archery",
+      "concept_families": [
+        "weapons"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-028",
+      "surface_form": "其外",
+      "kana": "そのほか",
+      "romaji": "sono hoka",
+      "english_gloss": "other things / besides",
+      "visual_concept": "other things / besides",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-029",
+      "surface_form": "諸芸諸能",
+      "kana": "しょげいしょのう",
+      "romaji": "shogei shonō",
+      "english_gloss": "various arts and skills",
+      "visual_concept": "various arts and skills",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-030",
+      "surface_form": "稽古し",
+      "kana": "けいこし",
+      "romaji": "keiko shi",
+      "english_gloss": "practice / train",
+      "visual_concept": "practice / train",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-031",
+      "surface_form": "兵法の道にはすく人",
+      "kana": "へいほうのみちにはすくひと",
+      "romaji": "heihō no michi ni wa suku hito",
+      "english_gloss": "person drawn to the Way of strategy",
+      "visual_concept": "person drawn to the Way of strategy",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p004-032",
+      "surface_form": "まれ",
+      "kana": "まれ",
+      "romaji": "mare",
+      "english_gloss": "rare",
+      "visual_concept": "rare",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0101",
+      "paragraph_id": "P004",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration; not an exact depiction",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
