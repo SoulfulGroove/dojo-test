@@ -1,0 +1,510 @@
+{
+  "schema_version": "0.1",
+  "source": {
+    "work": "Go Rin no Sho",
+    "edition": "V4 Book of Five Rings Japanese Versions.txt",
+    "scroll": "Earth",
+    "section_id": "0000",
+    "section_title": "序",
+    "paragraph_id": "P003",
+    "original_raw": "`兵法の利にまかせて諸芸諸能の道となせば万事に於て我に師匠なし `今この書を作るといへども仏法儒道の古語をもからず軍記軍法の古きことをも用ゐずこの一流の見立実の心をあらはすこと天道と観世音とを鏡として十月十日の夜寅の一点に筆を把りて書き初るものなり",
+    "organization_note": "Earth Scroll opening material by user organization; V4 section identifier [0000] retained."
+  },
+  "selection": "26 V4-matched lexical chunks; modern conventional readings provisional. Imagery contextual and replaceable; some Wikimedia URL filenames are unverified.",
+  "entries": [
+    {
+      "id": "earth-p003-001",
+      "surface_form": "兵法",
+      "kana": "ひょうほう",
+      "romaji": "hyōhō",
+      "english_gloss": "martial strategy",
+      "visual_concept": "martial strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-002",
+      "surface_form": "兵法の利",
+      "kana": "ひょうほうのり",
+      "romaji": "hyōhō no ri",
+      "english_gloss": "advantage of strategy",
+      "visual_concept": "advantage of strategy",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-003",
+      "surface_form": "諸芸諸能",
+      "kana": "しょげいしょのう",
+      "romaji": "shogei shonō",
+      "english_gloss": "various arts and skills",
+      "visual_concept": "various arts and skills",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-004",
+      "surface_form": "道",
+      "kana": "みち",
+      "romaji": "michi",
+      "english_gloss": "way / path",
+      "visual_concept": "way / path",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-005",
+      "surface_form": "万事",
+      "kana": "ばんじ",
+      "romaji": "banji",
+      "english_gloss": "all matters",
+      "visual_concept": "all matters",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-006",
+      "surface_form": "我",
+      "kana": "われ",
+      "romaji": "ware",
+      "english_gloss": "I / myself",
+      "visual_concept": "I / myself",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-007",
+      "surface_form": "師匠",
+      "kana": "ししょう",
+      "romaji": "shishō",
+      "english_gloss": "teacher / master",
+      "visual_concept": "teacher / master",
+      "concept_families": [
+        "people"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20calligraphy.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-008",
+      "surface_form": "今",
+      "kana": "いま",
+      "romaji": "ima",
+      "english_gloss": "now",
+      "visual_concept": "now",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-009",
+      "surface_form": "この書",
+      "kana": "このしょ",
+      "romaji": "kono sho",
+      "english_gloss": "this writing / book",
+      "visual_concept": "this writing / book",
+      "concept_families": [
+        "objects"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20book.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-010",
+      "surface_form": "作る",
+      "kana": "つくる",
+      "romaji": "tsukuru",
+      "english_gloss": "to compose / make",
+      "visual_concept": "to compose / make",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-011",
+      "surface_form": "仏法儒道",
+      "kana": "ぶっぽうじゅどう",
+      "romaji": "buppō judō",
+      "english_gloss": "Buddhist and Confucian teachings",
+      "visual_concept": "Buddhist and Confucian teachings",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-012",
+      "surface_form": "古語",
+      "kana": "こご",
+      "romaji": "kogo",
+      "english_gloss": "ancient sayings",
+      "visual_concept": "ancient sayings",
+      "concept_families": [
+        "language"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-013",
+      "surface_form": "軍記軍法",
+      "kana": "ぐんきぐんぽう",
+      "romaji": "gunki gunpō",
+      "english_gloss": "war chronicles and military methods",
+      "visual_concept": "war chronicles and military methods",
+      "concept_families": [
+        "weapons"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-014",
+      "surface_form": "古きこと",
+      "kana": "ふるきこと",
+      "romaji": "furuki koto",
+      "english_gloss": "things of old",
+      "visual_concept": "things of old",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-015",
+      "surface_form": "用ゐず",
+      "kana": "もちゐず",
+      "romaji": "mochīzu",
+      "english_gloss": "without using",
+      "visual_concept": "without using",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-016",
+      "surface_form": "一流",
+      "kana": "いちりゅう",
+      "romaji": "ichiryū",
+      "english_gloss": "one school / tradition",
+      "visual_concept": "one school / tradition",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-017",
+      "surface_form": "見立",
+      "kana": "みたて",
+      "romaji": "mitate",
+      "english_gloss": "view / discernment",
+      "visual_concept": "view / discernment",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-018",
+      "surface_form": "実の心",
+      "kana": "じつのこころ",
+      "romaji": "jitsu no kokoro",
+      "english_gloss": "true intention / real heart",
+      "visual_concept": "true intention / real heart",
+      "concept_families": [
+        "principles"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-019",
+      "surface_form": "天道",
+      "kana": "てんどう",
+      "romaji": "tendō",
+      "english_gloss": "way of heaven",
+      "visual_concept": "way of heaven",
+      "concept_families": [
+        "nature"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-020",
+      "surface_form": "観世音",
+      "kana": "かんぜおん",
+      "romaji": "Kanzeon",
+      "english_gloss": "Kannon, bodhisattva of compassion",
+      "visual_concept": "Kannon, bodhisattva of compassion",
+      "concept_families": [
+        "religion"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kannon%20Bosatsu.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-021",
+      "surface_form": "鏡",
+      "kana": "かがみ",
+      "romaji": "kagami",
+      "english_gloss": "mirror",
+      "visual_concept": "mirror",
+      "concept_families": [
+        "objects"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20mirror.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-022",
+      "surface_form": "十月十日",
+      "kana": "じゅうがつとおか",
+      "romaji": "jūgatsu tōka",
+      "english_gloss": "tenth day of the tenth month",
+      "visual_concept": "tenth day of the tenth month",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-023",
+      "surface_form": "夜",
+      "kana": "よる",
+      "romaji": "yoru",
+      "english_gloss": "night",
+      "visual_concept": "night",
+      "concept_families": [
+        "nature"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Full%20Moon%20Luc%20Viatour.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-024",
+      "surface_form": "寅の一点",
+      "kana": "とらのいってん",
+      "romaji": "tora no itten",
+      "english_gloss": "first point of the Tiger hour",
+      "visual_concept": "first point of the Tiger hour",
+      "concept_families": [
+        "time"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/path.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-025",
+      "surface_form": "筆",
+      "kana": "ふで",
+      "romaji": "fude",
+      "english_gloss": "writing brush",
+      "visual_concept": "writing brush",
+      "concept_families": [
+        "objects"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Calligraphy%20brush.jpg?width=720",
+      "image_status": "remote_commons_unverified_contextual",
+      "image_source": "Wikimedia Commons Special:FilePath (filename and depiction not independently verified)",
+      "reading_status": "provisional_contextual"
+    },
+    {
+      "id": "earth-p003-026",
+      "surface_form": "書き初る",
+      "kana": "かきはじむる",
+      "romaji": "kakihajimuru",
+      "english_gloss": "to begin writing",
+      "visual_concept": "to begin writing",
+      "concept_families": [
+        "actions"
+      ],
+      "scroll": "Earth",
+      "section_id": "0000",
+      "paragraph_id": "P003",
+      "source_match": true,
+      "image_url": "assets/wood.webp",
+      "image_status": "local_contextual_temporary",
+      "image_source": "Existing local application illustration",
+      "reading_status": "provisional_contextual"
+    }
+  ]
+}
