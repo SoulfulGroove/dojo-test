@@ -12,7 +12,7 @@
     "text_excerpt": "大将は大工の統領として天下のかねを弁へ其国のかねを糾し其家のかねを知る事統領の道也 大工の統領は堂塔伽藍のすみかねを覚えくうでんろうかくのさしづを知り人々をつかひ家々を取立る事 大工の統領も武家の統領も同じ事也 家を立るに木配りをする事 直にして節もなく見つきのよきを表の柱とし少し節有り共直につよきをうちの柱としたとひかよわくとも節なき木の見ざまよきをば敷居 鴨居 戸 障子と夫々に遣ひ節有り共ゆがみたり共強き木をば其家の強み強みを見分て能吟味して遣ふに於ては其家久しくくづれがたし 又材木のうちにしても節多くゆがみて弱きをばあししろ共なし後には薪共なすべき也",
     "alignment_note": "surface_form is an exact contiguous written form in V4 P013, except 道 which also appears in section heading; representative substring matching does not establish syntactic word boundaries"
   },
-  "image_policy": "Locally stored WebP where available, otherwise openly labeled remote placeholder; replace later",
+  "image_policy": "Local generated WebPs preserved for original eight; additional cards use hotlinked Wikimedia Commons contextual photography with source URLs recorded. Several illustrations are conceptual stand-ins, not exact anatomical/architectural depictions.",
   "entries": [
     {
       "id": "earth-0103-daiku",
@@ -172,9 +172,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=t%C5%8Dry%C5%8D",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg",
+      "image_context_note": "Historical carpenter team (leader depicted by context)"
     },
     {
       "id": "earth-0103-taisho",
@@ -190,9 +192,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=taish%C5%8D",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MET%20DP135873.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:MET%20DP135873.jpg",
+      "image_context_note": "Historic warrior/leader figure; metaphorical"
     },
     {
       "id": "earth-0103-kuni",
@@ -208,9 +212,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kuni",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Provinces%20of%20Japan.svg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Provinces%20of%20Japan.svg",
+      "image_context_note": "Map showing former Japanese provinces"
     },
     {
       "id": "earth-0103-hitobito",
@@ -226,9 +232,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=hitobito",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Japanese%20workmen%20Carpenters%20working%2C%20Japan.%20(10796585943).jpg",
+      "image_context_note": "Group of people at work"
     },
     {
       "id": "earth-0103-shikii",
@@ -244,9 +252,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=shikii",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20a%20traditional%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Interior%20of%20a%20traditional%20Japanese%20house.jpg",
+      "image_context_note": "Traditional doorway interior; lower rail not isolated"
     },
     {
       "id": "earth-0103-kamoi",
@@ -262,9 +272,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kamoi",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20a%20traditional%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Interior%20of%20a%20traditional%20Japanese%20house.jpg",
+      "image_context_note": "Traditional doorway interior; upper rail not isolated"
     },
     {
       "id": "earth-0103-to",
@@ -280,9 +292,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=to",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20of%20a%20traditional%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Interior%20of%20a%20traditional%20Japanese%20house.jpg",
+      "image_context_note": "Traditional Japanese doorway"
     },
     {
       "id": "earth-0103-zaimoku",
@@ -298,9 +312,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=zaimoku",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stacks%20of%20timber.png?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Stacks%20of%20timber.png",
+      "image_context_note": "Stacks of cut timber"
     },
     {
       "id": "earth-0103-kidori",
@@ -316,9 +332,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=kikubari",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Japan%2C%20building%20classic%20Japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Japan%2C%20building%20classic%20Japanese%20house.jpg",
+      "image_context_note": "Construction scene showing timber selection context"
     },
     {
       "id": "earth-0103-buke",
@@ -334,9 +352,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=buke",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Traditional%20japanese%20house.jpg",
+      "image_context_note": "Traditional house as contextual stand-in for warrior household"
     },
     {
       "id": "earth-0103-omote",
@@ -352,9 +372,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=omote",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20japanese%20house.jpg?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Traditional%20japanese%20house.jpg",
+      "image_context_note": "Visible front of house"
     },
     {
       "id": "earth-0103-tsuyoki",
@@ -370,9 +392,11 @@
       "section_id": "0103",
       "paragraph_id": "P013",
       "source_match": true,
-      "image_url": "https://placehold.co/640x480/f0ede6/52667d.png?text=tsuyoki",
-      "image_status": "temporary_label",
-      "reading_status": "provisional_contextual"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stacks%20of%20timber.png?width=720",
+      "image_status": "remote_commons",
+      "reading_status": "provisional_contextual",
+      "image_credit_url": "https://commons.wikimedia.org/wiki/File:Stacks%20of%20timber.png",
+      "image_context_note": "Sturdy timber as a metaphor for strength"
     }
   ]
 }
