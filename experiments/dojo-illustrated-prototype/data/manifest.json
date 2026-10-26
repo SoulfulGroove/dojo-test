@@ -1,0 +1,585 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "mockup-derived-production-art",
+  "title": "Dojo Illustrated UI Prototype v0.1",
+  "art_source": "User-approved original concept mockups created in conversation",
+  "assets": [
+    {
+      "id": "shared-header",
+      "path": "assets/shared-header.webp",
+      "source": "hall",
+      "region": [
+        0,
+        0,
+        941,
+        122
+      ],
+      "purpose": "Branded top header, demonstration-only statistics",
+      "width": 941,
+      "height": 122,
+      "bytes": 20698,
+      "derivative": true
+    },
+    {
+      "id": "hall-environment",
+      "path": "assets/hall-environment.webp",
+      "source": "hall",
+      "region": [
+        0,
+        120,
+        941,
+        555
+      ],
+      "purpose": "Moonlit Dojo hero illustration",
+      "width": 941,
+      "height": 435,
+      "bytes": 110160,
+      "derivative": true
+    },
+    {
+      "id": "hall-training",
+      "path": "assets/hall-training.webp",
+      "source": "hall",
+      "region": [
+        24,
+        550,
+        910,
+        916
+      ],
+      "purpose": "Framed illustrated featured training card",
+      "width": 886,
+      "height": 366,
+      "bytes": 66536,
+      "derivative": true
+    },
+    {
+      "id": "hall-quest",
+      "path": "assets/hall-quest.webp",
+      "source": "hall",
+      "region": [
+        24,
+        920,
+        909,
+        1129
+      ],
+      "purpose": "Framed current quest progress illustration",
+      "width": 885,
+      "height": 209,
+      "bytes": 32698,
+      "derivative": true
+    },
+    {
+      "id": "hall-profile",
+      "path": "assets/hall-profile.webp",
+      "source": "hall",
+      "region": [
+        23,
+        1320,
+        911,
+        1489
+      ],
+      "purpose": "Character HUD artwork (demo values)",
+      "width": 888,
+      "height": 169,
+      "bytes": 25414,
+      "derivative": true
+    },
+    {
+      "id": "tile-skills",
+      "path": "assets/tile-skills.webp",
+      "source": "hall",
+      "region": [
+        26,
+        1133,
+        244,
+        1308
+      ],
+      "purpose": "Reusable quick-navigation card",
+      "width": 218,
+      "height": 175,
+      "bytes": 11614,
+      "derivative": true
+    },
+    {
+      "id": "tile-quests",
+      "path": "assets/tile-quests.webp",
+      "source": "hall",
+      "region": [
+        244,
+        1133,
+        461,
+        1308
+      ],
+      "purpose": "Reusable quick-navigation card",
+      "width": 217,
+      "height": 175,
+      "bytes": 9898,
+      "derivative": true
+    },
+    {
+      "id": "tile-codex",
+      "path": "assets/tile-codex.webp",
+      "source": "hall",
+      "region": [
+        462,
+        1133,
+        680,
+        1308
+      ],
+      "purpose": "Reusable quick-navigation card",
+      "width": 218,
+      "height": 175,
+      "bytes": 10342,
+      "derivative": true
+    },
+    {
+      "id": "tile-map",
+      "path": "assets/tile-map.webp",
+      "source": "hall",
+      "region": [
+        682,
+        1133,
+        908,
+        1308
+      ],
+      "purpose": "Reusable quick-navigation card",
+      "width": 226,
+      "height": 175,
+      "bytes": 10556,
+      "derivative": true
+    },
+    {
+      "id": "quest-header",
+      "path": "assets/quest-header.webp",
+      "source": "quests",
+      "region": [
+        0,
+        120,
+        941,
+        395
+      ],
+      "purpose": "Lanternlit quest courtyard banner and tabs",
+      "width": 941,
+      "height": 275,
+      "bytes": 53712,
+      "derivative": true
+    },
+    {
+      "id": "quest-feature",
+      "path": "assets/quest-feature.webp",
+      "source": "quests",
+      "region": [
+        24,
+        394,
+        909,
+        749
+      ],
+      "purpose": "Main quest illustrated card",
+      "width": 885,
+      "height": 355,
+      "bytes": 65224,
+      "derivative": true
+    },
+    {
+      "id": "quest-row-1",
+      "path": "assets/quest-row-1.webp",
+      "source": "quests",
+      "region": [
+        24,
+        757,
+        909,
+        939
+      ],
+      "purpose": "Individual illustrated quest-card art",
+      "width": 885,
+      "height": 182,
+      "bytes": 32546,
+      "derivative": true
+    },
+    {
+      "id": "quest-row-2",
+      "path": "assets/quest-row-2.webp",
+      "source": "quests",
+      "region": [
+        24,
+        949,
+        909,
+        1127
+      ],
+      "purpose": "Individual illustrated quest-card art",
+      "width": 885,
+      "height": 178,
+      "bytes": 32234,
+      "derivative": true
+    },
+    {
+      "id": "quest-row-3",
+      "path": "assets/quest-row-3.webp",
+      "source": "quests",
+      "region": [
+        24,
+        1134,
+        909,
+        1319
+      ],
+      "purpose": "Individual illustrated quest-card art",
+      "width": 885,
+      "height": 185,
+      "bytes": 31810,
+      "derivative": true
+    },
+    {
+      "id": "quest-row-4",
+      "path": "assets/quest-row-4.webp",
+      "source": "quests",
+      "region": [
+        24,
+        1326,
+        909,
+        1510
+      ],
+      "purpose": "Individual illustrated quest-card art",
+      "width": 885,
+      "height": 184,
+      "bytes": 33792,
+      "derivative": true
+    },
+    {
+      "id": "skills-header",
+      "path": "assets/skills-header.webp",
+      "source": "skills",
+      "region": [
+        0,
+        120,
+        941,
+        357
+      ],
+      "purpose": "Skills header scenic artwork",
+      "width": 941,
+      "height": 237,
+      "bytes": 54540,
+      "derivative": true
+    },
+    {
+      "id": "skills-scenery",
+      "path": "assets/skills-scenery.webp",
+      "source": "skills",
+      "region": [
+        0,
+        123,
+        941,
+        478
+      ],
+      "purpose": "Skill tree atmospheric landscape (used behind discrete node art)",
+      "width": 941,
+      "height": 355,
+      "bytes": 84046,
+      "derivative": true
+    },
+    {
+      "id": "skills-detail",
+      "path": "assets/skills-detail.webp",
+      "source": "skills",
+      "region": [
+        28,
+        1099,
+        915,
+        1461
+      ],
+      "purpose": "Selected skill detail panel original artwork (reference preview)",
+      "width": 887,
+      "height": 362,
+      "bytes": 57080,
+      "derivative": true
+    },
+    {
+      "id": "skill-sound",
+      "path": "assets/skill-sound.webp",
+      "source": "skills",
+      "region": [
+        393,
+        305,
+        545,
+        457
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 5790,
+      "derivative": true
+    },
+    {
+      "id": "skill-recall",
+      "path": "assets/skill-recall.webp",
+      "source": "skills",
+      "region": [
+        151,
+        467,
+        303,
+        619
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 6154,
+      "derivative": true
+    },
+    {
+      "id": "skill-recognition",
+      "path": "assets/skill-recognition.webp",
+      "source": "skills",
+      "region": [
+        628,
+        464,
+        780,
+        616
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 5394,
+      "derivative": true
+    },
+    {
+      "id": "skill-reading",
+      "path": "assets/skill-reading.webp",
+      "source": "skills",
+      "region": [
+        149,
+        723,
+        301,
+        875
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 5368,
+      "derivative": true
+    },
+    {
+      "id": "skill-pronunciation",
+      "path": "assets/skill-pronunciation.webp",
+      "source": "skills",
+      "region": [
+        632,
+        722,
+        784,
+        874
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 4880,
+      "derivative": true
+    },
+    {
+      "id": "skill-writing",
+      "path": "assets/skill-writing.webp",
+      "source": "skills",
+      "region": [
+        389,
+        857,
+        541,
+        1009
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 152,
+      "height": 152,
+      "bytes": 5194,
+      "derivative": true
+    },
+    {
+      "id": "skill-kana",
+      "path": "assets/skill-kana.webp",
+      "source": "skills",
+      "region": [
+        332,
+        545,
+        596,
+        809
+      ],
+      "purpose": "Separated circular skill node with illustrated icon",
+      "width": 264,
+      "height": 264,
+      "bytes": 15806,
+      "derivative": true
+    },
+    {
+      "id": "codex-header",
+      "path": "assets/codex-header.webp",
+      "source": "codex",
+      "region": [
+        0,
+        120,
+        941,
+        501
+      ],
+      "purpose": "Lanternlit archive with books",
+      "width": 941,
+      "height": 381,
+      "bytes": 69644,
+      "derivative": true
+    },
+    {
+      "id": "codex-spread",
+      "path": "assets/codex-spread.webp",
+      "source": "codex",
+      "region": [
+        18,
+        493,
+        927,
+        1321
+      ],
+      "purpose": "Illustrated open K-row codex pages",
+      "width": 909,
+      "height": 828,
+      "bytes": 160990,
+      "derivative": true
+    },
+    {
+      "id": "codex-next",
+      "path": "assets/codex-next.webp",
+      "source": "codex",
+      "region": [
+        26,
+        1321,
+        917,
+        1499
+      ],
+      "purpose": "Illustrated codex next-chapter card",
+      "width": 891,
+      "height": 178,
+      "bytes": 26738,
+      "derivative": true
+    },
+    {
+      "id": "nav-dojo",
+      "path": "assets/nav-dojo.webp",
+      "source": "hall",
+      "region": [
+        77,
+        1520,
+        149,
+        1592
+      ],
+      "purpose": "Painted menu icon",
+      "width": 72,
+      "height": 72,
+      "bytes": 1064,
+      "derivative": true
+    },
+    {
+      "id": "nav-quests",
+      "path": "assets/nav-quests.webp",
+      "source": "hall",
+      "region": [
+        262,
+        1520,
+        334,
+        1592
+      ],
+      "purpose": "Painted menu icon",
+      "width": 72,
+      "height": 72,
+      "bytes": 1054,
+      "derivative": true
+    },
+    {
+      "id": "nav-skills",
+      "path": "assets/nav-skills.webp",
+      "source": "hall",
+      "region": [
+        431,
+        1520,
+        503,
+        1592
+      ],
+      "purpose": "Painted menu icon",
+      "width": 72,
+      "height": 72,
+      "bytes": 898,
+      "derivative": true
+    },
+    {
+      "id": "nav-codex",
+      "path": "assets/nav-codex.webp",
+      "source": "hall",
+      "region": [
+        605,
+        1520,
+        677,
+        1592
+      ],
+      "purpose": "Painted menu icon",
+      "width": 72,
+      "height": 72,
+      "bytes": 964,
+      "derivative": true
+    },
+    {
+      "id": "nav-map",
+      "path": "assets/nav-map.webp",
+      "source": "hall",
+      "region": [
+        784,
+        1520,
+        856,
+        1592
+      ],
+      "purpose": "Painted menu icon",
+      "width": 72,
+      "height": 72,
+      "bytes": 918,
+      "derivative": true
+    },
+    {
+      "id": "paper-texture",
+      "path": "assets/paper-texture.webp",
+      "source": "codex",
+      "region": [
+        140,
+        748,
+        340,
+        876
+      ],
+      "purpose": "Small washi texture tile",
+      "width": 200,
+      "height": 128,
+      "bytes": 6764,
+      "derivative": true
+    },
+    {
+      "id": "button-gold",
+      "path": "assets/button-gold.webp",
+      "source": "hall",
+      "region": [
+        87,
+        774,
+        606,
+        870
+      ],
+      "purpose": "Gold ornate CTA artwork for a live button",
+      "width": 519,
+      "height": 96,
+      "bytes": 11990,
+      "derivative": true
+    },
+    {
+      "id": "world-thumbnail",
+      "path": "assets/world-thumbnail.webp",
+      "source": "map",
+      "region": [
+        0,
+        64,
+        500,
+        525
+      ],
+      "purpose": "Illustrated Japan atlas thumbnail; separate world app opens on tap",
+      "width": 500,
+      "height": 461,
+      "bytes": 66198,
+      "derivative": true
+    }
+  ],
+  "note": "Decorative art is rasterized; menu navigation, selection, and interactive states are live controls. Embedded text and fake XP in concept art are not canonical app data."
+}

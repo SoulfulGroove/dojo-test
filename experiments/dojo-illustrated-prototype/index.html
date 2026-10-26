@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="theme-color" content="#061321"/>
+  <meta name="description" content="Interactive illustrated ADHD Dojo RPG prototype. Real image assets, live mobile navigation, skill selection, codex and existing practice games."/>
+  <title>ADHD Dojo — Illustrated UI Lab</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<div class="game" id="game">
+  <header class="topbar">
+    <img src="assets/shared-header.webp" alt="ADHD Dojo Japanese Learning RPG" width="941" height="122"/>
+    <button class="header-profile" aria-label="Open demo profile details" data-action="profile"></button>
+  </header>
+  <div class="prototype-label" role="note">INTERACTIVE ART PROTOTYPE <span aria-hidden="true">✦</span> SAMPLE XP AND LEVELS IN ART</div>
+  <main id="content" tabindex="-1" aria-live="off">
+    <section class="page is-active" id="page-hall" aria-labelledby="hallTitle">
+      <h1 id="hallTitle" class="sr-only">The Dojo Hall</h1>
+      <img class="wide-image hero-img" src="assets/hall-environment.webp" width="941" height="435" alt="Moonlit Japanese dojo with glowing lanterns, a stone path, sakura trees and mountain scenery"/>
+      <div class="art-panel interaction-art featured-art">
+        <img src="assets/hall-training.webp" alt="Decorated washi-paper card for Hiragana K-row practice, with illustrated kana tiles and a gold Start Training button"/>
+        <button class="art-hit training-hit" data-action="trainer" aria-label="Start Hiragana K-row training"><span class="sr-only">Start training</span></button>
+      </div>
+      <div class="art-panel interaction-art quest-art">
+        <img src="assets/hall-quest.webp" alt="Decorative current quest panel; sample progress 3 of 5 with golden experience reward"/>
+        <button class="art-hit" data-page="quests" aria-label="Open quest log"></button>
+      </div>
+      <div class="quick-tiles" aria-label="Explore the Dojo">
+        <button data-page="skills"><img src="assets/tile-skills.webp" alt="Skills — sword and scroll artwork"/></button>
+        <button data-page="quests"><img src="assets/tile-quests.webp" alt="Quests — Japanese study papers"/></button>
+        <button data-page="codex"><img src="assets/tile-codex.webp" alt="Codex — illustrated Japanese manuscript"/></button>
+        <button data-page="map"><img src="assets/tile-map.webp" alt="Map — illustrated temple gate"/></button>
+      </div>
+      <div class="art-panel interaction-art profile-art"><img src="assets/hall-profile.webp" alt="Decorative fox character preview and sample XP display"/><button class="art-hit" data-action="profile" aria-label="Inspect prototype character status"></button></div>
+      <p class="caption-note">This is a visual and interaction prototype. The artwork's levels, rewards and progress bars are sample values, not a live assessment.</p>
+    </section>
+
+    <section class="page" id="page-quests" aria-labelledby="questsTitle" hidden>
+      <h1 id="questsTitle" class="sr-only">Quest Log</h1>
+      <div class="quest-hero"><img class="wide-image" src="assets/quest-header.webp" alt="RPG quest courtyard, with lanterns and a torii under moonlight"/>
+        <div class="quest-filters" role="tablist" aria-label="Quest views">
+          <button role="tab" aria-selected="true" class="selected" data-questfilter="active">Active</button>
+          <button role="tab" aria-selected="false" data-questfilter="archive">Archive</button>
+          <button role="tab" aria-selected="false" data-questfilter="milestones">Milestones</button>
+        </div>
+      </div>
+      <div id="questActive" class="quest-cards">
+        <div class="art-panel interaction-art main-quest-art">
+          <img src="assets/quest-feature.webp" alt="Beautiful illustrated Hiragana K-row main quest, sample progress and Continue button"/>
+          <button class="art-hit" data-action="trainer" aria-label="Continue K-row quest and launch training"></button>
+        </div>
+        <div class="section-bar"><h2>Field quests</h2><span>Choose a quest</span></div>
+        <div class="quest-rows">
+          <button data-quest="musashi"><img src="assets/quest-row-1.webp" alt="Read the Opening Passage — field quest"/></button>
+          <button data-quest="recall"><img src="assets/quest-row-2.webp" alt="Kana Recall Drill — practice quest"/></button>
+          <button data-quest="vocab"><img src="assets/quest-row-3.webp" alt="Build a Five-Word Vocabulary — sample field quest"/></button>
+          <button data-quest="syntax"><img src="assets/quest-row-4.webp" alt="Sentence Construction — planned challenge"/></button>
+        </div>
+      </div>
+      <div id="questArchive" class="journal-panel" hidden><div class="journal-symbol">巻</div><h2>Quest Archive</h2><p>Your completed real practice sessions will eventually appear here. The sample quest cards in this concept are not synced to a quest backend.</p><button class="gold-cta" data-page="skills">View learning milestones <span aria-hidden="true">→</span></button></div>
+      <div id="questMilestones" class="journal-panel" hidden><div class="journal-symbol">印</div><h2>Learning Milestones</h2><p><strong>46 / 46</strong> base hiragana written from memory on the documented next-day test.</p><p>The skill evidence is historical. The sample XP printed on the art is not verified user progress.</p><button class="gold-cta" data-page="skills">Explore skills <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section class="page" id="page-skills" aria-labelledby="skillsTitle" hidden>
+      <h1 id="skillsTitle" class="sr-only">Skill Tree</h1>
+      <img class="wide-image" src="assets/skills-header.webp" alt="Skills — Japanese nighttime temple garden and mountain scenery"/>
+      <div class="skill-board" aria-label="Selectable real learning skills">
+        <svg class="skill-lines" viewBox="0 0 360 440" preserveAspectRatio="none" aria-hidden="true">
+          <g fill="none" stroke="#e8b95e" stroke-width="1.5" opacity=".86">
+            <path d="M180 217 L180 65 M180 217 L71 156 M180 217 L289 156 M180 217 L71 297 M180 217 L289 297 M180 217 L180 391"/>
+            <path d="M180 65 Q50 55 71 156 M180 65 Q310 55 289 156 M71 156 Q15 240 71 297 M289 156 Q345 240 289 297 M71 297 Q65 390 180 391 M289 297 Q300 385 180 391" opacity=".6"/>
+          </g>
+          <g fill="#ffd68a"><circle cx="180" cy="65" r="3"/><circle cx="71" cy="156" r="3"/><circle cx="289" cy="156" r="3"/><circle cx="71" cy="297" r="3"/><circle cx="289" cy="297" r="3"/><circle cx="180" cy="391" r="3"/></g>
+        </svg>
+        <button class="skill-node node-sound" data-skill="sound"><img src="assets/skill-sound.webp" alt=""/><span>Sounds</span></button>
+        <button class="skill-node node-recall" data-skill="recall"><img src="assets/skill-recall.webp" alt=""/><span>Recall</span></button>
+        <button class="skill-node node-recognition" data-skill="recognition"><img src="assets/skill-recognition.webp" alt=""/><span>Recognition</span></button>
+        <button class="skill-node node-reading" data-skill="reading"><img src="assets/skill-reading.webp" alt=""/><span>Reading</span></button>
+        <button class="skill-node node-writing" data-skill="writing"><img src="assets/skill-writing.webp" alt=""/><span>Writing</span></button>
+        <button class="skill-node node-pronunciation" data-skill="reconstruction"><img src="assets/skill-pronunciation.webp" alt=""/><span>Rebuild</span></button>
+        <div class="skill-core" aria-hidden="true"><img src="assets/skill-kana.webp" alt=""/></div>
+      </div>
+      <div class="skill-detail" aria-live="polite">
+        <div class="skill-detail-top"><img id="selectedSkillIcon" src="assets/skill-sound.webp" alt=""/><div><span class="detail-label">SELECTED CAPABILITY</span><h2 id="selectedSkillTitle">Sound Structure</h2><span id="selectedSkillState" class="status-label">Historically demonstrated</span></div></div>
+        <p id="selectedSkillDescription">Select a glowing skill node to inspect its learning evidence.</p>
+        <div class="skill-evidence"><strong>Learning evidence</strong><p id="selectedSkillEvidence"></p></div>
+        <button id="selectedSkillAction" class="gold-cta" data-action="trainer">Open practice <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <section class="page" id="page-codex" aria-labelledby="codexTitle" hidden>
+      <h1 id="codexTitle" class="sr-only">Dojo Codex</h1>
+      <img class="wide-image" src="assets/codex-header.webp" alt="The Dojo Codex — illustrated night scene with stacks of decorated Japanese books"/>
+      <div class="codex-tabs" role="tablist" aria-label="Codex chapters">
+        <button role="tab" aria-selected="true" data-codextab="characters">Characters</button>
+        <button role="tab" aria-selected="false" data-codextab="vocab">Vocabulary</button>
+        <button role="tab" aria-selected="false" data-codextab="reading">Reading</button>
+      </div>
+      <div id="codexCharacters">
+        <div class="codex-book"><img src="assets/codex-spread.webp" alt="Beautifully painted open Japanese codex showing the hiragana K-row and word examples"/></div>
+        <div class="kana-practice" aria-labelledby="kanaTitle"><h2 id="kanaTitle">Hear the K-row</h2><p id="kanaReadout" role="status">Tap a character to hear its reading.</p><div class="kana-buttons"><button data-kana="か" data-sound="ka">か<span>ka</span></button><button data-kana="き" data-sound="ki">き<span>ki</span></button><button data-kana="く" data-sound="ku">く<span>ku</span></button><button data-kana="け" data-sound="ke">け<span>ke</span></button><button data-kana="こ" data-sound="ko">こ<span>ko</span></button></div></div>
+      </div>
+      <div id="codexVocab" class="journal-panel" hidden><div class="journal-symbol">言</div><h2>Vocabulary workshop</h2><p>Associate known hiragana with authentic vocabulary and later with kanji. This chapter is a small structural preview, not a filled dictionary.</p><button class="gold-cta" data-action="trainer">Practice kana <span aria-hidden="true">→</span></button></div>
+      <div id="codexReading" class="journal-panel" hidden><div class="journal-symbol">読</div><h2>Musashi Reader</h2><p>Take your existing kana knowledge into a passage from <em>Go Rin no Sho</em>, then inspect words and clause boundaries.</p><button class="gold-cta" data-action="reader">Open the reader <span aria-hidden="true">→</span></button></div>
+      <div class="art-panel codex-next" role="presentation"><img src="assets/codex-next.webp" alt="Decorative next-chapter card with parchment kana tiles"/></div>
+    </section>
+
+    <section class="page" id="page-map" aria-labelledby="mapTitle" hidden>
+      <h1 id="mapTitle">Japan Overworld</h1>
+      <p class="map-intro">A painted atlas of Japan, connected to the interactive world-map experiment.</p>
+      <div class="world-art"><img src="assets/world-thumbnail.webp" alt="Painted map of Japanese archipelago with snowy mountains and Japanese castle scenery"/></div>
+      <div class="journal-panel"><div class="journal-symbol">日</div><h2>Enter the Japan Map</h2><p>Explore Japan, zoom into Kyoto and enter the Practice Hall. The original world-map interaction is preserved in its own working experiment.</p><a class="gold-cta" href="../japan-overworld-lab/">Explore overworld <span aria-hidden="true">→</span></a></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Game navigation">
+    <button data-page="hall" class="active" aria-current="page"><img src="assets/nav-dojo.webp" alt=""/><span>Dojo</span></button>
+    <button data-page="quests"><img src="assets/nav-quests.webp" alt=""/><span>Quests</span></button>
+    <button data-page="skills"><img src="assets/nav-skills.webp" alt=""/><span>Skills</span></button>
+    <button data-page="codex"><img src="assets/nav-codex.webp" alt=""/><span>Codex</span></button>
+    <button data-page="map"><img src="assets/nav-map.webp" alt=""/><span>Map</span></button>
+  </nav>
+</div>
+
+<div class="overlay" id="dialogOverlay" hidden>
+ <div class="backdrop" data-action="close-dialog"></div>
+ <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" tabindex="-1">
+   <div class="dialog-head"><span class="decorative">✦ DOJO RECORD</span><button type="button" data-action="close-dialog" aria-label="Close dialog">✕</button></div>
+   <h2 id="dialogTitle">Quest details</h2><p id="dialogText"></p>
+   <div class="dialog-buttons"><button class="gold-cta" id="dialogPrimary">Enter activity →</button><button class="text-cta" data-action="close-dialog">Return</button></div>
+ </section>
+</div>
+<div class="training-overlay" id="trainingOverlay" hidden><div class="training-title"><div><span>TRAINING ROOM</span><strong>Hiragana K-row</strong></div><button data-action="close-training" aria-label="Close training">✕ Close</button></div><iframe id="trainingFrame" title="Interactive K-row training" loading="lazy" referrerpolicy="no-referrer"></iframe></div>
+<script src="app.js" defer></script>
+</body>
+</html>

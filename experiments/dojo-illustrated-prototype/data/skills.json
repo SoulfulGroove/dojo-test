@@ -1,0 +1,13 @@
+{
+  "schemaVersion":"1.0.0",
+  "source":"Hiragana learning journey and Base Hiragana Learning Experiment in user Notion (October 2026)",
+  "note":"State labels summarize historical reports, not re-assessed mastery. Sample values painted into concept images are decorative only.",
+  "skills":[
+    {"id":"sound","title":"Sound Structure","kanji":"音","icon":"skill-sound","status":"reported","summary":"Organized the mora sound patterns and reconstructed the underlying sound system.","evidence":"Documented shift from casual exposure to a recoverable sound framework.","action":"Practice the K-row","target":"trainer"},
+    {"id":"recognition","title":"Kana Recognition","kanji":"見","icon":"skill-recognition","status":"reported","summary":"Recognized written kana and associated visual forms with the sound inventory.","evidence":"Flashcard exposure, matching and recognition testing were documented.","action":"Practice recognition","target":"trainer"},
+    {"id":"reconstruction","title":"Chart Reconstruction","kanji":"組","icon":"skill-kana","status":"reported","summary":"Rebuilt the structured kana chart from a random assortment of tiles.","evidence":"Used scavenger-hunt-style matching to recover sounds, shapes, and positions.","action":"Try reconstruction","target":"trainer"},
+    {"id":"recall","title":"Unaided Recall","kanji":"憶","icon":"skill-recall","status":"reported","summary":"Retrieved kana from memory and flagged wrong or uncertain answers.","evidence":"Repeated recall checks and handwritten notes of slow or missed forms.","action":"Practice recall","target":"trainer"},
+    {"id":"writing","title":"Written Production","kanji":"書","icon":"skill-writing","status":"reported","summary":"Reproduced all 46 base hiragana from memory on the documented next-day test.","evidence":"Delayed written production: 46/46, following an earlier roughly 89% trial.","action":"Open practice","target":"trainer"},
+    {"id":"reading","title":"Authentic Reading","kanji":"読","icon":"skill-reading","status":"active","summary":"Apply kana recognition and word recall to authentic passages from Musashi.","evidence":"The reading and interpretation path is active/emerging, not yet certified.","action":"Open Musashi reader","target":"reader"}
+  ]
+}
