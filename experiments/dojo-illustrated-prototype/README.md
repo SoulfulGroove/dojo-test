@@ -1,4 +1,4 @@
-# ADHD Dojo — Illustrated UI Prototype v0.1
+# ADHD Dojo — Illustrated UI Prototype v0.2
 
 **Live demo:** https://soulfulgroove.github.io/dojo-test/experiments/dojo-illustrated-prototype/
 
@@ -10,7 +10,7 @@ The first version intentionally keeps several decorative UI card captions and ex
 
 ## Interactions
 
-- **Dojo**: photographic-quality painted environment; independent painted training/quest cards and four quick navigation tiles; launch existing real Hiragana training in an iframe.
+- **Dojo**: painted environment, one readable live K-row quest card and four illustrated navigation tiles; the existing playable Hiragana trainer still launches in an iframe. The quest card reads the trainer's own JSON and saved browser practice state.
 - **Quests**: interactive Active / Archive / Milestones tabs; four selectable independent illustrated quest cards; tap opens a live detail sheet. Unsupported quests are explicitly marked as future, not falsely presented as playable.
 - **Skills**: connected skill tree with six separately extracted glowing raster skill medallions. Tap updates actual skill title, state, evidence, and practice action; no fabricated XP.
 - **Codex**: painted manuscript with live Characters / Vocabulary / Reading tabs and five clickable kana buttons; uses browser Japanese speech synthesis if available.
@@ -47,3 +47,9 @@ The original source mockup PNGs remain in the working design assets but are not 
 ## QA
 
 Smoke test on Playwright/Chromium at 320px, 390px and 1280px: initial Hall rendering, navigation across pages, selected skill updates, quest sheets, codex tabs/kana selection, iframe K-row trainer, Escape and close behavior, missing asset network checks, and horizontal overflow.
+
+## Hall v0.2 — first data-driven interaction
+
+The Hall now replaces three decorative sample-status panels with one real K-row quest card. Quest title and description come from the existing trainer at `../hiragana-dojo/data/kana.json` (with a readable fallback). This avoids duplicating the same quest metadata in another JSON file.
+
+The Hall displays the last saved local reconstruction/recall state under `adhd-dojo-hiragana-k-row-v01`. It refreshes when returning from the trainer; no account, remote progress system, new scoring algorithm, or false mastery claim is added. The Skills, Quests, Codex, Map and standalone trainer remain unchanged. Other painted concept elements may still show illustrative XP.

@@ -20,22 +20,25 @@
     <section class="page is-active" id="page-hall" aria-labelledby="hallTitle">
       <h1 id="hallTitle" class="sr-only">The Dojo Hall</h1>
       <img class="wide-image hero-img" src="assets/hall-environment.webp" width="941" height="435" alt="Moonlit Japanese dojo with glowing lanterns, a stone path, sakura trees and mountain scenery"/>
-      <div class="art-panel interaction-art featured-art">
-        <img src="assets/hall-training.webp" alt="Decorated washi-paper card for Hiragana K-row practice, with illustrated kana tiles and a gold Start Training button"/>
-        <button class="art-hit training-hit" data-action="trainer" aria-label="Start Hiragana K-row training"><span class="sr-only">Start training</span></button>
-      </div>
-      <div class="art-panel interaction-art quest-art">
-        <img src="assets/hall-quest.webp" alt="Decorative current quest panel; sample progress 3 of 5 with golden experience reward"/>
-        <button class="art-hit" data-page="quests" aria-label="Open quest log"></button>
-      </div>
+      <article class="hall-live-quest" aria-labelledby="hallQuestTitle">
+        <div class="hall-quest-heading">
+          <img src="assets/skill-recognition.webp" alt="" class="hall-quest-icon" width="64" height="64"/>
+          <div class="hall-quest-titles">
+            <span class="hall-quest-eyebrow">ACTIVE QUEST · ひらがな</span>
+            <h2 id="hallQuestTitle">Rebuild the K-row</h2>
+          </div>
+        </div>
+        <p id="hallQuestDescription" class="hall-quest-description">Reconstruct five kana, then recall their sounds without choices.</p>
+        <p id="hallQuestProgress" class="hall-quest-progress" role="status">Two practice stages: reconstruct, then retrieve from memory.</p>
+        <button id="hallQuestStart" class="gold-cta hall-quest-cta" type="button" data-action="trainer">Begin practice <span aria-hidden="true">→</span></button>
+      </article>
       <div class="quick-tiles" aria-label="Explore the Dojo">
         <button data-page="skills"><img src="assets/tile-skills.webp" alt="Skills — sword and scroll artwork"/></button>
         <button data-page="quests"><img src="assets/tile-quests.webp" alt="Quests — Japanese study papers"/></button>
         <button data-page="codex"><img src="assets/tile-codex.webp" alt="Codex — illustrated Japanese manuscript"/></button>
         <button data-page="map"><img src="assets/tile-map.webp" alt="Map — illustrated temple gate"/></button>
       </div>
-      <div class="art-panel interaction-art profile-art"><img src="assets/hall-profile.webp" alt="Decorative fox character preview and sample XP display"/><button class="art-hit" data-action="profile" aria-label="Inspect prototype character status"></button></div>
-      <p class="caption-note">This is a visual and interaction prototype. The artwork's levels, rewards and progress bars are sample values, not a live assessment.</p>
+      <p class="caption-note">Quest feedback reflects saved K-row practice on this device. Levels and XP printed in other concept artwork remain illustrative.</p>
     </section>
 
     <section class="page" id="page-quests" aria-labelledby="questsTitle" hidden>
