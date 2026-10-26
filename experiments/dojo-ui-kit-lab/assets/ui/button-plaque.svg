@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="145" viewBox="0 0 560 145" role="img">
+<defs><pattern id="fibers" width="38" height="32" patternUnits="userSpaceOnUse"><path d="M3 8l8-1M17 23l11 1M6 28l4 1M31 6l5-1" fill="none" stroke="#74582c" stroke-width=".7" opacity=".17"/></pattern><pattern id="hatch" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M0 17L17 0" stroke="#f5deb0" opacity=".13" stroke-width="1"/></pattern><linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fbebc8"/><stop offset=".53" stop-color="#e9d2a0"/><stop offset="1" stop-color="#cbaa70"/></linearGradient><linearGradient id="lacquer" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#253d51"/><stop offset=".5" stop-color="#122739"/><stop offset="1" stop-color="#081723"/></linearGradient><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe5a3"/><stop offset=".45" stop-color="#cb9b49"/><stop offset="1" stop-color="#785122"/></linearGradient></defs>
+
+<path d="M38 12H522l25 60-25 61H38L13 72z" fill="url(#brass)" stroke="#f9df9e" stroke-width="4"/>
+<path d="M48 24H512l19 48-19 49H48L29 72z" fill="url(#lacquer)" stroke="#f9ddb3" stroke-width="2"/>
+<path d="M61 39H499" stroke="#d7ac68" stroke-width="1.5" opacity=".5"/>
+<circle cx="47" cy="72" r="7" fill="#e9c479"/><circle cx="513" cy="72" r="7" fill="#e9c479"/>
+</svg>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#0b1c2b"/>
+<title>ADHD Dojo · Original UI Kit Lab</title>
+<link rel="stylesheet" href="./styles/app.css"/>
+</head>
+<body data-theme="lacquer">
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><img src="assets/ui/dojo-emblem.svg" alt="Dojo crest" class="brand-mark"/><div><span class="brand-kicker">ORIGINAL DESIGN SYSTEM · 01</span><strong>THE DOJO <span class="brand-sep">/</span> UI FORGE</strong></div></div>
+    <div class="top-actions"><button id="themeBtn" class="top-btn" type="button" aria-label="Toggle color theme" title="Switch between lacquer and washi"><span aria-hidden="true">◐</span><span class="top-label">Theme</span></button><a href="../dojo-asset-lab/" class="top-btn" title="Return to Asset Design Lab">↗ <span class="top-label">World lab</span></a></div>
+  </header>
+  <div class="mode-tabs" role="tablist" aria-label="Design lab mode"><button class="mode-tab selected" data-mode="play" role="tab" aria-selected="true">GAME PREVIEW</button><button class="mode-tab" data-mode="kit" role="tab" aria-selected="false">ASSET LIBRARY</button><button class="mode-tab" data-mode="notes" role="tab" aria-selected="false">ART DIRECTION</button></div>
+  <main id="main" tabindex="-1">
+  <section id="mode-play" class="mode-screen active" aria-label="Playable preview">
+    <div class="game-shell">
+      <div class="game-caption"><span class="light-diamond">✦</span> FIELD GUIDE / KYOTO PROTOTYPE <span class="right-label">INTERACTIVE SHELL v0.1</span></div>
+      <section id="room-hall" class="room active" aria-label="Dojo Hall">
+        <div class="hero-art"><div class="hero-noise"></div><div class="hero-calligraphy" aria-hidden="true">道</div><span class="location-pill">◈  KYOTO · PRACTICE HALL</span><div class="hero-copy"><span class="overline">THE ROAD OF PRACTICE</span><h1>Enter the<br><em>Dojo</em></h1><p>One useful rep. One step further.</p></div></div>
+        <div class="hall-grid"><div class="hall-feature card-soft"><div class="eyebrow">CURRENT QUEST · HIRAGANA</div><div class="feature-title">Reconstruct the K-row</div><p>Return to a small, playable recall exercise. Your actual progress is recorded in its own trainer.</p><div class="quest-meta"><span class="status-tag active-tag">● Ready to practice</span><span class="micro-note">き · か · く · け · こ</span></div><a class="action-plaque" href="../hiragana-dojo/"><span>ENTER TRAINING</span><span aria-hidden="true">↗</span></a></div><div class="hall-crest card-soft"><img src="assets/ui/dojo-emblem.svg" alt="Original Dojo crest"/><span class="overline">ARTIFACT NO. 001</span><strong>WASHI & LACQUER</strong><p>Original SVG components, ready to reuse.</p></div></div>
+      </section>
+      <section id="room-quests" class="room" aria-label="Quests">
+        <div class="section-heading"><span class="overline">QUEST ARCHIVE</span><h2>The next meaningful action</h2><p>Decorative framing, practical calls to action. No invented quest completion records.</p></div>
+        <div class="quest-art-card"><span class="small-ribbon">FIELD QUEST · ACTIVE</span><div class="quest-card-grid"><div class="quest-sigil"><img src="assets/skills/recall.svg" alt="Recall symbol"/></div><div><span class="overline">01 / LEARNING QUEST</span><h3>Kana Reconstruction</h3><p>Take scattered kana, identify the sound, and place each symbol where it belongs.</p><div class="quest-meta"><span class="status-tag active-tag">REPLAYABLE</span><span class="micro-note">Evidence through practice</span></div></div></div><a href="../hiragana-dojo/" class="action-plaque">BEGIN QUEST <span>↗</span></a></div>
+        <div class="milestone-row"><img src="assets/ui/seal-complete.svg" alt="Cultivation seal"/><div><span class="overline">HISTORICAL MILESTONE</span><strong>46 / 46 base kana</strong><p>A documented delayed written-production test, not a live XP reward.</p></div></div>
+      </section>
+      <section id="room-skills" class="room" aria-label="Skills">
+        <div class="section-heading"><span class="overline">CAPABILITIES / WAZA</span><h2>The skills that open the path</h2><p>Select a medallion to inspect its evidence and the next available training action.</p></div>
+        <div class="skill-stage"><span class="faint-label">KANA FOUNDATIONS · VISUAL PROTOTYPE</span><div id="skillGrid" class="skill-grid"></div><div class="legend"><span><i class="dot reported"></i> Recorded</span><span><i class="dot active"></i> Active</span><span><i class="dot planned"></i> Proposed</span></div></div>
+        <div id="skillDetail" class="skill-detail" aria-live="polite"></div>
+        <a class="quiet-link" href="../dojo-skill-tree-lab/">Explore the full Skill Tree Lab ↗</a>
+      </section>
+      <section id="room-codex" class="room" aria-label="Codex">
+        <div class="section-heading"><span class="overline">KNOWLEDGE / ARCHIVE</span><h2>Classical study, as a game artifact</h2><p>The open book is an original SVG; the page interaction is separate from its artwork.</p></div>
+        <div id="codexArea" class="codex-area"><div id="closedBook" class="closed-book"><img src="assets/ui/dojo-emblem.svg" alt="Crest on a closed codex"/><span>五輪書</span><small>THE BOOK OF FIVE RINGS</small></div><div id="openBook" class="open-book" hidden><img src="assets/ui/codex-open.svg" alt="Open washi-paper codex frame"/><div class="book-page left-page"><span class="page-tiny">STUDY RECORD · 001</span><strong>かな</strong><span class="jp-sub">Kana Foundations</span><p>Listen · Recognize<br/>Reconstruct · Recall<br/>Write · Read</p></div><div class="book-page right-page"><span class="page-tiny">YOUR JOURNEY</span><strong>46 / 46</strong><p>Reported next-day written production. From a recoverable structure to independent recall.</p><span class="page-tiny">NEXT: AUTHENTIC READING</span></div></div></div>
+        <button id="bookToggle" type="button" class="control-button main-cta">OPEN THE CODEX <span aria-hidden="true">→</span></button>
+        <div class="codex-actions"><a href="../musashi-reader/">Explore the Musashi reader ↗</a><span>Original frame · editable vector</span></div>
+      </section>
+      <section id="room-map" class="room" aria-label="Map">
+        <div class="section-heading"><span class="overline">REALM / OVERWORLD</span><h2>A landmark is a gateway</h2><p>A reusable marker overlays original landscape artwork. Tap it to inspect a location.</p></div>
+        <div class="mini-map-scene"><img class="map-pin marker-kyoto" src="assets/ui/location-marker.svg" alt=""/><button class="map-hit" id="mapHit" aria-label="Inspect Kyoto practice hall"></button><span class="map-location">京 都 <small>KYOTO</small></span></div>
+        <div class="map-info" id="mapInfo"><span class="overline">LOCATION · KYOTO</span><h3>The Practice Hall</h3><p>A prototype training location with links back into the living Dojo.</p><div class="map-actions"><a class="control-button" href="../dojo-asset-lab/">EXPLORE ASSET LAB ↗</a><a class="control-button muted" href="../japan-overworld-lab/">OPEN JAPAN MAP ↗</a></div></div>
+      </section>
+      <nav class="room-nav" aria-label="Game rooms"><button class="room-btn selected" data-room="hall" aria-current="page"><span class="nav-icon">⌂</span><span>Hall</span></button><button class="room-btn" data-room="quests"><span class="nav-icon">▣</span><span>Quests</span></button><button class="room-btn" data-room="skills"><span class="nav-icon">✧</span><span>Skills</span></button><button class="room-btn" data-room="codex"><span class="nav-icon">書</span><span>Codex</span></button><button class="room-btn" data-room="map"><span class="nav-icon">◇</span><span>Map</span></button></nav>
+    </div>
+  </section>
+  <section id="mode-kit" class="mode-screen" aria-label="Component gallery"><div class="section-heading"><span class="overline">THE DOJO · ORIGINAL ART LIBRARY</span><h2>Reusable assets</h2><p>Each illustration is an independent editable SVG. Filter by family, inspect its purpose, or use the file path in another Dojo experiment.</p></div><div id="familyFilters" class="filter-pills" aria-label="Asset families"></div><div id="assetGrid" class="asset-grid"></div><div id="assetInspect" class="asset-inspect" aria-live="polite">Select a component to inspect its use and path.</div></section>
+  <section id="mode-notes" class="mode-screen" aria-label="Art direction notes"><div class="section-heading"><span class="overline">OUR FIRST VISUAL LANGUAGE</span><h2>Built from principles, not borrowed pixels</h2><p>The reference archives helped define a component taxonomy. The shipped art and icons are newly drawn editable vectors.</p></div><div class="notes-grid"><div class="notes-card"><h3>Indigo lacquer</h3><p>Used for deeply framed RPG interfaces, quest cards, and skills, with gold-trimmed selected states.</p><div class="swatch-row"><span style="background:#0c2230"></span><span style="background:#254456"></span><span style="background:#d4ad6e"></span><span style="background:#aa4843"></span></div></div><div class="notes-card"><h3>Warm washi</h3><p>A calmer document layer for reading, writing, codex pages, and explanatory panels.</p><div class="swatch-row"><span style="background:#f2dfb6"></span><span style="background:#ceaa76"></span><span style="background:#8f6d43"></span><span style="background:#92b4a9"></span></div></div><div class="notes-card"><h3>Animation language</h3><p>Opening books, revealing nodes, marking milestones. Animation is optional decoration, never the only way to understand the state.</p></div><div class="notes-card"><h3>Reference taxonomy</h3><p>CraftPix: panels, icon categories, sprite state naming, frame sequences, and modular roads. EAST: shared scale, light direction, and separately managed shadows.</p></div></div><div class="source-links"><a href="https://craftpix.net/freebies/free-animated-magic-book-pixel-art-asset-pack/" target="_blank" rel="noopener noreferrer">Magic book reference ↗</a><a href="https://craftpix.net/freebies/free-monk-skills-icon-pack/" target="_blank" rel="noopener noreferrer">Skill-icon reference ↗</a><a href="https://craftpix.net/freebies/free-basic-pixel-art-ui-for-rpg/" target="_blank" rel="noopener noreferrer">RPG interface reference ↗</a><a href="../dojo-asset-lab/">Original environment asset lab ↗</a></div><div class="disclaimer"><strong>Licensing boundary</strong> — No CraftPix or EAST sprites are included in this UI kit. All SVG artwork here is original. The uploaded third-party ZIPs are research references only; their terms continue to apply to their original contents.</div></section>
+  </main>
+  <footer class="site-footer"><span>DOJO ART SYSTEM / EXPERIMENT 01</span><span>ONE SOURCE OF TRUTH · SVG + JSON</span></footer>
+</div>
+<script src="./scripts/app.js" defer></script>
+</body>
+</html>

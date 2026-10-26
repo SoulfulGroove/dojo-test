@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="565" viewBox="0 0 850 565" role="img">
+<defs><pattern id="fibers" width="38" height="32" patternUnits="userSpaceOnUse"><path d="M3 8l8-1M17 23l11 1M6 28l4 1M31 6l5-1" fill="none" stroke="#74582c" stroke-width=".7" opacity=".17"/></pattern><pattern id="hatch" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M0 17L17 0" stroke="#f5deb0" opacity=".13" stroke-width="1"/></pattern><linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fbebc8"/><stop offset=".53" stop-color="#e9d2a0"/><stop offset="1" stop-color="#cbaa70"/></linearGradient><linearGradient id="lacquer" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#253d51"/><stop offset=".5" stop-color="#122739"/><stop offset="1" stop-color="#081723"/></linearGradient><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe5a3"/><stop offset=".45" stop-color="#cb9b49"/><stop offset="1" stop-color="#785122"/></linearGradient></defs>
+
+<path d="M19 79q171-35 396 2 201-45 414-2l3 414q-197-38-414 5-215-43-396-5z" fill="#2b211d" stroke="#ae864e" stroke-width="12"/>
+<path d="M36 66q178-30 381 26v389q-182-42-379-8z" fill="url(#paper)" stroke="#6b4736" stroke-width="3"/>
+<path d="M417 92q197-56 398-26v407q-211-34-398 8z" fill="url(#paper)" stroke="#6b4736" stroke-width="3"/>
+<path d="M417 92q8 194 0 389" stroke="#8d5f3c" stroke-width="14" fill="none" opacity=".68"/>
+<path d="M83 98q151-12 299 24M458 118q154-26 316-21" stroke="#af8b59" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M79 429q150-20 305 20M462 448q155-30 310-16" stroke="#b0905b" stroke-width="1" fill="none" opacity=".46"/>
+<path d="M39 67q176-28 378 26v390q-187-39-378-8zM417 93q199-52 398-26v407q-210-32-398 9z" fill="url(#fibers)"/>
+<path d="M732 68l20-2v115l-11-18-11 18z" fill="#a33c38" stroke="#e3b46d" stroke-width="2"/>
+<path d="M88 163h267M88 180h267M88 197h267M88 214h267M88 230h192M470 162h273M470 181h273M470 199h273M470 216h180" stroke="#8b6b47" opacity=".1" stroke-width="2"/>
+</svg>

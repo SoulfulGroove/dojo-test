@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "statusDefinitions": {
+    "reported": "Documented historical learning activity, no current retest",
+    "milestone": "A recorded specific past performance, not a general guarantee",
+    "active": "Working focus, not certified mastery",
+    "planned": "Potential future capability"
+  },
+  "skills": [
+    {
+      "id": "structure",
+      "title": "Sound Structure",
+      "subtitle": "Discover the pattern",
+      "state": "reported",
+      "evidence": "You identified the organized mora grid and developed a recoverable sound framework.",
+      "detail": "A key turning point: the kana stopped behaving like 46 unrelated items.",
+      "action": "Review structure",
+      "icon": "structure",
+      "actionUrl": "../hiragana-dojo/"
+    },
+    {
+      "id": "recall",
+      "title": "Kana Recall",
+      "subtitle": "Retrieve unaided",
+      "state": "reported",
+      "evidence": "Memory-flash tests and scattered-tile reconstruction exposed slow and missed kana.",
+      "detail": "Retrieval, not recognition alone, became the central test.",
+      "action": "Train recall",
+      "icon": "recall",
+      "actionUrl": "../hiragana-dojo/"
+    },
+    {
+      "id": "writing",
+      "title": "Written Production",
+      "subtitle": "Produce all base kana",
+      "state": "milestone",
+      "evidence": "A reported next-day writing check reached 46/46 base hiragana. This is historical evidence, not a live mastery score.",
+      "detail": "Reconstruction progressed into independent written production.",
+      "action": "Revisit training",
+      "icon": "writing",
+      "actionUrl": "../hiragana-dojo/"
+    },
+    {
+      "id": "reading",
+      "title": "Connected Reading",
+      "subtitle": "Decode real expressions",
+      "state": "active",
+      "evidence": "Current working focus: read connected kana and authentic Japanese material aloud.",
+      "detail": "Practice transfers the sound and letter system into actual passages.",
+      "action": "Explore reader",
+      "icon": "reading",
+      "actionUrl": "../musashi-reader/"
+    },
+    {
+      "id": "application",
+      "title": "Musashi Application",
+      "subtitle": "Authentic Go Rin no Sho",
+      "state": "planned",
+      "evidence": "A proposed integration of vocabulary, grammar, and reading; no mastery certification claimed.",
+      "detail": "Use known kana as an entry point into authentic Musashi passages.",
+      "action": "Open reader",
+      "icon": "application",
+      "actionUrl": "../musashi-reader/"
+    },
+    {
+      "id": "focus",
+      "title": "Deliberate Practice",
+      "subtitle": "Choose a useful rep",
+      "state": "active",
+      "evidence": "A cross-cutting skill emphasized by the Dojo pedagogy; not separately scored here.",
+      "detail": "Identify one useful bottleneck and initiate the next rep.",
+      "action": "Enter training",
+      "icon": "focus",
+      "actionUrl": "../hiragana-dojo/"
+    }
+  ],
+  "sourcePages": [
+    "https://app.notion.com/p/3f6a0de59e12811bafaad31983fab12a",
+    "https://app.notion.com/p/3ffa0de59e1281c6a924e915343fd9e4"
+  ]
+}

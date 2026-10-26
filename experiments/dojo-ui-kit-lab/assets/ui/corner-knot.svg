@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img">
+<defs><pattern id="fibers" width="38" height="32" patternUnits="userSpaceOnUse"><path d="M3 8l8-1M17 23l11 1M6 28l4 1M31 6l5-1" fill="none" stroke="#74582c" stroke-width=".7" opacity=".17"/></pattern><pattern id="hatch" width="17" height="17" patternUnits="userSpaceOnUse"><path d="M0 17L17 0" stroke="#f5deb0" opacity=".13" stroke-width="1"/></pattern><linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fbebc8"/><stop offset=".53" stop-color="#e9d2a0"/><stop offset="1" stop-color="#cbaa70"/></linearGradient><linearGradient id="lacquer" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#253d51"/><stop offset=".5" stop-color="#122739"/><stop offset="1" stop-color="#081723"/></linearGradient><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe5a3"/><stop offset=".45" stop-color="#cb9b49"/><stop offset="1" stop-color="#785122"/></linearGradient></defs>
+
+<path d="M16 104V16h88" fill="none" stroke="url(#brass)" stroke-width="8"/>
+<path d="M32 86V32h54M50 68V50h18" fill="none" stroke="#eccd92" stroke-width="3"/>
+<circle cx="18" cy="18" r="10" fill="#a9453e" stroke="#f5d99c" stroke-width="3"/>
+</svg>

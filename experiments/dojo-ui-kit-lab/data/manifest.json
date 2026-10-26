@@ -1,0 +1,259 @@
+{
+  "schemaVersion": "1.0.0",
+  "kit": "ADHD Dojo Original UI Kit",
+  "version": "0.1.0",
+  "artDirection": {
+    "name": "Indigo Lacquer / Warm Washi",
+    "palette": {
+      "indigo": "#0c2230",
+      "lacquer": "#152e3f",
+      "bronze": "#d4ad6e",
+      "vermilion": "#aa4843",
+      "washi": "#f2dfb6",
+      "jade": "#92b4a9"
+    },
+    "principles": [
+      "Original editable SVG illustrations",
+      "Decorative art never carries essential text alone",
+      "Minimum 44px hit targets",
+      "Separate cosmetic skill effects from real learning records",
+      "Meaningful interaction with return/navigation controls"
+    ]
+  },
+  "sourcePolicy": {
+    "productionAssets": "Original project artwork made for the Dojo, not traced from reference packs.",
+    "references": [
+      {
+        "name": "CraftPix basic pixel UI",
+        "role": "button/window inventories and state organization",
+        "url": "https://craftpix.net/freebies/free-basic-pixel-art-ui-for-rpg/"
+      },
+      {
+        "name": "CraftPix animated magic book",
+        "role": "codex/page-opening interaction conventions",
+        "url": "https://craftpix.net/freebies/free-animated-magic-book-pixel-art-asset-pack/"
+      },
+      {
+        "name": "CraftPix monk and swordsman skills",
+        "role": "skill icon taxonomy and visual storytelling",
+        "url": "https://craftpix.net/freebies/free-monk-skills-icon-pack/"
+      },
+      {
+        "name": "CraftPix top-down roads",
+        "role": "map tile organization; no road sprites used",
+        "url": "https://craftpix.net/freebies/free-path-and-road-top-down-pixel-tileset/"
+      },
+      {
+        "name": "CraftPix samurai sprites",
+        "role": "animation states and sprite sheet conventions",
+        "url": "https://craftpix.net/freebies/free-samurai-pixel-art-sprite-sheets/"
+      },
+      {
+        "name": "EAST Free Sample",
+        "role": "shared scale and scene layering, no EAST files copied to this kit",
+        "url": "https://mmorwynn.itch.io/east-free-sample"
+      }
+    ],
+    "copyright": "All files under this kit assets/ directory are original project artwork. Reference ZIP artwork is not redistributed in this kit."
+  },
+  "assets": [
+    {
+      "id": "emblem",
+      "name": "Dojo Emblem",
+      "family": "Identity",
+      "purpose": "Dojo crest for the hall and player hub",
+      "path": "assets/ui/dojo-emblem.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "paper",
+      "name": "Panel Washi",
+      "family": "Frames",
+      "purpose": "Washi paper panel for documents and dialogs",
+      "path": "assets/ui/panel-washi.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "quest",
+      "name": "Quest Card",
+      "family": "Frames",
+      "purpose": "Lacquer and bronze quest-card frame",
+      "path": "assets/ui/quest-card.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "node",
+      "name": "Node Frame",
+      "family": "Skills",
+      "purpose": "Reusable skill-tree medallion and node states",
+      "path": "assets/ui/node-frame.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "seal",
+      "name": "Seal Complete",
+      "family": "Rewards",
+      "purpose": "Milestone seal, calligraphic 修 = cultivation",
+      "path": "assets/ui/seal-complete.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "location",
+      "name": "Location Marker",
+      "family": "Map",
+      "purpose": "Pinned dojo landmark symbol",
+      "path": "assets/ui/location-marker.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "button",
+      "name": "Button Plaque",
+      "family": "Controls",
+      "purpose": "Decorative button plaque for primary actions",
+      "path": "assets/ui/button-plaque.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "book",
+      "name": "Codex Open",
+      "family": "Learning",
+      "purpose": "Open double-page manuscript frame",
+      "path": "assets/ui/codex-open.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "scroll",
+      "name": "Scroll Roll",
+      "family": "Learning",
+      "purpose": "Rolled manuscript frame for brief practice",
+      "path": "assets/ui/scroll-roll.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "corner",
+      "name": "Corner Knot",
+      "family": "Frames",
+      "purpose": "Decorative corner ornament",
+      "path": "assets/ui/corner-knot.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "structure",
+      "name": "Structure",
+      "family": "Skills",
+      "purpose": "Mora structure / internal sound system",
+      "path": "assets/skills/structure.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "recall",
+      "name": "Recall",
+      "family": "Skills",
+      "purpose": "Unaided retrieval and reconstruction",
+      "path": "assets/skills/recall.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "writing",
+      "name": "Writing",
+      "family": "Skills",
+      "purpose": "Written kana production",
+      "path": "assets/skills/writing.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "reading",
+      "name": "Reading",
+      "family": "Skills",
+      "purpose": "Connected Japanese reading",
+      "path": "assets/skills/reading.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "application",
+      "name": "Application",
+      "family": "Skills",
+      "purpose": "Transfer into authentic material",
+      "path": "assets/skills/application.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "family": "Skills",
+      "purpose": "Attention and deliberate practice",
+      "path": "assets/skills/focus.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "world",
+      "name": "Kyoto Dusk",
+      "family": "World",
+      "purpose": "Original illustrated Kyoto-inspired twilight landscape",
+      "path": "assets/world/kyoto-dusk.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    },
+    {
+      "id": "tree",
+      "name": "Skill Backdrop",
+      "family": "World",
+      "purpose": "Original constellation backdrop for skill screens",
+      "path": "assets/world/skill-backdrop.svg",
+      "format": "svg",
+      "provenance": "original",
+      "license": "Original to project",
+      "editable": true
+    }
+  ]
+}
