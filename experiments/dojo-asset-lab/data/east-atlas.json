@@ -1,0 +1,112 @@
+{
+  "version": "1.0.0",
+  "image": "../assets/miniature/east-scene.png",
+  "size": {
+    "width": 1024,
+    "height": 756
+  },
+  "license": {
+    "name": "EAST Free Sample",
+    "creator": "mmorwynn",
+    "homepage": "https://mmorwynn.itch.io/east-free-sample",
+    "notes": "Use in projects permitted; do not redistribute raw assets as a standalone asset pack."
+  },
+  "sprites": {
+    "dojo": {
+      "x": 14,
+      "y": 14,
+      "w": 237,
+      "h": 191,
+      "source": "shrines/large/items/worship_hall/worship_hall_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "torii": {
+      "x": 265,
+      "y": 14,
+      "w": 104,
+      "h": 108,
+      "source": "shrines/large/items/vermilion_torii/vermilion_torii_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "house": {
+      "x": 383,
+      "y": 14,
+      "w": 214,
+      "h": 196,
+      "source": "houses/large/buildings/machiya/machiya_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "minka": {
+      "x": 611,
+      "y": 14,
+      "w": 284,
+      "h": 226,
+      "source": "houses/large/buildings/minka/minka_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "pagoda": {
+      "x": 14,
+      "y": 254,
+      "w": 256,
+      "h": 287,
+      "source": "shrines/large/items/pagoda/pagoda_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "bridge": {
+      "x": 284,
+      "y": 254,
+      "w": 87,
+      "h": 71,
+      "source": "gardens/large/items/arched_bridge/arched_bridge_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "pond": {
+      "x": 385,
+      "y": 254,
+      "w": 105,
+      "h": 61,
+      "source": "gardens/large/items/koi_pond/koi_pond_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "bamboo": {
+      "x": 504,
+      "y": 254,
+      "w": 168,
+      "h": 183,
+      "source": "bamboo/large/trees/bamboo_stand/bamboo_stand_1_summer.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "sakura": {
+      "x": 686,
+      "y": 254,
+      "w": 260,
+      "h": 222,
+      "source": "bamboo/large/trees/sakura/sakura_1_spring.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "maple": {
+      "x": 14,
+      "y": 555,
+      "w": 230,
+      "h": 187,
+      "source": "bamboo/large/trees/japanese_maple/japanese_maple_1_autumn.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "lantern": {
+      "x": 258,
+      "y": 555,
+      "w": 67,
+      "h": 73,
+      "source": "gardens/large/items/kasuga_lantern/kasuga_lantern_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    },
+    "fox": {
+      "x": 339,
+      "y": 555,
+      "w": 92,
+      "h": 78,
+      "source": "shrines/large/items/fox_statues/fox_statues_1_new.png",
+      "origin": "EAST Free Sample by mmorwynn"
+    }
+  }
+}

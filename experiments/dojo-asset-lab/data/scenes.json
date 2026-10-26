@@ -1,0 +1,80 @@
+{
+  "version": "0.1.0",
+  "entry": "world",
+  "styles": {
+    "miniature": {
+      "title": "Miniature",
+      "subtitle": "A tiny playable world assembled from modular pixel-art objects",
+      "accent": "#dbbf7e"
+    },
+    "illustrated": {
+      "title": "Illustrated",
+      "subtitle": "An atmospheric map and storybook location rendered as original vector artwork",
+      "accent": "#e5bd79"
+    }
+  },
+  "scenes": [
+    {
+      "id": "world",
+      "level": "01 · Overworld",
+      "title": "The Islands of Japan",
+      "eyebrow": "The archipelago · 日本",
+      "description": "A recognizable Japan, with geography underneath and a period-inspired artistic frame above it. Kyoto is the first explorable location.",
+      "miniatureArt": "assets/atlas/japan.svg",
+      "illustratedArt": "assets/atlas/japan.svg",
+      "backgroundType": "country",
+      "hotspots": [
+        {"id":"kyoto", "label":"Kyoto · 京", "glyph":"京", "x":42.1, "y":71.2, "title":"Kyoto", "description":"Enter a prototype region near the historic capital. This location is a fictional training stage, not a claim about where Musashi taught.", "action":"scene:kyoto", "actionLabel":"Explore Kyoto Region"}
+      ]
+    },
+    {
+      "id": "kyoto",
+      "level": "02 · Region",
+      "title": "Kyoto Valley",
+      "eyebrow": "An illustrated training ground · 京",
+      "description": "A fictional micro-region built for comparing art direction, not a historical reconstruction of a named seventeenth-century town.",
+      "miniatureArt": "assets/miniature/kyoto-terrace.svg",
+      "illustratedArt": "assets/illustrated/kyoto-valley.svg",
+      "backgroundType": "landscape",
+      "hotspots": [
+        {"id":"shrine","label":"Shrine Path","glyph":"⛩","x":21,"y":55,"title":"Shrine Path","description":"A gateway landmark. Test whether icons and path shapes are readable at phone size.","action":"select","actionLabel":"Inspect Landmark"},
+        {"id":"bridge","label":"Red Bridge","glyph":"橋","x":39,"y":76,"title":"Red Bridge","description":"A second landmark that helps orient you in the miniature scene.","action":"select","actionLabel":"Inspect Landmark"},
+        {"id":"dojo","label":"Practice Hall","glyph":"道","x":64,"y":58,"title":"Practice Hall","description":"Enter a compact Dojo interior and launch an existing Hiragana training rep.","action":"scene:dojo","actionLabel":"Enter the Dojo"},
+        {"id":"town","label":"Town Quarter","glyph":"町","x":81,"y":47,"title":"Town Quarter","description":"A modular settlement preview. Future locations can share the same scene format.","action":"select","actionLabel":"Inspect Landmark"}
+      ],
+      "miniatureProps": [
+        {"asset":"bamboo","x":120,"y":238,"scale":1.0},
+        {"asset":"sakura","x":224,"y":220,"scale":0.73},
+        {"asset":"minka","x":740,"y":303,"scale":0.81},
+        {"asset":"torii","x":188,"y":375,"scale":1.02},
+        {"asset":"pond","x":291,"y":389,"scale":1.28},
+        {"asset":"bridge","x":352,"y":422,"scale":1.28},
+        {"asset":"dojo","x":570,"y":408,"scale":1.12},
+        {"asset":"sakura","x":804,"y":376,"scale":0.58},
+        {"asset":"lantern","x":470,"y":443,"scale":0.92},
+        {"asset":"maple","x":654,"y":450,"scale":0.56}
+      ]
+    },
+    {
+      "id": "dojo",
+      "level": "03 · Location",
+      "title": "Hiragana Practice Hall",
+      "eyebrow": "An active learning location · 道場",
+      "description": "A one-room test where story scenery leads directly into a real, existing learning activity.",
+      "miniatureArt": "assets/miniature/dojo-plaza.svg",
+      "illustratedArt": "assets/illustrated/dojo-room.svg",
+      "backgroundType": "landscape",
+      "hotspots": [
+        {"id":"practice","label":"Kana Study","glyph":"あ","x":51,"y":70,"title":"Kana Study Station","description":"Rebuild the K-row and practice unaided sound recall using your real Hiragana Dojo experiment.","action":"trainer","actionLabel":"Begin K-row Training"}
+      ],
+      "miniatureProps": [
+        {"asset":"bamboo","x":151,"y":262,"scale":0.85},
+        {"asset":"sakura","x":690,"y":258,"scale":0.8},
+        {"asset":"dojo","x":473,"y":403,"scale":1.55},
+        {"asset":"torii","x":317,"y":448,"scale":0.98},
+        {"asset":"lantern","x":672,"y":444,"scale":0.95},
+        {"asset":"lantern","x":216,"y":393,"scale":0.83}
+      ]
+    }
+  ]
+}

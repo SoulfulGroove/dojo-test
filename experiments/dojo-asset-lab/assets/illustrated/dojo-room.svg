@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 570" role="img" aria-label="Original illustration of a Japanese-inspired training hall interior">
+<defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#a99f86"/><stop offset="1" stop-color="#e4d5b1"/></linearGradient><linearGradient id="floor" x2="0" y2="1"><stop stop-color="#9c865d"/><stop offset="1" stop-color="#503b2f"/></linearGradient><linearGradient id="light" x2="0" y2="1"><stop stop-color="#f7e9c6"/><stop offset="1" stop-color="#c8c3aa"/></linearGradient></defs>
+<rect width="900" height="570" fill="#4d4034"/>
+<rect x="25" y="23" width="850" height="389" fill="url(#wall)"/>
+<path d="M0 398L900 398V570H0Z" fill="url(#floor)"/>
+<path d="M0 401L900 401" stroke="#d3b584" stroke-width="9"/>
+<path d="M20 0v409 M880 0v409 M0 52h900 M0 126h900" stroke="#483b34" stroke-width="21"/>
+<g stroke="#76674f" stroke-width="10"><path d="M89 140v256M222 140v256M354 140v256M554 140v256M686 140v256M817 140v256"/></g>
+<g fill="url(#light)" opacity=".85"><rect x="100" y="145" width="112" height="244"/><rect x="233" y="145" width="111" height="244"/><rect x="565" y="145" width="111" height="244"/><rect x="697" y="145" width="110" height="244"/></g>
+<g stroke="#726553" stroke-width="3" opacity=".64"><path d="M105 187h100M105 238h100M105 290h100M105 340h100M239 187h98M239 238h98M239 290h98M239 340h98M569 187h102M569 238h102M569 290h102M569 340h102M702 187h101M702 238h101M702 290h101M702 340h101"/></g>
+<!-- Tokonoma scroll and alcove -->
+<path d="M372 139h164v259H372Z" fill="#71614c"/><path d="M385 149h138v223H385Z" fill="#e7d7b4"/><rect x="410" y="155" width="90" height="207" fill="#f7edd2" stroke="#967f5d" stroke-width="5"/>
+<path d="M398 151h113 M398 361h113" stroke="#4c352d" stroke-width="11"/><text x="454" y="292" font-size="102" text-anchor="middle" fill="#263f42" font-family="serif">道</text>
+<!-- floor tatami -->
+<path d="M33 433H867L810 557H95Z" fill="#b6ad81" stroke="#6f634c" stroke-width="6"/><path d="M250 431L220 555 M455 433V558 M649 432L682 556 M62 490H840" stroke="#706e52" stroke-width="6"/>
+<path d="M86 421h728" stroke="#c9b18b" stroke-width="12"/>
+<!-- training stand -->
+<path d="M630 409h125v22H630Z M647 433v60M735 433v60" fill="#4c3a32" stroke="#4c3a32" stroke-width="10"/><path d="M644 400l21-68 M663 397l25-63" stroke="#52473d" stroke-width="9"/>
+<!-- low table + kana study sheets -->
+<path d="M229 444l187-20l83 37l-199 32Z" fill="#574032" stroke="#302a26" stroke-width="6"/><path d="M248 467v31M467 472v36" stroke="#4d372c" stroke-width="13"/>
+<path d="M293 448l94-12l29 14l-96 13Z" fill="#f7e8cb" stroke="#bd9d7c" stroke-width="2"/><text x="356" y="454" font-family="serif" font-size="20" fill="#6b5442">かな</text>
+<g fill="#f5d89c" opacity=".17"><path d="M130 410L307 410L445 570H0Z"/></g>
+</svg>

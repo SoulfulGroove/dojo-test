@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 570" aria-label="Original artistic Kyoto valley game map, with a river, mountains and Japanese architecture" role="img">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#243f51"/><stop offset=".55" stop-color="#708a83"/><stop offset="1" stop-color="#c8b991"/></linearGradient>
+ <linearGradient id="mount" x2="0" y2="1"><stop stop-color="#283f47"/><stop offset="1" stop-color="#5c786b"/></linearGradient>
+ <linearGradient id="field" x2="0" y2="1"><stop stop-color="#769079"/><stop offset="1" stop-color="#d9c39a"/></linearGradient>
+ <linearGradient id="water" x2="0" y2="1"><stop stop-color="#234c63"/><stop offset="1" stop-color="#81aeb0"/></linearGradient>
+ <pattern id="grain" width="23" height="19" patternUnits="userSpaceOnUse"><circle cx="4" cy="12" r=".8" fill="#fff7cf" opacity=".34"/><path d="M12 3l3-1" stroke="#3a4b42" opacity=".18"/></pattern>
+ <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<rect width="900" height="570" fill="url(#sky)"/>
+<g opacity=".35" fill="#f0dfb6"><path d="M0 100Q100 78 202 101T407 102Q445 125 517 103T700 110T900 85V128H0Z"/><path d="M120 150Q230 128 317 144T512 143Q585 160 690 143T900 150V169H120Z"/></g>
+<!-- mountain distance -->
+<path d="M0 214L83 119L149 191L227 92L309 184L377 78L462 167L535 101L624 191L711 113L790 207L866 135L900 168V351H0Z" fill="#496c70"/>
+<path d="M0 250L106 175L169 232L268 155L340 227L421 151L501 230L596 173L678 228L772 161L900 224V377H0Z" fill="url(#mount)" stroke="#294a53" stroke-width="4"/>
+<path d="M220 101L250 139L230 130L214 151L196 139ZM368 84L394 119L378 112L362 136L345 125ZM531 105L551 134L534 129L520 143L503 131Z" fill="#d8d4c0" opacity=".7"/>
+<!-- foothills and fields -->
+<path d="M0 323Q155 272 289 312T549 315Q734 270 900 312V570H0Z" fill="#789079"/>
+<path d="M0 390Q120 346 249 375Q346 403 482 364T900 373V570H0Z" fill="url(#field)"/>
+<g fill="none" stroke="#6f8069" stroke-width="5" opacity=".65"><path d="M0 435Q157 398 272 427T521 414T900 430"/><path d="M0 482Q157 444 265 467T533 467T900 477"/><path d="M0 530Q170 501 296 517T564 522T900 529"/></g>
+<!-- river -->
+<path d="M296 337C307 382 244 410 282 459C321 509 415 512 446 570H618C548 515 416 486 388 452C361 423 405 385 392 350Z" fill="url(#water)" stroke="#e3d5ae" stroke-width="7"/>
+<path d="M323 373Q296 412 332 437T385 465 M338 487Q415 493 452 531 M413 399Q377 417 402 433" fill="none" stroke="#dbe8d7" stroke-width="3" opacity=".42"/>
+<!-- winding sandy road -->
+<path d="M740 545Q710 499 605 472T512 420Q508 378 554 349L611 296" fill="none" stroke="#977e58" stroke-width="36" opacity=".65"/>
+<path d="M740 545Q710 499 605 472T512 420Q508 378 554 349L611 296" fill="none" stroke="#e8d6ab" stroke-width="26"/>
+<path d="M740 545Q710 499 605 472T512 420Q508 378 554 349L611 296" fill="none" stroke="#fff1cb" stroke-width="2" stroke-dasharray="7 18" opacity=".5"/>
+<!-- town: roofs x730 y220 -->
+<g stroke-linejoin="round" stroke="#263f47" stroke-width="4"><path d="M699 280v79h123v-79l-61-33Z" fill="#d0b590"/><path d="M679 279l79-47l86 47l-28 12l-59-32l-52 32Z" fill="#394b53"/><path d="M738 306h37v53h-37Z" fill="#604c42"/><path d="M705 313h22v19h-22Z M791 313h22v19h-22Z" fill="#ddcfb0"/>
+<path d="M819 297v48h55v-48l-28-17Z" fill="#bfa886"/><path d="M804 299l42-31l45 31l-15 5l-30-21l-27 21Z" fill="#374c54"/></g>
+<!-- dojo hall x575 y270 -->
+<g stroke="#2b4149" stroke-width="4" stroke-linejoin="round"><path d="M512 327v85h156v-85l-78-43Z" fill="#cbb18e"/><path d="M491 330L586 261L687 327L655 340L588 293L520 343Z" fill="#304451"/><path d="M528 340h21v72h-21Z M558 325h21v87h-21Z M599 320h19v92h-19Z M638 340h18v72h-18Z" fill="#64554a"/><path d="M547 346h91v46h-91Z" fill="#dfd0b2"/><path d="M558 348v44M576 348v44M600 348v44M620 348v44" stroke="#85735d" stroke-width="2"/><path d="M495 417h190l-17 15H512Z" fill="#877963"/></g>
+<!-- shrine gate and garden x170 y310 -->
+<g stroke="#542f2a" stroke-width="5" stroke-linecap="round"><path d="M145 310v93M205 310v93"/><path d="M131 308h87 M141 326h68" stroke="#cc5943" stroke-width="12"/><path d="M145 345h60" stroke="#4e3631" stroke-width="5"/></g>
+<g fill="#6d846e" stroke="#456257" stroke-width="3"><path d="M82 367q-34-60 12-105q54 23 37 79q28 25-2 47Z"/><path d="M222 365q-19-49 21-83q40 29 18 74q20 30-13 42Z"/></g>
+<!-- arched bridge x350 y430 -->
+<g fill="none" stroke-linecap="round"><path d="M306 447Q343 400 397 446" stroke="#713e35" stroke-width="17"/><path d="M306 447Q343 402 397 446" stroke="#d4724e" stroke-width="10"/><path d="M317 425v41 M345 415v41 M371 420v41 M393 436v36" stroke="#903e37" stroke-width="6"/></g>
+<!-- silhouettes vegetation -->
+<g fill="#355b51"><path d="M18 412l18-61l19 61h-10v53H29v-53ZM69 439l19-73l20 73H97v52H79v-52ZM842 429l18-72l22 72h-12v49h-19v-49Z"/></g>
+<g fill="#71866a" opacity=".8"><path d="M0 500q60-39 131 10v60H0ZM780 515q63-39 120-8v63H780Z"/></g>
+<rect width="900" height="570" fill="url(#grain)" opacity=".48"/>
+<path d="M17 17h128 M17 17v100M883 17h-100M883 17v100M17 553h140M17 553v-88M883 553h-100M883 553v-100" stroke="#f4ddb0" stroke-width="2" fill="none" opacity=".45"/>
+</svg>

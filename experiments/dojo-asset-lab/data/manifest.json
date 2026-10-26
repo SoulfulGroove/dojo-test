@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "ADHD Dojo — Asset Design Lab",
+  "worldStyleBranches": ["miniature", "illustrated"],
+  "assetFamilies": [
+    {"id":"atlas","label":"Overworld cartography","purpose":"National/region backdrop illustrations with clear geography"},
+    {"id":"environments","label":"Region environments","purpose":"Landscapes, courtyard backgrounds, and atmospheric scenery"},
+    {"id":"landmarks","label":"Locations and architecture","purpose":"Clickable dojo, shrine, town and bridge landmarks"},
+    {"id":"foliage","label":"Plants and seasonal motifs","purpose":"Reusable trees, bamboo and scenic foreground elements"},
+    {"id":"ui","label":"Game interface","purpose":"Quest markers, action frames, selection rings and overlays"}
+  ],
+  "sourceCatalog": [
+    {"id":"custom-art","kind":"original vector artwork","usage":"Game backdrops (not a facsimile of period maps)","license":"Original for this project", "files":["assets/atlas/japan.svg","assets/illustrated/kyoto-valley.svg","assets/illustrated/dojo-room.svg","assets/miniature/kyoto-terrace.svg","assets/miniature/dojo-plaza.svg"]},
+    {"id":"east","kind":"licensed third-party sample art","usage":"Selected sprites bundled into one in-game texture atlas; not distributed as a standalone asset pack", "creator":"mmorwynn", "license":"Use in commercial/non-commercial projects; credit optional; no redistribution of files as asset pack", "url":"https://mmorwynn.itch.io/east-free-sample", "files":["assets/miniature/east-scene.png"],"atlasMetadata":"data/east-atlas.json"}
+  ],
+  "hotspotSchema": {"coordinates":"percentage of artboard width/height","target":"scene:id | trainer | select", "screenArtboard":"900x570 for regional/location art, 840x960 for Japan overview"},
+  "notes":"Do not mistake modern-geography artwork for historical Edo maps. Locations and Dojo are imaginative scenes; progress and mastery remain external to this visual prototype."
+}

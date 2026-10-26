@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 570" role="img" aria-label="Original low-poly styled isometric terrace ground asset">
+<defs><linearGradient id="sky" x2=".1" y2="1"><stop stop-color="#162d37"/><stop offset="1" stop-color="#335668"/></linearGradient><linearGradient id="grass" x2=".2" y2="1"><stop stop-color="#94ad83"/><stop offset="1" stop-color="#669576"/></linearGradient><pattern id="grassdots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="6" cy="12" r="2" fill="#d6d59c" opacity=".2"/><path d="M19 20l2-5" stroke="#426f5a" opacity=".3"/></pattern></defs>
+<rect width="900" height="570" fill="url(#sky)"/>
+<ellipse cx="450" cy="484" rx="370" ry="62" fill="#040f1c" opacity=".46"/>
+<path d="M450 103L876 319L452 540L26 319Z" fill="#3b5343" stroke="#233d3c" stroke-width="10"/>
+<path d="M450 72L876 290L452 511L26 290Z" fill="url(#grass)" stroke="#dae1ab" stroke-width="6"/>
+<path d="M450 72L876 290L452 511L26 290Z" fill="url(#grassdots)"/>
+<path d="M114 268L457 452L794 288" stroke="#d8c4a0" stroke-width="60" fill="none" opacity=".94"/>
+<path d="M257 183L560 345" stroke="#e0cbac" stroke-width="48" fill="none"/>
+<path d="M308 155Q353 203 321 251Q277 309 345 344Q423 391 442 484" stroke="#487f9f" stroke-width="64" fill="none"/>
+<path d="M313 156Q354 203 322 251Q285 308 349 344Q423 391 446 484" stroke="#83b8c4" stroke-width="33" fill="none"/>
+<path d="M448 73L876 290L452 511L26 290Z" fill="none" stroke="#e3d4ab" stroke-opacity=".8" stroke-width="3"/>
+<g fill="#f6e5bf" opacity=".8"><circle cx="98" cy="292" r="4"/><circle cx="124" cy="307" r="3"/><circle cx="710" cy="335" r="5"/><circle cx="685" cy="367" r="3"/><circle cx="460" cy="460" r="4"/><circle cx="536" cy="417" r="4"/></g>
+</svg>
