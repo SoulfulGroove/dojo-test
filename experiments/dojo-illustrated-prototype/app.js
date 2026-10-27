@@ -84,6 +84,31 @@
     const btn=$('#selectedSkillAction');btn.dataset.action=s.target;btn.innerHTML='';btn.append(document.createTextNode(s.action+' →'));
     try{localStorage.setItem('dojo-illustrated-skill',s.id)}catch(e){}
   }
+
+  const codexWords={ka:{word:'かさ',reading:'kasa',meaning:'umbrella'},ki:{word:'きり',reading:'kiri',meaning:'fog'},ku:{word:'くも',reading:'kumo',meaning:'cloud'},ke:{word:'けしき',reading:'keshiki',meaning:'scenery'},ko:{word:'こえ',reading:'koe',meaning:'voice'}};
+  let codexSelected={kana:'か',sound:'ka'},codexRecall=false,codexRevealed=true;
+  function renderCodex(){
+    const panel=$('.codex-practice');if(!panel)return;
+    panel.classList.toggle('is-recall',codexRecall);panel.classList.toggle('is-revealed',codexRevealed);
+    const toggle=$('#codexRecallToggle');toggle.setAttribute('aria-pressed',String(codexRecall));toggle.textContent=codexRecall?'Show readings':'Hide readings';
+    $('.codex-kana-choice').forEach(b=>{const active=b.dataset.kana===codexSelected.kana;b.classList.toggle('is-selected',active);b.setAttribute('aria-pressed',String(active));});
+    $('#codexEntryGlyph').textContent=codexSelected.kana;
+    $('#codexEntryReading').replaceChildren(document.createTextNode(codexSelected.sound+' '));
+    const readingKana=document.createElement('span');readingKana.lang='ja';readingKana.textContent=codexSelected.kana;$('#codexEntryReading').append(readingKana);
+    const example=codexWords[codexSelected.sound];$('#codexEntryExample').replaceChildren();
+    if(example){const jp=document.createElement('span');jp.lang='ja';jp.textContent=example.word;$('#codexEntryExample').append(jp,document.createTextNode(' · '+example.reading+' · '+example.meaning));}
+    $('#codexEntryHint').textContent=codexRecall?(codexRevealed?'Answer revealed. Try another character.':'Try recalling the reading, then tap the kana.'):'Select another character to explore it.';
+    $('#codexEntryReading').setAttribute('aria-hidden',String(codexRecall&&!codexRevealed));
+    $('#codexEntryExample').setAttribute('aria-hidden',String(codexRecall&&!codexRevealed));
+    $('#codexHear').setAttribute('aria-label','Hear '+codexSelected.kana+' ('+codexSelected.sound+')');
+  }
+  function speakCodex(){
+    const kana=codexSelected.kana;
+    if(!('speechSynthesis' in window)){$('#kanaReadout').textContent='Speech playback is unavailable on this device.';return;}
+    try{window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(kana);utterance.lang='ja-JP';utterance.rate=.78;window.speechSynthesis.speak(utterance);$('#kanaReadout').textContent='Playing '+kana+' · '+codexSelected.sound+' (device voice).';}
+    catch(e){$('#kanaReadout').textContent='Speech playback is unavailable on this device.';}
+  }
+  function selectCodexKana(kana,sound){codexSelected={kana,sound};codexRevealed=true;renderCodex();speakCodex();}
   function sayKana(kana,sound){
     $('#kanaReadout').textContent=kana+' — '+sound+' · listen and repeat';
     $$('.kana-buttons button').forEach(b=>b.classList.toggle('playing',b.dataset.kana===kana));
@@ -97,6 +122,9 @@
     if(el.dataset.codextab){codexTab(el.dataset.codextab);return;}
     if(el.dataset.skill){showSkill(el.dataset.skill);return;}
     if(el.dataset.quest){const q=qs[el.dataset.quest];lastQuest=el.dataset.quest;openDialog(q.title,q.description,q.action,q.button);return;}
+    if(el.id==='codexRecallToggle'){codexRecall=!codexRecall;codexRevealed=!codexRecall;renderCodex();return;}
+    if(el.id==='codexHear'){codexRevealed=true;renderCodex();speakCodex();return;}
+    if(el.classList.contains('codex-kana-choice')){selectCodexKana(el.dataset.kana,el.dataset.sound);return;}
     if(el.dataset.kana){sayKana(el.dataset.kana,el.dataset.sound);return;}
     if(el.id==='dialogPrimary'){closeDialog();followAction(dialogAction);return;}
   });
@@ -108,6 +136,7 @@
     }
   });
   fetch('data/skills.json').then(r=>{if(!r.ok)throw Error('skill source unavailable');return r.json()}).then(x=>{skills=x.skills;let p='sound';try{p=localStorage.getItem('dojo-illustrated-skill')||p}catch(e){}showSkill(p)}).catch(()=>{skills=[{id:'sound',title:'Sound Structure',icon:'skill-sound',status:'reported',summary:'Organized hiragana sounds into a recoverable structure.',evidence:'Documented in the hiragana experiment.',target:'trainer',action:'Open practice'}];showSkill('sound')});
+  renderCodex();
   let first=location.hash.slice(1);if(!pages.includes(first)){try{first=localStorage.getItem('dojo-illustrated-page')}catch(e){first='hall'}}nav(pages.includes(first)?first:'hall');
   // Test-facing state is read-only and contains no user secrets.
   window.__dojoLab={get page(){return current},get skill(){return selected},nav,showSkill,questFilter,codexTab};

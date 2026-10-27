@@ -61,3 +61,9 @@ The Quests screen now uses live text, tabs and status labels rather than decorat
 The featured K-row quest shares the Hall's existing `renderHallQuest` progress read from `adhd-dojo-hiragana-k-row-v01`. Availability is explicit: K-row is playable, Musashi opens a reader, vocabulary is a preview, and reconstruction is planned. Archive and milestones are honest placeholders, not fabricated user XP or developer test results. Other pages and existing trainer remain unchanged.
 
 QA: locally exercised navigation, quest dialog, training overlay and the three tabs at 320, 390, and 1280 CSS pixels without JavaScript errors or horizontal overflow.
+
+## Codex screen v0.4 — interactive character chapter
+
+The illustrated night setting remains as a compact header. The original painted codex spread stays available as an expandable decorative reference; its embedded speaker drawings are not presented as active controls.
+
+The K-row Characters chapter now has five large selectable kana, a live reading and example word, a Japanese device-voice pronunciation button, an unscored Hide readings self-test mode, and a direct link into the existing scored K-row trainer. The other Codex tabs keep their previous destinations and unfinished status. No analytics, user progress certification or account has been added.

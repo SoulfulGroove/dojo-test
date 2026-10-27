@@ -123,20 +123,51 @@
     </section>
 
     <section class="page" id="page-codex" aria-labelledby="codexTitle" hidden>
-      <h1 id="codexTitle" class="sr-only">Dojo Codex</h1>
-      <img class="wide-image" src="assets/codex-header.webp" alt="The Dojo Codex — illustrated night scene with stacks of decorated Japanese books"/>
+      <div class="codex-stage">
+        <div class="codex-stage-content">
+          <span class="codex-stage-eyebrow">THE KANA ARCHIVE · 学ぶ</span>
+          <h1 id="codexTitle">The Dojo Codex</h1>
+          <p>Explore a character. Listen, remember, then test yourself.</p>
+        </div>
+      </div>
       <div class="codex-tabs" role="tablist" aria-label="Codex chapters">
-        <button role="tab" aria-selected="true" data-codextab="characters">Characters</button>
-        <button role="tab" aria-selected="false" data-codextab="vocab">Vocabulary</button>
-        <button role="tab" aria-selected="false" data-codextab="reading">Reading</button>
+        <button type="button" role="tab" aria-selected="true" aria-controls="codexCharacters" data-codextab="characters">Characters</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="codexVocab" data-codextab="vocab">Vocabulary</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="codexReading" data-codextab="reading">Reading</button>
       </div>
-      <div id="codexCharacters">
-        <div class="codex-book"><img src="assets/codex-spread.webp" alt="Beautifully painted open Japanese codex showing the hiragana K-row and word examples"/></div>
-        <div class="kana-practice" aria-labelledby="kanaTitle"><h2 id="kanaTitle">Hear the K-row</h2><p id="kanaReadout" role="status">Tap a character to hear its reading.</p><div class="kana-buttons"><button data-kana="か" data-sound="ka">か<span>ka</span></button><button data-kana="き" data-sound="ki">き<span>ki</span></button><button data-kana="く" data-sound="ku">く<span>ku</span></button><button data-kana="け" data-sound="ke">け<span>ke</span></button><button data-kana="こ" data-sound="ko">こ<span>ko</span></button></div></div>
+      <div id="codexCharacters" role="tabpanel">
+        <section class="codex-practice" aria-labelledby="kanaTitle">
+          <div class="codex-lesson-heading">
+            <div><span class="codex-chapter-mark">CHAPTER 01 · か行</span><h2 id="kanaTitle">The K-row</h2></div>
+            <button type="button" id="codexRecallToggle" aria-pressed="false">Hide readings</button>
+          </div>
+          <p class="codex-instruction">Tap a character to hear its sound. Hide readings to practice retrieving them first.</p>
+          <div class="codex-kana-grid" role="group" aria-label="Select a K-row character">
+            <button class="codex-kana-choice is-selected" data-kana="か" data-sound="ka" aria-pressed="true" type="button"><span lang="ja">か</span><small>ka</small></button>
+            <button class="codex-kana-choice" data-kana="き" data-sound="ki" aria-pressed="false" type="button"><span lang="ja">き</span><small>ki</small></button>
+            <button class="codex-kana-choice" data-kana="く" data-sound="ku" aria-pressed="false" type="button"><span lang="ja">く</span><small>ku</small></button>
+            <button class="codex-kana-choice" data-kana="け" data-sound="ke" aria-pressed="false" type="button"><span lang="ja">け</span><small>ke</small></button>
+            <button class="codex-kana-choice" data-kana="こ" data-sound="ko" aria-pressed="false" type="button"><span lang="ja">こ</span><small>ko</small></button>
+          </div>
+          <div class="codex-entry" aria-live="polite">
+            <div class="codex-entry-glyph" id="codexEntryGlyph" lang="ja">か</div>
+            <div class="codex-entry-info">
+              <div id="codexEntryReading" class="codex-entry-reading">ka <span lang="ja">か</span></div>
+              <p class="codex-entry-example" id="codexEntryExample"><span lang="ja">かさ</span> · kasa · umbrella</p>
+              <p class="codex-entry-hint" id="codexEntryHint">Tap another character to explore it.</p>
+            </div>
+            <button type="button" class="codex-hear" id="codexHear" aria-label="Hear selected character"><span aria-hidden="true">♪</span></button>
+          </div>
+          <p class="codex-audio-note" id="kanaReadout" role="status">Japanese pronunciation uses your device's speech voices, when available.</p>
+          <button type="button" class="gold-cta codex-train-cta" data-action="trainer">Practice unaided recall <span aria-hidden="true">→</span></button>
+        </section>
+        <details class="codex-art-reference">
+          <summary>View illustrated K-row reference spread</summary>
+          <img src="assets/codex-spread.webp" alt="Decorative illustrated K-row spread with the five kana and sample Japanese words; the illustration itself is not interactive." loading="lazy"/>
+        </details>
       </div>
-      <div id="codexVocab" class="journal-panel" hidden><div class="journal-symbol">言</div><h2>Vocabulary workshop</h2><p>Associate known hiragana with authentic vocabulary and later with kanji. This chapter is a small structural preview, not a filled dictionary.</p><button class="gold-cta" data-action="trainer">Practice kana <span aria-hidden="true">→</span></button></div>
-      <div id="codexReading" class="journal-panel" hidden><div class="journal-symbol">読</div><h2>Musashi Reader</h2><p>Take your existing kana knowledge into a passage from <em>Go Rin no Sho</em>, then inspect words and clause boundaries.</p><button class="gold-cta" data-action="reader">Open the reader <span aria-hidden="true">→</span></button></div>
-      <div class="art-panel codex-next" role="presentation"><img src="assets/codex-next.webp" alt="Decorative next-chapter card with parchment kana tiles"/></div>
+      <div id="codexVocab" role="tabpanel" class="journal-panel" hidden><div class="journal-symbol">言</div><h2>Vocabulary workshop</h2><p>Associate known hiragana with authentic vocabulary and later with kanji. This chapter is a small structural preview, not a filled dictionary.</p><button class="gold-cta" data-action="trainer">Practice kana <span aria-hidden="true">→</span></button></div>
+      <div id="codexReading" role="tabpanel" class="journal-panel" hidden><div class="journal-symbol">読</div><h2>Musashi Reader</h2><p>Take your existing kana knowledge into a passage from <em>Go Rin no Sho</em>, then inspect words and clause boundaries.</p><button class="gold-cta" data-action="reader">Open the reader <span aria-hidden="true">→</span></button></div>
     </section>
 
     <section class="page" id="page-map" aria-labelledby="mapTitle" hidden>
