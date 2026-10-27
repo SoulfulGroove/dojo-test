@@ -42,29 +42,57 @@
     </section>
 
     <section class="page" id="page-quests" aria-labelledby="questsTitle" hidden>
-      <h1 id="questsTitle" class="sr-only">Quest Log</h1>
-      <div class="quest-hero"><img class="wide-image" src="assets/quest-header.webp" alt="RPG quest courtyard, with lanterns and a torii under moonlight"/>
-        <div class="quest-filters" role="tablist" aria-label="Quest views">
-          <button role="tab" aria-selected="true" class="selected" data-questfilter="active">Active</button>
-          <button role="tab" aria-selected="false" data-questfilter="archive">Archive</button>
-          <button role="tab" aria-selected="false" data-questfilter="milestones">Milestones</button>
+      <div class="quest-stage">
+        <div class="quest-stage-copy">
+          <span class="quest-stage-eyebrow">TRAINING GROUND · 冒険</span>
+          <h1 id="questsTitle">Quests</h1>
+          <p>Choose a challenge. Build real skill.</p>
         </div>
       </div>
-      <div id="questActive" class="quest-cards">
-        <div class="art-panel interaction-art main-quest-art">
-          <img src="assets/quest-feature.webp" alt="Beautiful illustrated Hiragana K-row main quest, sample progress and Continue button"/>
-          <button class="art-hit" data-action="trainer" aria-label="Continue K-row quest and launch training"></button>
-        </div>
-        <div class="section-bar"><h2>Field quests</h2><span>Choose a quest</span></div>
-        <div class="quest-rows">
-          <button data-quest="musashi"><img src="assets/quest-row-1.webp" alt="Read the Opening Passage — field quest"/></button>
-          <button data-quest="recall"><img src="assets/quest-row-2.webp" alt="Kana Recall Drill — practice quest"/></button>
-          <button data-quest="vocab"><img src="assets/quest-row-3.webp" alt="Build a Five-Word Vocabulary — sample field quest"/></button>
-          <button data-quest="syntax"><img src="assets/quest-row-4.webp" alt="Sentence Construction — planned challenge"/></button>
+      <div class="quest-filters" role="tablist" aria-label="Quest views">
+        <button type="button" role="tab" aria-selected="true" class="selected" data-questfilter="active" aria-controls="questActive">Active</button>
+        <button type="button" role="tab" aria-selected="false" data-questfilter="archive" aria-controls="questArchive">Archive</button>
+        <button type="button" role="tab" aria-selected="false" data-questfilter="milestones" aria-controls="questMilestones">Milestones</button>
+      </div>
+      <div id="questActive" class="quest-cards" role="tabpanel">
+        <article class="quest-feature-live" aria-labelledby="questFeatureTitle">
+          <div class="quest-feature-top">
+            <img src="assets/skill-kana.webp" class="quest-feature-medallion" alt="" width="84" height="84"/>
+            <div class="quest-feature-heading">
+              <span class="quest-tag">CURRENT PRACTICE · 01</span>
+              <h2 id="questFeatureTitle">Rebuild the K-row</h2>
+            </div>
+          </div>
+          <p id="questFeatureDescription">Reconstruct five kana and recall their sounds without choices.</p>
+          <p id="questFeatureProgress" class="quest-feature-progress" role="status">Two stages: reconstruction and unaided recall.</p>
+          <button id="questFeatureAction" type="button" class="gold-cta quest-feature-cta" data-action="trainer">Start K-row practice <span aria-hidden="true">→</span></button>
+        </article>
+        <div class="section-bar"><h2>More challenges</h2><span>Explore a path</span></div>
+        <div class="quest-rows" aria-label="Explore quests">
+          <button type="button" class="quest-list-card" data-quest="musashi" aria-label="Read the Opening Passage, reader available">
+            <span class="quest-list-art quest-art-musashi" aria-hidden="true"></span>
+            <span class="quest-list-content"><span class="quest-list-status">READER AVAILABLE</span><strong>Read an Opening Passage</strong><span>Explore an authentic Japanese text</span></span>
+            <span class="quest-list-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="quest-list-card" data-quest="recall" aria-label="Kana Recall Drill, playable">
+            <span class="quest-list-art quest-art-recall" aria-hidden="true"></span>
+            <span class="quest-list-content"><span class="quest-list-status quest-status-ready">PLAYABLE NOW</span><strong>Kana Recall Drill</strong><span>Retrieve sounds without choices</span></span>
+            <span class="quest-list-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="quest-list-card" data-quest="vocab" aria-label="Vocabulary Anchor, workshop preview">
+            <span class="quest-list-art quest-art-vocab" aria-hidden="true"></span>
+            <span class="quest-list-content"><span class="quest-list-status">WORKSHOP PREVIEW</span><strong>Vocabulary Anchor</strong><span>Link known kana to useful words</span></span>
+            <span class="quest-list-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="quest-list-card" data-quest="syntax" aria-label="Sentence Construction, planned challenge">
+            <span class="quest-list-art quest-art-syntax" aria-hidden="true"></span>
+            <span class="quest-list-content"><span class="quest-list-status">PLANNED CHALLENGE</span><strong>Sentence Construction</strong><span>Rebuild meaningful Japanese phrases</span></span>
+            <span class="quest-list-arrow" aria-hidden="true">›</span>
+          </button>
         </div>
       </div>
-      <div id="questArchive" class="journal-panel" hidden><div class="journal-symbol">巻</div><h2>Quest Archive</h2><p>Your completed real practice sessions will eventually appear here. The sample quest cards in this concept are not synced to a quest backend.</p><button class="gold-cta" data-page="skills">View learning milestones <span aria-hidden="true">→</span></button></div>
-      <div id="questMilestones" class="journal-panel" hidden><div class="journal-symbol">印</div><h2>Learning Milestones</h2><p><strong>46 / 46</strong> base hiragana written from memory on the documented next-day test.</p><p>The skill evidence is historical. The sample XP printed on the art is not verified user progress.</p><button class="gold-cta" data-page="skills">Explore skills <span aria-hidden="true">→</span></button></div>
+      <div id="questArchive" class="journal-panel" role="tabpanel" hidden><div class="journal-symbol">巻</div><h2>Quest Archive</h2><p>There is no saved quest history yet. Completed K-row reps currently stay in the training module on this device.</p><button class="gold-cta" data-action="trainer">Return to practice <span aria-hidden="true">→</span></button></div>
+      <div id="questMilestones" class="journal-panel" role="tabpanel" hidden><div class="journal-symbol">印</div><h2>Learning Milestones</h2><p>Milestones will be based on completed recall and practice evidence, not decorative XP or lesson views.</p><p>For now, open Skills to explore the demonstrated learning capabilities in this prototype.</p><button class="gold-cta" data-page="skills">Explore skills <span aria-hidden="true">→</span></button></div>
     </section>
 
     <section class="page" id="page-skills" aria-labelledby="skillsTitle" hidden>

@@ -53,3 +53,11 @@ Smoke test on Playwright/Chromium at 320px, 390px and 1280px: initial Hall rende
 The Hall now replaces three decorative sample-status panels with one real K-row quest card. Quest title and description come from the existing trainer at `../hiragana-dojo/data/kana.json` (with a readable fallback). This avoids duplicating the same quest metadata in another JSON file.
 
 The Hall displays the last saved local reconstruction/recall state under `adhd-dojo-hiragana-k-row-v01`. It refreshes when returning from the trainer; no account, remote progress system, new scoring algorithm, or false mastery claim is added. The Skills, Quests, Codex, Map and standalone trainer remain unchanged. Other painted concept elements may still show illustrative XP.
+
+## Quests v0.3 — screen refinement
+
+The Quests screen now uses live text, tabs and status labels rather than decorative image-only status bars. The painted quest-header scene, K-row skill icon and artwork portions of the four existing quest-row WebPs are reused; no unlicensed third-party packs were added.
+
+The featured K-row quest shares the Hall's existing `renderHallQuest` progress read from `adhd-dojo-hiragana-k-row-v01`. Availability is explicit: K-row is playable, Musashi opens a reader, vocabulary is a preview, and reconstruction is planned. Archive and milestones are honest placeholders, not fabricated user XP or developer test results. Other pages and existing trainer remain unchanged.
+
+QA: locally exercised navigation, quest dialog, training overlay and the three tabs at 320, 390, and 1280 CSS pixels without JavaScript errors or horizontal overflow.

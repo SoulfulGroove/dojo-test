@@ -34,6 +34,14 @@
       status.textContent='Two practice stages: reconstruct, then retrieve from memory.';
       button.textContent='Begin practice →';
     }
+    const questTitle=$('#questFeatureTitle'),questDescription=$('#questFeatureDescription'),questProgress=$('#questFeatureProgress'),questButton=$('#questFeatureAction');
+    if(questTitle&&questDescription&&questProgress&&questButton){
+      questTitle.textContent=hallQuest.title;
+      questDescription.textContent=hallQuest.description;
+      questProgress.textContent=status.textContent;
+      questButton.textContent=button.textContent;
+      questButton.dataset.action='trainer';
+    }
   }
   fetch('../hiragana-dojo/data/kana.json').then(r=>{if(!r.ok)throw Error('Quest metadata unavailable');return r.json()}).then(data=>{
     const quest=data&&data.quest;
