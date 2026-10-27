@@ -44,6 +44,25 @@
 @media(max-width:390px){.top-name{font-size:.77rem}.lab-head h1{font-size:1.3rem}.lab-tag{font-size:.58rem}.map-note span{font-size:.66rem}.tool{padding:9px}.segment button{font-size:.73rem}.info-top h2{font-size:1.12rem}.info-card{padding:12px}.info-card p{font-size:.75rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{transition:none!important;animation:none!important}
+
+/* Player-facing entry mode: ?play=1. Keep the full design lab unchanged at the base URL. */
+.player-map .shell{display:block;max-width:820px;height:100dvh;grid-template-columns:none}
+.player-map .rail,.player-map .style-row,.player-map .bottom,.player-map .map-note,.player-map .lab-tag,.player-map .top-action{display:none!important}
+.player-map .app{height:100dvh;min-height:0;grid-template-rows:auto minmax(0,1fr)}
+.player-map .topbar{min-height:62px;padding:10px 16px}
+.player-map .top-name{font-size:.9rem;letter-spacing:.12em}
+.player-map .top-tag{font-size:.67rem;letter-spacing:.07em}
+.player-map .main{overflow:hidden;min-height:0}
+.player-map .breadcrumb{padding:6px 14px;min-height:38px}
+.player-map .lab-head{padding:13px 16px 12px}
+.player-map .lab-head h1{font-size:clamp(1.35rem,5.5vw,1.85rem)}
+.player-map .lab-head p{font-size:.78rem}
+.player-map .scene-wrap,.player-map .main .scene-wrap{flex:1 1 auto;min-height:245px;max-width:none;width:calc(100% - 20px);margin:0 10px;border-radius:13px}
+.player-map .info-card{margin:9px 10px calc(10px + env(safe-area-inset-bottom));padding:13px 14px;flex:none;display:grid;grid-template-columns:1fr;gap:8px}
+.player-map .info-actions{min-width:0}.player-map .info-actions .primary{min-height:48px}
+.player-map .primary:disabled{opacity:.55;cursor:not-allowed;box-shadow:none}
+.player-map .map-flag{font-size:.66rem}
+@media(max-width:390px){.player-map .lab-head{padding:11px 13px 10px}.player-map .info-card{padding:11px 12px}.player-map .scene-wrap{min-height:230px}}
 </style>
 </head>
 <body>
@@ -160,14 +179,42 @@ body.reduce-motion *,body.reduce-motion *::before,body.reduce-motion *::after{tr
 <div class="train-screen" id="trainScreen" role="dialog" aria-label="Hiragana Dojo training" aria-modal="true" aria-hidden="true"><div class="train-top"><span>⚔ HIRAGANA DOJO · ACTIVE REP</span><button class="secondary" id="closeTrain">← Return</button></div><iframe id="trainFrame" title="Hiragana training activity" loading="lazy"></iframe><div class="train-bottom">Progress is saved locally by your existing training app.</div></div>
 <script>
 (()=>{'use strict';
-const $=id=>document.getElementById(id);const pages=['japan','kyoto','dojo'];const pageLabels={japan:['The Outer Realm · 第一層','The Japan Atlas','Explore the islands. Enter a training ground.','MAP 01 / 03'],kyoto:['The Kinai Region · 第二層','Yamashiro & Kyoto','Zooming closer brings the regional landscape into view.','MAP 02 / 03'],dojo:['The Training Grounds · 第三層','Kyoto Practice Hall','Enter a fictional Dojo and continue a real learning rep.','MAP 03 / 03']};
+const $=id=>document.getElementById(id);
+const playerMode=new URLSearchParams(window.location.search).get('play')==='1';
+if(playerMode){
+  document.documentElement.classList.add('player-map');
+  document.title='Hiragana Dojo — Explore Japan';
+  document.querySelector('.top-name').textContent='HIRAGANA DOJO';
+  document.querySelector('.top-tag').textContent='Explore Japan · Begin in Kyoto';
+}
+const pages=['japan','kyoto','dojo'];const pageLabels={japan:['The Outer Realm · 第一層','The Japan Atlas','Explore the islands. Enter a training ground.','MAP 01 / 03'],kyoto:['The Kinai Region · 第二層','Yamashiro & Kyoto','Zooming closer brings the regional landscape into view.','MAP 02 / 03'],dojo:['The Training Grounds · 第三層','Kyoto Practice Hall','Enter a fictional Dojo and continue a real learning rep.','MAP 03 / 03']};
 const places={kyoto:{title:'Kyoto · Yamashiro',desc:'Historic capital and the first explorable region in the design lab.',badge:'EXPLORE',action:'Explore Kyoto →'},edo:{title:'Edo · Kantō',desc:'A map marker for the shogunate seat. Other regions remain previews in this first slice.',badge:'PREVIEW',action:'Explore Kyoto instead'},kokura:{title:'Kokura · Buzen',desc:'A western Japan destination reserved for a later regional map. No quest is assigned yet.',badge:'PREVIEW',action:'Explore Kyoto instead'},kumamoto:{title:'Kumamoto · Higo',desc:'A future region that could support learning about Musashi’s later life.',badge:'PREVIEW',action:'Explore Kyoto instead'}};
+if(playerMode){
+  Object.assign(pageLabels,{
+    japan:['JAPAN · 日本','Travel across Japan','Choose a place to begin your journey.','WORLD'],
+    kyoto:['KYOTO · 京都','Arriving in Kyoto','Discover your first training ground.','KYOTO'],
+    dojo:['KYOTO · TRAINING','The Practice Hall','Try the first hiragana challenge, then return to Japan.','DOJO']
+  });
+}
 let stage='japan',skin='rpg',labels=true,place='kyoto',zoom=1,dx=0,dy=0,prevFocus=null;let activePointers=new Map(),mapMoving=false,startGesture=null,trainOpen=false,sheetOpen=false;
 const map=$('mapCanvas');const stageKey='adhd-dojo-overworld-v01';
 function persist(){try{localStorage.setItem(stageKey,JSON.stringify({skin,labels,stage,place}))}catch(e){}}
-function applySkin(){['japanScene','regionScene','hallScene'].forEach(id=>{const e=$(id);e.classList.remove('rpg','atlas');e.classList.add(skin)});$('styleRpg').classList.toggle('active',skin==='rpg');$('styleAtlas').classList.toggle('active',skin==='atlas');$('styleRpg').setAttribute('aria-pressed',String(skin==='rpg'));$('styleAtlas').setAttribute('aria-pressed',String(skin==='atlas'));$('historicalLabels').style.display=labels?'':'none';$('layerBtn').textContent=labels?'Labels: On':'Labels: Off';$('mapFlag').textContent=skin==='atlas'?'JAPAN · INSPIRED BY EARLY-EDO CARTOGRAPHY':'KAN’EI-INSPIRED CHART · JAPAN';document.querySelector('meta[name="theme-color"]').content=skin==='atlas'?'#dacbae':'#0d1822';persist();}
+function applySkin(){['japanScene','regionScene','hallScene'].forEach(id=>{const e=$(id);e.classList.remove('rpg','atlas');e.classList.add(skin)});$('styleRpg').classList.toggle('active',skin==='rpg');$('styleAtlas').classList.toggle('active',skin==='atlas');$('styleRpg').setAttribute('aria-pressed',String(skin==='rpg'));$('styleAtlas').setAttribute('aria-pressed',String(skin==='atlas'));$('historicalLabels').style.display=labels?'':'none';$('layerBtn').textContent=labels?'Labels: On':'Labels: Off';$('mapFlag').textContent=skin==='atlas'?'JAPAN · INSPIRED BY EARLY-EDO CARTOGRAPHY':'KAN’EI-INSPIRED CHART · JAPAN';if(playerMode)$('mapFlag').textContent='JAPAN · EXPLORE';document.querySelector('meta[name="theme-color"]').content=skin==='atlas'?'#dacbae':'#0d1822';persist();}
 function setInfo(title,desc,badge,action){$('infoTitle').textContent=title;$('infoDescription').textContent=desc;$('infoBadge').textContent=badge;$('primaryAction').textContent=action}
-function infoForStage(){if(stage==='japan'){const p=places[place];setInfo(p.title,p.desc,p.badge,p.action);$('infoKicker').textContent='SELECTED DESTINATION';$('secondaryAction').textContent='Map layers';}else if(stage==='kyoto'){setInfo('Kyoto region · first destination','This prototype uses a schematic region illustration, not a historical city survey. Enter a fictional practice hall to continue training.','REGION','Enter Practice Hall →');$('infoKicker').textContent='REGIONAL EXPERIENCE';$('secondaryAction').textContent='Return to Japan';}else{setInfo('The Kyoto Practice Hall','Your Hiragana K-row reconstruction and recall are ready to play. This opens the existing, working training module.','ACTIVE REP','Enter Hiragana Training →');$('infoKicker').textContent='CURRENT TRAINING LOCATION';$('secondaryAction').textContent='Skill Tree Lab';}}
+function infoForStage(){if(stage==='japan'){
+  const p=places[place],ready=place==='kyoto';
+  const playerDescriptions={
+    kyoto:'The historic capital. Your first playable training ground is here.',
+    edo:'Historic Edo, now Tokyo. More activities will be added here later.',
+    kokura:'A city in northern Kyushu. This destination is not playable yet.',
+    kumamoto:'A city in Kyushu. This destination is not playable yet.'
+  };
+  setInfo(p.title,playerMode?playerDescriptions[place]:p.desc,playerMode?(ready?'PLAYABLE':'PREVIEW'):p.badge,playerMode?(ready?'Travel to Kyoto →':'Coming later'):p.action);
+  $('infoKicker').textContent=playerMode?'CHOSEN DESTINATION':'SELECTED DESTINATION';
+  $('secondaryAction').textContent='Map layers';
+  $('primaryAction').disabled=playerMode&&!ready;
+  $('secondaryAction').hidden=playerMode;
+}else if(stage==='kyoto'){$('primaryAction').disabled=false;$('secondaryAction').hidden=false;setInfo('Kyoto region · first destination','This prototype uses a schematic region illustration, not a historical city survey. Enter a fictional practice hall to continue training.','REGION','Enter Practice Hall →');$('infoKicker').textContent='REGIONAL EXPERIENCE';$('secondaryAction').textContent='Return to Japan';}else{$('primaryAction').disabled=false;$('secondaryAction').hidden=false;setInfo('The Kyoto Practice Hall','Your Hiragana K-row reconstruction and recall are ready to play. This opens the existing, working training module.','ACTIVE REP','Enter Hiragana Training →');$('infoKicker').textContent='CURRENT TRAINING LOCATION';$('secondaryAction').textContent=playerMode?'Return to Japan':'Skill Tree Lab';}}
 function goto(next){if(!pages.includes(next))return;stage=next;pages.forEach(x=>$(x==='japan'?'japanScene':x==='kyoto'?'regionScene':'hallScene').classList.toggle('active',x===stage));const order=pages.indexOf(stage);const p=pageLabels[stage];$('chapter').textContent=p[0];$('stageTitle').textContent=p[1];$('stageSubtitle').textContent=p[2];$('stageTag').textContent=p[3];$('backBtn').disabled=order===0;$('regionCrumb').hidden=order<1;$('crumbSep2').hidden=order<1;$('hallCrumb').hidden=order<2;$('crumbSep3').hidden=order<2;$('worldCrumb').classList.toggle('active',stage==='japan');$('regionCrumb').classList.toggle('active',stage==='kyoto');$('hallCrumb').classList.toggle('active',stage==='dojo');$('bottomWorld').classList.toggle('active',stage==='japan');$('bottomDojo').classList.toggle('active',stage==='dojo');document.querySelectorAll('.rail-btn').forEach(x=>{if(x.dataset.step===stage)x.setAttribute('aria-current','step');else x.removeAttribute('aria-current')});$('navigationHint').textContent=stage==='japan'?'Drag to explore · tap a marker · pinch to zoom':stage==='kyoto'?'Illustrated region · tap the practice hall to descend':'A fictional training location · enter a real rep';$('layerBtn').disabled=stage!=='japan';$('mapControls').hidden=stage!=='japan';infoForStage();persist();}
 function selectPlace(id){if(!places[id])return;place=id;document.querySelectorAll('.pin').forEach(x=>x.classList.toggle('selected',x.dataset.place===id));infoForStage();persist();}
 function clamp(n,a,b){return Math.min(b,Math.max(a,n))}
@@ -177,8 +224,8 @@ function reset(){zoom=1;dx=dy=0;transform()}
 function toggleSheet(open){sheetOpen=open;$('sourceSheet').classList.toggle('open',open);$('sheetBackdrop').classList.toggle('open',open);$('sourceSheet').setAttribute('aria-hidden',String(!open));if(open){prevFocus=document.activeElement;$('closeSheet').focus()}else if(prevFocus?.isConnected)prevFocus.focus()}
 function toggleTraining(open){trainOpen=open;$('trainScreen').classList.toggle('open',open);$('trainScreen').setAttribute('aria-hidden',String(!open));if(open){prevFocus=document.activeElement;const f=$('trainFrame');if(!f.getAttribute('src'))f.src='../hiragana-dojo/';$('closeTrain').focus()}else if(prevFocus?.isConnected)prevFocus.focus()}
 function train(){toggleTraining(true)}
-$('primaryAction').addEventListener('click',()=>{if(stage==='japan')goto('kyoto');else if(stage==='kyoto')goto('dojo');else train()});
-$('secondaryAction').addEventListener('click',()=>{if(stage==='japan'){$('layerBtn').click()}else if(stage==='kyoto')goto('japan');else window.location.href='../dojo-skill-tree-lab/'});
+$('primaryAction').addEventListener('click',()=>{if(stage==='japan'){if(place==='kyoto')goto('kyoto')}else if(stage==='kyoto')goto('dojo');else train()});
+$('secondaryAction').addEventListener('click',()=>{if(stage==='japan'){$('layerBtn').click()}else if(stage==='kyoto')goto('japan');else if(playerMode)goto('japan');else window.location.href='../dojo-skill-tree-lab/'});
 $('styleAtlas').addEventListener('click',()=>{skin='atlas';applySkin()});$('styleRpg').addEventListener('click',()=>{skin='rpg';applySkin()});$('layerBtn').addEventListener('click',()=>{labels=!labels;applySkin()});
 $('backBtn').addEventListener('click',()=>goto(pages[Math.max(0,pages.indexOf(stage)-1)]));$('worldCrumb').addEventListener('click',()=>goto('japan'));$('regionCrumb').addEventListener('click',()=>goto('kyoto'));$('hallCrumb').addEventListener('click',()=>goto('dojo'));
 $('bottomWorld').addEventListener('click',()=>goto('japan'));$('bottomDojo').addEventListener('click',()=>goto('dojo'));$('bottomSkill').addEventListener('click',()=>{window.location.href='../dojo-skill-tree-lab/'});$('nextRepBtn').addEventListener('click',train);
@@ -194,7 +241,8 @@ function endPointer(e){activePointers.delete(e.pointerId);if(!activePointers.siz
 map.addEventListener('pointerup',endPointer);map.addEventListener('pointercancel',endPointer);
 map.addEventListener('wheel',e=>{if(stage!=='japan')return;e.preventDefault();setZoom(zoom+(e.deltaY<0?.16:-.16))},{passive:false});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'){if(trainOpen)toggleTraining(false);else if(sheetOpen)toggleSheet(false);else if(stage!=='japan')goto(pages[pages.indexOf(stage)-1])}});
-try{const s=JSON.parse(localStorage.getItem(stageKey)||'null');if(s){if(['atlas','rpg'].includes(s.skin))skin=s.skin;if(typeof s.labels==='boolean')labels=s.labels;if(pages.includes(s.stage))stage=s.stage;if(places[s.place])place=s.place}}catch(e){}
+try{const s=JSON.parse(localStorage.getItem(stageKey)||'null');if(s){if(['atlas','rpg'].includes(s.skin))skin=s.skin;if(typeof s.labels==='boolean')labels=s.labels;if(!playerMode&&pages.includes(s.stage))stage=s.stage;if(places[s.place])place=s.place}}catch(e){}
+if(playerMode){stage='japan';skin='rpg';labels=true;place='kyoto';}
 applySkin();selectPlace(place);goto(stage);reset();
 })();
 </script>
