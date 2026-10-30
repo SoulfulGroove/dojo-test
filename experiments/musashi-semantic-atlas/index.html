@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#202b32">
+  <meta name="description" content="Explore Miyamoto Musashi's Japanese vocabulary through kanji, semantic families, actions, grammar and exact V4 source references.">
+  <title>Musashi · Semantic Atlas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-icon" aria-hidden="true">武</div>
+  <div class="brand"><strong>Musashi</strong><span>Semantic Atlas <small>· v0.1</small></span></div>
+  <a class="legacy-link" href="../musashi-picture-vocab/" title="Open the existing picture vocabulary app">Original picture deck <span aria-hidden="true">↗</span></a>
+</header>
+<main class="page">
+  <section class="intro" aria-labelledby="headline">
+    <div class="eyebrow">五輪書 · V4 Text Lab</div>
+    <h1 id="headline">Discover a word.<br><em>Discover what it does.</em></h1>
+    <p>Explore real written forms in <cite>The Book of Five Rings</cite>, the actions they take part in, and their connections to other words. Always distinguish <b>the text</b> from <b>our interpretation</b>.</p>
+    <div class="statistics" aria-label="Database statistics">
+      <div><strong id="totalWords">—</strong><span>indexed forms</span></div>
+      <div><strong id="totalRelations">—</strong><span>attested patterns</span></div>
+      <div><strong id="totalInterpretations">—</strong><span>context interpretations</span></div>
+    </div>
+  </section>
+  <section class="browser" aria-labelledby="browseTitle">
+    <div class="section-heading"><div><div class="eyebrow">01 / Explore</div><h2 id="browseTitle">Vocabulary families</h2></div><span class="outline-label">Explore • Connect • Recall</span></div>
+    <div class="search-row">
+      <label class="searchbox"><span class="search-symbol" aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Search kanji, kana, English, action…" aria-label="Search vocabulary"></label>
+      <label class="select-wrap"><span>Family</span><select id="family" aria-label="Filter semantic family"><option value="">All families</option></select></label>
+      <label class="select-wrap sort-wrap"><span>Sort</span><select id="sort" aria-label="Sort vocabulary"><option value="relations">Most connected</option><option value="frequency">Source matches</option><option value="alphabetical">Japanese A–Z</option></select></label>
+    </div>
+    <div class="chips" role="group" aria-label="Vocabulary review filter">
+      <button class="chip" data-filter="all" aria-pressed="false">All forms</button>
+      <button class="chip" data-filter="reading" aria-pressed="false">Reading guides</button>
+      <button class="chip active" data-filter="actions" aria-pressed="true">With actions</button>
+      <button class="chip" data-filter="reviewed" aria-pressed="false">Context interpreted</button>
+      <button class="chip" data-filter="pending" aria-pressed="false">Needs review</button>
+    </div>
+    <div class="results-line"><span id="resultCount" aria-live="polite">Loading indexed vocabulary…</span><span class="legend"><span class="legend-dot"></span>Counts are string matches, not verified word frequencies</span></div>
+    <div class="card-grid" id="cards" aria-live="off"></div>
+    <div class="pagination"><button id="moreCards" class="secondary-btn" hidden>Show more words</button></div>
+  </section>
+  <section class="method" aria-labelledby="methodTitle">
+    <div class="eyebrow">How to read this atlas</div><h2 id="methodTitle">Evidence before interpretation.</h2>
+    <div class="method-grid"><p><b>Source-attested</b> means an exact string appears at known V4 character coordinates. It does <i>not</i> prove word boundaries, senses, or grammatical functions.</p><p><b>Reading guides, roles, grammar explanations, and modern relevance</b> are labeled study or editorial interpretations. Shirane and Rodrigues guide analysis but do not independently verify an individual token.</p></div>
+    <p class="small-note" id="sourceHash"></p>
+  </section>
+</main>
+<dialog id="detail" aria-label="Vocabulary detail"><div class="detail-shell"><button class="close" id="closeDialog" aria-label="Close details">×</button><div id="detailContent"></div></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
