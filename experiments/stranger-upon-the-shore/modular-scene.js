@@ -37,7 +37,6 @@
 
   const source = new Image();
   source.decoding = 'async';
-  source.src = ORIGINAL;
 
   let base, patch, patchCtx;
   let cssWidth = 0, cssHeight = 0, pixelsWidth = 0, pixelsHeight = 0;
@@ -177,6 +176,7 @@
   window.addEventListener('resize',()=>{pixelsWidth=0;pixelsHeight=0;},{passive:true});
   source.onload=()=>{ready=true;configure();syncScene();};
   source.onerror=()=>{canvas.remove();};
+  source.src=ORIGINAL;
 
   syncScene();
   raf=requestAnimationFrame(tick);
