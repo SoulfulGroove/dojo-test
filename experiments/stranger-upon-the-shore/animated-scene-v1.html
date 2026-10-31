@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#152b2c">
+<title>The Living Shore · Animated Scene Study</title>
+<style>
+:root{color-scheme:dark;--ink:#f5e8ca;--deep:#10252a;--accent:#eac68a}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#101c20;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #ffe4aa;outline-offset:3px}
+button:disabled{opacity:.6}
+.app{max-width:1390px;margin:auto;padding:10px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:60px;padding:0 4px 10px}
+.brand small{font-size:10px;letter-spacing:.2em;color:#e2c18e}
+.brand h1{font:normal clamp(22px,4vw,34px) Georgia,serif;margin:2px 0}
+.header-actions{display:flex;gap:9px}
+.smallbtn{border:1px solid #8c947b;background:#203a3c;color:#f5e4be;border-radius:6px;padding:10px 12px;white-space:nowrap;font-size:12px}
+.smallbtn[aria-pressed=false]{background:#5d4940}
+.scene{position:relative;height:min(74svh,760px);min-height:440px;overflow:hidden;border:1px solid #a9926d;border-radius:10px;isolation:isolate;background:#527579;box-shadow:0 12px 38px #0008;touch-action:manipulation}
+.art{position:absolute;width:100%;height:100%;inset:0;display:block}
+.paper{pointer-events:none}
+.scene::after{content:"";pointer-events:none;position:absolute;inset:0;background:linear-gradient(180deg,#182f3c16,transparent 45%,#0b1e2670 100%);z-index:1}
+.scene-title{position:absolute;left:15px;top:14px;z-index:3;font-size:10px;letter-spacing:.2em;text-shadow:0 2px 10px #0c252c}
+.marker{position:absolute;z-index:4;width:40px;height:40px;display:grid;place-items:center;transform:translate(-50%,-50%);padding:0;border:1px solid #fff4d0d9;color:#ffedc2;background:#223b3a99;border-radius:50%;box-shadow:0 0 0 8px #fceab22b,0 0 18px #ebcb82ac;font-size:22px;animation:mark 2.6s ease-in-out infinite}
+.marker:hover{background:#ab8159;color:#231e16}
+#mark-wreck{left:23%;top:64%}#mark-sea{left:54%;top:68%}#mark-fisher{left:77%;top:63%}
+@keyframes mark{50%{box-shadow:0 0 0 12px #fceab225,0 0 27px #f9dd97ba}}
+.dialogue{position:absolute;z-index:5;left:50%;transform:translateX(-50%);bottom:14px;width:min(93%,860px);min-height:122px;background:linear-gradient(140deg,#fcf2d9,#e9d7ad);color:#33291e;border:1px solid #e3ca99;border-radius:9px;display:flex;align-items:flex-start;gap:15px;padding:18px 20px;box-shadow:0 9px 28px #111c2499}
+.emblem{font:30px Georgia,serif;color:#a77b49;flex:none}
+.dialogue-main{flex:1;min-width:0}
+.speaker{font-size:10px;font-weight:800;letter-spacing:.18em;color:#88623c}
+#dialogueText{font:clamp(16px,2vw,19px)/1.43 Georgia,serif;margin:7px 0}
+#wordBox{display:none;align-items:center;gap:14px}
+#wordBox.visible{display:flex}
+#wordBox b{font-size:31px;color:#263e3d}
+#wordBox button{color:#2c4844;background:#fffaf0;border:1px solid #bba279;border-radius:6px;padding:7px 10px}
+.below{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:12px 4px 24px;flex-wrap:wrap;color:#d5cbb7}
+.below p{max-width:780px;font-size:13px;margin:0;line-height:1.6}
+.below a{color:#e8cc95;font-size:13px}
+.scene.paused .marker{animation:none}
+@media(max-width:660px){.app{padding:5px}.top{padding:6px 4px 9px;min-height:67px}.brand h1{font-size:23px}.brand small{font-size:8px}.smallbtn{padding:8px;font-size:11px}.scene{height:calc(100svh - 112px);min-height:580px}.dialogue{bottom:12px;padding:14px 13px;gap:9px;width:calc(100% - 17px)}.emblem{font-size:22px}#dialogueText{font-size:16px}.scene-title{top:13px;left:12px;font-size:9px}.marker{width:33px;height:33px;font-size:18px}#mark-wreck{left:17%;top:60%}#mark-sea{left:51%;top:64%}#mark-fisher{left:85%;top:53%}}
+@media(prefers-reduced-motion:reduce){.marker{animation:none}}
+</style>
+</head>
+<body><main class="app">
+<header class="top"><div class="brand"><small>A STRANGER UPON THE SHORE · ANIMATION TEST</small><h1>The Living Shore</h1></div><div class="header-actions"><button class="smallbtn" id="motionToggle" type="button" aria-pressed="true">Motion on</button><button class="smallbtn" id="soundToggle" type="button" aria-pressed="false">Sound off</button></div></header>
+<div class="scene" id="scene">
+<svg class="art" id="world" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Animated illustrated Japanese shore at sunrise: surf rolls in, clouds pass, a fisherman moves and a shipwreck rests on the rocks">
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#243e55"/><stop offset=".42" stop-color="#698d91"/><stop offset=".75" stop-color="#e5aa85"/><stop offset="1" stop-color="#eed1a0"/></linearGradient>
+<radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop stop-color="#fff9cc" stop-opacity=".9"/><stop offset=".15" stop-color="#f7d7a1" stop-opacity=".75"/><stop offset="1" stop-color="#f2b78d" stop-opacity="0"/></radialGradient>
+<linearGradient id="sea" x2="0" y2="1"><stop stop-color="#587d82"/><stop offset=".32" stop-color="#44767c"/><stop offset=".76" stop-color="#245b66"/><stop offset="1" stop-color="#1b4b59"/></linearGradient>
+<linearGradient id="wave" x2="0" y2="1"><stop stop-color="#75a1a1"/><stop offset=".43" stop-color="#447e85"/><stop offset="1" stop-color="#225b65"/></linearGradient>
+<linearGradient id="wash" x2="0" y2="1"><stop stop-color="#cee1d4" stop-opacity=".5"/><stop offset="1" stop-color="#92c1b6" stop-opacity=".72"/></linearGradient>
+<linearGradient id="sand" x2="0" y2="1"><stop stop-color="#a89e7a"/><stop offset=".58" stop-color="#857c65"/><stop offset="1" stop-color="#5b5a4c"/></linearGradient>
+<linearGradient id="cliff" x2="0" y2="1"><stop stop-color="#506d65"/><stop offset="1" stop-color="#283e40"/></linearGradient>
+<linearGradient id="wood" x2="0" y2="1"><stop stop-color="#806247"/><stop offset="1" stop-color="#342f2b"/></linearGradient>
+<linearGradient id="robe" x2="0" y2="1"><stop stop-color="#5f7262"/><stop offset="1" stop-color="#2a4144"/></linearGradient>
+<radialGradient id="vignette"><stop offset=".46" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#132229" stop-opacity=".42"/></radialGradient>
+<filter id="soft"><feGaussianBlur stdDeviation="15"/></filter>
+<filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".43" numOctaves="2" seed="7" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<!-- Sky, sun, and clouds: these are independent scenic elements, not an animated filter over a photograph. -->
+<path d="M0 0H1200V390H0Z" fill="url(#sky)"/>
+<circle cx="680" cy="277" r="220" fill="url(#sun)"/>
+<circle cx="680" cy="277" r="36" fill="#ffedbf" opacity=".67"/>
+<g id="cloudFar" opacity=".43" fill="#e7d8c5"><path d="M-150 130Q-75 98 8 117Q102 89 189 111Q282 92 343 113Q201 144 80 134Q-45 158-150 130Z"/><path d="M470 84Q540 60 603 79Q677 55 752 79Q823 68 904 91Q709 105 607 101Q518 117 470 84Z"/></g>
+<g id="cloudNear" opacity=".26" fill="#fff4dc"><path d="M655 190Q744 155 858 181Q959 157 1104 183Q1160 179 1298 203Q1120 225 995 207Q805 226 655 190Z"/></g>
+<!-- Distant coastal cliffs and islands. -->
+<path d="M0 304L55 252L97 261L159 193L209 227L251 214L301 278L370 306L405 347L0 359Z" fill="#667c73" opacity=".62"/>
+<path d="M0 324L66 252L108 263L164 204L215 237L266 225L325 296L404 351L0 372Z" fill="url(#cliff)"/>
+<path d="M0 327L73 289L126 296L172 230L209 259L259 258L319 321L406 356L0 391Z" fill="#29454c" opacity=".43"/>
+<path d="M785 326Q842 299 895 301L951 276L1009 297L1066 262L1122 283L1200 265V375H785Z" fill="#66786c" opacity=".6"/>
+<path d="M872 345L919 316L955 320L1006 288L1059 313L1119 274L1200 281V402H880Z" fill="#415e60"/>
+<path d="M0 352H1200V620H0Z" fill="url(#sea)"/>
+<path d="M0 352Q450 339 737 353T1200 344" fill="none" stroke="#dfd4b8" stroke-width="4" opacity=".3"/>
+<path d="M0 372Q510 360 1200 377" fill="none" stroke="#d4c5ac" stroke-width="2" opacity=".25"/>
+<!-- Sea waves are animated terrain geometry; their shapes change every frame. -->
+<g id="waterWorld">
+  <path id="swellBack" fill="#5a9394" opacity=".72"/>
+  <path id="swellMid" fill="url(#wave)"/>
+  <path id="swellFront" fill="#316b73"/>
+  <path id="highFoam" fill="none" stroke="#d8e7d8" stroke-width="5" stroke-linecap="round" opacity=".52"/>
+  <path id="midFoam" fill="none" stroke="#d7eee1" stroke-width="9" stroke-linecap="round" opacity=".63"/>
+</g>
+<!-- Wet stones and a permanent sandbank in front of the tide. -->
+<path d="M0 569Q167 552 281 599T527 621Q776 601 902 624T1200 603V720H0Z" fill="url(#sand)"/>
+<path d="M0 604Q158 589 294 626T580 646Q863 630 1069 654L1200 641V720H0Z" fill="#796f61" opacity=".49"/>
+<path d="M-60 583L77 541L192 556L277 589L239 640L92 644L-30 675Z" fill="#4a5954"/>
+<path d="M-13 589L79 549L170 559L198 580L105 594Z" fill="#748079"/>
+<path d="M117 586L185 571L276 601L241 630L168 627Z" fill="#526260"/>
+<path d="M824 634L938 604L1039 628L1097 682L944 693Z" fill="#465954"/>
+<path d="M831 638L942 612L995 625L954 643Z" fill="#7a8476" opacity=".58"/>
+<path d="M1015 660L1124 607L1228 645L1220 720L1087 705Z" fill="#52635a"/>
+<path d="M1061 647L1127 617L1193 646L1130 658Z" fill="#7b8674" opacity=".56"/>
+<!-- Tide actively advances and recedes across the foreground instead of an animated overlay. -->
+<path id="tide" fill="url(#wash)"/>
+<path id="tideFoam" fill="none" stroke="#f6f1d8" stroke-width="11" stroke-linecap="round" opacity=".87"/>
+<path id="tideFoamInner" fill="none" stroke="#cfe7d5" stroke-width="4" stroke-linecap="round" opacity=".88"/>
+<!-- Shipwreck drawn as its own anchored scenic actor. -->
+<g id="wreck" transform="translate(132 515)">
+<path d="M-102 71L-37 94L95 86L191 44L133 103L-7 128L-105 113Z" fill="#2b3432" opacity=".3"/>
+<path d="M-92 19Q-27 54 60 54Q139 47 177 8L133 74Q26 126-88 64Z" fill="url(#wood)" stroke="#302e2b" stroke-width="5"/>
+<path d="M-87 28Q-10 79 93 57L160 26" stroke="#c6a27a" stroke-width="5" fill="none" opacity=".63"/>
+<path d="M-56 44L-63 74M-4 62L-6 91M48 67L53 86M106 57L109 77" stroke="#292e29" stroke-width="10"/>
+<path d="M1 50L-13-150" stroke="#5c4835" stroke-width="17" stroke-linecap="round"/>
+<path d="M-14-128L63 -85L45 27Z" fill="#c9b695" opacity=".7" stroke="#5f5c49" stroke-width="3"/>
+<path d="M-12-128L59-89" stroke="#e2c99a" stroke-width="3"/>
+<path d="M-16-148L-56-95M-15-142L110 8" stroke="#64513a" stroke-width="2.5"/>
+<path d="M-82 18L-115 -12L-100 68" stroke="#5e4934" stroke-width="13" fill="none"/>
+</g>
+<!-- Independently bobbing debris and moving foreground grasses. -->
+<g id="floatingLog"><path d="M0 0Q28-10 68 0L75 14Q37 24 0 14Z" fill="#654f3a" stroke="#3a4036" stroke-width="3"/><path d="M9 6Q36 1 63 6" fill="none" stroke="#c5a37d" stroke-width="2" opacity=".6"/></g>
+<g id="grassLeft" stroke="#697b57" stroke-width="4" fill="none" stroke-linecap="round"><path d="M0 0Q-10-30-20-45M0 0Q0-48 8-60M0 0Q17-21 36-30"/></g>
+<g id="grassRight" stroke="#64764f" stroke-width="5" fill="none" stroke-linecap="round"><path d="M0 0Q-20-33-43-48M0 0Q-6-50 3-73M0 0Q15-32 39-48"/></g>
+<!-- Fisherman, drawn and rigged into separately moving head, body, sleeve and arm. -->
+<g id="fisher" transform="translate(921 503)">
+ <ellipse cx="4" cy="138" rx="74" ry="14" fill="#1b302e" opacity=".35"/>
+ <g id="fisherRig">
+  <g id="fisherLegs" fill="#2c3a39"><path d="M-34 76L-31 138L-5 140L2 81Z"/><path d="M15 75L24 138L49 137L45 65Z"/><path d="M-31 132L-51 142L-5 145L-5 134Z" fill="#292e2c"/><path d="M26 132L14 144L59 143L49 133Z" fill="#292e2c"/></g>
+  <path d="M-36-5Q-65 14-57 57L-51 94Q1 119 55 94L53 40Q50 6 29-6Z" fill="url(#robe)" stroke="#273b3b" stroke-width="4"/>
+  <path d="M-7-4L18 24L-1 92L-20 103L-4 19L-36 3Z" fill="#86907b" opacity=".8"/>
+  <path d="M-42 89Q-2 106 53 87" fill="none" stroke="#aa946e" stroke-width="11"/>
+  <path d="M-30 103Q3 111 38 103" fill="none" stroke="#283c3a" stroke-width="4"/>
+  <g id="offerArm">
+    <path d="M-43 14Q-66 49-54 83L-36 100Q-21 83-27 62L-20 24Z" fill="#53695e" stroke="#2c4644" stroke-width="4"/>
+    <path d="M-37 91Q-38 109-24 112L-15 104L-27 91Z" fill="#bf9374" stroke="#695c4c" stroke-width="2"/>
+  </g>
+  <path d="M29 12Q62 21 63 76L45 92L30 64L26 31Z" fill="#4f6158" stroke="#2b403c" stroke-width="4"/>
+  <g id="fisherHead">
+    <path d="M-19-38Q4-65 26-42L25-9Q8 10-15-8Z" fill="#b58d6f" stroke="#664f45" stroke-width="3"/>
+    <path d="M-18-37Q-9-53 9-54Q22-52 24-34" fill="none" stroke="#363d38" stroke-width="10"/>
+    <path d="M-12-21L-6-20M12-21L18-20" stroke="#493d35" stroke-width="3" stroke-linecap="round" id="fisherEyes"/>
+    <path d="M-4-5Q7 0 17-6" stroke="#614839" stroke-width="2.4" fill="none"/>
+    <path d="M-19-44Q-12-101 9-103Q31-93 45-47Q12-37-36-43Z" fill="#bca16b" stroke="#71654b" stroke-width="4"/>
+    <path d="M-36-44Q6-58 46-46" stroke="#ead59d" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M-12-66L29-67M-18-58L35-60M0-91L21-90" stroke="#8e825b" stroke-width="2" opacity=".7"/>
+  </g>
+  <path id="sash" d="M40 86Q66 107 57 123" fill="none" stroke="#bc9565" stroke-width="8" stroke-linecap="round"/>
+ </g>
+</g>
+<rect width="1200" height="720" fill="url(#vignette)" pointer-events="none"/>
+<rect width="1200" height="720" filter="url(#paper)" opacity=".055" pointer-events="none"/>
+</svg>
+<div class="scene-title">CHAPTER I · THE UNFAMILIAR SHORE</div>
+<button class="marker" type="button" id="mark-wreck" aria-label="Inspect the wreck">＋</button>
+<button class="marker" type="button" id="mark-sea" aria-label="Watch the waves">＋</button>
+<button class="marker" type="button" id="mark-fisher" aria-label="Speak to the fisherman">＋</button>
+<section class="dialogue" aria-live="polite"><div class="emblem" aria-hidden="true">◈</div><div class="dialogue-main"><div class="speaker" id="speaker">THE TRAVELER</div><p id="dialogueText">Salt on your lips. Your ship lies broken on the rocks. A fisherman is coming toward you through the surf.</p><div id="wordBox"><b lang="ja">みず</b><button id="hear" type="button">▶ Hear the word</button></div></div></section>
+</div>
+<div class="below"><p><strong>An animation-first vertical slice.</strong> The sea is drawn anew every frame, with waves physically advancing onto the shore. The fisherman has separately articulated head, arm, breathing and cloth movement. Nothing here depends on moving highlights over a flattened background. Try the three glowing points. This is a motion experiment, not a replacement for the existing story.</p><a href="./">Return to the playable prologue</a></div>
+</main>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const scene=$('scene'),svg=$('world'),speaker=$('speaker'),text=$('dialogueText'),wordBox=$('wordBox');
+const waveIDs=['swellBack','swellMid','swellFront','highFoam','midFoam','tide','tideFoam','tideFoamInner'];
+const waves=waveIDs.map($);
+let reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let moving=!reduced,sound=false,offered=false,approachAt=-99,lastTime=0,elapsed=0;
+const motionBtn=$('motionToggle'),soundBtn=$('soundToggle');
+const profile=[
+ {base:411,amplitude:5,period:315,speed:.6,offset:0},
+ {base:470,amplitude:12,period:385,speed:1.25,offset:1},
+ {base:542,amplitude:14,period:400,speed:1.55,offset:2}
+];
+function yAt(x,p,t){return p.base+p.amplitude*Math.sin(x*Math.PI*2/p.period-t*p.speed+p.offset)+3*Math.sin(x/81+t*.6)}
+function makeCrest(p,t,bottom){
+ let d='M -25 '+yAt(-25,p,t).toFixed(2);
+ for(let x=0;x<=1225;x+=20)d+=' L '+x+' '+yAt(x,p,t).toFixed(2);
+ return bottom ? d+' L 1225 720 L -25 720 Z' : d;
+}
+function tideAt(x,t){
+ const advance=Math.sin(t*.81-1.2)*16+Math.sin(t*.35)*7;
+ return 610+advance+8*Math.sin(x/120+t*1.3)+5*Math.sin(x/52-t*.9);
+}
+function tideD(t,closed,shift){
+ let d='M -25 '+(tideAt(-25,t)+shift).toFixed(2);
+ for(let x=0;x<=1225;x+=20)d+=' L '+x+' '+(tideAt(x,t)+shift).toFixed(2);
+ return closed?d+' L 1225 720 L -25 720 Z':d;
+}
+function pointTransform(id,x,y,angle){$(id).setAttribute('transform','translate('+x.toFixed(2)+' '+y.toFixed(2)+') rotate('+angle.toFixed(2)+')')}
+function render(t){
+ waves[0].setAttribute('d',makeCrest(profile[0],t,true));
+ waves[1].setAttribute('d',makeCrest(profile[1],t+.55,true));
+ waves[2].setAttribute('d',makeCrest(profile[2],t+.12,true));
+ waves[3].setAttribute('d',makeCrest(profile[1],t+.55,false));
+ waves[4].setAttribute('d',makeCrest(profile[2],t+.12,false));
+ waves[5].setAttribute('d',tideD(t,true,7));
+ waves[6].setAttribute('d',tideD(t,false,0));
+ waves[7].setAttribute('d',tideD(t,false,13));
+ pointTransform('cloudFar',Math.sin(t*.12)*38,Math.cos(t*.09)*2,0);
+ pointTransform('cloudNear',-Math.sin(t*.08)*52,3,0);
+ pointTransform('floatingLog',505+Math.sin(t*.65)*12,554+Math.cos(t*1.55)*7,Math.sin(t*1.1)*2);
+ pointTransform('grassLeft',110,697,Math.sin(t*1.2)*4);
+ pointTransform('grassRight',1108,686,Math.cos(t*.9)*5);
+ const gait=approachAt>=0?Math.min(1,Math.max(0,(t-approachAt)/1.3)):0;
+ pointTransform('fisherRig',0,Math.sin(t*1.2)*2.5-gait*3,Math.sin(t*.68)*.7);
+ pointTransform('fisherHead',0,0,Math.sin(t*.6)*1.2+gait*(-5));
+ // Shoulder hinge is at the origin of the sleeve; rotation is local.
+ $('offerArm').setAttribute('transform','rotate('+(gait*(-53)+Math.sin(t*.85)*1.5).toFixed(2)+' -38 18)');
+ $('sash').setAttribute('d','M40 86 Q'+(62+Math.sin(t*1.7)*6).toFixed(1)+' 106 '+(58+Math.sin(t*1.1)*6).toFixed(1)+' 123');
+ $('fisherEyes').style.opacity=((t%7.8)>7.59)?'.1':'1';
+}
+function tick(ms){
+ if(!moving) return;
+ if(lastTime===0)lastTime=ms;
+ const dt=Math.min(.05,(ms-lastTime)/1000); lastTime=ms; elapsed+=dt;
+ render(elapsed);requestAnimationFrame(tick);
+}
+render(0);if(moving)requestAnimationFrame(tick);
+motionBtn.textContent=moving?'Motion on':'Motion off';
+motionBtn.setAttribute('aria-pressed',String(moving));
+scene.classList.toggle('paused',!moving);
+motionBtn.addEventListener('click',function(){
+ moving=!moving;lastTime=0;scene.classList.toggle('paused',!moving);
+ motionBtn.setAttribute('aria-pressed',String(moving));motionBtn.textContent=moving?'Motion on':'Motion off';
+ if(moving)requestAnimationFrame(tick);
+});
+soundBtn.addEventListener('click',function(){
+ sound=!sound;soundBtn.textContent=sound?'Sound on':'Sound off';soundBtn.setAttribute('aria-pressed',String(sound));
+ if(!sound&&'speechSynthesis'in window)speechSynthesis.cancel();
+});
+function say(who,line,word){speaker.textContent=who;text.textContent=line;wordBox.classList.toggle('visible',!!word)}
+function speakJapanese(){
+ if(!sound||!('speechSynthesis'in window))return;
+ speechSynthesis.cancel();const u=new SpeechSynthesisUtterance('みず');u.lang='ja-JP';u.rate=.8;speechSynthesis.speak(u);
+}
+$('hear').addEventListener('click',function(){if(!sound){sound=true;soundBtn.textContent='Sound on';soundBtn.setAttribute('aria-pressed','true')}speakJapanese()});
+$('mark-wreck').addEventListener('click',function(){say('THE WRECK','The ruined timbers groan as water washes around them. Your ship will never sail again.',false)});
+$('mark-sea').addEventListener('click',function(){say('THE COAST','The waves gather, rise, break against the sand, then draw away. The tide has no care for your plans.',false)});
+$('mark-fisher').addEventListener('click',function(){
+ approachAt=elapsed;
+ if(!offered){
+ offered=true;
+ say('THE FISHERMAN','He turns toward you and offers a hand. “みず.” Water. You understand your first word on this unfamiliar shore.',true);
+ speakJapanese();
+ }else{
+ say('THE TRAVELER','みず. Water. You remember the word because you needed it.',true);speakJapanese();
+ }
+});
+document.addEventListener('visibilitychange',function(){if(document.hidden){moving=false;lastTime=0}else{moving=motionBtn.getAttribute('aria-pressed')==='true';if(moving)requestAnimationFrame(tick)}});
+})();
+</script>
+</body></html>
