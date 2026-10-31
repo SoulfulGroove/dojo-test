@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#162526"/>
+<title>Water Isolation Lab · Stranger Upon the Shore</title>
+<style>
+:root{color-scheme:dark;--cream:#f2e9d5;--gold:#dfbf87;--line:#526968;--cyan:#80d8e4}
+*{box-sizing:border-box}body{margin:0;background:#101b1c;color:var(--cream);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid #f1d59e;outline-offset:3px}
+main{max-width:1450px;margin:auto;padding:13px}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:10px;color:var(--gold)}h1{font:normal clamp(27px,4vw,39px) Georgia,serif;margin:3px 0}.header a,.foot a{color:#ead1a3}
+.scene{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #9e8666;border-radius:10px;background:#2d4a49;isolation:isolate;box-shadow:0 13px 35px #0008;touch-action:pan-y}
+.plate,.water,.editor{position:absolute;inset:0;width:100%;height:100%;display:block}.plate{object-fit:cover}.water{pointer-events:none}.editor{pointer-events:none;z-index:2;display:none}.scene.editing{touch-action:none}.scene.editing .editor{display:block;pointer-events:auto;cursor:crosshair}
+.hud{position:absolute;left:15px;top:13px;z-index:3;pointer-events:none;text-shadow:0 2px 9px #000;color:#fdf3dd;font-size:10px;letter-spacing:.16em;font-weight:700}.hud small{display:block;margin-top:7px;color:#dce8d9;text-transform:none;letter-spacing:.025em;font-size:11px;font-weight:500}
+.status{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}.readout{font-size:12px;line-height:1.5;color:#d4dfd9}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.control{border:1px solid var(--line);color:var(--cream);border-radius:7px;background:#243c3e;padding:10px 12px;font-size:12px;min-height:43px}.control[aria-pressed=true]{background:#786442;border-color:#e7c88f;color:#fff2d5}.control:hover{border-color:#c1b391}.danger{border-color:#8b7169}.slider-wrap{display:flex;align-items:center;gap:8px;font-size:12px}.slider-wrap input{width:110px}
+.panel{background:#1a2b2c;border:1px solid #385353;border-radius:9px;margin-top:15px;padding:16px}.panel h2{font:normal 24px Georgia,serif;margin:0 0 10px}.panel p{font-size:14px;line-height:1.6;color:#d7d9ce;margin:5px 0 11px}.panel strong{color:#fff0ce}.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.step{border-top:1px solid #5d716c;padding-top:10px}.step b{color:#f1d29d}.step p{font-size:13px}
+.legend{font-size:12px;color:#abcaca;line-height:1.5}.error{color:#ffbf9f}.pass{color:#b9edcf}.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:13px;font-size:12px;color:#c9d6ce}
+@media(max-width:720px){main{padding:7px}.header{padding:7px}.header a{font-size:12px}.scene{aspect-ratio:9/12}.hud{left:11px;top:11px}.status{align-items:flex-start}.controls{width:100%}.control{padding:9px 11px}.steps{grid-template-columns:1fr}.panel{padding:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+<header class="header"><div><div class="eyebrow">Animation Construction Proof 01</div><h1>Water Isolation Lab</h1></div><a href="./">Original prologue</a></header>
+<section class="scene" id="scene" aria-label="Original detailed shore painting with independently animated water-only masked areas">
+<img id="plate" class="plate" src="assets/shore-scene.webp" alt="The original illustrated Japanese shore: shipwreck, injured traveler, fisherman, rocks, sea, boats, and harbor"/>
+<canvas id="water" class="water" aria-hidden="true"></canvas>
+<canvas id="editor" class="editor" aria-label="Water mask paint surface"></canvas>
+<div class="hud">SHORE · WATER ISOLATION <small id="overlayLabel">Only painted water regions animate</small></div>
+</section>
+<div class="status"><div class="controls">
+<button type="button" id="motion" class="control" aria-pressed="true">Motion on</button>
+<button type="button" id="maskView" class="control" aria-pressed="false">Show water mask</button>
+<button type="button" id="edit" class="control" aria-pressed="false">Edit mask</button>
+<button type="button" id="brush" class="control" aria-pressed="true" disabled>Add water</button>
+<button type="button" id="erase" class="control" aria-pressed="false" disabled>Protect solid</button>
+<label class="slider-wrap" for="brushSize">Brush <input id="brushSize" type="range" min="5" max="52" value="19"/></label>
+<button type="button" id="reset" class="control danger">Reset mask</button>
+<button type="button" id="export" class="control">Export mask PNG</button>
+</div><div id="lock" class="readout">Checking stationary-object sample points…</div></div>
+<section class="panel"><h2>Prove the construction before scaling it</h2><div class="steps">
+<div class="step"><b>1 · Inspect separation</b><p>Toggle <strong>Show water mask</strong>. Cyan marks pixels eligible to move; all other pixels retain the unmodified painting. The starter mask is deliberately conservative.</p></div>
+<div class="step"><b>2 · Protect rocks and wreckage</b><p>Choose <strong>Edit mask → Protect solid</strong>, then brush over any stable object inside cyan. Use <strong>Add water</strong> to enlarge a safe water region. Changes update live.</p></div>
+<div class="step"><b>3 · Export the reusable asset</b><p>Export a transparent <strong>shore-water-mask.png</strong>. This is a production asset we can refine and reuse for different animation techniques without touching game logic.</p></div>
+</div><p class="legend">Quality criterion: static rocks, ropes, figures, boats, and shoreline must not shift. The sample-point check is a safety check, not a substitute for visual mask review. A true finished water layer will also need separate water artwork and foreground occlusion around complex rock edges.</p></section>
+<footer class="foot"><span id="message">The source painting is the static reference. WebGL animation is confined to an editable water matte.</span><a href="modular-prologue-v3.html">Compare with v3</a></footer>
+</main>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const plate=$('plate'),scene=$('scene'),display=$('water'),editor=$('editor'),label=$('overlayLabel'),message=$('message'),lock=$('lock');
+const motionButton=$('motion'),maskButton=$('maskView'),editButton=$('edit'),brushButton=$('brush'),eraseButton=$('erase');
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+let enabled=!reduce.matches,viewMask=false,editing=false,paintMode='add',drawing=false;
+let gl,program,uniforms,texArt,texMask,maskCanvas,maskCtx,ready=false,last=0,started=0,needUpload=true;
+let cover=[1,1],maskW=1024,maskH=576,previous=null;
+const seed=[
+[[.345,.361],[.391,.352],[.418,.368],[.417,.392],[.376,.405],[.342,.386]],
+[[.520,.405],[.553,.398],[.580,.416],[.579,.444],[.546,.451],[.523,.430]],
+[[.713,.444],[.770,.449],[.809,.460],[.852,.465],[.855,.503],[.815,.511],[.770,.504],[.718,.485]],
+[[.812,.551],[.843,.546],[.869,.559],[.862,.581],[.835,.591],[.811,.577]],
+[[.914,.465],[.950,.466],[.989,.487],[.982,.526],[.952,.528],[.927,.510]]
+];
+const solids=[
+['Traveler',.253,.735],['Fisherman',.469,.546],['Wreck',.143,.251],['Central rock',.612,.501],
+['Harbor boat',.777,.389],['Foreground timber',.908,.699],['Cliff',.719,.189]
+];
+function setStatus(text,ok){lock.textContent=text;lock.className='readout '+(ok===true?'pass':ok===false?'error':'');}
+function setMessage(text){message.textContent=text}
+function makeMask(){
+ maskCanvas=document.createElement('canvas');maskCanvas.width=maskW;maskCanvas.height=maskH;
+ maskCtx=maskCanvas.getContext('2d',{willReadFrequently:true});
+ if(!maskCtx){setMessage('Mask editor is unavailable.');return}
+ resetMask(false);
+}
+function resetMask(update){
+ maskCtx.clearRect(0,0,maskW,maskH);
+ maskCtx.fillStyle='rgba(255,255,255,1)';
+ seed.forEach(points=>{maskCtx.beginPath();points.forEach((p,i)=>{if(!i)maskCtx.moveTo(p[0]*maskW,p[1]*maskH);else maskCtx.lineTo(p[0]*maskW,p[1]*maskH)});maskCtx.closePath();maskCtx.fill()});
+ needUpload=true;
+ if(update)setMessage('Starter mask restored. Inspect the cyan zones before using them as a production matte.');
+}
+function compile(type,source){
+ const sh=gl.createShader(type);gl.shaderSource(sh,source);gl.compileShader(sh);
+ if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){throw Error(gl.getShaderInfoLog(sh)||'Shader compilation failed')}
+ return sh;
+}
+function texture(unit,data){
+ const t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+unit);gl.bindTexture(gl.TEXTURE_2D,t);
+ gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+ gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+ gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+ gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+ gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,data);
+ return t;
+}
+function initializeGL(){
+ gl=display.getContext('webgl',{alpha:true,depth:false,stencil:false,antialias:false,premultipliedAlpha:false,preserveDrawingBuffer:true});
+ if(!gl)throw Error('This browser does not support WebGL. The painting remains visible, but the animation preview is unavailable.');
+ const vs=compile(gl.VERTEX_SHADER,'attribute vec2 a; varying vec2 v; void main(){v=.5*(a+1.);gl_Position=vec4(a,0.,1.);}');
+ const fs=compile(gl.FRAGMENT_SHADER,[
+ 'precision highp float;',
+ 'varying vec2 v;uniform sampler2D art;uniform sampler2D matte;',
+ 'uniform vec2 cover;uniform float time;uniform float mode;',
+ 'void main(){',
+ 'vec2 uv=vec2(.5+(v.x-.5)*cover.x,.5+((1.-v.y)-.5)*cover.y);',
+ 'vec2 txy=vec2(uv.x,1.-uv.y);',
+ 'float a=texture2D(matte,txy).a;',
+ 'if(a<.004){gl_FragColor=vec4(0.);return;}',
+ 'if(mode>.5){gl_FragColor=vec4(.05,.76,.90,a*.75);return;}',
+ 'float w=sin(uv.y*195.-time*2.9+sin(uv.x*36.)*1.1);',
+ 'float w2=sin(uv.x*85.+uv.y*72.+time*1.65);',
+ 'vec2 drift=vec2(.0025*w+.0010*w2,.0021*w2+.0012*cos(time*1.7+uv.x*85.));',
+ 'vec2 src=clamp(uv+drift,vec2(.002),vec2(.998));',
+ 'vec4 pixel=texture2D(art,vec2(src.x,1.-src.y));',
+ 'gl_FragColor=vec4(pixel.rgb,a);',
+ '}'
+ ].join('\n'));
+ program=gl.createProgram();gl.attachShader(program,vs);gl.attachShader(program,fs);gl.linkProgram(program);
+ if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program)||'Shader linking failed');
+ gl.useProgram(program);
+ const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+ gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+ const a=gl.getAttribLocation(program,'a');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+ uniforms={cover:gl.getUniformLocation(program,'cover'),time:gl.getUniformLocation(program,'time'),mode:gl.getUniformLocation(program,'mode')};
+ texArt=texture(0,plate);texMask=texture(1,maskCanvas);
+ gl.uniform1i(gl.getUniformLocation(program,'art'),0);gl.uniform1i(gl.getUniformLocation(program,'matte'),1);
+}
+function resize(){
+ const r=scene.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,1.5);
+ const w=Math.max(1,Math.round(r.width*dpr)),h=Math.max(1,Math.round(r.height*dpr));
+ if(display.width!==w||display.height!==h){display.width=w;display.height=h;gl.viewport(0,0,w,h)}
+ editor.width=w;editor.height=h;
+ const scale=Math.max(r.width/plate.naturalWidth,r.height/plate.naturalHeight);
+ cover=[r.width/(plate.naturalWidth*scale),r.height/(plate.naturalHeight*scale)];
+ gl.uniform2f(uniforms.cover,cover[0],cover[1]);
+}
+function updateMaskTexture(){
+ if(!needUpload)return;
+ gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,texMask);
+ gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+ gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,maskCanvas);
+ needUpload=false;
+}
+function sampleTest(){
+ if(!gl||!ready)return;
+ const samples=solids.filter(item=>Math.abs((item[1]-.5)/cover[0])<=.5&&Math.abs((item[2]-.5)/cover[1])<=.5);
+ const pixel=new Uint8Array(4);let pass=0;
+ for(const item of samples){
+  const px=Math.floor(((item[1]-.5)/cover[0]+.5)*display.width);
+  const py=Math.floor((.5-(item[2]-.5)/cover[1])*display.height);
+  gl.readPixels(Math.max(0,Math.min(display.width-1,px)),Math.max(0,Math.min(display.height-1,py)),1,1,gl.RGBA,gl.UNSIGNED_BYTE,pixel);
+  if(pixel[3]<=5)pass++;
+ }
+ const ok=pass===samples.length;
+ setStatus('Stationary sample points: '+pass+'/'+samples.length+' clear • '+(ok?'PASS':'MASK OVERLAP'),ok);
+}
+function draw(now){
+ if(!ready)return;
+ updateMaskTexture();gl.useProgram(program);
+ gl.uniform1f(uniforms.time,enabled&&!reduce.matches?(now-started)/1000:0);
+ gl.uniform1f(uniforms.mode,viewMask?1:0);
+ gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);
+ gl.drawArrays(gl.TRIANGLES,0,6);
+ if(now-last>650){last=now;
+   if(!viewMask)sampleTest();
+   else {gl.uniform1f(uniforms.mode,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);sampleTest();gl.uniform1f(uniforms.mode,1);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6)}
+ }
+}
+function loop(now){
+ requestAnimationFrame(loop);
+ if(!ready||document.hidden)return;
+ if(!started)started=now;
+ if(!enabled&&!viewMask&& !editing){display.style.visibility='hidden';return}
+ display.style.visibility='visible';
+ draw(now);
+}
+function sceneToMask(event){
+ const r=scene.getBoundingClientRect();
+ const nx=(event.clientX-r.left)/r.width,ny=(event.clientY-r.top)/r.height;
+ const u=.5+(nx-.5)*cover[0],v=.5+(ny-.5)*cover[1];
+ return [u*maskW,v*maskH];
+}
+function stroke(event,isStart){
+ const p=sceneToMask(event);
+ if(p[0]<0||p[0]>maskW||p[1]<0||p[1]>maskH)return;
+ maskCtx.lineCap='round';maskCtx.lineJoin='round';
+ maskCtx.lineWidth=Number($('brushSize').value)*2;
+ maskCtx.globalCompositeOperation=paintMode==='erase'?'destination-out':'source-over';
+ maskCtx.strokeStyle='rgba(255,255,255,1)';
+ maskCtx.beginPath();
+ if(isStart||!previous){maskCtx.moveTo(p[0]-.01,p[1]);maskCtx.lineTo(p[0]+.01,p[1])}
+ else{maskCtx.moveTo(previous[0],previous[1]);maskCtx.lineTo(p[0],p[1])}
+ maskCtx.stroke();maskCtx.globalCompositeOperation='source-over';previous=p;needUpload=true;
+}
+editor.addEventListener('pointerdown',function(event){
+ if(!editing)return;event.preventDefault();drawing=true;previous=null;editor.setPointerCapture(event.pointerId);stroke(event,true)
+});
+editor.addEventListener('pointermove',function(event){if(drawing){event.preventDefault();stroke(event,false)}});
+function finish(){drawing=false;previous=null}
+editor.addEventListener('pointerup',finish);editor.addEventListener('pointercancel',finish);
+function setPressed(button,truth){button.setAttribute('aria-pressed',String(truth))}
+function modes(){
+ setPressed(motionButton,enabled);setPressed(maskButton,viewMask);setPressed(editButton,editing);
+ setPressed(brushButton,paintMode==='add');setPressed(eraseButton,paintMode==='erase');
+ motionButton.textContent=enabled?'Motion on':'Motion off';
+ maskButton.textContent=viewMask?'Hide water mask':'Show water mask';
+ editButton.textContent=editing?'Finish editing':'Edit mask';
+ scene.classList.toggle('editing',editing);
+ brushButton.disabled=eraseButton.disabled=!editing;
+ label.textContent=editing?'Paint water / protect solid • mask editor':
+   viewMask?'Cyan = water allowed to move':'Only painted water regions animate';
+}
+motionButton.addEventListener('click',function(){enabled=!enabled;modes()});
+maskButton.addEventListener('click',function(){viewMask=!viewMask;modes()});
+editButton.addEventListener('click',function(){editing=!editing;if(editing)viewMask=true;modes()});
+brushButton.addEventListener('click',function(){paintMode='add';modes()});
+eraseButton.addEventListener('click',function(){paintMode='erase';modes()});
+$('reset').addEventListener('click',function(){resetMask(true)});
+$('export').addEventListener('click',function(){
+ maskCanvas.toBlob(function(blob){if(!blob)return;
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='shore-water-mask.png';
+ document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1500);
+ setMessage('Exported shore-water-mask.png. White alpha pixels are the independently animated water matte.');
+ },'image/png');
+});
+window.addEventListener('resize',function(){if(ready)resize()},{passive:true});
+reduce.addEventListener?.('change',function(e){if(e.matches){enabled=false;modes()}});
+plate.addEventListener('load',setup,{once:true});
+plate.addEventListener('error',function(){setMessage('Original shore illustration could not load. The asset path may be unavailable.');setStatus('Image unavailable',false)});
+function setup(){
+ try{makeMask();initializeGL();resize();ready=true;modes();setMessage('Original painting loaded. Starter matte contains only conservative open-water regions.');}
+ catch(err){console.warn(err);setMessage('Animation unavailable: '+err.message+'. The original painting is still preserved.');setStatus('Renderer unavailable',false)}
+}
+if(plate.complete&&plate.naturalWidth)setup();
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
