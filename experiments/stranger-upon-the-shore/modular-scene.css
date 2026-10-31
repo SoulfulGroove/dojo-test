@@ -1,0 +1,30 @@
+/*
+  Modular Scene v3 — art directed motion/compositing layer.
+  Keep base painting/character art unchanged; water and mist are separate,
+  pointer-transparent image-derived canvas modules. UI remains original.
+*/
+.scene-art{isolation:isolate}
+.scene-art>.modular-painted-layer{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  z-index:0;
+  pointer-events:none;
+  image-rendering:auto;
+}
+/* Old synthetic weather layers are disabled on the shore only.
+   House fire/smoke, fisherman poses and the learning animations remain. */
+.modular-scene-build .ambient-layer.shore .sea-breathe,
+.modular-scene-build .ambient-layer.shore .sea-spray,
+.modular-scene-build .ambient-layer.shore .sun-path,
+.modular-scene-build .ambient-layer.shore .far-mist{display:none!important}
+.modular-scene-build .scene-vignette{z-index:1}
+.modular-scene-build .scene-titlebar,
+.modular-scene-build .scene-hint,
+.modular-scene-build .hotspot-layer{z-index:2}
+.modular-scene-build.motion-off .modular-painted-layer{display:none!important}
+@media(prefers-reduced-motion:reduce){
+  .modular-scene-build .modular-painted-layer{display:none!important}
+}
