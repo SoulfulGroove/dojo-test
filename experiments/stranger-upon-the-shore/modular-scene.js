@@ -168,7 +168,7 @@
     if(label==='Look toward sea')surgeTime=performance.now()/1000;
   });
   window.addEventListener('resize',()=>{pixelsWidth=0;pixelsHeight=0;},{passive:true});
-  source.onload=()=>{ready=configure();syncScene();};
+  source.onload=()=>{ready=true;configure();syncScene();};
   source.onerror=()=>{canvas.remove();};
 
   syncScene();
