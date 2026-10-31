@@ -33,3 +33,21 @@ Relevant primary and museum references:
 ## Scope
 
 This is a **working narrative and interface slice**, not a completed course, historically validated reconstruction, or finished game. The goal is to test whether story, exploration, and a first Japanese comprehension moment belong together as an enjoyable experience.
+
+## Animated illustration pass (v0.2)
+
+The original game story and interaction code remains unchanged. Two additive files provide animation:
+- `motion.css`: subtle water shimmer, sea spray, distant mist, hearth glow, smoke, embers, title-camera breathing, dialogue reveal, click ripples, and reduced-motion alternatives.
+- `motion.js`: attaches decorative layers to the existing illustrated scenes; responds to scene changes and the existing water dialogue to change the fisherman's pose, and offers a user-controlled motion toggle (`✧` in the header).
+- `assets/fisherman-idle.webp` and `assets/fisherman-offer.webp`: original isolated transparent character illustrations used as separate scene art.
+
+This experiment uses native CSS animations and a small JavaScript controller, not a new game engine or external animation/CDN dependency. Animation never blocks pointer/touch actions. On reduced-motion devices, ambient movement is disabled. The historical art remains a creative interpretation, not a verified reconstruction.
+
+### Playtest checks
+
+1. Start the prologue, explore a shore hotspot, and talk to the fisherman.
+2. Accept his help and enter the house. Look for smoke, firelight, and an independently breathing fisherman.
+3. Tap the water vessel; the fisherman should offer a scoop and みず should appear.
+4. Complete the same Japanese recall exercise and reach the ending.
+5. Use the small motion icon in the header to turn animations off and back on.
+6. Test on a small phone viewport and with an OS preference for reduced motion.

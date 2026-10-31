@@ -1,0 +1,59 @@
+/* Ambient illustration animation for A Stranger Upon the Shore.
+   Separate from story state: pointer events always pass to existing game hotspots. */
+.title-art,.ending-art{transform:scale(1.04);animation:painted-breath 28s ease-in-out infinite alternate;will-change:transform}
+.title-shade{animation:title-gather 1.5s ease-out both}
+.title-content{animation:chapter-enter .95s ease-out both}
+.scene-art{isolation:isolate;transition:filter .65s ease}
+.ambient-layer{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;contain:paint;}
+.ambient-layer>div{position:absolute;pointer-events:none}
+.scene-vignette,.scene-titlebar,.scene-hint,.hotspot-layer{z-index:2}
+.scene-vignette{z-index:1}
+.ambient-layer.shore .sea-breathe{left:30%;right:-12%;top:41%;height:29%;background:repeating-linear-gradient(175deg,transparent 0 22px,rgba(233,243,225,.42) 24px 27px,transparent 31px 51px);opacity:.14;filter:blur(4px);mix-blend-mode:screen;mask-image:linear-gradient(transparent,#000 30%,#000 66%,transparent);animation:sea-shift 8s ease-in-out infinite alternate}
+.ambient-layer.shore .sea-spray{width:45%;height:21%;right:0;bottom:13%;background:radial-gradient(ellipse at 25% 70%,rgba(231,247,243,.38),transparent 63%),radial-gradient(ellipse at 80% 54%,rgba(235,250,247,.25),transparent 68%);opacity:.36;filter:blur(16px);animation:sea-surge 5.5s ease-in-out infinite}
+.ambient-layer.shore .sun-path{width:29%;height:29%;left:30%;top:21%;background:radial-gradient(ellipse,rgba(255,221,139,.32) 0,rgba(255,218,129,.12) 39%,transparent 69%);filter:blur(10px);mix-blend-mode:screen;animation:fire-flicker 6s ease-in-out infinite alternate}
+.ambient-layer.shore .far-mist{left:40%;top:12%;width:75%;height:46%;background:radial-gradient(ellipse at 35% 40%,rgba(245,244,234,.45),transparent 62%),radial-gradient(ellipse at 80% 80%,rgba(220,231,219,.3),transparent 66%);filter:blur(26px);opacity:.17;animation:mist-travel 26s ease-in-out infinite alternate}
+.ambient-layer.house .fire-glow{left:55%;top:52%;width:31%;height:47%;background:radial-gradient(ellipse at 50% 76%,rgba(255,150,57,.52),rgba(234,110,37,.14) 37%,transparent 69%);mix-blend-mode:screen;opacity:.57;filter:blur(10px);animation:fire-flicker 2.4s ease-in-out infinite alternate}
+.ambient-layer.house .smoke{left:70%;bottom:21%;width:45px;height:110px;opacity:0;filter:blur(11px);background:radial-gradient(ellipse at 50% 70%,rgba(232,223,190,.52),transparent 67%);animation:smoke-rise 6s ease-out infinite}
+.ambient-layer.house .smoke.s2{left:67%;animation-delay:-2.3s;animation-duration:7.6s}
+.ambient-layer.house .smoke.s3{left:73%;animation-delay:-4.8s;animation-duration:6.7s}
+.ambient-layer.house .ember{left:69%;bottom:22%;width:5px;height:5px;border-radius:50%;background:rgba(255,186,100,.9);box-shadow:0 0 13px 5px rgba(251,120,32,.24);animation:ember-float 4.7s linear infinite}
+.ambient-layer.house .ember.e2{left:72%;animation-delay:-1.6s;animation-duration:3.9s}
+.ambient-layer.house .ember.e3{left:67%;animation-delay:-3.1s;animation-duration:5.1s}
+.fisherman-figure{position:absolute;z-index:1;right:7%;bottom:13%;height:clamp(235px,51%,420px);max-width:45%;display:block;object-fit:contain;object-position:bottom;opacity:0;transform-origin:bottom center;filter:drop-shadow(10px 18px 12px #0008);transition:opacity .45s ease,transform .4s ease;animation:figure-idle 5s ease-in-out infinite;pointer-events:none}
+.ambient-layer.house .fisherman-figure{opacity:.96}
+.fisherman-figure.gesturing{animation:figure-offer .66s ease-out both;}
+.speaking .dialogue-body{animation:dialogue-reveal .34s ease-out both}
+.speaking .dialogue-emblem{animation:emblem-flash .55s ease-out both}
+.hotspot{transition:background .18s ease,box-shadow .18s ease}
+.motion-ripple{position:absolute;z-index:3;pointer-events:none;width:34px;height:34px;border:2px solid rgba(255,235,177,.95);border-radius:50%;transform:translate(-50%,-50%);animation:touch-ripple .64s ease-out both;box-shadow:0 0 18px rgba(245,199,119,.55)}
+.scene-art .scene-vignette{animation:light-arrival 1s ease-out both}
+.scene-art.motion-enter .scene-vignette{animation:light-arrival 1.05s ease-out both}
+.story-screen .scene-art.motion-enter{animation:scene-wake 1.2s ease-out both}
+.motion-token{position:absolute;z-index:3;left:13%;bottom:33%;color:#ffe1a2;font:700 23px Georgia,serif;text-shadow:0 0 25px #f7ab55,0 2px 3px #47230e;animation:token-rise 1.65s ease-out both;pointer-events:none}
+.motion-goldfleck{position:absolute;z-index:3;width:5px;height:5px;border-radius:50%;background:#ffe9ba;box-shadow:0 0 10px 3px #edbd61;animation:goldfleck 1.15s ease-out both;pointer-events:none}
+.motion-toggle{min-width:38px;font-size:18px;padding:8px 10px!important}
+.motion-off .title-art,.motion-off .ending-art,.motion-off .ambient-layer,.motion-off .motion-ripple,.motion-off .motion-token,.motion-off .motion-goldfleck,.motion-off .fisherman-figure{animation:none!important;transition:none!important}
+.motion-off .ambient-layer .sea-breathe,.motion-off .ambient-layer .sea-spray,.motion-off .ambient-layer .far-mist,.motion-off .ambient-layer .smoke,.motion-off .ambient-layer .ember{opacity:0!important}
+.motion-off .ambient-layer .fire-glow{opacity:.32!important}
+.motion-off .fisherman-figure{opacity:.96!important}
+.motion-off .dialogue-body,.motion-off .dialogue-emblem{animation:none!important}
+@keyframes painted-breath{from{transform:scale(1.035) translateY(0)}to{transform:scale(1.085) translateY(-.7%)}}
+@keyframes chapter-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes title-gather{from{opacity:0}to{opacity:1}}
+@keyframes scene-wake{from{filter:brightness(.77) saturate(.73)}to{filter:brightness(1) saturate(1)}}
+@keyframes light-arrival{from{opacity:0}to{opacity:1}}
+@keyframes sea-shift{from{transform:translate3d(-18px,5px,0) scaleY(.9);opacity:.1}to{transform:translate3d(26px,-6px,0) scaleY(1.08);opacity:.28}}
+@keyframes sea-surge{0%,100%{transform:translateX(0) scale(.96);opacity:.2}55%{transform:translateX(-7%) scale(1.08);opacity:.4}}
+@keyframes mist-travel{from{transform:translateX(-10%);opacity:.1}to{transform:translateX(7%);opacity:.21}}
+@keyframes fire-flicker{0%{transform:scale(.94) translateY(2px);opacity:.3}40%{transform:scale(1.07);opacity:.64}100%{transform:scale(1.02) translateY(-5px);opacity:.43}}
+@keyframes smoke-rise{0%{transform:translateY(8px) translateX(0) scale(.52);opacity:0}18%{opacity:.18}70%{opacity:.14}100%{transform:translateY(-105px) translateX(23px) scale(2.1);opacity:0}}
+@keyframes ember-float{0%{transform:translate3d(0,0,0) scale(.7);opacity:0}18%{opacity:.8}80%{opacity:.65}100%{transform:translate3d(19px,-100px,0) scale(.1);opacity:0}}
+@keyframes figure-idle{0%,100%{transform:translateY(0) rotate(-.3deg)}50%{transform:translateY(-4px) rotate(.35deg)}}
+@keyframes figure-offer{0%{transform:translateX(9px) rotate(2deg);opacity:.45}60%{transform:translateX(-4px) rotate(-.6deg);opacity:1}100%{transform:translateX(0) rotate(0);opacity:.98}}
+@keyframes dialogue-reveal{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes emblem-flash{from{color:#efd298}to{color:#a47c44}}
+@keyframes touch-ripple{from{transform:translate(-50%,-50%) scale(.6);opacity:1}to{transform:translate(-50%,-50%) scale(3.6);opacity:0}}
+@keyframes token-rise{from{transform:translateY(0) scale(.8);opacity:0}25%{opacity:1}to{transform:translateY(-70px) scale(1.06);opacity:0}}
+@keyframes goldfleck{from{transform:translateY(0) scale(.6);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}}
+@media(max-width:760px){.fisherman-figure{height:clamp(155px,40%,290px);right:0;bottom:22%;opacity:.8!important}.motion-toggle{padding:7px!important;min-width:30px}.ambient-layer.house .fire-glow{left:49%;width:46%;top:51%}.ambient-layer.house .smoke{left:72%}.ambient-layer.house .ember{left:72%}}
+@media(prefers-reduced-motion:reduce){.title-art,.ending-art,.ambient-layer,.ambient-layer *,.fisherman-figure,.speaking .dialogue-body,.speaking .dialogue-emblem,.motion-ripple,.motion-token,.motion-goldfleck{animation:none!important;transition:none!important}.ambient-layer .smoke,.ambient-layer .ember,.ambient-layer .far-mist,.ambient-layer .sea-breathe{opacity:0!important}}
