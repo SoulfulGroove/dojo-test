@@ -94,7 +94,13 @@
     if (cx + rx < 0 || cx - rx > pixelsWidth || cy + ry < 0 || cy - ry > pixelsHeight) return;
 
     const c = patchCtx;
-    c.clearRect(0,0,pixelsWidth,pixelsHeight);
+    // Only touch the image module's local rectangle (mobile GPU friendly).
+    const left = Math.max(0, Math.floor(cx-rx-2));
+    const topClip = Math.max(0, Math.floor(cy-ry-2));
+    const right = Math.min(pixelsWidth, Math.ceil(cx+rx+2));
+    const bottomClip = Math.min(pixelsHeight, Math.ceil(cy+ry+2));
+    if (right <= left || bottomClip <= topClip) return;
+    c.clearRect(left,topClip,right-left,bottomClip-topClip);
     c.save();
     c.beginPath();
     c.ellipse(cx,cy,rx,ry,0,0,Math.PI*2);
@@ -131,7 +137,8 @@
     c.restore();
 
     ctx.globalAlpha=layer.type==='mist'?.67:.95;
-    ctx.drawImage(patch,0,0);
+    ctx.drawImage(patch,left,topClip,right-left,bottomClip-topClip,
+      left,topClip,right-left,bottomClip-topClip);
     ctx.globalAlpha=1;
   }
 
