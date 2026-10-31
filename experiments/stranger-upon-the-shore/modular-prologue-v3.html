@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="modular-scene-build">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#131b1b"/>
+  <meta name="description" content="A Stranger Upon the Shore — a playable historical Japanese point-and-click adventure."/>
+  <title>A Stranger Upon the Shore — Modular Illustrated Prologue</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="motion.css"/>
+  <link rel="stylesheet" href="modular-scene.css"/>
+  <script defer src="motion.js"></script>
+  <script defer src="modular-scene.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="app-top">
+    <button class="brand" id="toTitle" aria-label="Return to title screen"><span class="mon">波</span><span class="brandtext"><b>A Stranger Upon the Shore</b><small>Historical adventure · Prologue</small></span></button>
+    <div class="top-actions"><button class="top-btn" id="journalButton" aria-label="Open journal">Journal <span class="top-icon">▤</span></button><button class="top-btn" id="soundButton" aria-pressed="true" aria-label="Toggle sounds">Sound <span class="top-icon">♫</span></button></div>
+  </header>
+
+  <main id="main" class="game-shell" aria-live="polite">
+    <section id="titleScreen" class="screen title-screen" aria-label="Title screen">
+      <div class="paint title-art" role="img" aria-label="Painted Japanese harbor at dawn, with a sailor and fisherman on the shore"></div>
+      <div class="title-shade"></div>
+      <div class="title-inscription"><span class="vertical-jp" lang="ja">異郷の岸辺</span></div>
+      <div class="title-content">
+        <p class="eyebrow">A HISTORICAL STORY ADVENTURE · JAPAN, CIRCA 1600</p>
+        <h1>A Stranger<br/><em>Upon the Shore</em></h1>
+        <div class="gold-rule"></div>
+        <p>He crossed the world intending to return home.<br/>The sea had other designs.</p>
+        <div class="title-buttons"><button class="primary-btn" id="startButton">Begin the prologue <span>→</span></button><button class="ghost-btn" id="historyButton">Historical inspiration</button></div>
+        <p class="edition">A PLAYABLE STORY PROTOTYPE · ORIGINAL HISTORICAL FICTION</p>
+      </div>
+    </section>
+
+    <section id="storyScreen" class="screen story-screen hidden" aria-label="Interactive scene">
+      <div id="sceneArt" class="paint scene-art" role="img" aria-label="A painted historical Japanese environment">
+        <div class="scene-vignette"></div>
+        <div class="scene-titlebar"><span id="chapterLabel">CHAPTER I</span><span class="chapter-separator">✧</span><span id="placeLabel">THE UNFAMILIAR SHORE</span></div>
+        <div id="hotspotLayer" class="hotspot-layer"></div>
+        <div id="sceneHint" class="scene-hint">Tap a glowing point to explore</div>
+      </div>
+      <div class="dialogue-card" id="dialogueCard">
+        <div class="dialogue-emblem" aria-hidden="true">◈</div>
+        <div class="dialogue-body">
+          <div class="speaker" id="speaker">THE TRAVELER</div>
+          <p id="dialogueText">The taste of salt. The roar of the sea. A foreign shore.</p>
+          <div class="learning-strip hidden" id="learningStrip"><span class="word-jp" lang="ja">みず</span><button class="voice-btn" id="voiceBtn" aria-label="Hear mizu pronounced">▶ Hear</button><span id="romanHint" class="roman-hint hidden">mizu · water</span></div>
+          <div id="choices" class="choice-row"></div>
+        </div>
+        <button id="nextButton" class="next-button hidden" aria-label="Continue dialogue">Continue <span>→</span></button>
+      </div>
+      <nav class="quick-actions" id="quickActions" aria-label="Actions in the scene"></nav>
+    </section>
+
+    <section id="endingScreen" class="screen ending-screen hidden" aria-label="End of prologue">
+      <div class="paint ending-art"></div>
+      <div class="ending-content">
+        <p class="eyebrow">PROLOGUE COMPLETE</p>
+        <h2>There is much<br/>you do not yet understand.</h2>
+        <p>But you have learned one thing: the people of this place may be able to help you find your way home. First, you must find the words.</p>
+        <div class="ending-grid">
+          <div><span class="meta-label">FIRST WORD DISCOVERED</span><strong class="found-word" lang="ja">みず</strong><span>Water · mizu</span></div>
+          <div><span class="meta-label">NEW QUEST</span><strong>Find the missing crew</strong><span>Learn who survived the wreck.</span></div>
+        </div>
+        <p class="afterword">The traveler still intends to return to England. His reasons for staying have not yet begun to take shape.</p>
+        <button class="primary-btn" id="replayButton">Replay the prologue <span>↻</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer"><span>Historical-fiction concept · Original painted artwork</span><span>Point & click · Touch friendly</span></footer>
+</div>
+
+<dialog id="infoDialog" aria-labelledby="infoTitle"><div class="modal-body"><div class="modal-heading"><p class="eyebrow">FIELD NOTES</p><button class="modal-close" id="closeInfo" aria-label="Close journal">✕</button></div><h2 id="infoTitle">Journal</h2><div id="infoContent"></div></div></dialog>
+<noscript><p class="noscript">This interactive game requires JavaScript to run.</p></noscript>
+</body>
+</html>
