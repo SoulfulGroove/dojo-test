@@ -1,0 +1,11 @@
+/* Painted Motion v2 — compositing original painted assets, not vector scenery.
+   Existing story, dialogue, hotspots, and original illustration remain unchanged. */
+.scene-art{isolation:isolate}
+.painted-motion-layer{position:absolute;z-index:0;display:block;pointer-events:none;max-width:none;max-height:none;image-rendering:auto}
+.ambient-layer.shore .sea-breathe,.ambient-layer.shore .sea-spray,.ambient-layer.shore .sun-path,.ambient-layer.shore .far-mist{display:none!important}
+.ambient-layer.house .fisherman-figure{transform-origin:50% 95%;animation:painted-character-idle 5.2s ease-in-out infinite;filter:drop-shadow(9px 15px 10px #0008)}
+.ambient-layer.house .fisherman-figure.gesturing{animation:painted-character-reach .9s ease-out both}
+@keyframes painted-character-idle{0%,100%{transform:translateY(0) rotate(-.25deg) scaleY(1)}50%{transform:translateY(-3px) rotate(.35deg) scaleY(1.007)}}
+@keyframes painted-character-reach{from{transform:translateX(7px) rotate(1.5deg);opacity:.7}65%{transform:translateX(-3px) rotate(-.5deg);opacity:1}to{transform:translateX(0) rotate(0);opacity:.98}}
+.motion-off .painted-motion-layer{opacity:0!important}
+@media(prefers-reduced-motion:reduce){.painted-motion-layer{display:none!important}.ambient-layer.house .fisherman-figure{animation:none!important}}
