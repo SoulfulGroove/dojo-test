@@ -206,6 +206,14 @@ function render(t){
  $('sash').setAttribute('d','M40 86 Q'+(62+Math.sin(t*1.7)*6).toFixed(1)+' 106 '+(58+Math.sin(t*1.1)*6).toFixed(1)+' 123');
  $('fisherEyes').style.opacity=((t%7.8)>7.59)?'.1':'1';
 }
+function layout(){
+  // Keep the two story actors inside the visible portrait camera crop.
+  const portrait=window.matchMedia('(max-width: 660px)').matches;
+  $('fisher').setAttribute('transform',portrait?'translate(760 503)':'translate(921 503)');
+  $('wreck').setAttribute('transform',portrait?'translate(510 515)':'translate(132 515)');
+}
+window.addEventListener('resize',layout);
+layout();
 function tick(ms){
  if(!moving) return;
  if(lastTime===0)lastTime=ms;
