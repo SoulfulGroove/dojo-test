@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#101d24"/>
+<title>Hiragana Dojo · SCUMM & Logic Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#101d24;--panel:#192c34;--line:#405861;--muted:#b7c9c8;--text:#f5efd9;--gold:#edd19c;--jade:#b3e8cf;--lit:#70cba5;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;}
+*{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(circle at 15% -10%,#2c4848,transparent 55%),var(--bg);font-size:15px;line-height:1.48}
+button,select{font:inherit}button{cursor:pointer;background:#314c56;color:var(--text);border:1px solid #5f7b80;border-radius:12px;padding:10px 13px;min-height:44px}
+button:hover{background:#3d5c60}button:focus-visible,select:focus-visible{outline:3px solid #ecd18f;outline-offset:2px}
+a{color:#b6eadc}a:hover{color:#fff5d5}p{margin:.55em 0}small,.muted{color:var(--muted)}h1,h2,h3{line-height:1.2}h1{font-family:Georgia,serif;font-size:clamp(24px,5vw,36px);margin:4px 0 6px}h2{font-size:19px;margin:0 0 12px}h3{font-size:15px;margin:0 0 7px}
+main,.mast{max-width:1000px;margin:auto;padding:15px}.mast{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:23px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--jade);text-transform:uppercase}
+.mast p{color:var(--muted);max-width:670px}.page-kicker{display:flex;align-items:center;gap:8px;color:var(--gold);margin-bottom:12px;font-weight:650;font-size:13px}
+.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 13px;scrollbar-width:thin}.tabs button{white-space:nowrap;background:#213942}.tabs button[aria-selected="true"]{background:#35675b;border-color:#aee6c9;color:#fff}
+.panel{border:1px solid var(--line);background:rgba(25,44,52,.96);border-radius:18px;padding:16px;margin:0 0 13px}
+.card-eyebrow{font-size:11px;color:var(--jade);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.intro{padding:18px 20px}.japanese{font-size:clamp(25px,5vw,37px);font-weight:750;line-height:1.35;margin:10px 0;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,sans-serif}
+.scene{height:clamp(310px,57vw,430px);position:relative;isolation:isolate;overflow:hidden;border-radius:13px;border:2px solid #658781;background:linear-gradient(180deg,#95bcbc 0%,#c5dbca 47%,#77968a 48%,#607c67 100%);color:#102622}
+.scene:before{content:"";position:absolute;top:27%;left:-5%;width:110%;height:31%;background:#627c75;clip-path:polygon(0% 100%,17% 20%,33% 75%,48% 8%,63% 77%,80% 22%,100% 100%);opacity:.45}
+.scene:after{content:"";position:absolute;left:-25%;bottom:-49%;width:150%;height:97%;border-radius:50%;background:radial-gradient(ellipse at 52% 7%,#e4d1a8,#b49d7f 63%,#998e7e);z-index:0}
+.house{position:absolute;z-index:1;left:5%;top:27%;width:31%;height:40%;border:5px solid #776c5e;border-top:0;background:#d5bea0;box-shadow:inset 12px -10px #b5a189}
+.house:before{content:"";position:absolute;left:-16%;top:-51%;width:132%;height:54%;background:#48545a;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.house:after{content:"";position:absolute;left:38%;bottom:0;width:25%;height:57%;border-radius:8px 8px 0 0;background:#685046}
+.hotspot{z-index:2;position:absolute;border:2px solid #fbf0bf;box-shadow:0 4px 12px #172b3199;border-radius:999px;background:#245047ee;font-size:13px;font-weight:750;padding:7px 10px;min-height:43px;min-width:72px}
+.hotspot-villager{left:26%;top:60%}.hotspot-cup{left:42%;bottom:8%}.hotspot-well{right:19%;top:42%}.hotspot-kettle{right:5%;bottom:9%}.hotspot-sign{left:5%;top:5%}.hotspot-gate{right:4%;top:5%}
+.dialogue{margin-top:12px;background:#263f47;border-left:4px solid var(--gold);border-radius:10px;padding:14px;min-height:80px}.dialogue span{display:block;color:var(--gold);font-weight:800;font-size:12px;margin-bottom:3px}
+.verbbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:10px}.verbbar button{font-size:14px;padding:8px 4px}.verbbar button[aria-pressed="true"]{background:#37695a;border-color:#b3e8cf}
+.command{margin:12px 0;padding:9px 12px;color:var(--jade);background:#12252d;border:1px solid #37525a;border-radius:9px;font-weight:750;letter-spacing:.03em}
+.inventory{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.inventory-item{background:#285b52}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:13px}.twocol>.panel{margin:0}.twocol{margin-bottom:13px}
+pre{font-size:12px;line-height:1.5;white-space:pre-wrap;word-break:break-word;background:#0d222b;border:1px solid #31464c;border-radius:10px;padding:12px;color:#d7eee4;max-height:255px;overflow:auto}
+details{margin-top:8px}summary{cursor:pointer;font-weight:700;padding:4px}
+.note{font-size:13px;color:var(--muted);margin-top:9px}
+.formula{display:inline-block;padding:8px 14px;background:#102c30;color:var(--jade);border:1px solid #4a8275;border-radius:12px;font-size:20px;font-weight:800;letter-spacing:.04em;margin:5px 0}
+.conditions{list-style:none;margin:12px 0;padding:0;display:grid;gap:7px}
+.conditions li{padding:11px 12px;border:1px solid #3d5860;background:#203740;border-radius:10px;display:flex;align-items:center;gap:10px}.mark{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#39565b;color:#e4ecdf;font-weight:800}.check.passed .mark{background:#337c62;color:#fff}
+.result{border-left:4px solid #d2a77b;padding:10px 12px;background:#283b40;border-radius:7px;margin-bottom:12px}.result.allowed{border-color:#8ed4ad}
+.deps{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}.dependency{flex:1 1 175px;border:1px solid #5a8177;background:#193d3d;border-radius:12px;padding:13px}.dependency strong,.dependency small{display:block}.dependency small{font-size:12px;margin-top:5px}.dep-arrow{display:flex;align-items:center;font-size:24px;color:var(--gold)}
+.clue-row{display:grid;grid-template-columns:78px 1fr 1fr;align-items:center;gap:8px;margin:9px 0}
+.clue-row select{width:100%;background:#1e3b42;color:white;border:1px solid #638083;padding:11px 9px;border-radius:10px;min-width:0;min-height:44px}
+.clue-head{display:grid;grid-template-columns:78px 1fr 1fr;gap:8px;color:var(--muted);font-size:12px}
+.clue-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.clue-actions button{flex:1 1 100px}
+.output{min-height:57px;background:#132931;border-left:4px solid var(--gold);border-radius:8px;padding:10px 13px}
+.flag-grid{display:flex;gap:8px;flex-wrap:wrap}.flag-grid span{border-radius:999px;padding:6px 11px;background:#213d47;font-size:13px}
+[hidden]{display:none!important}
+.footer{font-size:12px;color:var(--muted);margin:23px 0}
+@media(max-width:650px){.mast{align-items:flex-start}.twocol{grid-template-columns:1fr}.verbbar{gap:5px}.hotspot{font-size:11px;min-width:59px;min-height:44px;padding:7px 5px}.hotspot-villager{left:12%}.hotspot-well{right:7%}.hotspot-cup{left:42%}.hotspot-gate{right:3%}.deps{flex-direction:column}.dep-arrow{align-self:center;transform:rotate(90deg)}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div><div class="eyebrow">Hiragana Dojo · Experimental workshop</div><h1>SCUMM & Logic Lab</h1><p>Play an interaction. Inspect why it works. Solve a clue puzzle.</p></div>
+</header>
+<main>
+  <div class="page-kicker">Independent experiment · No changes to other Dojo games</div>
+  <nav class="tabs" aria-label="Lab sections">
+    <button data-tab="story" aria-selected="true">1 · Play the story</button>
+    <button data-tab="logic" aria-selected="false">2 · Inspect the logic</button>
+    <button data-tab="clues" aria-selected="false">3 · Zebra clues</button>
+  </nav>
+  <section id="tab-story">
+    <div class="panel intro">
+      <div class="card-eyebrow">The request · A tiny adventure</div>
+      <p>A traveler meets a villager in a courtyard after surviving a shipwreck. She points toward the well and says:</p>
+      <div class="japanese" lang="ja">「みずを ください。」</div>
+      <p class="note">Try to respond through action. These are constructed modern Japanese learning lines, not quotations from Musashi's V4 text.</p>
+    </div>
+    <div class="panel">
+      <h2>The village courtyard</h2>
+      <div class="scene" id="scene" role="group" aria-label="Interactive courtyard with villager, well, cup, kettle, well sign, and gate"></div>
+      <div class="dialogue" role="status" aria-live="polite"><span>STORY RESPONSE</span><div id="message">She points toward the well: 「みずを ください。」 What does she need?</div></div>
+    </div>
+    <div class="panel">
+      <h2>Issue a command</h2>
+      <p class="muted">Choose a verb, then tap a scene object. For Use or Give, select the cup from inventory before its destination.</p>
+      <div class="verbbar">
+        <button data-verb="look" aria-pressed="true">Look</button>
+        <button data-verb="take" aria-pressed="false">Take</button>
+        <button data-verb="talk" aria-pressed="false">Talk</button>
+        <button data-verb="use" aria-pressed="false">Use</button>
+        <button data-verb="give" aria-pressed="false">Give</button>
+      </div>
+      <div class="command" id="command" aria-live="polite">LOOK → choose target</div>
+      <div class="inventory"><div><b>Inventory:</b> <span id="inventory">Empty</span></div><div><button id="hint">Contextual hint</button> <button id="reset">Reset scene</button></div></div>
+    </div>
+    <div class="twocol">
+      <div class="panel"><h3>World state</h3><pre id="world"></pre></div>
+      <div class="panel"><h3>Learning evidence</h3><pre id="evidence"></pre><p class="note">One unassisted action does not demonstrate mastery or retention.</p></div>
+    </div>
+    <div class="panel">
+      <details><summary>Developer event inspector</summary>
+        <h3>Last matched rule</h3><pre id="lastRule">Select an interaction.</pre>
+        <h3>Recent events</h3><pre id="events">[]</pre>
+      </details>
+    </div>
+  </section>
+  <section id="tab-logic" hidden>
+    <div class="panel">
+      <div class="card-eyebrow">Live propositional logic</div>
+      <h2>What makes a game action possible?</h2>
+      <p>To give the villager water, the player must <b>have the cup (C)</b>, it must <b>contain water (W)</b>, and the villager must <b>not already be helped (¬H)</b>.</p>
+      <div class="formula" id="guardFormula">C AND W AND NOT H</div>
+      <ul id="conditionTable" class="conditions"></ul>
+      <p id="allowed" class="result">No prerequisites evaluated yet.</p>
+      <div class="flag-grid"><span>Gate state: <strong id="gateEffect">CLOSED</strong></span></div>
+      <p class="note" id="flagNotice"></p>
+    </div>
+    <div class="panel">
+      <div class="card-eyebrow">Puzzle dependency chart</div>
+      <h2>Actions and their consequences</h2>
+      <div class="deps" id="dependencies"></div>
+      <p class="note">Arrows represent possible causal progression, not a mandatory click order. Rule prerequisites are evaluated on the current state. Actions may set or clear state variables.</p>
+    </div>
+    <div class="panel">
+      <h2>A subtle but essential distinction</h2>
+      <p><b>Guard:</b> C ∧ W ∧ ¬H tells us when the action may execute.</p>
+      <p><b>Effect:</b> Giving the water sets H and opens the gate, while consuming the cup.</p>
+      <p>Therefore, <b>gateOpen does not mean the guard is still true</b>. After a successful handoff the guard normally becomes false. A dependency chart is not just a list of truth-equivalent propositions; it also represents state-changing events.</p>
+    </div>
+  </section>
+  <section id="tab-clues" hidden>
+    <div class="panel intro">
+      <div class="card-eyebrow">Zebra puzzle · Constraint satisfaction</div>
+      <h2>Who has what, and where are they?</h2>
+      <p>Three villagers—Aki, Hana, and Ren—are each in a different location and carrying a different item. Combine all four clues to deduce every pairing.</p>
+      <ol id="clueList"></ol>
+      <p class="note" id="clueCount"></p>
+    </div>
+    <div class="panel">
+      <h2>Deduction board</h2>
+      <div class="clue-head"><span>Person</span><span>Location</span><span>Object</span></div>
+      <div id="assignments"></div>
+      <div class="clue-actions">
+        <button id="clueCheck">Check deductions</button>
+        <button id="clueHint">Get reasoning hint</button>
+        <button id="clueReset">Clear board</button>
+        <button id="clueReveal">Reveal solution</button>
+      </div>
+      <div class="output" id="clueFeedback" role="status" aria-live="polite">Assign each person to a location and object.</div>
+    </div>
+    <div class="panel">
+      <h2>Why this matters for Hiragana Dojo</h2>
+      <p>The game can deliver clues through Japanese dialogue, signs, and observations. The deduction engine checks logical consistency, while a separate learning layer records whether players understood the Japanese independently or needed help.</p>
+      <p class="note">This is an original English-language deduction demonstration, not an implemented Japanese-language lesson. The constraint rules are evaluated by enumerating all possible pairings, not by a full SAT or CSP solver library.</p>
+    </div>
+  </section>
+  <footer class="footer">Original educational prototype, inspired by classic adventure authoring concepts. No LucasArts art or source code. Logic and UI are experimental. <a href="README.md">Read the implementation notes</a>.</footer>
+</main>
+<script src="game-data.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>
