@@ -21,7 +21,7 @@
    const scene=$('scene'); scene.replaceChildren();
    const house=document.createElement('div');house.className='house';scene.append(house);
    for(const id of targets) {
-     if(id==='cup'&&state.world.hasCup)continue;
+     if(id==='cup'&&(state.world.hasCup||state.world.villagerHelped))continue;
      const b=btn(names[id]+({villager:' · 人',well:' · 井戸'}[id]||''),'hotspot hotspot-'+id);
      b.dataset.target=id;b.addEventListener('click',()=>run(id));scene.append(b);
    }
