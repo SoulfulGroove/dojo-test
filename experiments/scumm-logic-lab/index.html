@@ -27,6 +27,10 @@ main,.mast{max-width:1000px;margin:auto;padding:15px}.mast{display:flex;justify-
 .dialogue{margin-top:12px;background:#263f47;border-left:4px solid var(--gold);border-radius:10px;padding:14px;min-height:80px}.dialogue span{display:block;color:var(--gold);font-weight:800;font-size:12px;margin-bottom:3px}
 .verbbar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:10px}.verbbar button{font-size:14px;padding:8px 4px}.verbbar button[aria-pressed="true"]{background:#37695a;border-color:#b3e8cf}
 .command{margin:12px 0;padding:9px 12px;color:var(--jade);background:#12252d;border:1px solid #37525a;border-radius:9px;font-weight:750;letter-spacing:.03em}
+.context-actions{background:#16343c;border:1px solid #507c74;border-radius:12px;padding:12px;margin:10px 0}
+.context-choices{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.context-action{background:#2e594d}
+.classic-controls{margin:12px 0 14px;padding:10px 12px;border:1px solid #48636c;border-radius:12px;background:#1c323b}
+.classic-controls summary{cursor:pointer;color:var(--gold);font-weight:700;min-height:32px}
 .inventory{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.inventory-item{background:#285b52}
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:13px}.twocol>.panel{margin:0}.twocol{margin-bottom:13px}
 pre{font-size:12px;line-height:1.5;white-space:pre-wrap;word-break:break-word;background:#0d222b;border:1px solid #31464c;border-radius:10px;padding:12px;color:#d7eee4;max-height:255px;overflow:auto}
@@ -72,8 +76,15 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:700;padding:4px}
       <div class="dialogue" role="status" aria-live="polite"><span>STORY RESPONSE</span><div id="message">She points toward the well: 「みずを ください。」 What does she need?</div></div>
     </div>
     <div class="panel">
-      <h2>Issue a command</h2>
-      <p class="muted">Choose a verb, then tap a scene object. For Use or Give, select the cup from inventory before its destination.</p>
+      <h2>Tap directly to interact</h2>
+      <p class="muted">Tap something in the scene. The action changes with what you carry and what has happened. When there are other meaningful actions, they appear below.</p>
+      <div class="context-actions" id="contextActions" hidden aria-live="polite">
+        <strong id="contextTitle">Other actions</strong>
+        <div id="contextChoices" class="context-choices"></div>
+      </div>
+      <details id="classicControls" class="classic-controls">
+        <summary>Classic verb controls (optional)</summary>
+        <p class="muted">Select a verb, then the scene object. For Use or Give, select the cup in inventory before the destination.</p>
       <div class="verbbar">
         <button data-verb="look" aria-pressed="true">Look</button>
         <button data-verb="take" aria-pressed="false">Take</button>
@@ -82,6 +93,7 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:700;padding:4px}
         <button data-verb="give" aria-pressed="false">Give</button>
       </div>
       <div class="command" id="command" aria-live="polite">LOOK → choose target</div>
+      </details>
       <div class="inventory"><div><b>Inventory:</b> <span id="inventory">Empty</span></div><div><button id="hint">Contextual hint</button> <button id="reset">Reset scene</button></div></div>
     </div>
     <div class="twocol">
@@ -147,5 +159,5 @@ details{margin-top:8px}summary{cursor:pointer;font-weight:700;padding:4px}
   </section>
   <footer class="footer">Original educational prototype, inspired by classic adventure authoring concepts. No LucasArts art or source code. Logic and UI are experimental. <a href="README.md">Read the implementation notes</a>.</footer>
 </main>
-<script src="game-data.js"></script><script src="engine.js"></script><script src="app.js"></script>
+<script src="game-data.js"></script><script src="engine.js"></script><script src="context-actions.js"></script><script src="app.js"></script>
 </body></html>
