@@ -27,14 +27,48 @@
    }
    const gate=scene.querySelector('[data-target="gate"]'); if(gate)gate.textContent=state.world.gateOpen?'Gate · OPEN':'Gate · closed';
  }
+ function runCommand(cmd) {
+   const result=DojoEngine.interpret(DOJO_GAME,state,cmd);
+   state=result.state; selectedItem=null; say(result.message); render(result.event);
+ }
+ function showContextAlternatives(target, usedCommand, usedLabel) {
+   const panel=$('contextActions'), host=$('contextChoices');
+   host.replaceChildren();
+   if ($('classicControls').open) { panel.hidden=true; return; }
+   const candidates=DojoContextActions.forTarget(DOJO_GAME,state,target);
+   const alternatives=candidates.filter(a=>JSON.stringify(a.command)!==JSON.stringify(usedCommand));
+   // If the object has left the world, no actions remain for it.
+   if (!candidates.length || !alternatives.length) { panel.hidden=true; return; }
+   $('contextTitle').textContent=names[target]+' · other possible actions';
+   for(const option of alternatives){
+     const b=btn(option.label,'context-action');
+     b.addEventListener('click',()=>{
+       runCommand(option.command);
+       showContextAlternatives(target,option.command,option.label);
+     });
+     host.append(b);
+   }
+   panel.hidden=false;
+ }
  function run(target){
+   if (!$('classicControls').open) {
+     const actions=DojoContextActions.forTarget(DOJO_GAME,state,target);
+     if(!actions.length){say('There is nothing to interact with here.');return;}
+     runCommand(actions[0].command);
+     showContextAlternatives(target,actions[0].command,actions[0].label);
+     return;
+   }
+   $('contextActions').hidden=true;
    if(['use','give'].includes(verb)&&target==='cup'&&!selectedItem){inventoryClick();return;}
    const cmd={verb,target};
    if(selectedItem)cmd.item=selectedItem;
-   const result=DojoEngine.interpret(DOJO_GAME,state,cmd);
-   state=result.state;selectedItem=null;say(result.message);render(result.event);
+   runCommand(cmd);
  }
  function inventoryClick(){
+   if (!$('classicControls').open) {
+     say('You carry a cup ('+state.world.cupContents+'). Tap something in the scene to interact with it.');
+     return;
+   }
    if(!['use','give'].includes(verb)){say('First select Use or Give to choose the cup as an item.');return;}
    selectedItem='cup';say('Cup selected. Now choose the well, tea kettle, or villager.');render();
  }
@@ -141,11 +175,13 @@
    clueUsedHint=true;
    $('clueFeedback').textContent='Deduction hint: Hana is at the shrine, so the other two places belong to Aki and Ren. Combine the book/well and lantern/gate clues with what Aki cannot carry.';
  }
+ $('classicControls').addEventListener('toggle',()=>{ $('contextActions').hidden=true; render(); });
  $('hint').addEventListener('click',()=>{
    const result=DojoEngine.takeHint(state);state=result.state;say(result.message);render(state.log[0]);
  });
  $('reset').addEventListener('click',()=>{
    state=DojoEngine.freshState();verb='look';selectedItem=null;
+   $('contextActions').hidden=true;
    say('She points toward the well: 「みずを ください。」 What does she need?');
    render({message:'Session reset'});
  });
