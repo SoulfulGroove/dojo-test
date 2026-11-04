@@ -32,6 +32,6 @@ Every noun and verb is browseable, even entries for which no noun–verb relatio
 
 ## Architecture
 
-This initial release is intentionally just **one self-contained index.html file**: its CSS, JavaScript, JSON data, evidence records, variants, and paragraph texts are embedded, so GitHub Pages can serve it without extra dependencies. A separate modular source and reproducible build/test scripts were assembled locally in the working artifact package. Future changes should regenerate the page from the original, versioned corpus rather than manually editing 1,300,000 bytes of embedded data.
+The GitHub Pages release uses `index.html` with `styles.css`, `app.js`, and ten `data/*.json` files so browser fetches work reliably. An additional `Musashi_Atlas_Offline.html` is available in the downloadable source package for opening without a server.
 
 This experiment is isolated under `experiments/musashi-relation-atlas/` and does **not** change other Dojo apps, games or the authoritative Musashi source.
