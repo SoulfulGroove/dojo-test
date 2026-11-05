@@ -2,6 +2,10 @@
 
 An interactive, evidence-aware prototype for historical geography during Miyamoto Musashi's lifetime, under `/experiments/japan-historical-atlas/`.
 
+## Modern coastline foundation (new)
+
+[Open the Japan island outline viewer](../japan-base-map/) — a separate minimal GitHub Pages experiment for the modern shape of Japan, using simplified modern coastline geometry derived from GSI Global Map Japan (2016). No historical provinces, roads, or resource claims are overlaid yet. The independent offline package was supplied in the ChatGPT conversation.
+
 ## Historical master inventories (research extraction)
 
 [Open the grouped Markdown inventory](data/inventories/README.md), with separate machine-readable files for [natural resources](data/inventories/natural-resources.json), [processed goods](data/inventories/processed-goods.json), and [occupations/trades](data/inventories/occupations-and-trades.json). Current first pass: **50 resources, 62 goods, and 84 occupations/trades** from the existing deep-research reports. Evidence labels D/S/P describe the report-level support; none substitutes for verification against an exact historical source passage.
