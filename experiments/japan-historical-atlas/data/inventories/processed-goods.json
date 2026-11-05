@@ -1,0 +1,808 @@
+{
+  "schema_version": "1.0",
+  "inventory": "processed_and_manufactured_goods",
+  "period": "Japan circa 1580–1650",
+  "source_reports": {
+    "CG": "ChatGPT geographic deep research",
+    "CL": "ChatGPT lived-experience deep research",
+    "PG": "Perplexity geographic deep research",
+    "PL": "Perplexity lived-experience deep research",
+    "GG": "Gemini geographic deep research",
+    "GL": "Gemini lived-experience deep research"
+  },
+  "grading": {
+    "D": "Named historical/period document reported; original passage not rechecked",
+    "S": "Historical synthesis in one or more research reports",
+    "P": "Unresolved period or local details; research lead"
+  },
+  "caveat": "Report extraction only; provenance is not independently verified and imports are listed separately from domestic production.",
+  "items": [
+    {
+      "id": "G001",
+      "name": "Milled or stored rice",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Rice processing, markets and granary networks",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G002",
+      "name": "Salt (evaporated from seawater)",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Kariya salt fields in 1644 and Gyotoku salt supply to Edo",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G003",
+      "name": "Salted fish",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Coastal preservation and trade routes",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G004",
+      "name": "Dried fish",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Wakasa to Kyoto seafood trading, period-specific chain incomplete",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "G005",
+      "name": "Dried sardines for fertilizer",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Fish fertilizer to cotton growing, specific dates require review",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "G006",
+      "name": "Processed or dried seaweed",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Seaweed collection and coastal processing, locality not established",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "G007",
+      "name": "Sake",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tamonin diary and sake merchants; specific entry not directly checked",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G008",
+      "name": "Miso",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Monastic commodity and early modern food accounts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G009",
+      "name": "Soy sauce",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Japanese food-processing references; location needs specificity",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G010",
+      "name": "Tofu",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tofu sellers named in Yamashina Tokitsune occupational network",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G011",
+      "name": "Noodles and somen",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Noodle makers and tea diary foods",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "G012",
+      "name": "Prepared sweets",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Sweet makers among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G013",
+      "name": "Powdered tea",
+      "category": "Food, drink and agricultural products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Merchant tea diaries and contemporary descriptions",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G014",
+      "name": "Refined silver",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Iwami mining, refining and trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G015",
+      "name": "Silver ingots and bullion",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Foreign factory trading and silver industry",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G016",
+      "name": "Worked gold and gold leaf",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Gold-beating craft and precious-metal trade",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G017",
+      "name": "Refined copper and copper goods",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Metal trade and working in the period",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G018",
+      "name": "Smelted iron and pig iron",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tatara smelting reported but site and date need verification",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "G019",
+      "name": "Metal farm and carpentry tools",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Blacksmiths, agricultural tools, construction supply",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G020",
+      "name": "Swords and blades",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Warrior and blade-craft narratives",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G021",
+      "name": "Matchlock firearms",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Military manufacturing, individually attested sites unresolved",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G022",
+      "name": "Bullets and lead shot",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic-or-imported",
+      "evidence_anchor": "Military supply and imports of lead; fabrication details unresolved",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G023",
+      "name": "Metal fittings and castings",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Foundry and metalworking descriptions",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G024",
+      "name": "Gold, silver and copper coins",
+      "category": "Metalwork, weapons and currency",
+      "origin_context": "domestic",
+      "evidence_anchor": "Coinage and moneychanging; mint sources need checking",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G025",
+      "name": "Cut lumber and boards",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Forest work supplied town construction",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "G026",
+      "name": "Timber beams and posts",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Carpenter and building trades",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G027",
+      "name": "Charcoal",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Fuel for refining, ironworking and household uses",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G028",
+      "name": "Thatch and straw roofing",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Thatchers named in Tokitsune occupational network",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G029",
+      "name": "Fired roof tiles",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Ceramic and construction descriptions",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G030",
+      "name": "Dressed building stone",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Quarrying and castle walls",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G031",
+      "name": "Plaster and clay wall coatings",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Plasterer and built environment research accounts",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G032",
+      "name": "Barrels and wooden casks",
+      "category": "Construction, fuels and containers",
+      "origin_context": "domestic",
+      "evidence_anchor": "Sake, packing and storage contexts",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G033",
+      "name": "Wooden boats and ships",
+      "category": "Transport, fishing and travel equipment",
+      "origin_context": "domestic",
+      "evidence_anchor": "Marine fishery and sea trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "CL"
+      ]
+    },
+    {
+      "id": "G034",
+      "name": "Rope and cordage",
+      "category": "Transport, fishing and travel equipment",
+      "origin_context": "domestic",
+      "evidence_anchor": "Nets, boats and cargo handling",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G035",
+      "name": "Fishing nets",
+      "category": "Transport, fishing and travel equipment",
+      "origin_context": "domestic",
+      "evidence_anchor": "Wakasa fishing-ground documents name nets",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "G036",
+      "name": "Straw sandals",
+      "category": "Transport, fishing and travel equipment",
+      "origin_context": "domestic",
+      "evidence_anchor": "Temple commodity records and travel",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G037",
+      "name": "Spun cotton thread",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic",
+      "evidence_anchor": "Processing of cotton crops",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "G038",
+      "name": "Woven cotton cloth",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic",
+      "evidence_anchor": "Manufacturing and domestic markets",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G039",
+      "name": "Woven hemp cloth",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic",
+      "evidence_anchor": "Clothing and household fibre material",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G040",
+      "name": "Indigo-dyed cloth",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic",
+      "evidence_anchor": "Indigo-dyers mentioned among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "G041",
+      "name": "Silk cloth and silk garments",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic-and-imported",
+      "evidence_anchor": "Elite consumption and imported raw silk; origins vary",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G042",
+      "name": "Imported wool broadcloth",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "imported",
+      "evidence_anchor": "English Hirado factory cargo and weak sales",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "G043",
+      "name": "Imported raw silk",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "imported",
+      "evidence_anchor": "Chinese and overseas silk trade via western ports",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "G044",
+      "name": "Tailored clothing",
+      "category": "Textiles, fibres and clothing",
+      "origin_context": "domestic",
+      "evidence_anchor": "Broad clothing market; exact occupational record lacking",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G045",
+      "name": "Earthenware and pottery",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Regional kilns, pottery in tea inventories",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G046",
+      "name": "Porcelain ware",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Early seventeenth-century Arita production",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "G047",
+      "name": "Tea bowls and ceramic tea utensils",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic-and-imported",
+      "evidence_anchor": "Merchant tea records, Korean tea bowls",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "G048",
+      "name": "Lacquerware",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Matsuya family and lacquer crafts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G049",
+      "name": "Tatami mats",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tatami makers among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "G050",
+      "name": "Fans",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Fan-makers named among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G051",
+      "name": "Umbrellas",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Umbrella makers named among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G052",
+      "name": "Candles",
+      "category": "Ceramics, crafts and household items",
+      "origin_context": "domestic",
+      "evidence_anchor": "Candle-makers named among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G053",
+      "name": "Prepared herbal medicines",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tokitsune patient notes, prescribing and pharmacy",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G054",
+      "name": "Ointments and salves",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tokitsune medical treatments",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G055",
+      "name": "Handmade paper",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Paper-makers among Tokitsune patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "G056",
+      "name": "Bound books",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Bookbinders, bookselling, diary records",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "G057",
+      "name": "Copied manuscripts and correspondence",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Hand-copied and written texts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "G058",
+      "name": "Printed books and woodblock publications",
+      "category": "Medicine, books and paper",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tokitsune diary entries mention publishing and books",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "GL"
+      ]
+    },
+    {
+      "id": "G059",
+      "name": "Pepper as a traded spice",
+      "category": "Imported traded goods",
+      "origin_context": "imported",
+      "evidence_anchor": "Hirado imported spice trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PL"
+      ]
+    },
+    {
+      "id": "G060",
+      "name": "Sappanwood as dye material",
+      "category": "Imported traded goods",
+      "origin_context": "imported",
+      "evidence_anchor": "Overseas timber/dyewood trade via East India Company",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "G061",
+      "name": "Imported tin for craftsmen",
+      "category": "Imported traded goods",
+      "origin_context": "imported",
+      "evidence_anchor": "Trade in imported tin for Sakai craftsmen",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "G062",
+      "name": "Imported deer, ray and shark skins",
+      "category": "Imported traded goods",
+      "origin_context": "imported",
+      "evidence_anchor": "Foreign factory commodity supply from Southeast Asia",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    }
+  ]
+}
