@@ -1,0 +1,1016 @@
+{
+  "schema_version": "1.0",
+  "inventory": "historical_occupations_and_trades",
+  "period": "Japan circa 1580–1650",
+  "source_reports": {
+    "CG": "ChatGPT geographic deep research",
+    "CL": "ChatGPT lived-experience deep research",
+    "PG": "Perplexity geographic deep research",
+    "PL": "Perplexity lived-experience deep research",
+    "GG": "Gemini geographic deep research",
+    "GL": "Gemini lived-experience deep research"
+  },
+  "grading": {
+    "D": "Named historical/period document reported; original passage not rechecked",
+    "S": "Historical synthesis in one or more research reports",
+    "P": "Unresolved period or local details; research lead"
+  },
+  "caveat": "English role names can be modern descriptive labels; not all are verified contemporary Japanese occupational terms. Report repetition does not equal independent witness corroboration.",
+  "items": [
+    {
+      "id": "O001",
+      "name": "Farmer or cultivator",
+      "category": "Agriculture and land",
+      "evidence_anchor": "Rural land records, Musashi farming analogy",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O002",
+      "name": "Agricultural laborer or farm servant",
+      "category": "Agriculture and land",
+      "evidence_anchor": "Shimo-Kaize household servants and village administration",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PG",
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O003",
+      "name": "Landholding household head",
+      "category": "Agriculture and land",
+      "evidence_anchor": "Shimo-Kaize 1643 household evidence",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PG",
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O004",
+      "name": "Cotton cultivator",
+      "category": "Agriculture and land",
+      "evidence_anchor": "Commercial cotton cultivation in regional research",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O005",
+      "name": "Irrigation or drainage laborer",
+      "category": "Agriculture and land",
+      "evidence_anchor": "Waterworks and cultivation, distinct role not verified",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O006",
+      "name": "Fisherman",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "1608–1610 fishing-ground disputes",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O007",
+      "name": "Net-fishing crew member",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "Wakasa large-net fishing disputes",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O008",
+      "name": "Squid-net fisher",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "Wakasa 1608 squid-net rights",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG"
+      ]
+    },
+    {
+      "id": "O009",
+      "name": "Sardine fisher",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "1623 Saiki order regarding sardine production",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O010",
+      "name": "Whaler or whaling crew member",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "Organized Taiji whaling from 1606, later net method excluded",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O011",
+      "name": "Salt-field worker",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "1644 Kariya salt fields",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O012",
+      "name": "Fish salter or preserver",
+      "category": "Fisheries and coastal production",
+      "evidence_anchor": "Seafood preservation activity; specialized occupational designation unverified",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "O013",
+      "name": "Woodcutter or logger",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Yoshino, Kiso and urban timber supply",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O014",
+      "name": "Timber hauler",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Forest transport to waterways and markets",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O015",
+      "name": "Charcoal maker",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Forest fuel supply for mining and metalworking",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O016",
+      "name": "Silver miner",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Iwami, Sado and Innai extraction",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O017",
+      "name": "Gold miner",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Sado mining",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O018",
+      "name": "Ore sorter or processor",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Ore preparation in mining landscape",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O019",
+      "name": "Metal smelter or refiner",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Iwami refining and silver processing",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O020",
+      "name": "Mine drainage and maintenance worker",
+      "category": "Forestry and mining",
+      "evidence_anchor": "Mine flooding noted, specialized job designation unresolved",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O021",
+      "name": "Blacksmith",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O022",
+      "name": "Silversmith",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O023",
+      "name": "Gold-beater",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O024",
+      "name": "Swordsmith or blade maker",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Military craft synthesis, individual record unverified",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O025",
+      "name": "Foundry worker",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Metalworking synthesis, specific site/date missing",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O026",
+      "name": "Potter",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Tea pottery, regional ceramics",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O027",
+      "name": "Porcelain kiln worker",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Arita early porcelain industry, occupational hierarchy unverified",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O028",
+      "name": "Lacquerware craftsman",
+      "category": "Metalworking and crafts",
+      "evidence_anchor": "Matsuya lacquerware merchant family",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O029",
+      "name": "Weaver",
+      "category": "Textiles and clothing",
+      "evidence_anchor": "Cotton and hemp textile manufacturing",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O030",
+      "name": "Cotton spinner",
+      "category": "Textiles and clothing",
+      "evidence_anchor": "Cotton processing synthesis",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "O031",
+      "name": "Indigo dyer",
+      "category": "Textiles and clothing",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O032",
+      "name": "Silk reeler",
+      "category": "Textiles and clothing",
+      "evidence_anchor": "Sericulture in Gemini; period-locality evidence missing",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "O033",
+      "name": "Tailor or clothing maker",
+      "category": "Textiles and clothing",
+      "evidence_anchor": "General clothing manufacture, exact occupational label not checked",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O034",
+      "name": "Carpenter",
+      "category": "Building and equipment",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O035",
+      "name": "Thatcher",
+      "category": "Building and equipment",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O036",
+      "name": "Tatami maker",
+      "category": "Building and equipment",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O037",
+      "name": "Stoneworker or mason",
+      "category": "Building and equipment",
+      "evidence_anchor": "Castle stonework and quarrying",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O038",
+      "name": "Plasterer",
+      "category": "Building and equipment",
+      "evidence_anchor": "Building craft and urban construction",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O039",
+      "name": "Boatbuilder or shipwright",
+      "category": "Building and equipment",
+      "evidence_anchor": "Maritime trade and local boats",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "CL"
+      ]
+    },
+    {
+      "id": "O040",
+      "name": "Rope or net maker",
+      "category": "Building and equipment",
+      "evidence_anchor": "Equipment present but specialized role not directly checked",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "O041",
+      "name": "Papermaker",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O042",
+      "name": "Bookbinder",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O043",
+      "name": "Fan maker",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O044",
+      "name": "Umbrella maker",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O045",
+      "name": "Candle maker",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O046",
+      "name": "Scribe or manuscript copyist",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Manuscript and written-letter practices",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O047",
+      "name": "Bookseller or book merchant",
+      "category": "Paper and household crafts",
+      "evidence_anchor": "Tokitsune purchases and publication network",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O048",
+      "name": "Tofu seller or maker",
+      "category": "Food and beverage trades",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O049",
+      "name": "Noodle maker",
+      "category": "Food and beverage trades",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O050",
+      "name": "Sweet-maker",
+      "category": "Food and beverage trades",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O051",
+      "name": "Sake brewer",
+      "category": "Food and beverage trades",
+      "evidence_anchor": "Tamonin brewing details; specialized role needs direct check",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O052",
+      "name": "Cook",
+      "category": "Food and beverage trades",
+      "evidence_anchor": "Food provisioning in port and urban households",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "CL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O053",
+      "name": "Rice merchant",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O054",
+      "name": "Sake merchant",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O055",
+      "name": "Fishmonger",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O056",
+      "name": "Shopkeeper or retailer",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Urban shops and service economies",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O057",
+      "name": "Long-distance merchant or foreign factory factor",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Cocks and East India Company documents",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O058",
+      "name": "Commercial broker or intermediary",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Hirado Chinese intermediaries, trade networks",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O059",
+      "name": "Moneychanger",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Currency exchanges at urban markets",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O060",
+      "name": "Warehouse keeper or cargo handler",
+      "category": "Markets and merchant activity",
+      "evidence_anchor": "Edo canals, depots and port supply",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O061",
+      "name": "Sailor or seaman",
+      "category": "Transport and communication",
+      "evidence_anchor": "Adams, Saris and Cocks voyage accounts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O062",
+      "name": "Boatman or rower",
+      "category": "Transport and communication",
+      "evidence_anchor": "Musashi rowing analogy and river craft",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O063",
+      "name": "Ferryman",
+      "category": "Transport and communication",
+      "evidence_anchor": "Tokaido and Ise Bay crossings",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O064",
+      "name": "Packhorse handler",
+      "category": "Transport and communication",
+      "evidence_anchor": "Tokaido relay system and pack horses",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O065",
+      "name": "Porter or carrier",
+      "category": "Transport and communication",
+      "evidence_anchor": "Official labor obligations, coastal-to-inland freight",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O066",
+      "name": "Messenger or courier",
+      "category": "Transport and communication",
+      "evidence_anchor": "Letters, fast messages and official routes",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O067",
+      "name": "Interpreter",
+      "category": "Transport and communication",
+      "evidence_anchor": "Cocks, Saris and Rodrigues records",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O068",
+      "name": "Innkeeper or lodging proprietor",
+      "category": "Transport and communication",
+      "evidence_anchor": "Post stations and lodging, precise locality varies",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O069",
+      "name": "Village headman",
+      "category": "Government and institutions",
+      "evidence_anchor": "Village administration and taxation",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O070",
+      "name": "Mining administrator",
+      "category": "Government and institutions",
+      "evidence_anchor": "Umetsu Masakage appointment to Innai 1612",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "O071",
+      "name": "Tax accountant or domain finance officer",
+      "category": "Government and institutions",
+      "evidence_anchor": "Umetsu diaristic record of administration",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O072",
+      "name": "Magistrate or official adjudicator",
+      "category": "Government and institutions",
+      "evidence_anchor": "Umetsu adjudications and domain offices",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O073",
+      "name": "Warrior retainer or castle service officer",
+      "category": "Government and institutions",
+      "evidence_anchor": "Matsudaira Ietada and Uwai diaries",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "CL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O074",
+      "name": "Monk or temple administrator",
+      "category": "Government and institutions",
+      "evidence_anchor": "Tamonin diary and Buddhist temple communities",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O075",
+      "name": "Missionary or religious interpreter",
+      "category": "Government and institutions",
+      "evidence_anchor": "Joao Rodrigues and Jesuit mission reports",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "O076",
+      "name": "Physician",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "Yamashina Tokitsune's documented medical practice",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "O077",
+      "name": "Apothecary or pharmacist",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG"
+      ]
+    },
+    {
+      "id": "O078",
+      "name": "Acupuncturist",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "O079",
+      "name": "Hairdresser or barber",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "Named among Tokitsune's patients",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL"
+      ]
+    },
+    {
+      "id": "O080",
+      "name": "Bathhouse proprietor",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "Tokitsune diary and bathing scholarship",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "O081",
+      "name": "Household servant",
+      "category": "Medicine and personal services",
+      "evidence_anchor": "English factory and differentiated village households",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "CL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O082",
+      "name": "Tea-gathering host or tea master",
+      "category": "Entertainment and cultural activity",
+      "evidence_anchor": "Matsuya, Tennōjiya and Sotan tea records",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GL"
+      ]
+    },
+    {
+      "id": "O083",
+      "name": "Actor or stage performer",
+      "category": "Entertainment and cultural activity",
+      "evidence_anchor": "Early kabuki and performing arts",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CL",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "O084",
+      "name": "Artist or painter",
+      "category": "Entertainment and cultural activity",
+      "evidence_anchor": "Musashi artwork and contemporary screens",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CL",
+        "GG",
+        "GL"
+      ]
+    }
+  ]
+}
