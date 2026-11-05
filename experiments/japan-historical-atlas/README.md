@@ -2,6 +2,10 @@
 
 An interactive, evidence-aware prototype for historical geography during Miyamoto Musashi's lifetime, under `/experiments/japan-historical-atlas/`.
 
+## Historical master inventories (research extraction)
+
+[Open the grouped Markdown inventory](data/inventories/README.md), with separate machine-readable files for [natural resources](data/inventories/natural-resources.json), [processed goods](data/inventories/processed-goods.json), and [occupations/trades](data/inventories/occupations-and-trades.json). Current first pass: **50 resources, 62 goods, and 84 occupations/trades** from the existing deep-research reports. Evidence labels D/S/P describe the report-level support; none substitutes for verification against an exact historical source passage.
+
 ## What this first version does
 
 - Shows a modern terrain/topographical map with **indicative modern** locator pins for historically named places and districts.
