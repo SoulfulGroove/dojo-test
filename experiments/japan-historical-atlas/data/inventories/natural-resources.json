@@ -1,0 +1,641 @@
+{
+  "schema_version": "1.0",
+  "inventory": "natural_resources_and_raw_materials",
+  "period": "Japan circa 1580–1650",
+  "source_reports": {
+    "CG": "ChatGPT geographic deep research",
+    "CL": "ChatGPT lived-experience deep research",
+    "PG": "Perplexity geographic deep research",
+    "PL": "Perplexity lived-experience deep research",
+    "GG": "Gemini geographic deep research",
+    "GL": "Gemini lived-experience deep research"
+  },
+  "grading": {
+    "D": "Named historical/period document reported; original passage not rechecked",
+    "S": "Historical synthesis in one or more research reports",
+    "P": "Unresolved period or local details; research lead"
+  },
+  "caveat": "AI-report extraction only. Repetition among AI reports is not independent historical verification. Domestic/imported status follows the reports and needs locality-level confirmation.",
+  "items": [
+    {
+      "id": "R001",
+      "name": "Silver-bearing ore",
+      "category": "Metals and mineral ores",
+      "origin_context": "domestic",
+      "evidence_anchor": "Iwami, Sado and Innai mining systems",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R002",
+      "name": "Gold-bearing ore",
+      "category": "Metals and mineral ores",
+      "origin_context": "domestic",
+      "evidence_anchor": "Sado mining records and regional histories",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R003",
+      "name": "Copper-bearing ore",
+      "category": "Metals and mineral ores",
+      "origin_context": "domestic",
+      "evidence_anchor": "Copper extraction in regional studies",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R004",
+      "name": "Iron-bearing sand",
+      "category": "Metals and mineral ores",
+      "origin_context": "domestic",
+      "evidence_anchor": "Chugoku tatara account; specific period site not verified",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "R005",
+      "name": "Lead-bearing ore",
+      "category": "Metals and mineral ores",
+      "origin_context": "origin unresolved",
+      "evidence_anchor": "Smelting and mine-supply contexts; mining origin unresolved",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R006",
+      "name": "Ceramic and porcelain stone",
+      "category": "Earth and stone",
+      "origin_context": "domestic",
+      "evidence_anchor": "Arita porcelain mineral deposits, early seventeenth century",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R007",
+      "name": "Pottery clay",
+      "category": "Earth and stone",
+      "origin_context": "domestic",
+      "evidence_anchor": "Regional pottery and kilns",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R008",
+      "name": "Building stone",
+      "category": "Earth and stone",
+      "origin_context": "domestic",
+      "evidence_anchor": "Quarrying and stone for castles and ports",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R009",
+      "name": "Timber trees, species unspecified",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Forestry in Kiso, Yoshino and other forest districts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R010",
+      "name": "Cypress",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Kiso and mountain forestry accounts",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "R011",
+      "name": "Cedar",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Forestry and construction material",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R012",
+      "name": "Pine wood",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Wood and fuel in construction narratives",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R013",
+      "name": "Bamboo",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Plant material in craft and housing descriptions",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R014",
+      "name": "Reeds and rushes",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Wetland vegetation and roofing material",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R015",
+      "name": "Lacquer-tree sap",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Lacquerware trade and production",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R016",
+      "name": "Paper mulberry",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Papermaking material in the reports",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R017",
+      "name": "Firewood",
+      "category": "Forest resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Forest fuel for homes and workshops",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R018",
+      "name": "Rice",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Land surveys, village cultivation and grain trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R019",
+      "name": "Barley",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Cultivation and commodity records",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R020",
+      "name": "Wheat",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Cultivation and noodle manufacturing",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R021",
+      "name": "Millet",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Alternative cereals in rural diet and cultivation",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R022",
+      "name": "Soybeans",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Food processing and crop economies",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R023",
+      "name": "Cotton plants",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Kinai and Mikawa-region cultivation",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R024",
+      "name": "Hemp plants",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Textiles and maritime cordage",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R025",
+      "name": "Indigo plants",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Cultivation and dyeing occupations",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R026",
+      "name": "Tea leaves",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tea production and tea-gathering records",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R027",
+      "name": "Mulberry leaves",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Sericulture reported by Gemini, period-locality check needed",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "R028",
+      "name": "Vegetable crops, unspecified",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Gardens and food provisioning; species unspecified",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL",
+        "PL"
+      ]
+    },
+    {
+      "id": "R029",
+      "name": "Rice straw and crop residues",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "domestic",
+      "evidence_anchor": "Straw sandals, roofs and household materials",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R030",
+      "name": "Sweet potatoes",
+      "category": "Cultivated crops and fibres",
+      "origin_context": "recently introduced, not general",
+      "evidence_anchor": "Reported planting in Hirado from Ryukyuan trader; verify original passage",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "R031",
+      "name": "Marine fish, unspecified",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Fisheries, fresh fish markets and preserved-seafood trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "PL",
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R032",
+      "name": "Sardines",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "1623 Saiki order and coastal production",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R033",
+      "name": "Sea bream",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Tomonoura and Kada examples, locality-specific verification pending",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "R034",
+      "name": "Squid",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "1608 Wakasa fishing-ground dispute",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R035",
+      "name": "Octopus",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Seto Inland Sea pots and fishing history",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R036",
+      "name": "Shellfish",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Coastal gathering and food",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R037",
+      "name": "Seaweed",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Gathering and coastal commercial products",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "GG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R038",
+      "name": "Whales",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Taiji organized whaling from 1606; net techniques date later",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R039",
+      "name": "Seawater for salt production",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "1644 Kariya salt-field survey",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R040",
+      "name": "Freshwater and streams",
+      "category": "Marine and aquatic resources",
+      "origin_context": "domestic",
+      "evidence_anchor": "Irrigation, household water and transport",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "CG",
+        "PG",
+        "GG"
+      ]
+    },
+    {
+      "id": "R041",
+      "name": "Horses",
+      "category": "Animals and animal products",
+      "origin_context": "domestic",
+      "evidence_anchor": "1601 road relay and animal transport",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "GG",
+        "CL"
+      ]
+    },
+    {
+      "id": "R042",
+      "name": "Draft cattle and oxen",
+      "category": "Animals and animal products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Animal traction in agricultural descriptions",
+      "report_evidence_class": "S",
+      "source_reports": [
+        "GG",
+        "GL"
+      ]
+    },
+    {
+      "id": "R043",
+      "name": "Hens and poultry",
+      "category": "Animals and animal products",
+      "origin_context": "domestic",
+      "evidence_anchor": "Cocks context: livestock and poultry gifts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL"
+      ]
+    },
+    {
+      "id": "R044",
+      "name": "Pigs",
+      "category": "Animals and animal products",
+      "origin_context": "domestic or traded",
+      "evidence_anchor": "Cocks context: food provisions and gifts",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CL"
+      ]
+    },
+    {
+      "id": "R045",
+      "name": "Silkworm cocoons",
+      "category": "Animals and animal products",
+      "origin_context": "domestic production uncertain",
+      "evidence_anchor": "Sericulture claims need dated local records",
+      "report_evidence_class": "P",
+      "source_reports": [
+        "GG"
+      ]
+    },
+    {
+      "id": "R046",
+      "name": "Deer hides",
+      "category": "Imported raw materials",
+      "origin_context": "imported",
+      "evidence_anchor": "Trade from Southeast Asia; not domestic production evidence",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "R047",
+      "name": "Ray and shark skins",
+      "category": "Imported raw materials",
+      "origin_context": "imported",
+      "evidence_anchor": "East India Company Southeast Asian trade",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "R048",
+      "name": "Sappanwood",
+      "category": "Imported raw materials",
+      "origin_context": "imported",
+      "evidence_anchor": "Imported dye wood described in foreign factory research",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL"
+      ]
+    },
+    {
+      "id": "R049",
+      "name": "Pepper",
+      "category": "Imported raw materials",
+      "origin_context": "imported",
+      "evidence_anchor": "Overseas food spice traded via Hirado",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "CG",
+        "PG",
+        "PL"
+      ]
+    },
+    {
+      "id": "R050",
+      "name": "Tin",
+      "category": "Imported raw materials",
+      "origin_context": "imported",
+      "evidence_anchor": "Imported metal traded to Sakai craftsmen",
+      "report_evidence_class": "D",
+      "source_reports": [
+        "PL",
+        "GG"
+      ]
+    }
+  ]
+}
