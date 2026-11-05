@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Modern Japan national landmass outline sourced from GSI Global Map Japan 2016.">
+<title>Japan · Modern Island Outline</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#183c42;background:#f7f8f5}
+*{box-sizing:border-box}body{margin:0}header{background:#fff;border-bottom:1px solid #cbdcdc;padding:23px clamp(14px,3vw,36px) 18px}
+small{display:block;letter-spacing:.16em;font-weight:750;font-size:.7rem;color:#638286;text-transform:uppercase}h1{font-size:clamp(1.45rem,3.5vw,2.25rem);letter-spacing:-.05em;margin:5px 0 6px}
+p{margin:5px 0;color:#5c777c;line-height:1.5;font-size:.9rem}main{max-width:1450px;margin:auto;padding:16px clamp(10px,2vw,26px)}
+.toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 12px}button{background:white;color:#164249;border:1px solid #bfcfcf;border-radius:9px;padding:9px 13px;cursor:pointer;font-weight:650}
+button:hover{background:#eaf6f5}.status{color:#5c777c;font-size:.8rem;margin-left:auto}#stage{height:min(75vh,780px);min-height:400px;background:#eaf3f3;border:1px solid #cbdcdc;border-radius:14px;overflow:hidden;position:relative;touch-action:none;cursor:grab}#stage.dragging{cursor:grabbing}
+#map{width:100%;height:100%;display:block;object-fit:contain;transform-origin:50% 50%;pointer-events:none;user-select:none;-webkit-user-drag:none}
+#message{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.9);padding:15px 23px;border-radius:11px;border:1px solid #bbd0d0;text-align:center;font-size:.85rem;color:#55777d}
+.note{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:13px;font-size:.78rem;color:#657d7f;line-height:1.5}.note a{color:#1d6870}footer{margin-top:14px;padding:20px;text-align:center;color:#789194;border-top:1px solid #d7e3e2;font-size:.76rem}@media(max-width:640px){#stage{height:67vh;min-height:350px}.status{margin-left:0;width:100%}}
+</style></head>
+<body>
+<header><small>Japan historical atlas · Geography foundation 01</small><h1>Japan · Modern Island Outline</h1><p>Accurate modern geographical shapes, with no roads, cities or historical province boundaries.</p></header>
+<main><div class="toolbar"><button id="zi">＋ Zoom</button><button id="zo">− Zoom</button><button id="reset">Reset</button><button id="save">Save SVG</button><span id="status" class="status" role="status">Loading GSI-derived coastline data…</span></div>
+<div id="stage" aria-label="Modern silhouette of Japan"><img id="map" alt="Modern map outline of the Japanese islands" draggable="false"><div id="message">Loading modern Japan island geometry…</div></div>
+<div class="note"><span>Source: <a href="https://www.gsi.go.jp/kankyochiri/gm_japan_e.html" target="_blank" rel="noopener">Geospatial Information Authority of Japan · Global Map Japan (2016)</a>, via <a href="https://github.com/biskwikman/jpn-atlas" target="_blank" rel="noopener">jpn-atlas</a> · simplified vector geometry.</span><span>Modern landmass only. Historical shorelines differ.</span></div>
+</main><footer>Stage 01: geographical foundation · Historical boundaries and resource layers will be separate research stages.</footer>
+<script>
+(()=>{
+ const source="https://unpkg.com/jpn-atlas@1/japan/japan.json",
+ image=document.getElementById("map"),stage=document.getElementById("stage"),message=document.getElementById("message"),status=document.getElementById("status");
+ let svgSource="",oldUrl=null,scale=1,x=0,y=0,drag=null;
+ const redraw=()=>{image.style.transform="translate("+x+"px,"+y+"px) scale("+scale+")"};
+ function zoom(f){scale=Math.max(1,Math.min(12,scale*f));if(scale===1){x=0;y=0}redraw()}
+ document.getElementById("zi").onclick=()=>zoom(1.5);
+ document.getElementById("zo").onclick=()=>zoom(1/1.5);
+ document.getElementById("reset").onclick=()=>{scale=1;x=y=0;redraw()};
+ document.getElementById("save").onclick=()=>{
+  if(!svgSource)return;
+  const url=URL.createObjectURL(new Blob([svgSource],{type:"image/svg+xml"})),a=document.createElement("a");
+  a.href=url;a.download="japan-modern-islands-gsi-2016.svg";a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)
+ };
+ stage.addEventListener("pointerdown",e=>{if(e.button!==0)return;drag={ox:x,oy:y,px:e.clientX,py:e.clientY};stage.setPointerCapture(e.pointerId);stage.classList.add("dragging")});
+ stage.addEventListener("pointermove",e=>{if(!drag)return;x=drag.ox+e.clientX-drag.px;y=drag.oy+e.clientY-drag.py;redraw()});
+ for(const evt of ["pointerup","pointercancel","lostpointercapture"])stage.addEventListener(evt,()=>{drag=null;stage.classList.remove("dragging")});
+ stage.addEventListener("wheel",e=>{e.preventDefault();zoom(e.deltaY<0?1.15:1/1.15)},{passive:false});
+ function polygons(topology){
+  if(!topology.objects||!topology.objects.country||!topology.arcs)throw Error("Invalid country topology");
+  const cache=new Map(),t=topology.transform;
+  function arc(index){
+   const reverse=index<0,n=reverse?~index:index;
+   if(!cache.has(n)){
+    let x=0,y=0;const points=topology.arcs[n].map(([dx,dy])=>{x+=dx;y+=dy;return t?[x*t.scale[0]+t.translate[0],y*t.scale[1]+t.translate[1]]:[x,y]});cache.set(n,points)
+   }
+   const points=cache.get(n);return reverse?[...points].reverse():points;
+  }
+  function ring(parts){const pts=[];parts.forEach((i,n)=>{const seg=arc(i);pts.push(...(n?seg.slice(1):seg))});return pts}
+  const all=[];
+  function read(g){if(g.type==="GeometryCollection")g.geometries.forEach(read);
+   else if(g.type==="Polygon")all.push(g.arcs.map(ring));
+   else if(g.type==="MultiPolygon")g.arcs.forEach(a=>all.push(a.map(ring)));
+  }
+  read(topology.objects.country);return all;
+ }
+ function makeSvg(topology){
+  const ps=polygons(topology);if(!ps.length)throw Error("No polygons");
+  let minx=Infinity,miny=Infinity,maxx=-Infinity,maxy=-Infinity;
+  for(const p of ps)for(const r of p)for(const [x,y] of r){minx=Math.min(minx,x);miny=Math.min(miny,y);maxx=Math.max(maxx,x);maxy=Math.max(maxy,y)}
+  if(!Number.isFinite(minx)||maxx-minx<1||maxy-miny<1)throw Error("Invalid outline");
+  const pad=Math.max(maxx-minx,maxy-miny)*.055,width=maxx-minx+pad*2,height=maxy-miny+pad*2;
+  const d=ps.map(p=>p.map(r=>r.map(([x,y],i)=>(i?"L":"M")+x.toFixed(2)+","+y.toFixed(2)).join("")+"Z").join("")).join("");
+  const sw=(Math.max(width,height)*.0018).toFixed(2);
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+[minx-pad,miny-pad,width,height].map(n=>n.toFixed(2)).join(" ")+'" preserveAspectRatio="xMidYMid meet"><rect x="'+(minx-pad)+'" y="'+(miny-pad)+'" width="'+width+'" height="'+height+'" fill="#eaf3f3"/><path d="'+d+'" fill="#fbfaf5" fill-rule="evenodd" stroke="#234c52" stroke-linejoin="round" stroke-width="'+sw+'"/></svg>'
+ }
+ fetch(source).then(r=>{if(!r.ok)throw Error("Download failed "+r.status);return r.json()})
+ .then(t=>{svgSource=makeSvg(t);oldUrl=URL.createObjectURL(new Blob([svgSource],{type:"image/svg+xml"}));image.onload=()=>message.hidden=true;image.src=oldUrl;message.hidden=true;status.textContent="GSI-derived modern coastline · 2016";})
+ .catch(err=>{message.textContent="Unable to load online geometry. For an offline map, use the ZIP package provided in chat.";status.textContent="Source connection unavailable";});
+})();
+</script></body></html>
