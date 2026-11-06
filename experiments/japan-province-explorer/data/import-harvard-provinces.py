@@ -57,12 +57,19 @@ with tempfile.TemporaryDirectory() as temp:
                 if v != v: continue
             except Exception: pass
             if hasattr(v, "item"): v=v.item()
+            # The DBF's Unicode values are UTF-8 bytes interpreted as Latin-1;
+            # restore the original Japanese characters, preserving unmodified fields.
+            if isinstance(v, str) and k in ("NAME_UTF", "NAME_UTF_A"):
+                try:
+                    v = v.encode("latin-1").decode("utf-8")
+                except (UnicodeError, ValueError):
+                    pass
             if isinstance(v, (str,float,int,bool)): props[k] = v
         def label():
-            candidates = sorted((k for k in props if re.search(r"romaji|roman|name|kuni|eng|label",k,re.I)), key=lambda k:0 if re.search(r"romaji|roman|name",k,re.I) else 1)
-            for k in candidates:
-                v=str(props[k]).strip()
-                if 2 <= len(v) <= 65 and any(c.isalpha() for c in v): return v
+            for k in ("LABEL", "CITY1", "NAME_ROM", "NAME_UTF"):
+                if k in props:
+                    v = str(props[k]).strip()
+                    if 2 <= len(v) <= 65: return v
             return "Province " + str(len(features)+1)
         props["display_name"] = label()
         props["historical_source"] = "Harvard Tokugawa Japan GIS, province layer based on late-Edo/1828 reference"
