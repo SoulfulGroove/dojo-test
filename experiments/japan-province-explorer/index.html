@@ -28,6 +28,7 @@ button:hover{background:#edf7f4}label{display:flex;align-items:center;gap:6px;co
 <label>Map <select id="base"><option value="blank">Clean outline</option><option value="relief">Elevation / terrain</option><option value="pale">Modern reference</option></select></label>
 <label><input type="checkbox" id="boundaries" checked> Provinces</label>
 <label><input type="checkbox" id="labels"> Names</label>
+<label title="Show all tiny polygon components from the unedited Harvard file"><input type="checkbox" id="fragments"> Tiny fragments</label>
 <label>Fill <input type="range" id="opacity" min="0" max="60" step="5" value="15" aria-label="Province fill opacity"></label>
 <button id="fit">Fit Japan</button><button id="download" disabled>Download GeoJSON</button>
 <span id="status" role="status">Loading historical province boundaries…</span>
@@ -39,6 +40,7 @@ button:hover{background:#edf7f4}label{display:flex;align-items:center;gap:6px;co
 <b>About these layers</b><br>
 Modern map: <a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">Geospatial Information Authority of Japan (GSI)</a>.<br>
 Historical source: <a href="https://doi.org/10.7910/DVN/2CVTR0" target="_blank" rel="noopener">Lex Berman, Harvard Dataverse, Japan Tokugawa GIS (2017)</a>.
+<br><b>Display:</b> Province outlines become finer when zoomed out. Tiny detached triangular source fragments are hidden by default; use “Tiny fragments” to show them. GeoJSON export always includes every original fragment.
 <br><b>Caution:</b> Harvard's province GIS is based largely on later Edo reference geography (around 1828), not verified 1580–1650 borders. <b>Kuni</b> are historical provinces, not modern prefectures or daimyo domains. Northern and Ryukyu political geographies require separate treatment.
 </div></div></main><footer>Historical boundary shapes are research approximations. Modern shorelines also differ from those in the early 1600s. No towns, roads, or resource claims have been added.</footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -55,9 +57,9 @@ relief:L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png'
 pale:L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:2,maxNativeZoom:18,maxZoom:18,attribution:attr})
 };
 let active=base.blank.addTo(map), provinceLayer=null,data=null, provenance='';
-const outlines=document.getElementById('boundaries'),labels=document.getElementById('labels'),opacity=document.getElementById('opacity');
+const outlines=document.getElementById('boundaries'),labels=document.getElementById('labels'),opacity=document.getElementById('opacity'),fragments=document.getElementById('fragments');
 const nameOf=p=>String(p.display_name||p.NAME_ROM||p.NAME_ENG||p.NAME||p.KUNI||p.KUNI_NAM||p.province||p.name||p.PROVINCE||p.NAME_UTF||'Historical province').trim();
-const style=()=>({color:'#176c74',weight:1.45,fillColor:'#0b8a90',fillOpacity:Number(opacity.value)/100,opacity:.88});
+const style=()=>{const z=map.getZoom();return {color:'#176c74',weight:z<=5?.48:z===6?.70:z===7?.92:z<=9?1.14:1.5,fillColor:'#0b8a90',fillOpacity:Number(opacity.value)/100,opacity:z<=5?.56:z<=7?.72:.88};};
 function updateLabels(){if(!provinceLayer)return;provinceLayer.eachLayer(l=>{
  if(l.getTooltip())l.unbindTooltip();
  if(labels.checked){const name=nameOf(l.feature?.properties||{});l.bindTooltip(name,{permanent:true,direction:'center',className:'province-tooltip',opacity:.90}).openTooltip();}
@@ -69,16 +71,29 @@ const details=document.createElement('p');details.textContent=(kind==='harvard'?
 selected.appendChild(details);
 if(raw.length){const d=document.createElement('p');d.textContent=raw.map(k=>k+': '+String(p[k])).join(' · ');selected.appendChild(d)}
 }
+function ringArea(r){let a=0;for(let i=0;i<r.length-1;i++){a+=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1]}return Math.abs(a/2)}
+// Keep source GeoJSON unchanged. Optionally omit only extremely small, near-triangular
+// detached polygon components from the DISPLAY; the Download button exports everything.
+function displayGeometry(geo){if(fragments.checked)return {geo,hidden:0};let hidden=0;
+ const features=geo.features.map(f=>{let g=f.geometry;if(!g||!['Polygon','MultiPolygon'].includes(g.type))return f;
+ const tiny=p=>{const r=p?.[0]||[];return r.length<=5&&r.length>2&&ringArea(r)<.0002};
+ if(g.type==='Polygon')return tiny(g.coordinates)?(hidden++,null):f;
+ const polygons=g.coordinates.filter(p=>{if(tiny(p)){hidden++;return false}return true});
+ if(!polygons.length)return null;
+ return polygons.length===g.coordinates.length?f:{...f,geometry:{...g,coordinates:polygons}};
+ }).filter(Boolean);return {geo:{...geo,features},hidden};}
 function paint(geo,kind){if(!geo||geo.type!=='FeatureCollection'||!geo.features?.length)throw Error('Source did not contain valid province polygons');
 data=geo;provenance=kind;downloadBtn.disabled=false;
-provinceLayer=L.geoJSON(geo,{style, onEachFeature:(feature,layer)=>{
+if(provinceLayer){map.removeLayer(provinceLayer);provinceLayer=null}
+const display=displayGeometry(geo);
+provinceLayer=L.geoJSON(display.geo,{style, onEachFeature:(feature,layer)=>{
   layer.on('click',()=>{choose(feature.properties||{},kind);layer.setStyle({weight:3,fillOpacity:Math.min(.6,Number(opacity.value)/100+.2)});setTimeout(()=>{if(provinceLayer)provinceLayer.resetStyle(layer)},1200)});
-  layer.on('mouseover',()=>layer.setStyle({weight:2.5,color:'#0e4c56'}));
+  layer.on('mouseover',()=>layer.setStyle({weight:Math.max(1.25,style().weight*1.7),color:'#0e4c56'}));
   layer.on('mouseout',()=>{if(provinceLayer)provinceLayer.resetStyle(layer)});
 }}).addTo(map);
 if(!outlines.checked)map.removeLayer(provinceLayer);
 updateLabels();
-status.textContent=geo.features.length+' historical province features · '+(kind==='harvard'?'Harvard GIS (later Edo)':'ArcGIS temporary substitute');
+status.textContent=geo.features.length+' historical province features · '+(display.hidden?display.hidden+' tiny polygon fragments hidden · ':'')+(kind==='harvard'?'Harvard GIS (later Edo)':'ArcGIS temporary substitute');
 }
 async function getData(){
  const local='./data/harvard-kuni.geojson';
@@ -93,7 +108,10 @@ async function getData(){
 }
 document.getElementById('base').addEventListener('change',e=>{map.removeLayer(active);active=base[e.target.value].addTo(map);active.bringToBack();});
 outlines.addEventListener('change',()=>{if(!provinceLayer)return;if(outlines.checked)provinceLayer.addTo(map);else provinceLayer.removeFrom(map)});
-labels.addEventListener('change',updateLabels);opacity.addEventListener('input',()=>{if(provinceLayer)provinceLayer.setStyle(style())});
+labels.addEventListener('change',updateLabels);
+fragments.addEventListener('change',()=>{if(data)paint(data,provenance)});
+opacity.addEventListener('input',()=>{if(provinceLayer)provinceLayer.setStyle(style())});
+map.on('zoomend',()=>{if(provinceLayer)provinceLayer.setStyle(style())});
 document.getElementById('fit').addEventListener('click',()=>map.fitBounds(japanBounds,{padding:[12,12]}));
 downloadBtn.addEventListener('click',()=>{if(!data)return;let blob=new Blob([JSON.stringify(data)],{type:'application/geo+json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=(provenance==='harvard'?'harvard-later-edo-kuni':'arcgis-provisional-kuni')+'.geojson';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 getData();
