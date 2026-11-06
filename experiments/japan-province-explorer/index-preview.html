@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f6f4">
+<meta name="description" content="Explore approximate historical Japanese provinces over a coastline-only GSI-derived Japan outline, with optional modern map context.">
+<title>Japan Province Explorer · Historical Atlas</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f4f7f6;color:#18383c}*{box-sizing:border-box}
+body{margin:0}header{padding:20px clamp(12px,2.5vw,36px);background:white;border-bottom:1px solid #d6e2df}header .tag{letter-spacing:.14em;text-transform:uppercase;color:#6b8585;font-size:.7rem;font-weight:760}h1{margin:4px 0;font-size:clamp(1.4rem,3vw,2.15rem);letter-spacing:-.04em}header p{margin:6px 0 0;color:#61777b;line-height:1.5;font-size:.89rem;max-width:900px}
+main{max-width:1580px;margin:0 auto;padding:12px clamp(9px,1.5vw,24px)}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:11px;padding:10px 3px 12px}
+button,select{padding:9px 12px;background:#fff;border:1px solid #bfced0;color:#164347;border-radius:9px;font-weight:650;cursor:pointer}
+button:hover{background:#edf7f4}label{display:flex;align-items:center;gap:6px;color:#38585b;font-size:.88rem;font-weight:610}label input[type=range]{width:86px;accent-color:#196973}label input[type=checkbox]{accent-color:#196973}
+#status{font-size:.82rem;color:#5c7c7e;margin-left:auto}
+#map{height:min(73vh,780px);min-height:385px;border:1px solid #cadad8;border-radius:13px;background:#e1eff2;overflow:hidden}
+.panel{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;margin-top:12px}
+#selected{background:white;border:1px solid #d5e2df;border-radius:10px;padding:13px 15px;min-width:240px;flex:1}
+#selected strong{font-size:1.03rem}#selected p{color:#5a7375;font-size:.8rem;margin:6px 0 0;line-height:1.55}
+.attribution{flex:1;min-width:250px;font-size:.77rem;line-height:1.55;color:#698082;margin-top:4px}
+.attribution a{color:#1b6170}footer{padding:16px 22px 23px;font-size:.77rem;color:#6c8183;max-width:1580px;margin:0 auto}
+.province-tooltip{background:#fffef7;border:1px solid #799898;border-radius:4px;box-shadow:0 1px 4px #132b2b1d;font-size:.74rem;color:#1e4f55;font-weight:690;padding:2px 5px}
+.leaflet-container{font-family:inherit}.leaflet-control-attribution{font-size:10px!important}
+@media(max-width:700px){#status{margin-left:0;width:100%}#map{height:65vh;min-height:365px}.controls{gap:8px}button,select{font-size:.83rem}label{font-size:.8rem}}
+</style></head><body>
+<header><div class="tag">Japan Historical Atlas / Experiment 02</div><h1>Historical Province Explorer</h1>
+<p>Modern geographic coordinates underneath provisional historical <em>kuni</em> (国) boundaries. Explore the outlines first; this is not a claim that the lines are precise for 1600.</p></header>
+<main><section class="controls" aria-label="Map controls">
+<label>Map <select id="base"><option value="blank">Clean outline</option><option value="relief">Elevation / terrain</option><option value="pale">Modern reference</option></select></label>
+<label><input type="checkbox" id="boundaries" checked> Provinces</label>
+<label><input type="checkbox" id="labels"> Names</label>
+<label title="Show all tiny polygon components from the unedited Harvard file"><input type="checkbox" id="fragments"> Tiny fragments</label>
+<label>Fill <input type="range" id="opacity" min="0" max="60" step="5" value="15" aria-label="Province fill opacity"></label>
+<button id="fit">Fit Japan</button><button id="download" disabled>Download GeoJSON</button>
+<span id="status" role="status">Loading historical province boundaries…</span>
+</section>
+<div id="map" role="application" aria-label="Interactive modern Japan map with historical province overlays"></div>
+<div class="panel">
+<article id="selected"><strong>Select a province</strong><p>Tap or click a historical region on the map to see its name and the source qualification.</p></article>
+<div class="attribution">
+<b>About these layers</b><br>
+Modern map: <a href="https://maps.gsi.go.jp/" target="_blank" rel="noopener">Geospatial Information Authority of Japan (GSI)</a>; coastline geometry via <a href="https://github.com/biskwikman/jpn-atlas" target="_blank" rel="noopener">jpn-atlas</a> (GSI Global Map Japan, 2016).<br>
+Historical source: <a href="https://doi.org/10.7910/DVN/2CVTR0" target="_blank" rel="noopener">Lex Berman, Harvard Dataverse, Japan Tokugawa GIS (2017)</a>.
+<br><b>Display:</b> “Clean outline” displays only the modern GSI-derived national coastline (2016), without modern prefecture/municipal lines. Elevation and modern reference modes may still include contemporary map detail. Historical province lines stay fine at all zooms; tiny detached triangular source fragments are hidden by default. GeoJSON export retains every original fragment.
+<br><b>Caution:</b> Harvard's province GIS is based largely on later Edo reference geography (around 1828), not verified 1580–1650 borders. <b>Kuni</b> are historical provinces, not modern prefectures or daimyo domains. Northern and Ryukyu political geographies require separate treatment.
+</div></div></main><footer>Historical boundary shapes are research approximations. Modern shorelines also differ from those in the early 1600s. No towns, roads, or resource claims have been added.</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(()=>{'use strict';
+const status=document.getElementById('status'),selected=document.getElementById('selected'),downloadBtn=document.getElementById('download');
+if(typeof L==='undefined'){status.textContent='Map library could not load. Check your internet connection.';return;}
+const map=L.map('map',{zoomControl:true,preferCanvas:true,worldCopyJump:false,minZoom:3,maxZoom:13});
+const japanBounds=L.latLngBounds([24,122],[46.5,148]);map.fitBounds(japanBounds,{padding:[12,12]});
+const attr='© Geospatial Information Authority of Japan (GSI)';
+const base={
+relief:L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png',{minZoom:2,maxNativeZoom:15,maxZoom:17,attribution:attr+' · Marine source: Japan Coast Guard'}),
+pale:L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:2,maxNativeZoom:18,maxZoom:18,attribution:attr})
+};
+// The GSI "blank" tile is NOT coastline-only: it has modern administrative lines.
+ // For Clean outline, decode only the merged national boundary from the same
+ // GSI-derived 2016 topology used by the independent Japan island experiment.
+ // Its source coordinates are projected screen coordinates, NOT WGS84 lon/lat.
+map.createPane('coastlinePane');
+map.getPane('coastlinePane').style.zIndex='350';
+map.getPane('coastlinePane').style.pointerEvents='none';
+let active=null, coastLayer=null, coastError=false, provinceLayer=null,data=null, provenance='';
+const baseSelect=document.getElementById('base');
+const coastStyle=()=>({color:'#37686d',weight:.85,opacity:.85,fillColor:'#fffefa',fillOpacity:1});
+function countryGeoJSON(t){
+ if(!t?.objects?.country||!Array.isArray(t.arcs)||typeof d3==='undefined')throw Error('Missing country topology or projection library');
+ const projected=d3.geoAzimuthalEqualArea().center([138.5,35.7]).rotate([-138.5,-35.7]).scale(1700).translate([2500,-1930]);
+ const cache=new Map(),arcs=t.arcs,tf=t.transform;
+ function arc(n){
+  const reversed=n<0,i=reversed?~n:n;
+  if(!cache.has(i)){
+   if(!Array.isArray(arcs[i]))throw Error('Invalid coastline arc');
+   let x=0,y=0;const points=arcs[i].map(([dx,dy])=>{
+    x+=dx;y+=dy;
+    const p=tf?[x*tf.scale[0]+tf.translate[0],y*tf.scale[1]+tf.translate[1]]:[x,y];
+    const geo=projected.invert(p);
+    if(!geo||!Number.isFinite(geo[0])||!Number.isFinite(geo[1]))throw Error('Invalid coastline projection');
+    return geo;
+   });
+   cache.set(i,points);
+  }
+  const pts=cache.get(i);return reversed?[...pts].reverse():pts;
+ }
+ function ring(refs){
+  const pts=[];refs.forEach((r,i)=>pts.push(...(i?arc(r).slice(1):arc(r))));
+  if(pts.length<3)return null;
+  if(pts[0][0]!==pts[pts.length-1][0]||pts[0][1]!==pts[pts.length-1][1])pts.push([...pts[0]]);
+  return pts;
+ }
+ const polygons=[];
+ function collect(g){
+  if(g.type==='GeometryCollection')g.geometries.forEach(collect);
+  else if(g.type==='Polygon'){const rings=g.arcs.map(ring).filter(Boolean);if(rings.length)polygons.push(rings);}
+  else if(g.type==='MultiPolygon')g.arcs.forEach(p=>collect({type:'Polygon',arcs:p}));
+ }
+ collect(t.objects.country);
+ if(!polygons.length)throw Error('No country polygons');
+ return {type:'Feature',properties:{source:'GSI Global Map Japan 2016 via jpn-atlas'},geometry:{type:'MultiPolygon',coordinates:polygons}};
+}
+async function loadCoast(){
+ try{
+  const r=await fetch('https://unpkg.com/jpn-atlas@1/japan/japan.json');
+  if(!r.ok)throw Error('Coastline HTTP '+r.status);
+  coastLayer=L.geoJSON(countryGeoJSON(await r.json()),{pane:'coastlinePane',style:coastStyle,interactive:false});
+  if(baseSelect.value==='blank')coastLayer.addTo(map);
+ }catch(e){
+  console.error('Clean coastline unavailable:',e);coastError=true;
+  status.textContent+=' · Clean coastline unavailable (historical polygons still available)';
+ }
+}
+function showBase(mode){
+ if(active){map.removeLayer(active);active=null}
+ if(coastLayer)map.removeLayer(coastLayer);
+ if(mode==='blank'){if(coastLayer)coastLayer.addTo(map);}
+ else if(base[mode]){active=base[mode].addTo(map);active.bringToBack();}
+}
+
+const outlines=document.getElementById('boundaries'),labels=document.getElementById('labels'),opacity=document.getElementById('opacity'),fragments=document.getElementById('fragments');
+const nameOf=p=>String(p.display_name||p.NAME_ROM||p.NAME_ENG||p.NAME||p.KUNI||p.KUNI_NAM||p.province||p.name||p.PROVINCE||p.NAME_UTF||'Historical province').trim();
+const style=()=>{const z=map.getZoom();return {color:'#176c74',weight:z<=5?.38:z<=7?.52:z<=9?.66:.78,fillColor:'#0b8a90',fillOpacity:Number(opacity.value)/100,opacity:z<=5?.56:z<=7?.66:.75};};
+function updateLabels(){if(!provinceLayer)return;provinceLayer.eachLayer(l=>{
+ if(l.getTooltip())l.unbindTooltip();
+ if(labels.checked){const name=nameOf(l.feature?.properties||{});l.bindTooltip(name,{permanent:true,direction:'center',className:'province-tooltip',opacity:.90}).openTooltip();}
+});}
+function choose(p,kind){let label=nameOf(p),raw=Object.keys(p||{}).filter(k=>k!=='historical_source'&&k!=='source_doi'&&!k.toLowerCase().includes('shape')&&p[k]!=null&&typeof p[k]!=='object').slice(0,6);
+selected.replaceChildren();
+const heading=document.createElement('strong');heading.textContent=label;selected.appendChild(heading);
+const details=document.createElement('p');details.textContent=(kind==='harvard'?'Harvard historical province approximation, using a late-Edo reference.':'Public ArcGIS historical province layer; origin and reference date not independently verified.')+' Not an exact border for 1600.';
+selected.appendChild(details);
+if(raw.length){const d=document.createElement('p');d.textContent=raw.map(k=>k+': '+String(p[k])).join(' · ');selected.appendChild(d)}
+}
+function ringArea(r){let a=0;for(let i=0;i<r.length-1;i++){a+=r[i][0]*r[i+1][1]-r[i+1][0]*r[i][1]}return Math.abs(a/2)}
+// Keep source GeoJSON unchanged. Optionally omit only extremely small, near-triangular
+// detached polygon components from the DISPLAY; the Download button exports everything.
+function displayGeometry(geo){if(fragments.checked)return {geo,hidden:0};let hidden=0;
+ const features=geo.features.map(f=>{let g=f.geometry;if(!g||!['Polygon','MultiPolygon'].includes(g.type))return f;
+ const tiny=p=>{const r=p?.[0]||[];return r.length<=5&&r.length>2&&ringArea(r)<.0002};
+ if(g.type==='Polygon')return tiny(g.coordinates)?(hidden++,null):f;
+ const polygons=g.coordinates.filter(p=>{if(tiny(p)){hidden++;return false}return true});
+ if(!polygons.length)return null;
+ return polygons.length===g.coordinates.length?f:{...f,geometry:{...g,coordinates:polygons}};
+ }).filter(Boolean);return {geo:{...geo,features},hidden};}
+function paint(geo,kind){if(!geo||geo.type!=='FeatureCollection'||!geo.features?.length)throw Error('Source did not contain valid province polygons');
+data=geo;provenance=kind;downloadBtn.disabled=false;
+if(provinceLayer){map.removeLayer(provinceLayer);provinceLayer=null}
+const display=displayGeometry(geo);
+provinceLayer=L.geoJSON(display.geo,{style, onEachFeature:(feature,layer)=>{
+  layer.on('click',()=>{choose(feature.properties||{},kind);layer.setStyle({weight:1.2,fillOpacity:Math.min(.6,Number(opacity.value)/100+.2)});setTimeout(()=>{if(provinceLayer)provinceLayer.resetStyle(layer)},1200)});
+  layer.on('mouseover',()=>layer.setStyle({weight:Math.max(.95,style().weight*1.3),color:'#0e4c56'}));
+  layer.on('mouseout',()=>{if(provinceLayer)provinceLayer.resetStyle(layer)});
+}}).addTo(map);
+if(!outlines.checked)map.removeLayer(provinceLayer);
+updateLabels();
+status.textContent=geo.features.length+' historical province features · '+(display.hidden?display.hidden+' tiny polygon fragments hidden · ':'')+(kind==='harvard'?'Harvard GIS (later Edo)':'ArcGIS temporary substitute')+(coastError?' · Clean coastline unavailable':'');
+}
+async function getData(){
+ const local='./data/harvard-kuni.geojson';
+ try{const r=await fetch(local,{cache:'no-store'});if(!r.ok)throw Error('Harvard local '+r.status);paint(await r.json(),'harvard');return;}
+ catch(err){console.info('Harvard local data unavailable:',err);status.textContent='Trying external province layer…'}
+ try{
+ const endpoint='https://services5.arcgis.com/cuQhNeNcUrgLmYGD/ArcGIS/rest/services/JapanHistoricMap/FeatureServer/1/query';
+ const q=new URLSearchParams({where:'1=1',outFields:'*',outSR:'4326',returnGeometry:'true',f:'geojson'});
+ const r=await fetch(endpoint+'?'+q,{mode:'cors'});if(!r.ok)throw Error('ArcGIS HTTP '+r.status);
+ const geo=await r.json();if(geo.error)throw Error(geo.error.message||'ArcGIS service error');paint(geo,'arcgis');}
+ catch(err){console.error(err);status.textContent='Boundary layer unavailable — modern GSI map still works';selected.querySelector('p').textContent='The Harvard dataset has not yet been imported or the external source cannot be reached. The basemap remains available; no approximate lines have been fabricated.';}
+}
+baseSelect.addEventListener('change',e=>showBase(e.target.value));
+outlines.addEventListener('change',()=>{if(!provinceLayer)return;if(outlines.checked)provinceLayer.addTo(map);else provinceLayer.removeFrom(map)});
+labels.addEventListener('change',updateLabels);
+fragments.addEventListener('change',()=>{if(data)paint(data,provenance)});
+opacity.addEventListener('input',()=>{if(provinceLayer)provinceLayer.setStyle(style())});
+map.on('zoomend',()=>{if(provinceLayer)provinceLayer.setStyle(style())});
+document.getElementById('fit').addEventListener('click',()=>map.fitBounds(japanBounds,{padding:[12,12]}));
+downloadBtn.addEventListener('click',()=>{if(!data)return;let blob=new Blob([JSON.stringify(data)],{type:'application/geo+json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=(provenance==='harvard'?'harvard-later-edo-kuni':'arcgis-provisional-kuni')+'.geojson';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+loadCoast();
+getData();
+})();
+</script></body></html>
