@@ -1,0 +1,63 @@
+name: Build Redot Village Web Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/redot-village-s101/**"
+      - ".github/workflows/redot-village-web.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Redot 26.3 editor
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 -o /tmp/redot.zip https://github.com/Redot-Engine/redot-engine/releases/download/redot-26.3-stable/Redot_v26.3-stable_linux_x64.zip
+          mkdir -p /tmp/redot
+          unzip -q /tmp/redot.zip -d /tmp/redot
+          find /tmp/redot -maxdepth 2 -type f -name '*linux*' -exec chmod +x '{}' ';'
+          EDITOR="$(find /tmp/redot -maxdepth 2 -type f -name '*linux*' | head -1)"
+          echo "REDOT_EDITOR=$EDITOR" >> "$GITHUB_ENV"
+          "$EDITOR" --headless --version
+      - name: Install Redot Web export template
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 -o /tmp/templates.tpz https://github.com/Redot-Engine/redot-engine/releases/download/redot-26.3-stable/Redot_v26.3-stable_export_templates.tpz
+          mkdir -p "$HOME/.local/share/Redot/export_templates/26.3.stable"
+          unzip -p /tmp/templates.tpz 'templates/web_release.zip' > "$HOME/.local/share/Redot/export_templates/26.3.stable/web_release.zip"
+          test -s "$HOME/.local/share/Redot/export_templates/26.3.stable/web_release.zip"
+          printf '26.3.stable\n' > "$HOME/.local/share/Redot/export_templates/26.3.stable/version.txt"
+      - name: Import and export Redot Web game
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT="$GITHUB_WORKSPACE/experiments/redot-village-s101"
+          mkdir -p "$PROJECT/play"
+          "$REDOT_EDITOR" --headless --path "$PROJECT" --import
+          "$REDOT_EDITOR" --headless --path "$PROJECT" --export-release "Web" "$PROJECT/play/index.html"
+          test -s "$PROJECT/play/index.html"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
