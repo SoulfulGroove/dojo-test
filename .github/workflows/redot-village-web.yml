@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -57,6 +57,17 @@ jobs:
           "$REDOT_EDITOR" --headless --path "$PROJECT" --import
           "$REDOT_EDITOR" --headless --path "$PROJECT" --export-release "Web" "$PROJECT/play/index.html"
           test -s "$PROJECT/play/index.html"
+      - name: Preserve compiled browser game in repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f experiments/redot-village-s101/play/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update exported Redot S101 browser game [skip ci]"
+            git push origin HEAD:main
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
