@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: redot-village-web
   cancel-in-progress: false
 
 jobs:
