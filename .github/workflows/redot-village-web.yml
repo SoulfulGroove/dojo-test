@@ -41,10 +41,13 @@ jobs:
         run: |
           set -euo pipefail
           curl --fail --location --retry 3 -o /tmp/templates.tpz https://github.com/Redot-Engine/redot-engine/releases/download/redot-26.3-stable/Redot_v26.3-stable_export_templates.tpz
-          mkdir -p "$HOME/.local/share/Redot/export_templates/26.3.stable"
-          unzip -p /tmp/templates.tpz 'templates/web_release.zip' > "$HOME/.local/share/Redot/export_templates/26.3.stable/web_release.zip"
-          test -s "$HOME/.local/share/Redot/export_templates/26.3.stable/web_release.zip"
-          printf '26.3.stable\n' > "$HOME/.local/share/Redot/export_templates/26.3.stable/version.txt"
+          TEMPLATES="$HOME/.local/share/redot/export_templates/26.3.stable"
+          mkdir -p "$TEMPLATES"
+          unzip -p /tmp/templates.tpz 'templates/web_nothreads_release.zip' > "$TEMPLATES/web_nothreads_release.zip"
+          unzip -p /tmp/templates.tpz 'templates/web_nothreads_debug.zip' > "$TEMPLATES/web_nothreads_debug.zip"
+          test -s "$TEMPLATES/web_nothreads_release.zip"
+          test -s "$TEMPLATES/web_nothreads_debug.zip"
+          printf '26.3.stable\n' > "$TEMPLATES/version.txt"
       - name: Import and export Redot Web game
         shell: bash
         run: |
