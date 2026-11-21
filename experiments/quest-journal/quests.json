@@ -1,0 +1,48 @@
+{
+	"quests": [
+		{
+			"id": "Q1",
+			"title": "Brain and Mind"
+		},
+		{
+			"id": "Q2",
+			"title": "The Mind at Work"
+		},
+		{
+			"id": "Q3",
+			"title": "Man Writing Numbers"
+		},
+		{
+			"id": "Q4",
+			"title": "Mathematese - The Language of Numbers"
+		},
+		{
+			"id": "Q5",
+			"title": "The Algebra of Sentences"
+		},
+		{
+			"id": "Q6",
+			"title": "Illustrating the Language"
+		},
+		{
+			"id": "Q7",
+			"title": "Extending the Language"
+		},
+		{
+			"id": "Q8",
+			"title": "Becoming More Familiar With the Language"
+		},
+		{
+			"id": "Q9",
+			"title": "Other Related Ideas"
+		},
+		{
+			"id": "Q10",
+			"title": "Number Bases"
+		},
+		{
+			"id": "Q11",
+			"title": "Men, Mathematics, and Machines"
+		}
+	]
+}
