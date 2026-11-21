@@ -1,0 +1,90 @@
+{
+  "quests": [
+    {
+      "id": "Q1",
+      "title": "Brain and Mind",
+      "status": "completed",
+      "requires": []
+    },
+    {
+      "id": "Q2",
+      "title": "The Mind at Work",
+      "status": "completed",
+      "requires": [
+        "Q1"
+      ]
+    },
+    {
+      "id": "Q3",
+      "title": "Man Writing Numbers",
+      "status": "not_started",
+      "requires": [
+        "Q2"
+      ]
+    },
+    {
+      "id": "Q4",
+      "title": "Mathematese - The Language of Numbers",
+      "status": "not_started",
+      "requires": [
+        "Q3"
+      ]
+    },
+    {
+      "id": "Q5",
+      "title": "The Algebra of Sentences",
+      "status": "not_started",
+      "requires": [
+        "Q4"
+      ]
+    },
+    {
+      "id": "Q6",
+      "title": "Illustrating the Language",
+      "status": "not_started",
+      "requires": [
+        "Q5"
+      ]
+    },
+    {
+      "id": "Q7",
+      "title": "Extending the Language",
+      "status": "not_started",
+      "requires": [
+        "Q6"
+      ]
+    },
+    {
+      "id": "Q8",
+      "title": "Becoming More Familiar With the Language",
+      "status": "not_started",
+      "requires": [
+        "Q7"
+      ]
+    },
+    {
+      "id": "Q9",
+      "title": "Other Related Ideas",
+      "status": "not_started",
+      "requires": [
+        "Q8"
+      ]
+    },
+    {
+      "id": "Q10",
+      "title": "Number Bases",
+      "status": "not_started",
+      "requires": [
+        "Q9"
+      ]
+    },
+    {
+      "id": "Q11",
+      "title": "Men, Mathematics, and Machines",
+      "status": "not_started",
+      "requires": [
+        "Q10"
+      ]
+    }
+  ]
+}
