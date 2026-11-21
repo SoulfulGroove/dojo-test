@@ -33,7 +33,7 @@ button:disabled{cursor:not-allowed}
 .focus:active{filter:brightness(1.12)}
 .eyebrow{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:800;color:#ded2ae}
 .focus-main{display:block;font-family:Georgia,serif;font-size:clamp(20px,5vw,27px);line-height:1.23;font-weight:600;margin:7px 0 5px;overflow-wrap:anywhere}
-.focus-sub{display:block;color:#c9d7d4;font-size:12px;line-height:1.4}
+.focus-sub{display:block;color:#c9d7d4;font-size:12px;line-height:1.4}.focus-next{display:block;margin-top:7px;color:#f0f0e5;font-size:13px;font-weight:650;line-height:1.4;overflow-wrap:anywhere}
 .workspace{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr)}
 .view-head{padding:17px var(--pad) 11px;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .view-head h2{margin:0;font-size:17px;font-weight:760;letter-spacing:-.015em}
@@ -43,7 +43,7 @@ button:disabled{cursor:not-allowed}
 .segment button{flex:1;background:transparent;border:0;color:var(--muted);border-radius:9px;min-height:41px;font-size:13px;font-weight:750}
 .segment button[aria-pressed=true]{color:#10262b;background:#c9e4e5;box-shadow:0 2px 8px #0003}
 .group{margin-bottom:18px}
-.group-head{padding:5px 2px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.group-head{padding:5px 2px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}.group-shortcut{width:100%;text-align:left;background:none;color:inherit;border:0;display:block;padding:0;border-radius:12px;touch-action:manipulation}.group-shortcut:disabled{opacity:1;cursor:default}.group-shortcut:not(:disabled):active{background:#ffffff10}.group-shortcut:not(:disabled):hover{background:#ffffff06}.group-shortcut .progress{margin-bottom:16px}.shortcut-hint{font-size:11px;color:#aedbdb;margin-top:6px;font-weight:700}
 .group-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--subtle);font-weight:780;margin:0 0 4px}
 .group-title{font-family:Georgia,serif;font-size:clamp(20px,5vw,24px);line-height:1.22;font-weight:600;margin:0;overflow-wrap:anywhere}
 .group-sub{color:var(--muted);font-size:12px;line-height:1.4;margin-top:5px}
@@ -92,7 +92,7 @@ button:disabled{cursor:not-allowed}
 .heading-row h3{font-size:15px;margin:0 0 11px}
 .objective{display:flex;gap:12px;align-items:flex-start;background:#1c3038;border:1px solid var(--line);border-radius:11px;padding:14px;margin-bottom:9px;min-height:53px}
 .objective input[type=checkbox]{margin:3px 0 0;flex:0 0 auto;width:20px;height:20px;accent-color:#72c7b1;cursor:pointer;touch-action:manipulation}
-.objective label{flex:1;min-width:0;font-size:14px;font-weight:620;line-height:1.45;cursor:pointer}
+.objective label{flex:1;min-width:0;font-size:14px;font-weight:620;line-height:1.45;cursor:pointer}.objective-help{display:block;font-size:12px;font-weight:450;color:var(--muted);line-height:1.5;margin-top:5px}.objective-text{display:block}
 .readonly-check{display:flex;align-items:center;justify-content:center;flex:0 0 19px;height:19px;border:1.5px solid #8aa3a6;border-radius:4px;color:var(--green);font-weight:800;font-size:12px}
 .readonly-check.checked{border-color:var(--green);background:#294e44}
 .objective.readonly{background:transparent;border-color:var(--line)}
@@ -131,7 +131,7 @@ button:disabled{cursor:not-allowed}
   <button class="focus" type="button" id="focus-button" aria-label="Open active quest or browse">
     <span class="eyebrow">Active Quest</span>
     <span class="focus-main" id="focus-title">No active quest</span>
-    <span class="focus-sub" id="focus-sub">Tap to browse available quests</span>
+    <span class="focus-sub" id="focus-sub">Tap to browse available quests</span><span class="focus-next" id="focus-next" hidden></span>
   </button>
   <section class="workspace" aria-label="Quest Journal workspace">
     <div class="view-head"><h2 id="view-title">Browse Quests</h2><span class="mini-label" id="view-sub">V3</span></div>
@@ -168,6 +168,8 @@ button:disabled{cursor:not-allowed}
   }
   var kindLabels={completed:"Completed",locked:"Locked",active:"Active",in_progress:"In progress",not_started:"Not started"};
   function countDone(q){return completed(q)?q.objectives.length:q.objectives.filter(function(o,i){return !!state.checks[q.id+":"+i];}).length;}
+  function nextObjective(q){return q.objectives.findIndex(function(o,i){return !state.checks[q.id+":"+i];});}
+  function procedureAt(q,i){return (q.procedures||[])[i]||"";}
   function countGroup(g){return groupQuests(g).filter(completed).length;}
   function nextOf(g){return groupQuests(g).find(function(q){return !completed(q);})||null;}
   function after(q){var group=groupOf(q);if(!group||group.kind==="independent")return null;var list=groupQuests(group);return list[list.findIndex(function(v){return v.id===q.id;})+1]||null;}
@@ -209,7 +211,10 @@ button:disabled{cursor:not-allowed}
   function focus(){
     var q=getQuest(state.activeId);
     $("focus-title").textContent=q?q.title:"No active quest";
-    $("focus-sub").textContent=q?(groupOf(q).name+(q.scroll?" · "+q.scroll:"")+" · "+countDone(q)+"/"+q.objectives.length+" objectives"):"Tap to browse available quests";
+    $("focus-sub").textContent=q?(groupOf(q).name+(q.scroll?" · "+q.scroll:"")+" · "+countDone(q)+"/"+q.objectives.length+" objectives complete"):"Tap to browse available quests";
+    var index=q?nextObjective(q):-1;
+    $("focus-next").hidden=!q;
+    $("focus-next").textContent=!q?"":index<0?"All objectives checked — ready to complete":("Next objective "+(index+1)+" of "+q.objectives.length+": "+q.objectives[index]);
   }
   function heading(title,sub){
     $("view-title").textContent=title;
@@ -231,8 +236,11 @@ button:disabled{cursor:not-allowed}
   }
   function groupHeader(g){
     var progress=progressOf(g), count=countGroup(g), total=groupQuests(g).length;
-    return '<div class="group-head"><div><div class="group-kicker">'+(g.kind==="independent"?"Other quests":"Quest collection")+'</div><h3 class="group-title">'+esc(g.name)+'</h3><div class="group-sub">'+esc(g.subtitle||"")+'</div></div><span class="group-counter">'+count+' / '+total+'</span></div>'+
+    var target=g.kind==="independent"?null:nextOf(g);
+    var head='<div class="group-head"><div><div class="group-kicker">'+(g.kind==="independent"?"Other quests":"Quest collection")+'</div><h3 class="group-title">'+esc(g.name)+'</h3><div class="group-sub">'+esc(g.subtitle||"")+'</div></div><span class="group-counter">'+count+' / '+total+'</span></div>'+
        '<div class="progress" aria-label="'+count+' of '+total+' quests completed"><div class="progress-fill" style="width:'+progress+'%"></div></div>';
+    if(!target)return head;
+    return '<button type="button" class="group-shortcut" data-action="collection" data-id="'+esc(target.id)+'" aria-label="Start or resume next quest in '+esc(g.name)+': '+esc(target.title)+'">'+head+'<div class="shortcut-hint">Tap collection to '+(statusOf(target)==="in_progress"?"resume":"start")+' '+esc(target.title)+'</div></button>';
   }
   function cardsWithScrolls(list,showDivisions){
     var html='<ul class="quest-list">',lastScroll="";
@@ -277,7 +285,7 @@ button:disabled{cursor:not-allowed}
   function readonlyObjectives(q){
     return q.objectives.map(function(objective,i){
       var checked=completed(q)||!!state.checks[q.id+":"+i];
-      return '<div class="objective readonly"><span aria-hidden="true" class="readonly-check '+(checked?"checked":"")+'">'+(checked?"✓":"")+'</span><span>'+esc(objective)+'</span></div>';
+      return '<div class="objective readonly"><span aria-hidden="true" class="readonly-check '+(checked?"checked":"")+'">'+(checked?"✓":"")+'</span><span><span class="objective-text">'+esc(objective)+'</span>'+(procedureAt(q,i)?'<span class="objective-help">How: '+esc(procedureAt(q,i))+'</span>':'')+'</span></div>';
     }).join("");
   }
   function formatContext(q){
@@ -321,7 +329,7 @@ button:disabled{cursor:not-allowed}
     html+='<div class="divider"></div><div class="heading-row"><h3>Quest Objectives</h3><span class="small-note">'+count+' / '+q.objectives.length+'</span></div>';
     q.objectives.forEach(function(obj,i){
       var id='objective-'+esc(q.id)+'-'+i,checked=!!state.checks[q.id+":"+i];
-      html+='<div class="objective"><input type="checkbox" id="'+id+'" data-check="'+esc(q.id)+'" data-index="'+i+'" '+(checked?"checked":"")+'><label for="'+id+'">'+esc(obj)+'</label></div>';
+      html+='<div class="objective"><input type="checkbox" id="'+id+'" data-check="'+esc(q.id)+'" data-index="'+i+'" '+(checked?"checked":"")+'><label for="'+id+'"><span class="objective-text">'+esc(obj)+'</span>'+(procedureAt(q,i)?'<span class="objective-help">How: '+esc(procedureAt(q,i))+'</span>':'')+'</label></div>';
     });
     html+='<div class="divider"></div><p class="small-note" style="color:'+(ready?"var(--green)":"var(--muted)")+'">'+(ready?"All objectives complete. You can now finish this quest.":"Check off every objective when its outcome is actually finished.")+'</p>';
     html+='<button type="button" class="btn primary block" data-action="complete" '+(ready?"":"disabled")+'>✓ Mark Quest Complete</button>';
@@ -405,6 +413,7 @@ button:disabled{cursor:not-allowed}
     if(action==="detail"){
       state.detailId=id;go("detail");return;
     }
+    if(action==="collection"){var targetQuest=getQuest(id);if(targetQuest && state.activeId===id){go("current");}else if(canStart(targetQuest)){start(id);}return;}
     if(action==="start"){start(id);return;}
     if(action==="back"||action==="browse"){go("browse");return;}
     if(action==="current"){go("current");return;}
