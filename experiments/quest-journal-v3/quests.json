@@ -1,90 +1,3753 @@
 {
+  "version": 3,
+  "description": "Quest Journal V3 multi-project prototype. Go Rin no Sho section and paragraph sequence from V4. Working English titles outside Earth Scroll; Python and other objective templates are illustrative.",
+  "collections": [
+    {
+      "id": "gorin",
+      "name": "Go Rin no Sho",
+      "kind": "saga",
+      "subtitle": "An English translation of the Five Scrolls",
+      "total": 89
+    },
+    {
+      "id": "math",
+      "name": "Mathematics Makes Sense",
+      "kind": "saga",
+      "subtitle": "11 sequential chapters",
+      "total": 11
+    },
+    {
+      "id": "python",
+      "name": "100 Days of Python",
+      "kind": "saga",
+      "subtitle": "100 sequential course days",
+      "total": 100
+    },
+    {
+      "id": "independent",
+      "name": "Independent Quests",
+      "kind": "independent",
+      "subtitle": "Standalone undertakings",
+      "total": 3
+    }
+  ],
   "quests": [
     {
+      "id": "GR-0000",
+      "collection": "gorin",
+      "title": "Preface",
+      "code": "0000",
+      "scroll": "Earth Scroll",
+      "sequence": 1,
+      "originalHeading": "序 (Preface) [0000]",
+      "outcome": "Produce a written English draft of the Preface.",
+      "objectives": [
+        "Translate P000",
+        "Translate P001",
+        "Translate P002",
+        "Translate P003"
+      ],
+      "requires": [],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0101",
+      "collection": "gorin",
+      "title": "Introduction",
+      "code": "0101",
+      "scroll": "Earth Scroll",
+      "sequence": 2,
+      "originalHeading": "一 序 (Introduction) [0101]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P004",
+        "Translate P005",
+        "Translate P006"
+      ],
+      "requires": [
+        "GR-0000"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0102",
+      "collection": "gorin",
+      "title": "The Way of Military Strategy",
+      "code": "0102",
+      "scroll": "Earth Scroll",
+      "sequence": 3,
+      "originalHeading": "二 一 兵法の道と云事 (The Way of Military Strategy) [0102]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P007",
+        "Translate P008",
+        "Translate P009",
+        "Translate P010",
+        "Translate P011",
+        "Translate P012"
+      ],
+      "requires": [
+        "GR-0101"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0103",
+      "collection": "gorin",
+      "title": "Analogy of the Way with the Carpenter",
+      "code": "0103",
+      "scroll": "Earth Scroll",
+      "sequence": 4,
+      "originalHeading": "三 一 兵法の道大工にたとへたる事 (Analogy of the Way with the Carpenter) [0103]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P013",
+        "Translate P014",
+        "Translate P015"
+      ],
+      "requires": [
+        "GR-0102"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0104",
+      "collection": "gorin",
+      "title": "The Way of Strategy",
+      "code": "0104",
+      "scroll": "Earth Scroll",
+      "sequence": 5,
+      "originalHeading": "四 一 兵法の道 (The Way of Strategy) [0104]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P016",
+        "Translate P017",
+        "Translate P018"
+      ],
+      "requires": [
+        "GR-0103"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0105",
+      "collection": "gorin",
+      "title": "Naming the Way of Strategy in Five Scrolls",
+      "code": "0105",
+      "scroll": "Earth Scroll",
+      "sequence": 6,
+      "originalHeading": "五 一 此兵法の書五巻に仕立る事 (Naming the Way of Strategy in Five Scrolls) [0105]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P019",
+        "Translate P020",
+        "Translate P021",
+        "Translate P022",
+        "Translate P023",
+        "Translate P024",
+        "Translate P025",
+        "Translate P026",
+        "Translate P027"
+      ],
+      "requires": [
+        "GR-0104"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0106",
+      "collection": "gorin",
+      "title": "The Naming of the Two-Swords Style",
+      "code": "0106",
+      "scroll": "Earth Scroll",
+      "sequence": 7,
+      "originalHeading": "六 一 此一流二刀と名付る事 (The Naming of the \"Two-Swords Style\") [0106]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P028",
+        "Translate P029",
+        "Translate P030",
+        "Translate P031",
+        "Translate P032",
+        "Translate P033"
+      ],
+      "requires": [
+        "GR-0105"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0107",
+      "collection": "gorin",
+      "title": "To Know the Advantage of Strategy",
+      "code": "0107",
+      "scroll": "Earth Scroll",
+      "sequence": 8,
+      "originalHeading": "七 一 兵法二ツの字の利を知事 (To Know the Advantage of Strategy) [0107]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P034",
+        "Translate P035",
+        "Translate P036"
+      ],
+      "requires": [
+        "GR-0106"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0108",
+      "collection": "gorin",
+      "title": "To Know the Advantage of Weapons in Strategy",
+      "code": "0108",
+      "scroll": "Earth Scroll",
+      "sequence": 9,
+      "originalHeading": "八 一 兵法に武具の利を知ると云事 (To Know the Advantage of Weapons in Strategy) [0108]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P037",
+        "Translate P038",
+        "Translate P039",
+        "Translate P040",
+        "Translate P041"
+      ],
+      "requires": [
+        "GR-0107"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0109",
+      "collection": "gorin",
+      "title": "Concerning Timing in Strategy",
+      "code": "0109",
+      "scroll": "Earth Scroll",
+      "sequence": 10,
+      "originalHeading": "九 一 兵法の拍子の事 (Concerning the Matter of Timing in Strategy) [0109]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P042",
+        "Translate P043",
+        "Translate P044",
+        "Translate P045",
+        "Translate P046"
+      ],
+      "requires": [
+        "GR-0108"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": false
+    },
+    {
+      "id": "GR-0201",
+      "collection": "gorin",
+      "title": "Introduction",
+      "code": "0201",
+      "scroll": "Water Scroll",
+      "sequence": 11,
+      "originalHeading": "一 序 [0201]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P047"
+      ],
+      "requires": [
+        "GR-0109"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0202",
+      "collection": "gorin",
+      "title": "Mental Attitude in Strategy",
+      "code": "0202",
+      "scroll": "Water Scroll",
+      "sequence": 12,
+      "originalHeading": "二 一 兵法心持の事 [0202]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P048"
+      ],
+      "requires": [
+        "GR-0201"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0203",
+      "collection": "gorin",
+      "title": "Posture in Strategy",
+      "code": "0203",
+      "scroll": "Water Scroll",
+      "sequence": 13,
+      "originalHeading": "三 一 兵法の身なりの事 [0203]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P049"
+      ],
+      "requires": [
+        "GR-0202"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0204",
+      "collection": "gorin",
+      "title": "The Gaze in Strategy",
+      "code": "0204",
+      "scroll": "Water Scroll",
+      "sequence": 14,
+      "originalHeading": "四 一 兵法の目付と云事 [0204]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P050",
+        "Translate P051"
+      ],
+      "requires": [
+        "GR-0203"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0205",
+      "collection": "gorin",
+      "title": "How to Hold the Sword",
+      "code": "0205",
+      "scroll": "Water Scroll",
+      "sequence": 15,
+      "originalHeading": "五 一 太刀の持様の事 [0205]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P052",
+        "Translate P053"
+      ],
+      "requires": [
+        "GR-0204"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0206",
+      "collection": "gorin",
+      "title": "Footwork",
+      "code": "0206",
+      "scroll": "Water Scroll",
+      "sequence": 16,
+      "originalHeading": "六 一 足つかひの事 [0206]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P054"
+      ],
+      "requires": [
+        "GR-0205"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0207",
+      "collection": "gorin",
+      "title": "The Five Stances",
+      "code": "0207",
+      "scroll": "Water Scroll",
+      "sequence": 17,
+      "originalHeading": "七 一 五方の構の事 [0207]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P055"
+      ],
+      "requires": [
+        "GR-0206"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0208",
+      "collection": "gorin",
+      "title": "The Path of the Sword",
+      "code": "0208",
+      "scroll": "Water Scroll",
+      "sequence": 18,
+      "originalHeading": "八 一 太刀の道と云事 [0208]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P056"
+      ],
+      "requires": [
+        "GR-0207"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0209",
+      "collection": "gorin",
+      "title": "The First Form",
+      "code": "0209",
+      "scroll": "Water Scroll",
+      "sequence": 19,
+      "originalHeading": "九 一 五ツのおもての次第 第一の事 [0209]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P057"
+      ],
+      "requires": [
+        "GR-0208"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0210",
+      "collection": "gorin",
+      "title": "The Second Form",
+      "code": "0210",
+      "scroll": "Water Scroll",
+      "sequence": 20,
+      "originalHeading": "一〇 一 おもての第二の次第の事 [0210]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P058"
+      ],
+      "requires": [
+        "GR-0209"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0211",
+      "collection": "gorin",
+      "title": "The Third Form",
+      "code": "0211",
+      "scroll": "Water Scroll",
+      "sequence": 21,
+      "originalHeading": "一一 一 おもて第三の次第の事 [0211]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P059"
+      ],
+      "requires": [
+        "GR-0210"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0212",
+      "collection": "gorin",
+      "title": "The Fourth Form",
+      "code": "0212",
+      "scroll": "Water Scroll",
+      "sequence": 22,
+      "originalHeading": "一二 一 おもて第四の次第の事 [0212]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P060"
+      ],
+      "requires": [
+        "GR-0211"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0213",
+      "collection": "gorin",
+      "title": "The Fifth Form",
+      "code": "0213",
+      "scroll": "Water Scroll",
+      "sequence": 23,
+      "originalHeading": "一三 一 おもて第五の次第の事 [0213]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P061"
+      ],
+      "requires": [
+        "GR-0212"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0214",
+      "collection": "gorin",
+      "title": "Stances and No-Stances",
+      "code": "0214",
+      "scroll": "Water Scroll",
+      "sequence": 24,
+      "originalHeading": "一四 一 有構無構の数の事 [0214]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P062",
+        "Translate P063",
+        "Translate P064"
+      ],
+      "requires": [
+        "GR-0213"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0215",
+      "collection": "gorin",
+      "title": "The Single-Beat Strike",
+      "code": "0215",
+      "scroll": "Water Scroll",
+      "sequence": 25,
+      "originalHeading": "一五 一 敵を打に一拍子の打の事 [0215]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P065"
+      ],
+      "requires": [
+        "GR-0214"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0216",
+      "collection": "gorin",
+      "title": "The Second-Beat Timing",
+      "code": "0216",
+      "scroll": "Water Scroll",
+      "sequence": 26,
+      "originalHeading": "一六 一 二のこしの拍子の事 [0216]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P066"
+      ],
+      "requires": [
+        "GR-0215"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0217",
+      "collection": "gorin",
+      "title": "The Strike of No Thought",
+      "code": "0217",
+      "scroll": "Water Scroll",
+      "sequence": 27,
+      "originalHeading": "一七 一 無念無想の打と云事 [0217]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P067"
+      ],
+      "requires": [
+        "GR-0216"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0218",
+      "collection": "gorin",
+      "title": "The Flowing-Water Strike",
+      "code": "0218",
+      "scroll": "Water Scroll",
+      "sequence": 28,
+      "originalHeading": "一八 一 流水の打と云事 [0218]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P068"
+      ],
+      "requires": [
+        "GR-0217"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0219",
+      "collection": "gorin",
+      "title": "The Opportunistic Strike",
+      "code": "0219",
+      "scroll": "Water Scroll",
+      "sequence": 29,
+      "originalHeading": "一九 一 縁のあたりと云事 [0219]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P069"
+      ],
+      "requires": [
+        "GR-0218"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0220",
+      "collection": "gorin",
+      "title": "The Flint-and-Steel Strike",
+      "code": "0220",
+      "scroll": "Water Scroll",
+      "sequence": 30,
+      "originalHeading": "二〇 一 石火のあたりと云事 [0220]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P070"
+      ],
+      "requires": [
+        "GR-0219"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0221",
+      "collection": "gorin",
+      "title": "The Crimson-Leaves Strike",
+      "code": "0221",
+      "scroll": "Water Scroll",
+      "sequence": 31,
+      "originalHeading": "二一 一 紅葉の打と云事 [0221]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P071"
+      ],
+      "requires": [
+        "GR-0220"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0222",
+      "collection": "gorin",
+      "title": "The Body Replacing the Sword",
+      "code": "0222",
+      "scroll": "Water Scroll",
+      "sequence": 32,
+      "originalHeading": "二二 一 太刀にかはる身と云事 [0222]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P072"
+      ],
+      "requires": [
+        "GR-0221"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0223",
+      "collection": "gorin",
+      "title": "Striking versus Hitting",
+      "code": "0223",
+      "scroll": "Water Scroll",
+      "sequence": 33,
+      "originalHeading": "二三 一 打とあたると云事 [0223]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P073",
+        "Translate P074"
+      ],
+      "requires": [
+        "GR-0222"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0224",
+      "collection": "gorin",
+      "title": "The Body of the Autumn Monkey",
+      "code": "0224",
+      "scroll": "Water Scroll",
+      "sequence": 34,
+      "originalHeading": "二四 一 しうこうの身と云事 [0224]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P075"
+      ],
+      "requires": [
+        "GR-0223"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0225",
+      "collection": "gorin",
+      "title": "The Body of Lacquer and Glue",
+      "code": "0225",
+      "scroll": "Water Scroll",
+      "sequence": 35,
+      "originalHeading": "二五 一 しつこうの身と云事 [0225]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P076"
+      ],
+      "requires": [
+        "GR-0224"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0226",
+      "collection": "gorin",
+      "title": "Comparing Heights",
+      "code": "0226",
+      "scroll": "Water Scroll",
+      "sequence": 36,
+      "originalHeading": "二六 一 たけくらべと云事 [0226]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P077"
+      ],
+      "requires": [
+        "GR-0225"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0227",
+      "collection": "gorin",
+      "title": "Applying Adhesion",
+      "code": "0227",
+      "scroll": "Water Scroll",
+      "sequence": 37,
+      "originalHeading": "二七 一 ねばりをかくると云ふ事 [0227]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P078"
+      ],
+      "requires": [
+        "GR-0226"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0228",
+      "collection": "gorin",
+      "title": "The Body Strike",
+      "code": "0228",
+      "scroll": "Water Scroll",
+      "sequence": 38,
+      "originalHeading": "二八 一 身のあたりと云事 [0228]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P079"
+      ],
+      "requires": [
+        "GR-0227"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0229",
+      "collection": "gorin",
+      "title": "Three Defenses",
+      "code": "0229",
+      "scroll": "Water Scroll",
+      "sequence": 39,
+      "originalHeading": "二九 一 三ツのうけの事 [0229]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P080"
+      ],
+      "requires": [
+        "GR-0228"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0230",
+      "collection": "gorin",
+      "title": "Stabbing at the Face",
+      "code": "0230",
+      "scroll": "Water Scroll",
+      "sequence": 40,
+      "originalHeading": "三〇 一 面てをさすと云事 [0230]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P081",
+        "Translate P082"
+      ],
+      "requires": [
+        "GR-0229"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0231",
+      "collection": "gorin",
+      "title": "Stabbing at the Heart",
+      "code": "0231",
+      "scroll": "Water Scroll",
+      "sequence": 41,
+      "originalHeading": "三一 一 心をさすと云事 [0231]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P083"
+      ],
+      "requires": [
+        "GR-0230"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0232",
+      "collection": "gorin",
+      "title": "Katsu-Totsu",
+      "code": "0232",
+      "scroll": "Water Scroll",
+      "sequence": 42,
+      "originalHeading": "三二 一 かつとつと云事 [0232]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P084"
+      ],
+      "requires": [
+        "GR-0231"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0233",
+      "collection": "gorin",
+      "title": "Parrying and Receiving",
+      "code": "0233",
+      "scroll": "Water Scroll",
+      "sequence": 43,
+      "originalHeading": "三三 一 はりうけと云事 [0233]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P085"
+      ],
+      "requires": [
+        "GR-0232"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0234",
+      "collection": "gorin",
+      "title": "Position Against Multiple Enemies",
+      "code": "0234",
+      "scroll": "Water Scroll",
+      "sequence": 44,
+      "originalHeading": "三四 一 多敵の位の事 [0234]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P086",
+        "Translate P087"
+      ],
+      "requires": [
+        "GR-0233"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0235",
+      "collection": "gorin",
+      "title": "The Advantage of Crossing Swords",
+      "code": "0235",
+      "scroll": "Water Scroll",
+      "sequence": 45,
+      "originalHeading": "三五 一 打あひの利の事 [0235]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P088",
+        "Translate P089"
+      ],
+      "requires": [
+        "GR-0234"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0236",
+      "collection": "gorin",
+      "title": "The Single Strike",
+      "code": "0236",
+      "scroll": "Water Scroll",
+      "sequence": 46,
+      "originalHeading": "三六 一 一ツの打と云事 [0236]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P090"
+      ],
+      "requires": [
+        "GR-0235"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0237",
+      "collection": "gorin",
+      "title": "Direct Penetration",
+      "code": "0237",
+      "scroll": "Water Scroll",
+      "sequence": 47,
+      "originalHeading": "三七 一 直通の位と云事 [0237]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P091",
+        "Translate P092"
+      ],
+      "requires": [
+        "GR-0236"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0238",
+      "collection": "gorin",
+      "title": "Closing Remarks",
+      "code": "0238",
+      "scroll": "Water Scroll",
+      "sequence": 48,
+      "originalHeading": "三八 後書 [0238]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P093"
+      ],
+      "requires": [
+        "GR-0237"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0301",
+      "collection": "gorin",
+      "title": "Introduction",
+      "code": "0301",
+      "scroll": "Fire Scroll",
+      "sequence": 49,
+      "originalHeading": "一 序 [0301]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P094",
+        "Translate P095"
+      ],
+      "requires": [
+        "GR-0238"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0302",
+      "collection": "gorin",
+      "title": "The Nature of the Terrain",
+      "code": "0302",
+      "scroll": "Fire Scroll",
+      "sequence": 50,
+      "originalHeading": "二 一 場の次第と云事 [0302]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P096",
+        "Translate P097"
+      ],
+      "requires": [
+        "GR-0301"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0303",
+      "collection": "gorin",
+      "title": "The Three Initiatives",
+      "code": "0303",
+      "scroll": "Fire Scroll",
+      "sequence": 51,
+      "originalHeading": "三 一 三ツの先と云事 [0303]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P098",
+        "Translate P099",
+        "Translate P100",
+        "Translate P101",
+        "Translate P102"
+      ],
+      "requires": [
+        "GR-0302"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0304",
+      "collection": "gorin",
+      "title": "Holding Down the Pillow",
+      "code": "0304",
+      "scroll": "Fire Scroll",
+      "sequence": 52,
+      "originalHeading": "四 一 枕をおさふると云事 [0304]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P103"
+      ],
+      "requires": [
+        "GR-0303"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0305",
+      "collection": "gorin",
+      "title": "Crossing the Ford",
+      "code": "0305",
+      "scroll": "Fire Scroll",
+      "sequence": 53,
+      "originalHeading": "五 一 とをこすと云事 [0305]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P104",
+        "Translate P105"
+      ],
+      "requires": [
+        "GR-0304"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0306",
+      "collection": "gorin",
+      "title": "Knowing the Situation",
+      "code": "0306",
+      "scroll": "Fire Scroll",
+      "sequence": 54,
+      "originalHeading": "六 一 けいきを知ると云事 [0306]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P106"
+      ],
+      "requires": [
+        "GR-0305"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0307",
+      "collection": "gorin",
+      "title": "Treading Down the Sword",
+      "code": "0307",
+      "scroll": "Fire Scroll",
+      "sequence": 55,
+      "originalHeading": "七 一 けんをふむと云事 [0307]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P107",
+        "Translate P108"
+      ],
+      "requires": [
+        "GR-0306"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0308",
+      "collection": "gorin",
+      "title": "Recognizing Collapse",
+      "code": "0308",
+      "scroll": "Fire Scroll",
+      "sequence": 56,
+      "originalHeading": "八 一 くづれを知ると云事 [0308]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P109",
+        "Translate P110"
+      ],
+      "requires": [
+        "GR-0307"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0309",
+      "collection": "gorin",
+      "title": "Becoming the Enemy",
+      "code": "0309",
+      "scroll": "Fire Scroll",
+      "sequence": 57,
+      "originalHeading": "九 一 敵になると云事 [0309]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P111",
+        "Translate P112"
+      ],
+      "requires": [
+        "GR-0308"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0310",
+      "collection": "gorin",
+      "title": "Disengaging from a Stalemate",
+      "code": "0310",
+      "scroll": "Fire Scroll",
+      "sequence": 58,
+      "originalHeading": "一〇 一 四手をはなすと云事 [0310]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P113"
+      ],
+      "requires": [
+        "GR-0309"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0311",
+      "collection": "gorin",
+      "title": "Moving the Shadow",
+      "code": "0311",
+      "scroll": "Fire Scroll",
+      "sequence": 59,
+      "originalHeading": "一一 一 かげをうごかすと云事 [0311]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P114"
+      ],
+      "requires": [
+        "GR-0310"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0312",
+      "collection": "gorin",
+      "title": "Holding Down the Shadow",
+      "code": "0312",
+      "scroll": "Fire Scroll",
+      "sequence": 60,
+      "originalHeading": "一二 一 かげをおさふると云事 [0312]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P115"
+      ],
+      "requires": [
+        "GR-0311"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0313",
+      "collection": "gorin",
+      "title": "Causing Contagion",
+      "code": "0313",
+      "scroll": "Fire Scroll",
+      "sequence": 61,
+      "originalHeading": "一三 一 うつらかすと云事 [0313]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P116",
+        "Translate P117"
+      ],
+      "requires": [
+        "GR-0312"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0314",
+      "collection": "gorin",
+      "title": "Provoking Irritation",
+      "code": "0314",
+      "scroll": "Fire Scroll",
+      "sequence": 62,
+      "originalHeading": "一四 一 むかつかすると云事 [0314]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P118",
+        "Translate P119"
+      ],
+      "requires": [
+        "GR-0313"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0315",
+      "collection": "gorin",
+      "title": "Intimidation",
+      "code": "0315",
+      "scroll": "Fire Scroll",
+      "sequence": 63,
+      "originalHeading": "一五 一 おびやかすと云事 [0315]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P120"
+      ],
+      "requires": [
+        "GR-0314"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0316",
+      "collection": "gorin",
+      "title": "Becoming Entangled",
+      "code": "0316",
+      "scroll": "Fire Scroll",
+      "sequence": 64,
+      "originalHeading": "一六 一 まぶるると云事 [0316]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P121"
+      ],
+      "requires": [
+        "GR-0315"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0317",
+      "collection": "gorin",
+      "title": "Touching the Corners",
+      "code": "0317",
+      "scroll": "Fire Scroll",
+      "sequence": 65,
+      "originalHeading": "一七 一 かどにさはると云事 [0317]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P122"
+      ],
+      "requires": [
+        "GR-0316"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0318",
+      "collection": "gorin",
+      "title": "Confusing the Enemy",
+      "code": "0318",
+      "scroll": "Fire Scroll",
+      "sequence": 66,
+      "originalHeading": "一八 一 うろめかすと云事 [0318]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P123"
+      ],
+      "requires": [
+        "GR-0317"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0319",
+      "collection": "gorin",
+      "title": "The Three Cries",
+      "code": "0319",
+      "scroll": "Fire Scroll",
+      "sequence": 67,
+      "originalHeading": "一九 一 三ツの声と云事 [0319]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P124",
+        "Translate P125"
+      ],
+      "requires": [
+        "GR-0318"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0320",
+      "collection": "gorin",
+      "title": "Mingling",
+      "code": "0320",
+      "scroll": "Fire Scroll",
+      "sequence": 68,
+      "originalHeading": "二〇 一 まぎるると云事 [0320]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P126"
+      ],
+      "requires": [
+        "GR-0319"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0321",
+      "collection": "gorin",
+      "title": "Crushing",
+      "code": "0321",
+      "scroll": "Fire Scroll",
+      "sequence": 69,
+      "originalHeading": "二一 一 ひしぐと云事 [0321]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P127",
+        "Translate P128"
+      ],
+      "requires": [
+        "GR-0320"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0322",
+      "collection": "gorin",
+      "title": "Mountain and Sea Change",
+      "code": "0322",
+      "scroll": "Fire Scroll",
+      "sequence": 70,
+      "originalHeading": "二二 一 さんかいのかはりと云事 [0322]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P129"
+      ],
+      "requires": [
+        "GR-0321"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0323",
+      "collection": "gorin",
+      "title": "Penetrating to the Depths",
+      "code": "0323",
+      "scroll": "Fire Scroll",
+      "sequence": 71,
+      "originalHeading": "二三 一 そこをぬくと云事 [0323]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P130"
+      ],
+      "requires": [
+        "GR-0322"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0324",
+      "collection": "gorin",
+      "title": "Renewing Oneself",
+      "code": "0324",
+      "scroll": "Fire Scroll",
+      "sequence": 72,
+      "originalHeading": "二四 一 あらたになると云事 [0324]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P131"
+      ],
+      "requires": [
+        "GR-0323"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0325",
+      "collection": "gorin",
+      "title": "The Rat's Head and Ox's Neck",
+      "code": "0325",
+      "scroll": "Fire Scroll",
+      "sequence": 73,
+      "originalHeading": "二五 一 そとうごしゆと云事 [0325]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P132"
+      ],
+      "requires": [
+        "GR-0324"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0326",
+      "collection": "gorin",
+      "title": "Knowing the Commander and Soldiers",
+      "code": "0326",
+      "scroll": "Fire Scroll",
+      "sequence": 74,
+      "originalHeading": "二六 一 しやうそつをしると云事 [0326]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P133"
+      ],
+      "requires": [
+        "GR-0325"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0327",
+      "collection": "gorin",
+      "title": "Releasing the Hilt",
+      "code": "0327",
+      "scroll": "Fire Scroll",
+      "sequence": 75,
+      "originalHeading": "二七 一 つかをはなすと云事 [0327]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P134"
+      ],
+      "requires": [
+        "GR-0326"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0328",
+      "collection": "gorin",
+      "title": "The Body of a Rock",
+      "code": "0328",
+      "scroll": "Fire Scroll",
+      "sequence": 76,
+      "originalHeading": "二八 一 いはほの身と云事 [0328]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P135",
+        "Translate P136"
+      ],
+      "requires": [
+        "GR-0327"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0329",
+      "collection": "gorin",
+      "title": "Closing Remarks",
+      "code": "0329",
+      "scroll": "Fire Scroll",
+      "sequence": 77,
+      "originalHeading": "二九 後書 [0329]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P137"
+      ],
+      "requires": [
+        "GR-0328"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0401",
+      "collection": "gorin",
+      "title": "Understanding Other Schools of Strategy",
+      "code": "0401",
+      "scroll": "Wind Scroll",
+      "sequence": 78,
+      "originalHeading": "一 兵法他流の道を知る事 [0401]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P138"
+      ],
+      "requires": [
+        "GR-0329"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0402",
+      "collection": "gorin",
+      "title": "The Use of Large Swords in Other Schools",
+      "code": "0402",
+      "scroll": "Wind Scroll",
+      "sequence": 79,
+      "originalHeading": "二 一 他流に大きなる太刀を持事 [0402]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P139",
+        "Translate P140",
+        "Translate P141"
+      ],
+      "requires": [
+        "GR-0401"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0403",
+      "collection": "gorin",
+      "title": "The Strong Sword in Other Schools",
+      "code": "0403",
+      "scroll": "Wind Scroll",
+      "sequence": 80,
+      "originalHeading": "三 一 他流に於てつよみの太刀と云事 [0403]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P142",
+        "Translate P143"
+      ],
+      "requires": [
+        "GR-0402"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0404",
+      "collection": "gorin",
+      "title": "Short Swords in Other Schools",
+      "code": "0404",
+      "scroll": "Wind Scroll",
+      "sequence": 81,
+      "originalHeading": "四 一 他流に短き太刀を用ゐる事 [0404]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P144",
+        "Translate P145",
+        "Translate P146"
+      ],
+      "requires": [
+        "GR-0403"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0405",
+      "collection": "gorin",
+      "title": "Many Sword Techniques in Other Schools",
+      "code": "0405",
+      "scroll": "Wind Scroll",
+      "sequence": 82,
+      "originalHeading": "五 一 他流に太刀かず多き事 [0405]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P147",
+        "Translate P148"
+      ],
+      "requires": [
+        "GR-0404"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0406",
+      "collection": "gorin",
+      "title": "Sword Stances in Other Schools",
+      "code": "0406",
+      "scroll": "Wind Scroll",
+      "sequence": 83,
+      "originalHeading": "六 一 他流に太刀の構を用る事 [0406]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P149",
+        "Translate P150",
+        "Translate P151"
+      ],
+      "requires": [
+        "GR-0405"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0407",
+      "collection": "gorin",
+      "title": "The Gaze in Other Schools",
+      "code": "0407",
+      "scroll": "Wind Scroll",
+      "sequence": 84,
+      "originalHeading": "七 一 他流に目付と云事 [0407]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P152",
+        "Translate P153"
+      ],
+      "requires": [
+        "GR-0406"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0408",
+      "collection": "gorin",
+      "title": "Footwork in Other Schools",
+      "code": "0408",
+      "scroll": "Wind Scroll",
+      "sequence": 85,
+      "originalHeading": "八 一 他流に足つかひ有事 [0408]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P154",
+        "Translate P155"
+      ],
+      "requires": [
+        "GR-0407"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0409",
+      "collection": "gorin",
+      "title": "Speed in Other Schools",
+      "code": "0409",
+      "scroll": "Wind Scroll",
+      "sequence": 86,
+      "originalHeading": "九 一 他の兵法にはやきを用る事 [0409]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P156",
+        "Translate P157",
+        "Translate P158",
+        "Translate P159"
+      ],
+      "requires": [
+        "GR-0408"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0410",
+      "collection": "gorin",
+      "title": "Inner and Outer Teachings in Other Schools",
+      "code": "0410",
+      "scroll": "Wind Scroll",
+      "sequence": 87,
+      "originalHeading": "一〇 一 他流に奥表と云事 [0410]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P160",
+        "Translate P161"
+      ],
+      "requires": [
+        "GR-0409"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0411",
+      "collection": "gorin",
+      "title": "Closing Remarks",
+      "code": "0411",
+      "scroll": "Wind Scroll",
+      "sequence": 88,
+      "originalHeading": "一一 後書 [0411]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P162",
+        "Translate P163"
+      ],
+      "requires": [
+        "GR-0410"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
+      "id": "GR-0501",
+      "collection": "gorin",
+      "title": "Void Scroll — Untitled Section",
+      "code": "0501",
+      "scroll": "Void Scroll",
+      "sequence": 89,
+      "originalHeading": "一 （段） [0501]",
+      "outcome": "Produce a written English draft of this section.",
+      "objectives": [
+        "Translate P164",
+        "Translate P165",
+        "Translate P166",
+        "Translate P167"
+      ],
+      "requires": [
+        "GR-0411"
+      ],
+      "status": "not_started",
+      "titleIsWorkingTranslation": true
+    },
+    {
       "id": "Q1",
+      "collection": "math",
       "title": "Brain and Mind",
+      "code": "Chapter 1",
+      "sequence": 1,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
+      "requires": [],
       "status": "completed",
-      "requires": []
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q2",
+      "collection": "math",
       "title": "The Mind at Work",
-      "status": "completed",
+      "code": "Chapter 2",
+      "sequence": 2,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q1"
-      ]
+      ],
+      "status": "completed",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q3",
+      "collection": "math",
       "title": "Man Writing Numbers",
-      "status": "not_started",
+      "code": "Chapter 3",
+      "sequence": 3,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q2"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q4",
-      "title": "Mathematese - The Language of Numbers",
-      "status": "not_started",
+      "collection": "math",
+      "title": "Mathematese — The Language of Numbers",
+      "code": "Chapter 4",
+      "sequence": 4,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q3"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q5",
+      "collection": "math",
       "title": "The Algebra of Sentences",
-      "status": "not_started",
+      "code": "Chapter 5",
+      "sequence": 5,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q4"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q6",
+      "collection": "math",
       "title": "Illustrating the Language",
-      "status": "not_started",
+      "code": "Chapter 6",
+      "sequence": 6,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q5"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q7",
+      "collection": "math",
       "title": "Extending the Language",
-      "status": "not_started",
+      "code": "Chapter 7",
+      "sequence": 7,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q6"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q8",
+      "collection": "math",
       "title": "Becoming More Familiar With the Language",
-      "status": "not_started",
+      "code": "Chapter 8",
+      "sequence": 8,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q7"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q9",
+      "collection": "math",
       "title": "Other Related Ideas",
-      "status": "not_started",
+      "code": "Chapter 9",
+      "sequence": 9,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q8"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q10",
+      "collection": "math",
       "title": "Number Bases",
-      "status": "not_started",
+      "code": "Chapter 10",
+      "sequence": 10,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q9"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     },
     {
       "id": "Q11",
+      "collection": "math",
       "title": "Men, Mathematics, and Machines",
-      "status": "not_started",
+      "code": "Chapter 11",
+      "sequence": 11,
+      "outcome": "Finish the chapter and its review work.",
+      "objectives": [
+        "Read the chapter",
+        "Answer the review questions",
+        "Check the answers"
+      ],
       "requires": [
         "Q10"
-      ]
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY1",
+      "collection": "python",
+      "title": "Day 1 — Band Name Generator",
+      "code": "Day 1",
+      "sequence": 1,
+      "outcome": "Build the Band Name Generator.",
+      "objectives": [
+        "Work through the Day 1 lesson",
+        "Complete the coding exercises",
+        "Build and run the Band Name Generator"
+      ],
+      "requires": [],
+      "status": "not_started",
+      "objectivesAreTemplate": false
+    },
+    {
+      "id": "PY2",
+      "collection": "python",
+      "title": "Day 2",
+      "code": "Day 2",
+      "sequence": 2,
+      "outcome": "Complete the learning and coding work for Day 2.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY1"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY3",
+      "collection": "python",
+      "title": "Day 3",
+      "code": "Day 3",
+      "sequence": 3,
+      "outcome": "Complete the learning and coding work for Day 3.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY2"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY4",
+      "collection": "python",
+      "title": "Day 4",
+      "code": "Day 4",
+      "sequence": 4,
+      "outcome": "Complete the learning and coding work for Day 4.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY3"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY5",
+      "collection": "python",
+      "title": "Day 5",
+      "code": "Day 5",
+      "sequence": 5,
+      "outcome": "Complete the learning and coding work for Day 5.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY4"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY6",
+      "collection": "python",
+      "title": "Day 6",
+      "code": "Day 6",
+      "sequence": 6,
+      "outcome": "Complete the learning and coding work for Day 6.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY5"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY7",
+      "collection": "python",
+      "title": "Day 7",
+      "code": "Day 7",
+      "sequence": 7,
+      "outcome": "Complete the learning and coding work for Day 7.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY6"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY8",
+      "collection": "python",
+      "title": "Day 8",
+      "code": "Day 8",
+      "sequence": 8,
+      "outcome": "Complete the learning and coding work for Day 8.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY7"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY9",
+      "collection": "python",
+      "title": "Day 9",
+      "code": "Day 9",
+      "sequence": 9,
+      "outcome": "Complete the learning and coding work for Day 9.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY8"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY10",
+      "collection": "python",
+      "title": "Day 10",
+      "code": "Day 10",
+      "sequence": 10,
+      "outcome": "Complete the learning and coding work for Day 10.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY9"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY11",
+      "collection": "python",
+      "title": "Day 11",
+      "code": "Day 11",
+      "sequence": 11,
+      "outcome": "Complete the learning and coding work for Day 11.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY10"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY12",
+      "collection": "python",
+      "title": "Day 12",
+      "code": "Day 12",
+      "sequence": 12,
+      "outcome": "Complete the learning and coding work for Day 12.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY11"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY13",
+      "collection": "python",
+      "title": "Day 13",
+      "code": "Day 13",
+      "sequence": 13,
+      "outcome": "Complete the learning and coding work for Day 13.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY12"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY14",
+      "collection": "python",
+      "title": "Day 14",
+      "code": "Day 14",
+      "sequence": 14,
+      "outcome": "Complete the learning and coding work for Day 14.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY13"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY15",
+      "collection": "python",
+      "title": "Day 15",
+      "code": "Day 15",
+      "sequence": 15,
+      "outcome": "Complete the learning and coding work for Day 15.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY14"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY16",
+      "collection": "python",
+      "title": "Day 16",
+      "code": "Day 16",
+      "sequence": 16,
+      "outcome": "Complete the learning and coding work for Day 16.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY15"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY17",
+      "collection": "python",
+      "title": "Day 17",
+      "code": "Day 17",
+      "sequence": 17,
+      "outcome": "Complete the learning and coding work for Day 17.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY16"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY18",
+      "collection": "python",
+      "title": "Day 18",
+      "code": "Day 18",
+      "sequence": 18,
+      "outcome": "Complete the learning and coding work for Day 18.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY17"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY19",
+      "collection": "python",
+      "title": "Day 19",
+      "code": "Day 19",
+      "sequence": 19,
+      "outcome": "Complete the learning and coding work for Day 19.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY18"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY20",
+      "collection": "python",
+      "title": "Day 20",
+      "code": "Day 20",
+      "sequence": 20,
+      "outcome": "Complete the learning and coding work for Day 20.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY19"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY21",
+      "collection": "python",
+      "title": "Day 21",
+      "code": "Day 21",
+      "sequence": 21,
+      "outcome": "Complete the learning and coding work for Day 21.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY20"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY22",
+      "collection": "python",
+      "title": "Day 22",
+      "code": "Day 22",
+      "sequence": 22,
+      "outcome": "Complete the learning and coding work for Day 22.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY21"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY23",
+      "collection": "python",
+      "title": "Day 23",
+      "code": "Day 23",
+      "sequence": 23,
+      "outcome": "Complete the learning and coding work for Day 23.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY22"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY24",
+      "collection": "python",
+      "title": "Day 24",
+      "code": "Day 24",
+      "sequence": 24,
+      "outcome": "Complete the learning and coding work for Day 24.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY23"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY25",
+      "collection": "python",
+      "title": "Day 25",
+      "code": "Day 25",
+      "sequence": 25,
+      "outcome": "Complete the learning and coding work for Day 25.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY24"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY26",
+      "collection": "python",
+      "title": "Day 26",
+      "code": "Day 26",
+      "sequence": 26,
+      "outcome": "Complete the learning and coding work for Day 26.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY25"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY27",
+      "collection": "python",
+      "title": "Day 27",
+      "code": "Day 27",
+      "sequence": 27,
+      "outcome": "Complete the learning and coding work for Day 27.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY26"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY28",
+      "collection": "python",
+      "title": "Day 28",
+      "code": "Day 28",
+      "sequence": 28,
+      "outcome": "Complete the learning and coding work for Day 28.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY27"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY29",
+      "collection": "python",
+      "title": "Day 29",
+      "code": "Day 29",
+      "sequence": 29,
+      "outcome": "Complete the learning and coding work for Day 29.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY28"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY30",
+      "collection": "python",
+      "title": "Day 30",
+      "code": "Day 30",
+      "sequence": 30,
+      "outcome": "Complete the learning and coding work for Day 30.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY29"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY31",
+      "collection": "python",
+      "title": "Day 31",
+      "code": "Day 31",
+      "sequence": 31,
+      "outcome": "Complete the learning and coding work for Day 31.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY30"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY32",
+      "collection": "python",
+      "title": "Day 32",
+      "code": "Day 32",
+      "sequence": 32,
+      "outcome": "Complete the learning and coding work for Day 32.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY31"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY33",
+      "collection": "python",
+      "title": "Day 33",
+      "code": "Day 33",
+      "sequence": 33,
+      "outcome": "Complete the learning and coding work for Day 33.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY32"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY34",
+      "collection": "python",
+      "title": "Day 34",
+      "code": "Day 34",
+      "sequence": 34,
+      "outcome": "Complete the learning and coding work for Day 34.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY33"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY35",
+      "collection": "python",
+      "title": "Day 35",
+      "code": "Day 35",
+      "sequence": 35,
+      "outcome": "Complete the learning and coding work for Day 35.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY34"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY36",
+      "collection": "python",
+      "title": "Day 36",
+      "code": "Day 36",
+      "sequence": 36,
+      "outcome": "Complete the learning and coding work for Day 36.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY35"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY37",
+      "collection": "python",
+      "title": "Day 37",
+      "code": "Day 37",
+      "sequence": 37,
+      "outcome": "Complete the learning and coding work for Day 37.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY36"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY38",
+      "collection": "python",
+      "title": "Day 38",
+      "code": "Day 38",
+      "sequence": 38,
+      "outcome": "Complete the learning and coding work for Day 38.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY37"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY39",
+      "collection": "python",
+      "title": "Day 39",
+      "code": "Day 39",
+      "sequence": 39,
+      "outcome": "Complete the learning and coding work for Day 39.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY38"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY40",
+      "collection": "python",
+      "title": "Day 40",
+      "code": "Day 40",
+      "sequence": 40,
+      "outcome": "Complete the learning and coding work for Day 40.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY39"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY41",
+      "collection": "python",
+      "title": "Day 41",
+      "code": "Day 41",
+      "sequence": 41,
+      "outcome": "Complete the learning and coding work for Day 41.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY40"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY42",
+      "collection": "python",
+      "title": "Day 42",
+      "code": "Day 42",
+      "sequence": 42,
+      "outcome": "Complete the learning and coding work for Day 42.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY41"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY43",
+      "collection": "python",
+      "title": "Day 43",
+      "code": "Day 43",
+      "sequence": 43,
+      "outcome": "Complete the learning and coding work for Day 43.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY42"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY44",
+      "collection": "python",
+      "title": "Day 44",
+      "code": "Day 44",
+      "sequence": 44,
+      "outcome": "Complete the learning and coding work for Day 44.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY43"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY45",
+      "collection": "python",
+      "title": "Day 45",
+      "code": "Day 45",
+      "sequence": 45,
+      "outcome": "Complete the learning and coding work for Day 45.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY44"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY46",
+      "collection": "python",
+      "title": "Day 46",
+      "code": "Day 46",
+      "sequence": 46,
+      "outcome": "Complete the learning and coding work for Day 46.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY45"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY47",
+      "collection": "python",
+      "title": "Day 47",
+      "code": "Day 47",
+      "sequence": 47,
+      "outcome": "Complete the learning and coding work for Day 47.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY46"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY48",
+      "collection": "python",
+      "title": "Day 48",
+      "code": "Day 48",
+      "sequence": 48,
+      "outcome": "Complete the learning and coding work for Day 48.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY47"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY49",
+      "collection": "python",
+      "title": "Day 49",
+      "code": "Day 49",
+      "sequence": 49,
+      "outcome": "Complete the learning and coding work for Day 49.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY48"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY50",
+      "collection": "python",
+      "title": "Day 50",
+      "code": "Day 50",
+      "sequence": 50,
+      "outcome": "Complete the learning and coding work for Day 50.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY49"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY51",
+      "collection": "python",
+      "title": "Day 51",
+      "code": "Day 51",
+      "sequence": 51,
+      "outcome": "Complete the learning and coding work for Day 51.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY50"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY52",
+      "collection": "python",
+      "title": "Day 52",
+      "code": "Day 52",
+      "sequence": 52,
+      "outcome": "Complete the learning and coding work for Day 52.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY51"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY53",
+      "collection": "python",
+      "title": "Day 53",
+      "code": "Day 53",
+      "sequence": 53,
+      "outcome": "Complete the learning and coding work for Day 53.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY52"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY54",
+      "collection": "python",
+      "title": "Day 54",
+      "code": "Day 54",
+      "sequence": 54,
+      "outcome": "Complete the learning and coding work for Day 54.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY53"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY55",
+      "collection": "python",
+      "title": "Day 55",
+      "code": "Day 55",
+      "sequence": 55,
+      "outcome": "Complete the learning and coding work for Day 55.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY54"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY56",
+      "collection": "python",
+      "title": "Day 56",
+      "code": "Day 56",
+      "sequence": 56,
+      "outcome": "Complete the learning and coding work for Day 56.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY55"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY57",
+      "collection": "python",
+      "title": "Day 57",
+      "code": "Day 57",
+      "sequence": 57,
+      "outcome": "Complete the learning and coding work for Day 57.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY56"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY58",
+      "collection": "python",
+      "title": "Day 58",
+      "code": "Day 58",
+      "sequence": 58,
+      "outcome": "Complete the learning and coding work for Day 58.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY57"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY59",
+      "collection": "python",
+      "title": "Day 59",
+      "code": "Day 59",
+      "sequence": 59,
+      "outcome": "Complete the learning and coding work for Day 59.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY58"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY60",
+      "collection": "python",
+      "title": "Day 60",
+      "code": "Day 60",
+      "sequence": 60,
+      "outcome": "Complete the learning and coding work for Day 60.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY59"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY61",
+      "collection": "python",
+      "title": "Day 61",
+      "code": "Day 61",
+      "sequence": 61,
+      "outcome": "Complete the learning and coding work for Day 61.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY60"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY62",
+      "collection": "python",
+      "title": "Day 62",
+      "code": "Day 62",
+      "sequence": 62,
+      "outcome": "Complete the learning and coding work for Day 62.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY61"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY63",
+      "collection": "python",
+      "title": "Day 63",
+      "code": "Day 63",
+      "sequence": 63,
+      "outcome": "Complete the learning and coding work for Day 63.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY62"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY64",
+      "collection": "python",
+      "title": "Day 64",
+      "code": "Day 64",
+      "sequence": 64,
+      "outcome": "Complete the learning and coding work for Day 64.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY63"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY65",
+      "collection": "python",
+      "title": "Day 65",
+      "code": "Day 65",
+      "sequence": 65,
+      "outcome": "Complete the learning and coding work for Day 65.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY64"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY66",
+      "collection": "python",
+      "title": "Day 66",
+      "code": "Day 66",
+      "sequence": 66,
+      "outcome": "Complete the learning and coding work for Day 66.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY65"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY67",
+      "collection": "python",
+      "title": "Day 67",
+      "code": "Day 67",
+      "sequence": 67,
+      "outcome": "Complete the learning and coding work for Day 67.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY66"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY68",
+      "collection": "python",
+      "title": "Day 68",
+      "code": "Day 68",
+      "sequence": 68,
+      "outcome": "Complete the learning and coding work for Day 68.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY67"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY69",
+      "collection": "python",
+      "title": "Day 69",
+      "code": "Day 69",
+      "sequence": 69,
+      "outcome": "Complete the learning and coding work for Day 69.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY68"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY70",
+      "collection": "python",
+      "title": "Day 70",
+      "code": "Day 70",
+      "sequence": 70,
+      "outcome": "Complete the learning and coding work for Day 70.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY69"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY71",
+      "collection": "python",
+      "title": "Day 71",
+      "code": "Day 71",
+      "sequence": 71,
+      "outcome": "Complete the learning and coding work for Day 71.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY70"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY72",
+      "collection": "python",
+      "title": "Day 72",
+      "code": "Day 72",
+      "sequence": 72,
+      "outcome": "Complete the learning and coding work for Day 72.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY71"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY73",
+      "collection": "python",
+      "title": "Day 73",
+      "code": "Day 73",
+      "sequence": 73,
+      "outcome": "Complete the learning and coding work for Day 73.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY72"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY74",
+      "collection": "python",
+      "title": "Day 74",
+      "code": "Day 74",
+      "sequence": 74,
+      "outcome": "Complete the learning and coding work for Day 74.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY73"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY75",
+      "collection": "python",
+      "title": "Day 75",
+      "code": "Day 75",
+      "sequence": 75,
+      "outcome": "Complete the learning and coding work for Day 75.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY74"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY76",
+      "collection": "python",
+      "title": "Day 76",
+      "code": "Day 76",
+      "sequence": 76,
+      "outcome": "Complete the learning and coding work for Day 76.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY75"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY77",
+      "collection": "python",
+      "title": "Day 77",
+      "code": "Day 77",
+      "sequence": 77,
+      "outcome": "Complete the learning and coding work for Day 77.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY76"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY78",
+      "collection": "python",
+      "title": "Day 78",
+      "code": "Day 78",
+      "sequence": 78,
+      "outcome": "Complete the learning and coding work for Day 78.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY77"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY79",
+      "collection": "python",
+      "title": "Day 79",
+      "code": "Day 79",
+      "sequence": 79,
+      "outcome": "Complete the learning and coding work for Day 79.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY78"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY80",
+      "collection": "python",
+      "title": "Day 80",
+      "code": "Day 80",
+      "sequence": 80,
+      "outcome": "Complete the learning and coding work for Day 80.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY79"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY81",
+      "collection": "python",
+      "title": "Day 81",
+      "code": "Day 81",
+      "sequence": 81,
+      "outcome": "Complete the learning and coding work for Day 81.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY80"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY82",
+      "collection": "python",
+      "title": "Day 82",
+      "code": "Day 82",
+      "sequence": 82,
+      "outcome": "Complete the learning and coding work for Day 82.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY81"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY83",
+      "collection": "python",
+      "title": "Day 83",
+      "code": "Day 83",
+      "sequence": 83,
+      "outcome": "Complete the learning and coding work for Day 83.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY82"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY84",
+      "collection": "python",
+      "title": "Day 84",
+      "code": "Day 84",
+      "sequence": 84,
+      "outcome": "Complete the learning and coding work for Day 84.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY83"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY85",
+      "collection": "python",
+      "title": "Day 85",
+      "code": "Day 85",
+      "sequence": 85,
+      "outcome": "Complete the learning and coding work for Day 85.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY84"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY86",
+      "collection": "python",
+      "title": "Day 86",
+      "code": "Day 86",
+      "sequence": 86,
+      "outcome": "Complete the learning and coding work for Day 86.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY85"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY87",
+      "collection": "python",
+      "title": "Day 87",
+      "code": "Day 87",
+      "sequence": 87,
+      "outcome": "Complete the learning and coding work for Day 87.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY86"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY88",
+      "collection": "python",
+      "title": "Day 88",
+      "code": "Day 88",
+      "sequence": 88,
+      "outcome": "Complete the learning and coding work for Day 88.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY87"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY89",
+      "collection": "python",
+      "title": "Day 89",
+      "code": "Day 89",
+      "sequence": 89,
+      "outcome": "Complete the learning and coding work for Day 89.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY88"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY90",
+      "collection": "python",
+      "title": "Day 90",
+      "code": "Day 90",
+      "sequence": 90,
+      "outcome": "Complete the learning and coding work for Day 90.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY89"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY91",
+      "collection": "python",
+      "title": "Day 91",
+      "code": "Day 91",
+      "sequence": 91,
+      "outcome": "Complete the learning and coding work for Day 91.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY90"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY92",
+      "collection": "python",
+      "title": "Day 92",
+      "code": "Day 92",
+      "sequence": 92,
+      "outcome": "Complete the learning and coding work for Day 92.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY91"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY93",
+      "collection": "python",
+      "title": "Day 93",
+      "code": "Day 93",
+      "sequence": 93,
+      "outcome": "Complete the learning and coding work for Day 93.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY92"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY94",
+      "collection": "python",
+      "title": "Day 94",
+      "code": "Day 94",
+      "sequence": 94,
+      "outcome": "Complete the learning and coding work for Day 94.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY93"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY95",
+      "collection": "python",
+      "title": "Day 95",
+      "code": "Day 95",
+      "sequence": 95,
+      "outcome": "Complete the learning and coding work for Day 95.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY94"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY96",
+      "collection": "python",
+      "title": "Day 96",
+      "code": "Day 96",
+      "sequence": 96,
+      "outcome": "Complete the learning and coding work for Day 96.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY95"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY97",
+      "collection": "python",
+      "title": "Day 97",
+      "code": "Day 97",
+      "sequence": 97,
+      "outcome": "Complete the learning and coding work for Day 97.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY96"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY98",
+      "collection": "python",
+      "title": "Day 98",
+      "code": "Day 98",
+      "sequence": 98,
+      "outcome": "Complete the learning and coding work for Day 98.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY97"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY99",
+      "collection": "python",
+      "title": "Day 99",
+      "code": "Day 99",
+      "sequence": 99,
+      "outcome": "Complete the learning and coding work for Day 99.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY98"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "PY100",
+      "collection": "python",
+      "title": "Day 100",
+      "code": "Day 100",
+      "sequence": 100,
+      "outcome": "Complete the learning and coding work for Day 100.",
+      "objectives": [
+        "Complete the day's lessons",
+        "Work through the coding exercises",
+        "Finish and test the day's coding work"
+      ],
+      "requires": [
+        "PY99"
+      ],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "H1",
+      "collection": "independent",
+      "title": "Hiragana Practice",
+      "code": "Independent",
+      "outcome": "Practice reading hiragana and reviewing unfamiliar characters.",
+      "objectives": [
+        "Practice reading hiragana",
+        "Review unfamiliar characters"
+      ],
+      "requires": [],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "W1",
+      "collection": "independent",
+      "title": "Portfolio Website",
+      "code": "Independent",
+      "outcome": "Build an initial professional portfolio website.",
+      "objectives": [
+        "Plan the homepage",
+        "Build an initial page",
+        "Test the mobile layout"
+      ],
+      "requires": [],
+      "status": "not_started",
+      "objectivesAreTemplate": true
+    },
+    {
+      "id": "J1",
+      "collection": "independent",
+      "title": "Quest Journal Prototype",
+      "code": "Independent",
+      "outcome": "Evaluate the core interactions of the quest journal.",
+      "objectives": [
+        "Test quest selection",
+        "Test objective completion",
+        "Evaluate the browsing experience"
+      ],
+      "requires": [],
+      "status": "not_started",
+      "objectivesAreTemplate": true
     }
   ]
 }
