@@ -1,273 +1,294 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0f1b23">
-  <title>Quest Journal — Dojo Prototype</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --background: #0f1b23;
-      --panel: #1c2e39;
-      --gold: #caaa74;
-      --text: #f4ebda;
-      --muted: #b5c3c8;
-      --line: rgba(202, 170, 116, 0.38);
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: system-ui, -apple-system, sans-serif;
-      overflow: hidden;
-    }
-    .app {
-      width: min(100%, 680px);
-      height: 100vh;
-      height: 100dvh;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      padding-top: env(safe-area-inset-top);
-    }
-    .page-header {
-      flex: 0 0 auto;
-      padding: 20px 18px 13px;
-      border-bottom: 1px solid var(--line);
-    }
-    .eyebrow {
-      color: var(--gold);
-      font-size: .72rem;
-      font-weight: 750;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-    h1 {
-      margin: 4px 0 0;
-      font: 600 clamp(1.65rem, 7vw, 2.2rem)/1.18 Georgia, serif;
-    }
-    .active-panel {
-      flex: 0 0 auto;
-      margin: 14px 18px 0;
-      padding: 17px 18px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: linear-gradient(140deg, #293a43, #1a2b35);
-      box-shadow: 0 8px 22px #0002;
-    }
-    .panel-label {
-      margin: 0 0 8px;
-      font-size: .68rem;
-      font-weight: 800;
-      color: var(--gold);
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-    .active-title {
-      margin: 0;
-      min-height: 1.5em;
-      font-size: 1.12rem;
-      line-height: 1.4;
-      font-weight: 680;
-      overflow-wrap: anywhere;
-    }
-    .active-id { font-size: .79rem; color: var(--gold); margin-right: 8px; }
-    .divider { border: 0; border-top: 1px solid var(--line); margin: 14px 0 12px; }
-    .objective {
-      margin: 0;
-      line-height: 1.45;
-      font-size: .91rem;
-      color: var(--muted);
-    }
-    .quest-area {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-      min-height: 0;
-      margin-top: 18px;
-    }
-    .list-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-      flex: 0 0 auto;
-      padding: 0 18px 12px;
-    }
-    h2 {
-      margin: 0;
-      font-size: .91rem;
-      letter-spacing: .045em;
-      font-weight: 750;
-    }
-    #count { color: var(--muted); font-size: .82rem; }
-    .quest-scroller {
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-      padding: 0 18px calc(24px + env(safe-area-inset-bottom));
-    }
-    #quest-list {
-      display: grid;
-      gap: 10px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .quest-button {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 36px minmax(0, 1fr) auto;
-      gap: 13px;
-      align-items: center;
-      min-height: 72px;
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: var(--panel);
-      color: var(--text);
-      text-align: left;
-      font: inherit;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .quest-button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-    .quest-button[aria-pressed="true"] {
-      border-color: var(--gold);
-      background: #293c45;
-      box-shadow: inset 3px 0 0 var(--gold);
-    }
-    .quest-id { color: var(--gold); font-size: .8rem; font-weight: 750; }
-    .quest-title { min-width: 0; font-size: .97rem; font-weight: 620; line-height: 1.38; overflow-wrap: anywhere; }
-    .quest-marker { color: var(--gold); font-size: .76rem; white-space: nowrap; }
-    .message { color: var(--muted); line-height: 1.5; }
-    @media (min-width: 720px) {
-      .app { border-inline: 1px solid #ffffff14; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1b23">
+<title>Quest Journal — Dojo Prototype</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0f1b23;
+    --panel: #1c2e39;
+    --panel-hi: #263943;
+    --gold: #caaa74;
+    --text: #f4ebda;
+    --muted: #b5c3c8;
+    --line: rgba(202,170,116,.36);
+  }
+  * { box-sizing: border-box; }
+  html,body { width:100%;height:100%;margin:0; }
+  body { background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;overflow:hidden; }
+  button { font:inherit; }
+  button:focus-visible { outline:3px solid var(--gold);outline-offset:2px; }
+  .app {
+    width:min(100%,680px);
+    height:100vh;height:100dvh;
+    display:flex;flex-direction:column;
+    margin:auto;
+    padding-top:env(safe-area-inset-top);
+    background:var(--bg);
+  }
+  .header {
+    flex:none;padding:16px 18px 13px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow {
+    color:var(--gold);font-size:.7rem;font-weight:800;
+    letter-spacing:.15em;text-transform:uppercase;
+  }
+  h1 { font:600 clamp(1.55rem,7vw,2rem)/1.2 Georgia,serif;margin:4px 0 0; }
+  .focus {
+    flex:none;margin:13px 16px 0;padding:15px 16px;
+    background:linear-gradient(135deg,#2a3b45,#192a34);
+    border:1px solid var(--line);border-radius:15px;
+    box-shadow:0 8px 20px #0002;
+  }
+  .overline {
+    margin:0 0 6px;color:var(--gold);font-size:.69rem;
+    font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  }
+  .active-title { font-size:1.08rem;font-weight:700;line-height:1.4;margin:0;overflow-wrap:anywhere; }
+  .focus-rule { border:0;border-top:1px solid var(--line);margin:12px 0; }
+  .focus-objective { color:var(--muted);font-size:.89rem;line-height:1.45;margin:0; }
+  .content-area { flex:1;min-height:0;display:flex;flex-direction:column;padding-top:15px; }
+  .view { flex:1;min-height:0;display:flex;flex-direction:column; }
+  .view[hidden] { display:none!important; }
+  .view-header {
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:12px;padding:0 18px 12px;flex:none;
+  }
+  h2 { font-size:.9rem;letter-spacing:.05em;margin:0;font-weight:800; }
+  #count { color:var(--muted);font-size:.81rem; }
+  .scroll {
+    flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;padding:0 16px 18px;
+  }
+  .detail-panels { display:grid;gap:12px;padding-bottom:10px; }
+  .detail-panel {
+    padding:16px;border-radius:13px;background:var(--panel);
+    border:1px solid var(--line);min-height:88px;
+  }
+  .detail-panel h3 {
+    margin:0 0 8px;color:var(--text);font-size:.96rem;font-weight:740;
+  }
+  .detail-panel p {
+    margin:0;color:var(--muted);font-size:.9rem;line-height:1.5;
+    overflow-wrap:anywhere;
+  }
+  .empty-state { padding:22px 16px;border:1px dashed var(--line);border-radius:13px;color:var(--muted);line-height:1.55; }
+  #quest-list { list-style:none;margin:0;padding:0;display:grid;gap:10px; }
+  .quest-button {
+    width:100%;display:grid;grid-template-columns:35px minmax(0,1fr) auto;
+    align-items:center;gap:12px;min-height:72px;padding:15px;
+    color:var(--text);background:var(--panel);border:1px solid var(--line);
+    border-radius:13px;text-align:left;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .quest-button[aria-pressed="true"] { background:var(--panel-hi);border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold); }
+  .quest-id { color:var(--gold);font-size:.81rem;font-weight:750; }
+  .quest-title { min-width:0;overflow-wrap:anywhere;font-size:.96rem;font-weight:640;line-height:1.4; }
+  .quest-marker { font-size:.75rem;color:var(--gold);font-weight:750; }
+  .bottom-nav {
+    flex:none;display:grid;grid-template-columns:1fr 1fr;gap:9px;
+    padding:9px 16px calc(9px + env(safe-area-inset-bottom));
+    background:#101f29;border-top:1px solid var(--line);
+    box-shadow:0 -7px 18px #0003;
+  }
+  .nav-button {
+    display:flex;justify-content:center;align-items:center;gap:9px;
+    min-height:51px;border:1px solid transparent;border-radius:12px;
+    background:transparent;color:var(--muted);font-size:.9rem;font-weight:750;cursor:pointer;
+  }
+  .nav-button[aria-selected="true"] {
+    color:var(--text);background:#2a3a44;border-color:var(--gold);
+  }
+  .nav-icon { color:var(--gold);font-size:1.1rem; }
+  @media(min-width:720px){.app{border-inline:1px solid #ffffff12;}}
+</style>
 </head>
 <body>
-  <main class="app">
-    <header class="page-header">
-      <div class="eyebrow">The Dojo</div>
-      <h1>Quest Journal</h1>
-    </header>
+<main class="app">
+  <header class="header">
+    <div class="eyebrow">The Dojo</div>
+    <h1>Quest Journal</h1>
+  </header>
 
-    <section class="active-panel" aria-label="Active quest">
-      <p class="panel-label">Active Quest</p>
-      <p class="active-title" id="active-title">No active quest selected</p>
-      <hr class="divider">
-      <p class="panel-label">Current Objective</p>
-      <p class="objective" id="active-objective">Tap a quest below to make it active.</p>
+  <section class="focus" aria-label="Current quest and objective">
+    <p class="overline">Active Quest</p>
+    <p class="active-title" id="active-title">No quest selected</p>
+    <hr class="focus-rule">
+    <p class="overline">Current Objective</p>
+    <p class="focus-objective" id="active-objective">Select a quest from Browse All.</p>
+  </section>
+
+  <div class="content-area">
+    <section class="view" id="view-current" role="tabpanel" aria-labelledby="tab-current">
+      <div class="view-header"><h2>Current Quest</h2></div>
+      <div class="scroll" tabindex="0" aria-label="Current quest details">
+        <div class="empty-state" id="no-selection">No active quest yet. Open Browse All below and choose one.</div>
+        <div class="detail-panels" id="details" hidden>
+          <section class="detail-panel">
+            <h3>Quest Log</h3>
+            <p id="detail-log">No journal entries recorded yet.</p>
+          </section>
+          <section class="detail-panel">
+            <h3>Prerequisites</h3>
+            <p id="detail-prereqs">No prerequisites recorded yet.</p>
+          </section>
+          <section class="detail-panel">
+            <h3>Specifications</h3>
+            <p id="detail-specs">No specifications recorded yet.</p>
+          </section>
+          <section class="detail-panel">
+            <h3>Related Quests</h3>
+            <p id="detail-related">No related quests recorded yet.</p>
+          </section>
+        </div>
+      </div>
     </section>
 
-    <section class="quest-area" aria-label="Quest browser">
-      <div class="list-heading">
-        <h2>All Quests</h2>
+    <section class="view" id="view-browse" role="tabpanel" aria-labelledby="tab-browse" hidden>
+      <div class="view-header">
+        <h2>Browse All Quests</h2>
         <span id="count" aria-live="polite">Loading…</span>
       </div>
-      <div class="quest-scroller" tabindex="0" aria-label="Scrollable quest list">
+      <div class="scroll" tabindex="0" aria-label="All quests">
         <ul id="quest-list"></ul>
       </div>
     </section>
-  </main>
+  </div>
 
-  <script>
-    const STORAGE_KEY = 'dojo-quest-journal-active-id-v1';
-    let quests = [];
-    let activeQuestId = null;
+  <nav class="bottom-nav" role="tablist" aria-label="Quest Journal navigation">
+    <button class="nav-button" type="button" id="tab-current" role="tab"
+      aria-selected="true" aria-controls="view-current" data-view="current">
+      <span class="nav-icon" aria-hidden="true">⌂</span>Current
+    </button>
+    <button class="nav-button" type="button" id="tab-browse" role="tab"
+      aria-selected="false" aria-controls="view-browse" data-view="browse">
+      <span class="nav-icon" aria-hidden="true">☷</span>Browse All
+    </button>
+  </nav>
+</main>
 
-    function savedActiveId() {
-      try { return localStorage.getItem(STORAGE_KEY); }
-      catch { return null; }
+<script>
+  const ACTIVE_KEY = 'dojo-quest-journal-active-id-v1';
+  let quests = [];
+  let activeQuestId = null;
+
+  function storedActiveId() {
+    try { return localStorage.getItem(ACTIVE_KEY); }
+    catch { return null; }
+  }
+  function storeActiveId(id) {
+    try { localStorage.setItem(ACTIVE_KEY,id); }
+    catch { /* Still works without storage. */ }
+  }
+  function showView(which) {
+    for (const key of ['current','browse']) {
+      const selected = key === which;
+      document.getElementById('view-' + key).hidden = !selected;
+      const tab = document.getElementById('tab-' + key);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    }
+  }
+  document.querySelectorAll('[data-view]').forEach(tab => {
+    tab.addEventListener('click', () => showView(tab.dataset.view));
+  });
+
+  function asText(value, fallback) {
+    if (typeof value === 'string' && value.trim()) return value;
+    if (Array.isArray(value) && value.length) return value.map(item =>
+      typeof item === 'string' ? item : (item && item.title) ? item.title : String(item)
+    ).join(' • ');
+    return fallback;
+  }
+
+  function renderCurrent() {
+    const q = quests.find(quest => String(quest.id) === activeQuestId);
+    const empty = document.getElementById('no-selection');
+    const details = document.getElementById('details');
+    empty.hidden = !!q;
+    details.hidden = !q;
+
+    document.getElementById('active-title').textContent =
+      q ? (q.id ? q.id + ' · ' : '') + (q.title || 'Untitled quest') : 'No quest selected';
+    document.getElementById('active-objective').textContent =
+      q ? asText(q.current_objective || q.objective, 'No objective recorded yet.')
+        : 'Select a quest from Browse All.';
+
+    if (q) {
+      document.getElementById('detail-log').textContent =
+        asText(q.quest_log || q.journal || q.logs, 'No journal entries recorded yet.');
+      document.getElementById('detail-prereqs').textContent =
+        asText(q.prerequisites, 'No prerequisites recorded yet.');
+      document.getElementById('detail-specs').textContent =
+        asText(q.specifications, 'No specifications recorded yet.');
+      document.getElementById('detail-related').textContent =
+        asText(q.related_quests, 'No related quests recorded yet.');
     }
 
-    function saveActiveId(id) {
-      try { localStorage.setItem(STORAGE_KEY, id); }
-      catch { /* Screen still works when browser storage is unavailable. */ }
-    }
+    document.querySelectorAll('.quest-button').forEach(button => {
+      const active = button.dataset.questId === activeQuestId;
+      button.setAttribute('aria-pressed', String(active));
+      button.querySelector('.quest-marker').textContent = active ? 'ACTIVE' : '›';
+    });
+  }
 
-    function updateActivePanel() {
-      const active = quests.find(quest => String(quest.id) === activeQuestId);
-      const title = document.getElementById('active-title');
-      const objective = document.getElementById('active-objective');
+  function renderBrowse() {
+    const list = document.getElementById('quest-list');
+    list.replaceChildren();
+    for (const q of quests) {
+      const li = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'quest-button';
+      button.dataset.questId = String(q.id);
 
-      if (!active) {
-        title.textContent = 'No active quest selected';
-        objective.textContent = 'Tap a quest below to make it active.';
-      } else {
-        title.textContent = (active.id ? active.id + ' · ' : '') + (active.title || 'Untitled quest');
-        objective.textContent = active.objective || active.current_objective ||
-          'No objective recorded yet.';
-      }
-
-      document.querySelectorAll('.quest-button').forEach(button => {
-        const selected = button.dataset.questId === activeQuestId;
-        button.setAttribute('aria-pressed', String(selected));
-        button.querySelector('.quest-marker').textContent = selected ? 'ACTIVE' : '›';
+      const id = document.createElement('span');
+      id.className = 'quest-id';
+      id.textContent = q.id ?? '';
+      const title = document.createElement('span');
+      title.className = 'quest-title';
+      title.textContent = q.title || 'Untitled quest';
+      const marker = document.createElement('span');
+      marker.className = 'quest-marker';
+      marker.setAttribute('aria-hidden','true');
+      button.append(id,title,marker);
+      button.addEventListener('click', () => {
+        activeQuestId = String(q.id);
+        storeActiveId(activeQuestId);
+        renderCurrent();
+        showView('current');
       });
+      li.append(button);
+      list.append(li);
     }
+    renderCurrent();
+  }
 
-    function renderQuests() {
-      const list = document.getElementById('quest-list');
-      list.replaceChildren();
-      quests.forEach(quest => {
-        const item = document.createElement('li');
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'quest-button';
-        button.dataset.questId = String(quest.id);
-
-        const id = document.createElement('span');
-        id.className = 'quest-id';
-        id.textContent = quest.id || '';
-        const title = document.createElement('span');
-        title.className = 'quest-title';
-        title.textContent = quest.title || 'Untitled quest';
-        const marker = document.createElement('span');
-        marker.className = 'quest-marker';
-        marker.setAttribute('aria-hidden', 'true');
-
-        button.append(id, title, marker);
-        button.addEventListener('click', () => {
-          activeQuestId = String(quest.id);
-          saveActiveId(activeQuestId);
-          updateActivePanel();
-        });
-        item.append(button);
-        list.append(item);
-      });
-      updateActivePanel();
+  async function loadQuests() {
+    try {
+      const response = await fetch('./quests.json');
+      if (!response.ok) throw new Error('Could not load quests.json');
+      const data = await response.json();
+      if (!Array.isArray(data.quests)) throw new Error('Expected quests array');
+      quests = data.quests;
+      const saved = storedActiveId();
+      activeQuestId = quests.some(q => String(q.id) === saved) ? saved : null;
+      document.getElementById('count').textContent =
+        quests.length + (quests.length === 1 ? ' quest' : ' quests');
+      renderBrowse();
+    } catch (error) {
+      document.getElementById('count').textContent = 'Unable to load quests';
+      document.getElementById('quest-list').textContent =
+        'Could not load quest data. Check quests.json is in this folder.';
+      console.error(error);
     }
-
-    async function loadQuests() {
-      const count = document.getElementById('count');
-      try {
-        const response = await fetch('./quests.json');
-        if (!response.ok) throw new Error('Unable to fetch quests.json');
-        const data = await response.json();
-        if (!Array.isArray(data.quests)) throw new Error('Expected a quests array');
-
-        quests = data.quests;
-        const previous = savedActiveId();
-        activeQuestId = quests.some(q => String(q.id) === previous) ? previous : null;
-        count.textContent = quests.length + (quests.length === 1 ? ' quest' : ' quests');
-        renderQuests();
-      } catch (error) {
-        count.textContent = 'Unable to load quests';
-        const note = document.createElement('li');
-        note.className = 'message';
-        note.textContent = 'Quest data could not be loaded. Check that quests.json is in this folder.';
-        document.getElementById('quest-list').replaceChildren(note);
-        console.error(error);
-      }
-    }
-    loadQuests();
-  </script>
+  }
+  showView('current');
+  loadQuests();
+</script>
 </body>
 </html>
