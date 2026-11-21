@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121f24">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Quest Journal — Layout Lab v2</title>
+<style>
+:root {
+  color-scheme: dark;
+  --ink: #111d23;
+  --surface: #19272d;
+  --surface-soft: #203038;
+  --warm: #d7c7a4;
+  --bright: #f2eee4;
+  --quiet: #abb6b8;
+  --subtle: #7e9297;
+  --hairline: rgba(215, 199, 164, .16);
+  --gutter: clamp(15px, 4.5vw, 28px);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; }
+body {
+  background: #101b20; color: var(--bright);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; -webkit-tap-highlight-color: transparent; }
+button:focus-visible, summary:focus-visible { outline: 2px solid var(--warm); outline-offset: 3px; }
+.app {
+  container-type: inline-size;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  width: min(100%, 860px);
+  height: 100vh; height: 100svh; height: 100dvh;
+  margin-inline: auto;
+  padding-block-start: env(safe-area-inset-top, 0px);
+  overflow: hidden;
+  background: var(--ink);
+}
+.masthead {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: clamp(12px, 2.2vh, 18px) var(--gutter) 10px;
+  min-height: 54px;
+}
+.brand {
+  margin: 0;
+  font-size: clamp(19px, 4.8vw, 25px);
+  line-height: 1.15;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.025em;
+  font-weight: 600;
+}
+.version {
+  font-size: 10px; font-weight: 700; letter-spacing: .17em;
+  color: var(--subtle); text-transform: uppercase;
+}
+.focus {
+  position: relative;
+  min-height: 116px;
+  max-height: min(34dvh, 220px);
+  overflow-y: auto;
+  padding: clamp(13px, 2.1vh, 20px) var(--gutter) clamp(15px, 2.6vh, 22px);
+  background:
+    radial-gradient(ellipse at 102% -10%, rgba(174, 157, 116, .23), transparent 58%),
+    linear-gradient(118deg, #293d42 0%, #203138 56%, #17252b 100%);
+}
+.focus::before {
+  content: ""; position: absolute; inset-inline-start: 0; inset-block: 0;
+  width: 3px; background: linear-gradient(#ac986f, #6b827e);
+}
+.kicker {
+  margin: 0 0 7px;
+  color: var(--warm); font-size: 10px; font-weight: 780;
+  letter-spacing: .135em; text-transform: uppercase;
+}
+.focus-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 5.1vw, 28px);
+  line-height: 1.22; letter-spacing: -.02em;
+  font-weight: 600; margin: 0;
+  overflow-wrap: anywhere;
+}
+.objective-line {
+  display: grid; grid-template-columns: minmax(0,1fr);
+  margin-block-start: clamp(10px, 2vh, 16px);
+  gap: 3px; max-width: 58ch;
+}
+.objective-line .label {
+  font-size: 10px; font-weight: 750; letter-spacing: .12em;
+  color: #bdc3b6; text-transform: uppercase;
+}
+.objective-line p {
+  margin: 0; color: #e4e4da; font-size: clamp(13px, 3.7vw, 15px);
+  line-height: 1.45; overflow-wrap: anywhere;
+}
+.workspace {
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr);
+  min-height: 0;
+  background: linear-gradient(180deg, #17252b, #122027 55%);
+}
+.workspace[hidden] { display:none!important; }
+.workspace-heading {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 12px;
+  padding: clamp(17px, 3vh, 23px) var(--gutter) 9px;
+}
+.workspace-heading h2 {
+  margin: 0; font-size: clamp(14px, 3.7vw, 17px);
+  font-weight: 680; letter-spacing: .005em;
+}
+.mini-meta { color: var(--subtle); font-size: 12px; flex: none; }
+.scroller {
+  min-height: 0; overflow-y: auto; overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 var(--gutter) 30px;
+  scrollbar-width: thin;
+}
+.empty {
+  padding-block: clamp(24px, 6vh, 52px);
+  max-width: 48ch; font-size: 15px; line-height: 1.6; color: var(--quiet);
+}
+#quest-details[hidden], #no-active[hidden] { display:none!important; }
+.info-block { border-block-end: 1px solid var(--hairline); }
+.info-block:first-child { border-block-start: 1px solid var(--hairline); }
+.info-block summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  cursor: pointer; list-style: none;
+  padding: clamp(13px, 2.8vh, 19px) 2px;
+  min-height: 51px; font-weight: 640; font-size: 15px;
+}
+.info-block summary::-webkit-details-marker { display:none; }
+.info-block .indicator {
+  font-size: 19px; font-weight: 400; color: var(--warm);
+  transform: rotate(0deg); transition: transform 140ms ease;
+}
+.info-block[open] .indicator { transform: rotate(90deg); }
+.info-value {
+  margin: 0; color: var(--quiet); font-size: 14px; line-height: 1.55;
+  padding: 0 2px 18px; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.quest-list { list-style: none; margin:0; padding:0; }
+.quest-item { border-block-end: 1px solid var(--hairline); }
+.quest-item:first-child { border-block-start: 1px solid var(--hairline); }
+.quest-select {
+  width: 100%; border: 0; background: transparent; color: var(--bright);
+  display:grid;grid-template-columns: minmax(31px,auto) minmax(0,1fr) auto;
+  align-items:center;column-gap:clamp(11px,3.5vw,20px);
+  text-align:left;min-height:clamp(58px,9svh,75px);
+  padding: 12px 2px; cursor:pointer;
+}
+.quest-select:active { background: #ffffff0a; }
+.quest-select[aria-pressed="true"] .quest-name { color: #fff6e4; }
+.quest-select[aria-pressed="true"] .quest-status { color: var(--warm); }
+.quest-number { color: #b8aa8b; font-size:12px; font-weight:700; }
+.quest-name { font-size:clamp(14px,3.8vw,16px);line-height:1.38;font-weight:530;overflow-wrap:anywhere; }
+.quest-status { font-size:12px;color:#789097;white-space:nowrap; }
+.tabbar {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 0 max(12px,env(safe-area-inset-right, 0px))
+    max(4px, env(safe-area-inset-bottom, 0px))
+    max(12px,env(safe-area-inset-left, 0px));
+  min-height: 62px;
+  background: #111e24;
+  box-shadow: 0 -7px 18px rgba(0,0,0,.11);
+  border-block-start: 1px solid var(--hairline);
+}
+.tabbar button {
+  position:relative;
+  border:0; background:transparent; color:#96a6a9; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:3px; min-height:52px;
+  font-size:11px; font-weight:640; letter-spacing:.02em;
+}
+.tabbar button[aria-selected="true"] { color:var(--bright); }
+.tabbar button[aria-selected="true"]::before {
+  content:"";position:absolute;inset-block-start:0;left:38%;width:24%;
+  height:2px; border-radius:3px; background:var(--warm);
+}
+.nav-symbol { width:21px;height:21px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round; }
+input, textarea, select { font-size:16px; }
+@container (min-width: 600px) {
+  .focus { padding-inline: clamp(28px, 6cqw, 70px); }
+  .masthead, .workspace-heading, .scroller { padding-inline: clamp(28px, 6cqw, 70px); }
+  .objective-line { grid-template-columns: 130px minmax(0,1fr); align-items:baseline; }
+  .quest-select { min-height: 70px; }
+}
+@media (max-height: 650px) {
+  .masthead { padding-block: 10px 7px; min-height:44px; }
+  .focus { min-height: 98px; padding-block: 11px 13px; }
+  .kicker { margin-bottom: 4px; }
+  .workspace-heading { padding-block: 12px 8px; }
+  .tabbar { min-height: 54px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .info-block .indicator { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="masthead">
+    <h1 class="brand">Quest Journal</h1>
+    <span class="version">Layout / 02</span>
+  </header>
+
+  <section class="focus" aria-labelledby="active-label">
+    <p class="kicker" id="active-label">Active Quest</p>
+    <p class="focus-title" id="active-title" aria-live="polite">No quest selected</p>
+    <div class="objective-line">
+      <span class="label">Current objective</span>
+      <p id="active-objective">Choose a quest from Browse.</p>
+    </div>
+  </section>
+
+  <section class="workspace" id="screen-current" aria-label="Current quest workspace">
+    <div class="workspace-heading">
+      <h2>Quest workspace</h2>
+      <span class="mini-meta" id="workspace-id"></span>
+    </div>
+    <div class="scroller" tabindex="0" aria-label="Quest information">
+      <div class="empty" id="no-active">No active quest yet. Open Browse below and choose one to see its workspace.</div>
+      <div id="quest-details" hidden>
+        <details class="info-block" open>
+          <summary>Quest log <span class="indicator" aria-hidden="true">›</span></summary>
+          <p class="info-value" id="detail-log"></p>
+        </details>
+        <details class="info-block">
+          <summary>Objectives <span class="indicator" aria-hidden="true">›</span></summary>
+          <p class="info-value" id="detail-objectives"></p>
+        </details>
+        <details class="info-block">
+          <summary>Prerequisites <span class="indicator" aria-hidden="true">›</span></summary>
+          <p class="info-value" id="detail-prerequisites"></p>
+        </details>
+        <details class="info-block">
+          <summary>Specifications <span class="indicator" aria-hidden="true">›</span></summary>
+          <p class="info-value" id="detail-specifications"></p>
+        </details>
+        <details class="info-block">
+          <summary>Related quests <span class="indicator" aria-hidden="true">›</span></summary>
+          <p class="info-value" id="detail-related"></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="workspace" id="screen-browse" aria-label="Browse quests" hidden>
+    <div class="workspace-heading">
+      <h2>All quests</h2>
+      <span class="mini-meta" id="quest-count">Loading…</span>
+    </div>
+    <div class="scroller" tabindex="0" aria-label="Quest list">
+      <ul class="quest-list" id="quest-list"></ul>
+    </div>
+  </section>
+
+  <nav class="tabbar" role="tablist" aria-label="Quest Journal views">
+    <button type="button" id="tab-current" role="tab" aria-controls="screen-current" aria-selected="true" data-view="current">
+      <svg class="nav-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+      <span>Current</span>
+    </button>
+    <button type="button" id="tab-browse" role="tab" aria-controls="screen-browse" aria-selected="false" data-view="browse">
+      <svg class="nav-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h2m4 0h10M4 12h2m4 0h10M4 18h2m4 0h10"/></svg>
+      <span>Browse</span>
+    </button>
+  </nav>
+</div>
+
+<script>
+  'use strict';
+  const ACTIVE_KEY = 'dojo-quest-journal-active-id-v1';
+  const state = { quests: [], activeId: null };
+
+  function getSavedId() {
+    try { return localStorage.getItem(ACTIVE_KEY); }
+    catch { return null; }
+  }
+  function saveId(id) {
+    try { localStorage.setItem(ACTIVE_KEY, id); }
+    catch { /* Remains usable in restricted storage environments. */ }
+  }
+  function field(value, fallback = 'Not recorded in quests.json yet.') {
+    if (typeof value === 'string' && value.trim()) return value.trim();
+    if (Array.isArray(value) && value.length) return value.map(v =>
+      typeof v === 'string' ? v : v && typeof v === 'object'
+        ? (v.title || v.text || v.id || JSON.stringify(v)) : String(v)).join('\n');
+    if (value != null && typeof value === 'object') return JSON.stringify(value, null, 2);
+    return fallback;
+  }
+  function switchView(name) {
+    for (const which of ['current', 'browse']) {
+      const selected = which === name;
+      document.getElementById('screen-' + which).hidden = !selected;
+      const tab = document.getElementById('tab-' + which);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    }
+  }
+  document.querySelectorAll('.tabbar button').forEach(button => {
+    button.addEventListener('click', () => switchView(button.dataset.view));
+    button.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const other = button.dataset.view === 'current' ? 'browse' : 'current';
+      switchView(other);
+      document.getElementById('tab-' + other).focus();
+    });
+  });
+
+  function refreshActive() {
+    const q = state.quests.find(q => String(q.id) === state.activeId);
+    document.getElementById('active-title').textContent =
+      q ? field(q.title, 'Untitled quest') : 'No quest selected';
+    document.getElementById('active-objective').textContent =
+      q ? field(q.current_objective ?? q.objective, 'No objective recorded yet.')
+        : 'Choose a quest from Browse.';
+    document.getElementById('workspace-id').textContent = q ? String(q.id) : '';
+    document.getElementById('no-active').hidden = !!q;
+    document.getElementById('quest-details').hidden = !q;
+
+    if (q) {
+      const values = {
+        'detail-log': q.quest_log ?? q.journal ?? q.logs,
+        'detail-objectives': q.objectives,
+        'detail-prerequisites': q.prerequisites,
+        'detail-specifications': q.specifications,
+        'detail-related': q.related_quests
+      };
+      for (const [id, value] of Object.entries(values)) {
+        document.getElementById(id).textContent = field(value);
+      }
+    }
+    document.querySelectorAll('.quest-select').forEach(button => {
+      const isActive = button.dataset.questId === state.activeId;
+      button.setAttribute('aria-pressed', String(isActive));
+      button.querySelector('.quest-status').textContent = isActive ? 'ACTIVE' : '›';
+    });
+  }
+
+  function drawList() {
+    const list = document.getElementById('quest-list');
+    list.replaceChildren();
+    state.quests.forEach(q => {
+      const li = document.createElement('li');
+      li.className = 'quest-item';
+      const button = document.createElement('button');
+      button.className = 'quest-select';
+      button.type = 'button';
+      button.dataset.questId = String(q.id);
+      const id = document.createElement('span');
+      id.className = 'quest-number';
+      id.textContent = q.id ?? '';
+      const title = document.createElement('span');
+      title.className = 'quest-name';
+      title.textContent = q.title || 'Untitled quest';
+      const marker = document.createElement('span');
+      marker.className = 'quest-status';
+      marker.setAttribute('aria-hidden', 'true');
+      button.append(id, title, marker);
+      button.addEventListener('click', () => {
+        state.activeId = String(q.id);
+        saveId(state.activeId);
+        refreshActive();
+        switchView('current');
+        document.querySelector('#screen-current .scroller').scrollTop = 0;
+      });
+      li.append(button);
+      list.append(li);
+    });
+    refreshActive();
+  }
+
+  async function loadQuests() {
+    try {
+      const response = await fetch('./quests.json');
+      if (!response.ok) throw new Error('Quest data request failed');
+      const payload = await response.json();
+      if (!Array.isArray(payload.quests)) throw new Error('Expected a quests array');
+      state.quests = payload.quests;
+      const remembered = getSavedId();
+      state.activeId = remembered !== null &&
+        state.quests.some(q => String(q.id) === remembered) ? remembered : null;
+      document.getElementById('quest-count').textContent =
+        state.quests.length + (state.quests.length === 1 ? ' quest' : ' quests');
+      drawList();
+    } catch (error) {
+      document.getElementById('quest-count').textContent = 'Unable to load quests';
+      document.getElementById('quest-list').textContent = 'Could not read quests.json.';
+      console.error(error);
+    }
+  }
+  switchView('current');
+  loadQuests();
+</script>
+</body>
+</html>
