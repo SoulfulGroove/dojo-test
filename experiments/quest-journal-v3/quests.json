@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "description": "Quest Journal V3 multi-project prototype. Go Rin no Sho section and paragraph sequence from V4. Working English titles outside Earth Scroll; Python and other objective templates are illustrative.",
+  "description": "Quest Journal V3 multi-project prototype. Go Rin no Sho section and paragraph sequence from V4. Working English titles outside Earth Scroll; Python and other objective templates are illustrative. Optional procedures provide how-to guidance for Mathematics Makes Sense, without adding completion requirements.",
   "collections": [
     {
       "id": "gorin",
@@ -1725,7 +1725,12 @@
       ],
       "requires": [],
       "status": "completed",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q2",
@@ -1743,7 +1748,12 @@
         "Q1"
       ],
       "status": "completed",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q3",
@@ -1761,7 +1771,12 @@
         "Q2"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q4",
@@ -1779,7 +1794,12 @@
         "Q3"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q5",
@@ -1797,7 +1817,12 @@
         "Q4"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q6",
@@ -1815,7 +1840,12 @@
         "Q5"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q7",
@@ -1833,7 +1863,12 @@
         "Q6"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q8",
@@ -1851,7 +1886,12 @@
         "Q7"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q9",
@@ -1869,7 +1909,12 @@
         "Q8"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q10",
@@ -1887,7 +1932,12 @@
         "Q9"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "Q11",
@@ -1905,7 +1955,12 @@
         "Q10"
       ],
       "status": "not_started",
-      "objectivesAreTemplate": true
+      "objectivesAreTemplate": true,
+      "procedures": [
+        "Read the chapter. Capture brief notes or questions only where they help you understand it.",
+        "Write your numbered answers on a separate sheet of paper or in your memory journal. Keep the numbering aligned with the book.",
+        "Compare your answers with a provided answer key, if one exists, or revisit the relevant chapter material. Note any corrections."
+      ]
     },
     {
       "id": "PY1",
