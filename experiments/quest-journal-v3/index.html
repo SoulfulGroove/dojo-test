@@ -43,7 +43,7 @@ button:disabled{cursor:not-allowed}
 .segment button{flex:1;background:transparent;border:0;color:var(--muted);border-radius:9px;min-height:41px;font-size:13px;font-weight:750}
 .segment button[aria-pressed=true]{color:#10262b;background:#c9e4e5;box-shadow:0 2px 8px #0003}
 .group{margin-bottom:18px}
-.group-head{padding:5px 2px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}.group-shortcut{width:100%;text-align:left;background:none;color:inherit;border:0;display:block;padding:0;border-radius:12px;touch-action:manipulation}.group-shortcut:disabled{opacity:1;cursor:default}.group-shortcut:not(:disabled):active{background:#ffffff10}.group-shortcut:not(:disabled):hover{background:#ffffff06}.group-shortcut .progress{margin-bottom:16px}.shortcut-hint{font-size:11px;color:#aedbdb;margin-top:6px;font-weight:700}
+.group-head{padding:5px 2px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}.group{padding:9px;border:1px solid transparent;border-radius:15px;transition:background-color .14s,border-color .14s}.group.selected{border-color:rgba(118,219,235,.52);background:rgba(89,185,199,.085)}.group-shortcut{width:100%;text-align:left;background:none;color:inherit;border:0;display:block;padding:2px;border-radius:12px;touch-action:manipulation}.group-shortcut:active{background:#ffffff10}.group-shortcut:hover{background:#ffffff06}.group-shortcut .progress{margin-bottom:7px}.shortcut-hint{font-size:11px;color:#aedbdb;margin-top:5px;font-weight:700}.group.selected .shortcut-hint{color:var(--cyan)}
 .group-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--subtle);font-weight:780;margin:0 0 4px}
 .group-title{font-family:Georgia,serif;font-size:clamp(20px,5vw,24px);line-height:1.22;font-weight:600;margin:0;overflow-wrap:anywhere}
 .group-sub{color:var(--muted);font-size:12px;line-height:1.4;margin-top:5px}
@@ -146,7 +146,7 @@ button:disabled{cursor:not-allowed}
 "use strict";
 (function(){
   var STORAGE_KEY = "dojo-quest-journal-v3-multiproject-v1";
-  var state = {quests:[],groups:[],statuses:{},checks:{},activeId:null,selectedId:null,detailId:null,recentId:null,page:"browse",filter:"available",browseY:0};
+  var state = {quests:[],groups:[],statuses:{},checks:{},activeId:null,selectedId:null,selectedCollectionId:null,detailId:null,recentId:null,page:"browse",filter:"available",browseY:0};
   var $ = function(id){return document.getElementById(id);};
   var saveAvailable = true;
   function esc(value){
@@ -235,12 +235,11 @@ button:disabled{cursor:not-allowed}
     return html+"</li>";
   }
   function groupHeader(g){
-    var progress=progressOf(g), count=countGroup(g), total=groupQuests(g).length;
-    var target=g.kind==="independent"?null:nextOf(g);
+    var progress=progressOf(g),count=countGroup(g),total=groupQuests(g).length;
+    var chosen=state.selectedCollectionId===g.id;
     var head='<div class="group-head"><div><div class="group-kicker">'+(g.kind==="independent"?"Other quests":"Quest collection")+'</div><h3 class="group-title">'+esc(g.name)+'</h3><div class="group-sub">'+esc(g.subtitle||"")+'</div></div><span class="group-counter">'+count+' / '+total+'</span></div>'+
-       '<div class="progress" aria-label="'+count+' of '+total+' quests completed"><div class="progress-fill" style="width:'+progress+'%"></div></div>';
-    if(!target)return head;
-    return '<button type="button" class="group-shortcut" data-action="collection" data-id="'+esc(target.id)+'" aria-label="Start or resume next quest in '+esc(g.name)+': '+esc(target.title)+'">'+head+'<div class="shortcut-hint">Tap collection to '+(statusOf(target)==="in_progress"?"resume":"start")+' '+esc(target.title)+'</div></button>';
+      '<div class="progress" aria-label="'+count+' of '+total+' quests completed"><div class="progress-fill" style="width:'+progress+'%"></div></div>';
+    return '<button type="button" class="group-shortcut" data-action="collection" data-id="'+esc(g.id)+'" aria-pressed="'+chosen+'" aria-label="'+(chosen?'Deselect ':'Select ')+esc(g.name)+' quest collection">'+head+'</button>';
   }
   function cardsWithScrolls(list,showDivisions){
     var html='<ul class="quest-list">',lastScroll="";
@@ -263,7 +262,7 @@ button:disabled{cursor:not-allowed}
       if(state.filter==="available"){
         shown=g.kind==="independent"?quests.filter(function(q){return !completed(q);}):(nextOf(g)?[nextOf(g)]:[]);
       }else shown=quests;
-      html+='<section class="group" aria-label="'+esc(g.name)+'">'+groupHeader(g);
+      html+='<section class="group'+(state.selectedCollectionId===g.id?' selected':'')+'" aria-label="'+esc(g.name)+'">'+groupHeader(g);
       if(shown.length)html+=cardsWithScrolls(shown,state.filter==="all"&&g.id==="gorin");
       else html+='<p class="small-note">All quests in this collection are complete.</p>';
       html+='</section>';
@@ -413,7 +412,7 @@ button:disabled{cursor:not-allowed}
     if(action==="detail"){
       state.detailId=id;go("detail");return;
     }
-    if(action==="collection"){var targetQuest=getQuest(id);if(targetQuest && state.activeId===id){go("current");}else if(canStart(targetQuest)){start(id);}return;}
+    if(action==="collection"){state.selectedCollectionId=state.selectedCollectionId===id?null:id;state.browseY=$("scroller").scrollTop;render();return;}
     if(action==="start"){start(id);return;}
     if(action==="back"||action==="browse"){go("browse");return;}
     if(action==="current"){go("current");return;}
@@ -432,7 +431,7 @@ button:disabled{cursor:not-allowed}
   $("tab-browse").addEventListener("click",function(){go("browse");});
   $("reset").addEventListener("click",function(){
     if(!window.confirm("Reset V3 prototype progress on this browser? Versions 1 and 2 will not be affected."))return;
-    state.statuses={};state.checks={};state.activeId=null;state.recentId=null;state.selectedId=null;state.filter="available";state.browseY=0;
+    state.statuses={};state.checks={};state.activeId=null;state.recentId=null;state.selectedId=null;state.selectedCollectionId=null;state.filter="available";state.browseY=0;
     try{localStorage.removeItem(STORAGE_KEY);}catch(error){}
     go("browse");
   });
