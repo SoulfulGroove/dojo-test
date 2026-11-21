@@ -170,7 +170,7 @@ button:disabled{cursor:not-allowed}
   function countDone(q){return completed(q)?q.objectives.length:q.objectives.filter(function(o,i){return !!state.checks[q.id+":"+i];}).length;}
   function countGroup(g){return groupQuests(g).filter(completed).length;}
   function nextOf(g){return groupQuests(g).find(function(q){return !completed(q);})||null;}
-  function after(q){var list=groupQuests(groupOf(q));return list[list.findIndex(function(v){return v.id===q.id;})+1]||null;}
+  function after(q){var group=groupOf(q);if(!group||group.kind==="independent")return null;var list=groupQuests(group);return list[list.findIndex(function(v){return v.id===q.id;})+1]||null;}
   function canStart(q){return !!q && !completed(q) && unlocked(q) && state.activeId!==q.id;}
   function progressOf(g){var list=groupQuests(g);return list.length?Math.round(countGroup(g)*100/list.length):0;}
   function persist(){
