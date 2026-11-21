@@ -3,578 +3,447 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#121f24">
+<meta name="theme-color" content="#14242b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Quest Journal — Interaction Lab v3</title>
+<title>Quest Journal — Multi-Project v3</title>
 <style>
-:root {
-  color-scheme: dark;
-  --ink: #111d23;
-  --surface: #19272d;
-  --surface-soft: #203038;
-  --warm: #d7c7a4;
-  --bright: #f2eee4;
-  --quiet: #abb6b8;
-  --subtle: #7e9297;
-  --hairline: rgba(215, 199, 164, .16);
-  --gutter: clamp(15px, 4.5vw, 28px);
+:root{
+  color-scheme:dark;
+  --bg:#101d24;--ink:#f4f1e9;--muted:#b2c2c5;--subtle:#879ca2;
+  --panel:#1d3038;--panel-deep:#15262e;--panel-soft:#273e47;
+  --line:rgba(203,223,217,.14);--accent:#c6dbc9;
+  --cyan:#62d9ef;--green:#7ed8a4;--red:#f18085;--yellow:#f0d276;--grey:#9caab0;
+  --pad:clamp(15px,4.4vw,28px);
 }
-* { box-sizing: border-box; }
-html, body { margin: 0; width: 100%; height: 100%; }
-body {
-  background: #101b20; color: var(--bright);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-button { font: inherit; -webkit-tap-highlight-color: transparent; }
-button:focus-visible, summary:focus-visible { outline: 2px solid var(--warm); outline-offset: 3px; }
-.app {
-  container-type: inline-size;
-  display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
-  width: min(100%, 860px);
-  height: 100vh; height: 100svh; height: 100dvh;
-  margin-inline: auto;
-  padding-block-start: env(safe-area-inset-top, 0px);
-  overflow: hidden;
-  background: var(--ink);
-}
-.masthead {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: clamp(12px, 2.2vh, 18px) var(--gutter) 10px;
-  min-height: 54px;
-}
-.brand {
-  margin: 0;
-  font-size: clamp(19px, 4.8vw, 25px);
-  line-height: 1.15;
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: -.025em;
-  font-weight: 600;
-}
-.version {
-  font-size: 10px; font-weight: 700; letter-spacing: .17em;
-  color: var(--subtle); text-transform: uppercase;
-}
-.focus {
-  position: relative;
-  min-height: 116px;
-  max-height: min(34dvh, 220px);
-  overflow-y: auto;
-  padding: clamp(13px, 2.1vh, 20px) var(--gutter) clamp(15px, 2.6vh, 22px);
-  background:
-    radial-gradient(ellipse at 102% -10%, rgba(174, 157, 116, .23), transparent 58%),
-    linear-gradient(118deg, #293d42 0%, #203138 56%, #17252b 100%);
-}
-.focus::before {
-  content: ""; position: absolute; inset-inline-start: 0; inset-block: 0;
-  width: 3px; background: linear-gradient(#ac986f, #6b827e);
-}
-.kicker {
-  margin: 0 0 7px;
-  color: var(--warm); font-size: 10px; font-weight: 780;
-  letter-spacing: .135em; text-transform: uppercase;
-}
-.focus-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(19px, 5.1vw, 28px);
-  line-height: 1.22; letter-spacing: -.02em;
-  font-weight: 600; margin: 0;
-  overflow-wrap: anywhere;
-}
-.objective-line {
-  display: grid; grid-template-columns: minmax(0,1fr);
-  margin-block-start: clamp(10px, 2vh, 16px);
-  gap: 3px; max-width: 58ch;
-}
-.objective-line .label {
-  font-size: 10px; font-weight: 750; letter-spacing: .12em;
-  color: #bdc3b6; text-transform: uppercase;
-}
-.objective-line p {
-  margin: 0; color: #e4e4da; font-size: clamp(13px, 3.7vw, 15px);
-  line-height: 1.45; overflow-wrap: anywhere;
-}
-.workspace {
-  display: grid;
-  grid-template-rows: auto minmax(0,1fr);
-  min-height: 0;
-  background: linear-gradient(180deg, #17252b, #122027 55%);
-}
-.workspace[hidden] { display:none!important; }
-.workspace-heading {
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: 12px;
-  padding: clamp(17px, 3vh, 23px) var(--gutter) 9px;
-}
-.workspace-heading h2 {
-  margin: 0; font-size: clamp(14px, 3.7vw, 17px);
-  font-weight: 680; letter-spacing: .005em;
-}
-.mini-meta { color: var(--subtle); font-size: 12px; flex: none; }
-.scroller {
-  min-height: 0; overflow-y: auto; overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 var(--gutter) 30px;
-  scrollbar-width: thin;
-}
-.empty {
-  padding-block: clamp(24px, 6vh, 52px);
-  max-width: 48ch; font-size: 15px; line-height: 1.6; color: var(--quiet);
-}
-#quest-details[hidden], #no-active[hidden] { display:none!important; }
-.info-block { border-block-end: 1px solid var(--hairline); }
-.info-block:first-child { border-block-start: 1px solid var(--hairline); }
-.info-block summary {
-  display: flex; align-items: center; justify-content: space-between; gap: 14px;
-  cursor: pointer; list-style: none;
-  padding: clamp(13px, 2.8vh, 19px) 2px;
-  min-height: 51px; font-weight: 640; font-size: 15px;
-}
-.info-block summary::-webkit-details-marker { display:none; }
-.info-block .indicator {
-  font-size: 19px; font-weight: 400; color: var(--warm);
-  transform: rotate(0deg); transition: transform 140ms ease;
-}
-.info-block[open] .indicator { transform: rotate(90deg); }
-.info-value {
-  margin: 0; color: var(--quiet); font-size: 14px; line-height: 1.55;
-  padding: 0 2px 18px; white-space: pre-wrap; overflow-wrap: anywhere;
-}
-.quest-list { list-style: none; margin:0; padding:0; }
-.quest-item { border-block-end: 1px solid var(--hairline); }
-.quest-item:first-child { border-block-start: 1px solid var(--hairline); }
-.quest-select {
-  width: 100%; border: 0; background: transparent; color: var(--bright);
-  display:grid;grid-template-columns: minmax(31px,auto) minmax(0,1fr) auto;
-  align-items:center;column-gap:clamp(11px,3.5vw,20px);
-  text-align:left;min-height:clamp(58px,9svh,75px);
-  padding: 12px 2px; cursor:pointer;
-}
-.quest-select:active { background: #ffffff0a; }
-.quest-select[aria-pressed="true"] .quest-name { color: #fff6e4; }
-.quest-select[aria-pressed="true"] .quest-status { color: var(--warm); }
-.quest-number { color: #b8aa8b; font-size:12px; font-weight:700; }
-.quest-name { font-size:clamp(14px,3.8vw,16px);line-height:1.38;font-weight:530;overflow-wrap:anywhere; }
-.quest-status { font-size:12px;color:#789097;white-space:nowrap; }
-.tabbar {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  padding: 0 max(12px,env(safe-area-inset-right, 0px))
-    max(4px, env(safe-area-inset-bottom, 0px))
-    max(12px,env(safe-area-inset-left, 0px));
-  min-height: 62px;
-  background: #111e24;
-  box-shadow: 0 -7px 18px rgba(0,0,0,.11);
-  border-block-start: 1px solid var(--hairline);
-}
-.tabbar button {
-  position:relative;
-  border:0; background:transparent; color:#96a6a9; cursor:pointer;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:3px; min-height:52px;
-  font-size:11px; font-weight:640; letter-spacing:.02em;
-}
-.tabbar button[aria-selected="true"] { color:var(--bright); }
-.tabbar button[aria-selected="true"]::before {
-  content:"";position:absolute;inset-block-start:0;left:38%;width:24%;
-  height:2px; border-radius:3px; background:var(--warm);
-}
-.nav-symbol { width:21px;height:21px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round; }
-input, textarea, select { font-size:16px; }
-@container (min-width: 600px) {
-  .focus { padding-inline: clamp(28px, 6cqw, 70px); }
-  .masthead, .workspace-heading, .scroller { padding-inline: clamp(28px, 6cqw, 70px); }
-  .objective-line { grid-template-columns: 130px minmax(0,1fr); align-items:baseline; }
-  .quest-select { min-height: 70px; }
-}
-@media (max-height: 650px) {
-  .masthead { padding-block: 10px 7px; min-height:44px; }
-  .focus { min-height: 98px; padding-block: 11px 13px; }
-  .kicker { margin-bottom: 4px; }
-  .workspace-heading { padding-block: 12px 8px; }
-  .tabbar { min-height: 54px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .info-block .indicator { transition: none; }
-}
-
-/* V3: selection surfaces, true status colors, and explicit actions */
-:root { --red:#f06470; --yellow:#f5d34f; --green:#77d6a2; --cyan:#58d9f0; }
-.version { letter-spacing:.13em; }
-#browse-list[hidden], #inspect-panel[hidden], #quest-details[hidden], #no-active[hidden] { display:none!important; }
-.quest-list { display:grid; gap:5px; padding:0 0 10px; }
-.quest-item { border:0!important; overflow:hidden; border-radius:11px; }
-.quest-item.selected { background:#263740; box-shadow:inset 0 0 0 1px rgba(225,230,223,.10); }
-.quest-select {
-  grid-template-columns:26px minmax(0,1fr) 18px; gap:12px;
-  padding:clamp(12px,2.4vh,16px) 12px;
-  min-height:clamp(65px,9svh,78px);
-  border-radius:10px;
-}
-.quest-select:hover { background:rgba(255,255,255,.035); }
-.quest-select:active { background:rgba(255,255,255,.08); }
-.quest-select[aria-expanded="true"] { background:rgba(255,255,255,.025); }
-.state-symbol { display:flex; justify-content:center; align-items:center; }
-.state-symbol svg { width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
-.state-active .state-symbol, .state-active .state-label { color:var(--cyan); }
-.state-completed .state-symbol, .state-completed .state-label { color:var(--green); }
-.state-in_progress .state-symbol, .state-in_progress .state-label { color:var(--yellow); }
-.state-not_started .state-symbol, .state-not_started .state-label { color:var(--red); }
-.state-locked .state-symbol, .state-locked .state-label { color:#8a989d; }
-.quest-heading { display:flex; flex-direction:column; align-items:flex-start; gap:4px; min-width:0; }
-.quest-name { font-size:clamp(14px,3.9vw,16px); font-weight:620; }
-.state-locked .quest-name { color:#9aadb0; }
-.quest-subrow { display:flex; flex-wrap:wrap; gap:9px; align-items:center; line-height:1.3; }
-.quest-number { color:#b8aa8b; font-size:11px; }
-.state-label { font-size:11px; font-weight:660; }
-.quest-chevron { color:#94a3a6; font-size:21px; transform:rotate(0deg); transition:transform 150ms ease; }
-.quest-select[aria-expanded="true"] .quest-chevron { transform:rotate(90deg); }
-.quest-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; padding:2px 12px 13px 50px; }
-.action-button {
-  border:1px solid rgba(227,234,229,.26); border-radius:10px;
-  min-height:44px; padding:8px 10px;
-  background:#2d3d45; color:var(--bright); font-weight:650; font-size:clamp(12px,3.2vw,14px);
-  cursor:pointer;
-}
-.action-button:active:not(:disabled) { transform:translateY(1px); background:#364a52; }
-.action-primary { background:#bcebf0; color:#10252d; border-color:#bcebf0; }
-.action-primary:active:not(:disabled) { background:#8bdfe9; }
-.action-button:disabled { background:#10191e; border-color:#26353b; color:#6f8188; cursor:not-allowed; opacity:.92; }
-.action-note { margin:0; padding:0 14px 12px 51px; color:#a9b5b8; font-size:12px; line-height:1.45; }
-.fact-section { padding:16px 0 17px; border-block-end:1px solid var(--hairline); }
-.fact-section:first-child { border-block-start:1px solid var(--hairline); }
-.fact-title { margin:0 0 7px; font-size:14px; color:var(--bright); font-weight:680; }
-.fact-content { margin:0; color:var(--quiet); font-size:14px; line-height:1.6; white-space:pre-wrap; overflow-wrap:anywhere; }
-.inspect-back {
-  min-height:44px; padding:7px 4px; color:var(--warm);
-  background:transparent; border:0; display:flex; align-items:center;
-  gap:8px; font-weight:660; cursor:pointer;
-}
-.inspect-head { padding:10px 0 19px; }
-.inspect-tag { color:var(--warm); font-size:11px;letter-spacing:.12em;font-weight:760;text-transform:uppercase; }
-.inspect-title { font-family:Georgia,serif; font-size:clamp(22px,5.8vw,29px);line-height:1.24; font-weight:600; margin:10px 0 14px; }
-.inspect-status { display:inline-flex;gap:7px;align-items:center; font-size:13px; font-weight:710; }
-.inspect-status::before { content:"";width:8px;height:8px;border-radius:50%;background:currentColor; }
-.inspect-status.state-active { color:var(--cyan); }
-.inspect-status.state-completed { color:var(--green); }
-.inspect-status.state-in_progress { color:var(--yellow); }
-.inspect-status.state-not_started { color:var(--red); }
-.inspect-status.state-locked { color:#9eabb0; }
-.inspect-note { margin:12px 0 0; color:var(--quiet); font-size:13px;line-height:1.5; }
-.current-kicker { margin:0 0 15px; font-size:13px; color:var(--subtle); }
-.scroller { scroll-padding-block-end:14px; }
-@container (min-width:600px) {
-  .quest-select { padding-inline:14px; }
-  .quest-actions { padding-inline-start:54px; padding-inline-end:14px; }
-}
-@media(max-width:340px) {
- .quest-actions { padding-left:12px; }
- .quest-select { gap:8px; }
-}
-@media(prefers-reduced-motion:reduce) { .quest-chevron { transition:none; } }
-
+*{box-sizing:border-box}
+html,body{height:100%;width:100%;margin:0}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0b161b;color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
+button,input{font:inherit}button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+button:disabled{cursor:not-allowed}
+[hidden]{display:none!important}
+.app{max-width:860px;margin:auto;width:100%;height:100vh;height:100svh;height:100dvh;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;background:var(--bg);overflow:hidden;padding-top:env(safe-area-inset-top)}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px var(--pad) 13px}
+.brand{font-family:Georgia,serif;font-size:clamp(23px,5vw,29px);line-height:1.12;font-weight:600;letter-spacing:-.02em;margin:0}
+.version{display:block;color:var(--subtle);font-size:10px;font-weight:800;letter-spacing:.13em;margin-top:3px;text-transform:uppercase}
+.quiet-action{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:10px;min-height:36px;padding:5px 10px;font-size:12px;font-weight:650}
+.quiet-action:active{background:var(--panel-soft)}
+.focus{display:block;width:100%;text-align:left;background:radial-gradient(ellipse at right top,rgba(166,197,183,.18),transparent 65%),linear-gradient(115deg,#2b4449,#1d3038 67%,#1a2c33);padding:16px var(--pad) 18px;border:0;border-left:3px solid #bdcda5;color:var(--ink);min-height:107px}
+.focus:active{filter:brightness(1.12)}
+.eyebrow{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:800;color:#ded2ae}
+.focus-main{display:block;font-family:Georgia,serif;font-size:clamp(20px,5vw,27px);line-height:1.23;font-weight:600;margin:7px 0 5px;overflow-wrap:anywhere}
+.focus-sub{display:block;color:#c9d7d4;font-size:12px;line-height:1.4}
+.workspace{min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr)}
+.view-head{padding:17px var(--pad) 11px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.view-head h2{margin:0;font-size:17px;font-weight:760;letter-spacing:-.015em}
+.mini-label{color:var(--subtle);font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:720}
+.scroller{min-height:0;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:0 var(--pad) 34px;scrollbar-width:thin}
+.segment{display:flex;gap:4px;background:#1b2d34;border:1px solid var(--line);border-radius:12px;padding:4px;margin:1px 0 19px}
+.segment button{flex:1;background:transparent;border:0;color:var(--muted);border-radius:9px;min-height:41px;font-size:13px;font-weight:750}
+.segment button[aria-pressed=true]{color:#10262b;background:#c9e4e5;box-shadow:0 2px 8px #0003}
+.group{margin-bottom:18px}
+.group-head{padding:5px 2px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
+.group-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--subtle);font-weight:780;margin:0 0 4px}
+.group-title{font-family:Georgia,serif;font-size:clamp(20px,5vw,24px);line-height:1.22;font-weight:600;margin:0;overflow-wrap:anywhere}
+.group-sub{color:var(--muted);font-size:12px;line-height:1.4;margin-top:5px}
+.group-counter{font-size:13px;font-weight:740;color:#dae1d5;white-space:nowrap}
+.progress{height:6px;overflow:hidden;border-radius:999px;background:#31454c;margin-bottom:16px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#66b99a,#8bd7ac);border-radius:999px}
+.scroll-heading{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#c4c8b0;font-weight:800;margin:14px 0 5px;padding:0 4px}
+.quest-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.quest-card{border-radius:13px;border:1px solid transparent;overflow:hidden}
+.quest-card.expanded{border-color:var(--line);background:#20343c}
+.quest-row{display:flex;width:100%;align-items:center;gap:13px;min-height:66px;padding:11px 10px;border:0;background:transparent;text-align:left;color:var(--ink);border-radius:11px}
+.quest-row:hover{background:#ffffff06}
+.quest-row:active{background:#ffffff10}
+.state-icon{display:flex;flex:0 0 22px;align-items:center;justify-content:center;height:22px;border:2px solid currentColor;border-radius:50%;font-size:13px;line-height:1;font-weight:900}
+.state-icon.completed{color:var(--green);background:rgba(126,216,164,.12)}
+.state-icon.in_progress{color:var(--yellow)}
+.state-icon.active{color:var(--cyan)}
+.state-icon.not_started{color:var(--red)}
+.state-icon.locked{color:var(--grey);border-style:dotted;font-size:11px}
+.quest-copy{display:block;min-width:0;flex:1}
+.quest-title{display:block;font-weight:690;font-size:clamp(14px,3.8vw,16px);line-height:1.34;overflow-wrap:anywhere}
+.locked-quest .quest-title{color:#9badb0}
+.quest-meta{display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;row-gap:2px;margin-top:5px}
+.status-text{font-size:11px;font-weight:730}
+.status-text.completed{color:var(--green)}.status-text.active{color:var(--cyan)}
+.status-text.in_progress{color:var(--yellow)}.status-text.not_started{color:var(--red)}
+.status-text.locked{color:var(--grey)}
+.quest-id{color:var(--subtle);font-size:11px}
+.chevron{flex:0 0 16px;color:var(--subtle);font-size:21px;text-align:center;transition:transform .15s}
+.quest-card.expanded .chevron{transform:rotate(90deg)}
+.quest-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:2px 9px 12px 45px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;gap:8px;border-radius:10px;padding:11px 12px;min-height:44px;border:1px solid #45616a;background:#273e47;color:var(--ink);font-size:13px;font-weight:780;line-height:1.28}
+.btn:active:not(:disabled){filter:brightness(1.15)}
+.btn.primary{background:#bce8ed;color:#0e2730;border-color:#bce8ed}
+.btn.primary:disabled{background:#263841;color:#7c9498;border-color:#364c54}
+.btn.secondary:disabled{opacity:.5}
+.btn.block{display:flex;width:100%}
+.action-note{padding:0 13px 11px 46px;margin:0;font-size:12px;color:var(--muted);line-height:1.45}
+.divider{height:1px;background:var(--line);margin:19px 0}
+.section-eyebrow{color:#c4cbb2;font-size:11px;letter-spacing:.105em;font-weight:780;text-transform:uppercase;line-height:1.5}
+.detail-title{font-family:Georgia,serif;font-size:clamp(26px,6vw,32px);font-weight:600;line-height:1.23;margin:9px 0 8px;overflow-wrap:anywhere}
+.status-line{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:720;margin:8px 0 15px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.detail-copy{line-height:1.55;font-size:14px;color:#d3dcd8;margin:10px 0}
+.heading-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.heading-row h3{font-size:15px;margin:0 0 11px}
+.objective{display:flex;gap:12px;align-items:flex-start;background:#1c3038;border:1px solid var(--line);border-radius:11px;padding:14px;margin-bottom:9px;min-height:53px}
+.objective input[type=checkbox]{margin:3px 0 0;flex:0 0 auto;width:20px;height:20px;accent-color:#72c7b1;cursor:pointer;touch-action:manipulation}
+.objective label{flex:1;min-width:0;font-size:14px;font-weight:620;line-height:1.45;cursor:pointer}
+.readonly-check{display:flex;align-items:center;justify-content:center;flex:0 0 19px;height:19px;border:1.5px solid #8aa3a6;border-radius:4px;color:var(--green);font-weight:800;font-size:12px}
+.readonly-check.checked{border-color:var(--green);background:#294e44}
+.objective.readonly{background:transparent;border-color:var(--line)}
+.small-note{font-size:12px;color:var(--muted);line-height:1.55;margin:0 0 12px}
+.back{padding:9px 0;margin-bottom:9px;border:0;background:transparent;color:#d1e7e7;font-size:13px;font-weight:750;min-height:43px}
+.notice{border:1px solid var(--line);border-radius:13px;background:#1b3038;padding:18px;margin:8px 0}
+.notice-title{font-weight:800;font-size:15px;margin:0 0 7px}
+.notice p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+.complete-head{display:flex;gap:11px;align-items:center;color:var(--green);font-size:13px;letter-spacing:.07em;font-weight:800;text-transform:uppercase;margin:8px 0}
+.complete-badge{width:29px;height:29px;border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
+.complete-actions{display:grid;gap:11px;margin:16px 0}
+.footnote{font-size:11px;line-height:1.5;color:var(--subtle);margin-top:20px}
+.disclosure{border-top:1px solid var(--line);padding:12px 0}
+.disclosure summary{list-style:none;cursor:pointer;color:#d2dfdc;font-size:13px;font-weight:690;touch-action:manipulation}
+.disclosure summary::-webkit-details-marker{display:none}
+.disclosure summary:after{content:"⌄";float:right;color:var(--subtle)}
+.disclosure[open] summary:after{content:"⌃"}
+.compact-item{display:flex;align-items:center;gap:10px;padding:10px 5px;color:var(--muted);font-size:13px}
+.compact-item .state-icon{width:18px;height:18px;flex-basis:18px;font-size:11px}
+.tabbar{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;padding:6px max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));min-height:62px;background:#13242b;border-top:1px solid var(--line)}
+.tabbar button{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:1px solid transparent;color:var(--muted);font-size:13px;font-weight:750;border-radius:10px;min-height:46px}
+.tabbar button[aria-current=page]{color:#e7f5ed;background:#2c424a;border-color:#3c5b64}
+.navicon{font-size:18px;line-height:1}
+.empty{padding:20px;border:1px dashed #45616a;border-radius:12px;color:var(--muted);font-size:14px;line-height:1.5}
+@media(min-width:680px){.focus{padding-inline:44px}.masthead,.view-head,.scroller{padding-inline:44px}.quest-actions{padding-left:47px}}
+@media(max-height:650px){.masthead{padding-block:9px}.focus{min-height:83px;padding-block:10px}.view-head{padding-block:10px}.tabbar{min-height:53px}}
+@media(prefers-reduced-motion:reduce){.chevron{transition:none}}
 </style>
 </head>
 <body>
-<div class="app">
+<main class="app">
   <header class="masthead">
-    <h1 class="brand">Quest Journal</h1>
-    <span class="version">Interaction / 03</span>
+    <div><h1 class="brand">Quest Journal</h1><span class="version">Interaction Prototype / V3</span></div>
+    <button class="quiet-action" type="button" id="reset">↺ Reset</button>
   </header>
-
-  <section class="focus" aria-labelledby="active-label">
-    <p class="kicker" id="active-label">Active Quest</p>
-    <p class="focus-title" id="active-title" aria-live="polite">No quest selected</p>
-    <div class="objective-line">
-      <span class="label">Current objective</span>
-      <p id="active-objective">Choose a quest from Browse.</p>
-    </div>
+  <button class="focus" type="button" id="focus-button" aria-label="Open active quest or browse">
+    <span class="eyebrow">Active Quest</span>
+    <span class="focus-main" id="focus-title">No active quest</span>
+    <span class="focus-sub" id="focus-sub">Tap to browse available quests</span>
+  </button>
+  <section class="workspace" aria-label="Quest Journal workspace">
+    <div class="view-head"><h2 id="view-title">Browse Quests</h2><span class="mini-label" id="view-sub">V3</span></div>
+    <div class="scroller" id="scroller" tabindex="0" aria-live="off"></div>
   </section>
-
-  <section class="workspace" id="screen-current" aria-label="Current quest workspace">
-    <div class="workspace-heading">
-      <h2>Quest workspace</h2>
-      <span class="mini-meta" id="workspace-id"></span>
-    </div>
-    <div class="scroller" tabindex="0" aria-label="Current quest information">
-      <div class="empty" id="no-active">No active quest selected. Open Browse and choose an available quest, then tap Set Active.</div>
-      <div id="quest-details" hidden>
-        <p class="current-kicker" id="current-status"></p>
-        <div id="current-facts"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="workspace" id="screen-browse" aria-label="Browse quests" hidden>
-    <div class="workspace-heading">
-      <h2 id="browse-title">All quests</h2>
-      <span class="mini-meta" id="quest-count">Loading…</span>
-    </div>
-    <div class="scroller" id="browse-scroller" tabindex="0" aria-label="Browse quest list and details">
-      <div id="browse-list">
-        <ul class="quest-list" id="quest-list"></ul>
-      </div>
-      <div id="inspect-panel" hidden>
-        <button type="button" class="inspect-back" id="inspect-back"><span aria-hidden="true">‹</span> Back to all quests</button>
-        <div class="inspect-head">
-          <span class="inspect-tag" id="inspect-id"></span>
-          <h3 class="inspect-title" id="inspect-title"></h3>
-          <span class="inspect-status" id="inspect-status"></span>
-          <p class="inspect-note" id="inspect-note"></p>
-        </div>
-        <div id="inspect-facts"></div>
-      </div>
-    </div>
-  </section>
-
-  <nav class="tabbar" role="tablist" aria-label="Quest Journal views">
-    <button type="button" id="tab-current" role="tab" aria-controls="screen-current" aria-selected="true" data-view="current">
-      <svg class="nav-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
-      <span>Current</span>
-    </button>
-    <button type="button" id="tab-browse" role="tab" aria-controls="screen-browse" aria-selected="false" data-view="browse">
-      <svg class="nav-symbol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h2m4 0h10M4 12h2m4 0h10M4 18h2m4 0h10"/></svg>
-      <span>Browse</span>
-    </button>
+  <nav class="tabbar" aria-label="Quest Journal navigation">
+    <button id="tab-current" type="button" data-tab="current"><span class="navicon" aria-hidden="true">⌂</span>Current</button>
+    <button id="tab-browse" type="button" data-tab="browse"><span class="navicon" aria-hidden="true">☷</span>Browse</button>
   </nav>
-</div>
-
+</main>
 <script>
-'use strict';
-// This experiment has its own selection key so V2 remains independent.
-const ACTIVE_KEY = 'dojo-quest-journal-v3-active-id';
-const state = { quests: [], selectedId:null, activeId:null, inspectingId:null };
-
-function $ (id) { return document.getElementById(id); }
-function getSavedActive() {
-  try { return localStorage.getItem(ACTIVE_KEY); } catch { return null; }
-}
-function saveActive(id) {
-  try { localStorage.setItem(ACTIVE_KEY,id); } catch { /* app still works */ }
-}
-function questFor(id) { return state.quests.find(q=>String(q.id)===id); }
-function isCompleted(q) { return q && q.status==='completed'; }
-function isUnlocked(q) {
-  return (q.requires || []).every(id=>isCompleted(questFor(String(id))));
-}
-function canActivate(q) {
-  return !!q && !isCompleted(q) && isUnlocked(q) && state.activeId!==String(q.id);
-}
-function visualState(q) {
-  if (state.activeId===String(q.id) && !isCompleted(q) && isUnlocked(q)) return 'active';
-  if (isCompleted(q)) return 'completed';
-  if (!isUnlocked(q)) return 'locked';
-  return q.status==='in_progress'?'in_progress':'not_started';
-}
-function statusText(q) {
-  const visual=visualState(q);
-  if (visual==='active') return 'Active · '+(q.status==='in_progress'?'In progress':'Not started');
-  return {completed:'Completed',locked:'Locked',in_progress:'In progress',not_started:'Not started'}[visual];
-}
-function field(value, fallback='Not recorded yet.') {
-  if(typeof value==='string' && value.trim()) return value.trim();
-  if(Array.isArray(value) && value.length) return value.map(v=>
-    typeof v==='string'?v:v && typeof v==='object'?(v.title||v.text||v.id||JSON.stringify(v)):String(v)).join('\n');
-  if(value!==null && value!==undefined && typeof value==='object') return JSON.stringify(value,null,2);
-  return fallback;
-}
-function prerequisiteText(q) {
-  if (!Array.isArray(q.requires) || !q.requires.length) return 'No prerequisite quests.';
-  return q.requires.map(id=>{
-    const required=questFor(String(id));
-    return String(id)+(required?' · '+required.title:'')+
-      (isCompleted(required)?' — Completed':' — Not completed');
-  }).join('\n');
-}
-function makeFact(title, value) {
-  const section=document.createElement('section'); section.className='fact-section';
-  const heading=document.createElement('h4');heading.className='fact-title';heading.textContent=title;
-  const content=document.createElement('p');content.className='fact-content';content.textContent=value;
-  section.append(heading,content);return section;
-}
-function renderFacts(target,q) {
-  $(target).replaceChildren(
-    makeFact('Objectives', field(q.objectives,'No objectives recorded yet.')),
-    makeFact('Prerequisites', prerequisiteText(q)),
-    makeFact('Quest log', field(q.quest_log ?? q.journal ?? q.logs,'No journal entries recorded yet.')),
-    makeFact('Specifications', field(q.specifications)),
-    makeFact('Related quests', field(q.related_quests))
-  );
-}
-function renderCurrent() {
-  const q=questFor(state.activeId);
-  $('active-title').textContent=q?field(q.title,'Untitled quest'):'No quest selected';
-  $('active-objective').textContent=q?
-    field(q.current_objective ?? q.objective,'No objective recorded yet.'):'Choose an available quest from Browse.';
-  $('workspace-id').textContent=q?String(q.id):'';
-  $('no-active').hidden=!!q;
-  $('quest-details').hidden=!q;
-  if(q) {
-    $('current-status').textContent='Active quest · '+(q.status==='in_progress'?'In progress':'Not started');
-    renderFacts('current-facts',q);
-  }
-}
-function switchView(name) {
-  for(const which of ['current','browse']) {
-    const selected=which===name;
-    $('screen-'+which).hidden=!selected;
-    const tab=$('tab-'+which);
-    tab.setAttribute('aria-selected',String(selected));
-    tab.tabIndex=selected?0:-1;
-  }
-}
-function makeStatusIcon(kind) {
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-  svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');
-  const paths={
-    active:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>',
-    completed:'<circle cx="12" cy="12" r="9"/><path d="m7 12 3.2 3.2L17 8.6"/>',
-    locked:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
-    in_progress:'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/>',
-    not_started:'<circle cx="12" cy="12" r="9"/>'
-  };
-  svg.innerHTML=paths[kind];return svg;
-}
-function activationLabel(q) {
-  if(isCompleted(q))return 'Completed';
-  if(!isUnlocked(q))return 'Locked';
-  if(state.activeId===String(q.id))return 'Already Active';
-  return 'Set Active';
-}
-function renderBrowse() {
-  const scroller=$('browse-scroller');
-  const oldY=scroller.scrollTop;
-  const list=$('quest-list');list.replaceChildren();
-  state.quests.forEach(q=>{
-    const id=String(q.id);
-    const kind=visualState(q);
-    const selected=state.selectedId===id;
-    const li=document.createElement('li');
-    li.className='quest-item state-'+kind+(selected?' selected':'');
-    const row=document.createElement('button');
-    row.type='button';row.className='quest-select';
-    row.setAttribute('aria-expanded',String(selected));
-    row.setAttribute('aria-controls','controls-'+id);
-    row.setAttribute('aria-label',q.title+', '+statusText(q)+'. '+(selected?'Hide actions':'Show actions'));
-    const icon=document.createElement('span');icon.className='state-symbol';icon.append(makeStatusIcon(kind));
-    const heading=document.createElement('span');heading.className='quest-heading';
-    const title=document.createElement('span');title.className='quest-name';title.textContent=q.title;
-    const sub=document.createElement('span');sub.className='quest-subrow';
-    const number=document.createElement('span');number.className='quest-number';number.textContent=id;
-    const label=document.createElement('span');label.className='state-label';label.textContent=statusText(q);
-    sub.append(number,label);heading.append(title,sub);
-    const arrow=document.createElement('span');arrow.className='quest-chevron';
-    arrow.textContent='›';arrow.setAttribute('aria-hidden','true');
-    row.append(icon,heading,arrow);
-    row.addEventListener('click',()=>{
-      state.selectedId=selected?null:id;
-      renderBrowse();
+"use strict";
+(function(){
+  var STORAGE_KEY = "dojo-quest-journal-v3-multiproject-v1";
+  var state = {quests:[],groups:[],statuses:{},checks:{},activeId:null,selectedId:null,detailId:null,recentId:null,page:"browse",filter:"available",browseY:0};
+  var $ = function(id){return document.getElementById(id);};
+  var saveAvailable = true;
+  function esc(value){
+    return String(value == null ? "" : value).replace(/[&<>"']/g,function(ch){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch];
     });
-    li.append(row);
-    const controls=document.createElement('div');controls.id='controls-'+id;
-    if(selected) {
-      const actions=document.createElement('div');actions.className='quest-actions';
-      const view=document.createElement('button');view.type='button';view.className='action-button';
-      view.textContent='View Quest';
-      view.addEventListener('click',()=>inspectQuest(id));
-      const activate=document.createElement('button');activate.type='button';
-      activate.className='action-button action-primary';
-      activate.textContent=activationLabel(q);
-      activate.disabled=!canActivate(q);
-      activate.title=isCompleted(q)?'Completed quests cannot be active':!isUnlocked(q)?
-        'Complete its prerequisite quests to unlock it':state.activeId===id?'This quest is already active':'Set this as the active quest';
-      activate.addEventListener('click',()=>setActive(id));
-      actions.append(view,activate);controls.append(actions);
-      if(!isUnlocked(q) && !isCompleted(q)) {
-        const note=document.createElement('p');note.className='action-note';
-        note.textContent='Complete '+(q.requires||[]).filter(req=>!isCompleted(questFor(String(req)))).join(', ')+' to unlock.';
-        controls.append(note);
+  }
+  function getQuest(id){return state.quests.find(function(q){return q.id===id;});}
+  function groupOf(q){return state.groups.find(function(g){return q && g.id===q.collection;});}
+  function groupQuests(group){return state.quests.filter(function(q){return q.collection===group.id;});}
+  function statusOf(q){return state.statuses[q.id] || q.status || "not_started";}
+  function completed(q){return !!q && statusOf(q)==="completed";}
+  function unlocked(q){return !!q && (q.requires||[]).every(function(id){return completed(getQuest(id));});}
+  function kindOf(q){
+    if(completed(q))return "completed";
+    if(!unlocked(q))return "locked";
+    if(state.activeId===q.id)return "active";
+    return statusOf(q)==="in_progress"?"in_progress":"not_started";
+  }
+  var kindLabels={completed:"Completed",locked:"Locked",active:"Active",in_progress:"In progress",not_started:"Not started"};
+  function countDone(q){return completed(q)?q.objectives.length:q.objectives.filter(function(o,i){return !!state.checks[q.id+":"+i];}).length;}
+  function countGroup(g){return groupQuests(g).filter(completed).length;}
+  function nextOf(g){return groupQuests(g).find(function(q){return !completed(q);})||null;}
+  function after(q){var list=groupQuests(groupOf(q));return list[list.findIndex(function(v){return v.id===q.id;})+1]||null;}
+  function canStart(q){return !!q && !completed(q) && unlocked(q) && state.activeId!==q.id;}
+  function progressOf(g){var list=groupQuests(g);return list.length?Math.round(countGroup(g)*100/list.length):0;}
+  function persist(){
+    if(!saveAvailable)return;
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify({v:1,statuses:state.statuses,checks:state.checks,activeId:state.activeId}));}
+    catch(error){saveAvailable=false;}
+  }
+  function restore(){
+    try{
+      var raw=localStorage.getItem(STORAGE_KEY);
+      if(!raw)return;
+      var saved=JSON.parse(raw);
+      if(!saved||saved.v!==1)return;
+      var valid=new Set(state.quests.map(function(q){return q.id;}));
+      state.statuses={};
+      Object.entries(saved.statuses||{}).forEach(function(item){
+        if(valid.has(item[0]) && ["completed","in_progress","not_started"].includes(item[1]))state.statuses[item[0]]=item[1];
+      });
+      state.checks={};
+      Object.entries(saved.checks||{}).forEach(function(item){
+        var id=item[0].split(":")[0];
+        if(valid.has(id) && typeof item[1]==="boolean")state.checks[item[0]]=item[1];
+      });
+      var q=getQuest(saved.activeId);
+      state.activeId=q && !completed(q) && unlocked(q)?q.id:null;
+    }catch(error){console.warn("Unable to restore prototype progress",error);}
+  }
+  function stateIcon(kind){
+    var symbol=kind==="completed"?"✓":kind==="active"?"●":kind==="locked"?"×":kind==="in_progress"?"◷":"";
+    return '<span class="state-icon '+kind+'" aria-hidden="true">'+symbol+'</span>';
+  }
+  function statusLine(q){
+    var kind=kindOf(q);
+    return '<span class="status-text '+kind+'">'+kindLabels[kind]+'</span>';
+  }
+  function focus(){
+    var q=getQuest(state.activeId);
+    $("focus-title").textContent=q?q.title:"No active quest";
+    $("focus-sub").textContent=q?(groupOf(q).name+(q.scroll?" · "+q.scroll:"")+" · "+countDone(q)+"/"+q.objectives.length+" objectives"):"Tap to browse available quests";
+  }
+  function heading(title,sub){
+    $("view-title").textContent=title;
+    $("view-sub").textContent=sub||"V3";
+  }
+  function card(q){
+    var k=kindOf(q), selected=state.selectedId===q.id, possible=canStart(q);
+    var label=completed(q)?"Completed":!unlocked(q)?"Locked":state.activeId===q.id?"Active":statusOf(q)==="in_progress"?"Set Active":"Start Quest";
+    var html='<li class="quest-card '+(selected?"expanded ":"")+(k==="locked"?"locked-quest":"")+'">';
+    html+='<button class="quest-row" type="button" aria-expanded="'+selected+'" data-action="toggle" data-id="'+esc(q.id)+'">'+stateIcon(k);
+    html+='<span class="quest-copy"><span class="quest-title">'+esc(q.title)+'</span><span class="quest-meta">'+statusLine(q)+'<span class="quest-id">'+esc(q.code||q.id)+'</span></span></span>';
+    html+='<span class="chevron" aria-hidden="true">›</span></button>';
+    if(selected){
+      html+='<div class="quest-actions"><button type="button" class="btn secondary" data-action="detail" data-id="'+esc(q.id)+'">View Quest</button>';
+      html+='<button type="button" class="btn primary" data-action="start" data-id="'+esc(q.id)+'" '+(possible?"":"disabled")+'>'+label+'</button></div>';
+      if(!unlocked(q) && !completed(q))html+='<p class="action-note">Complete the previous section or chapter to unlock this quest.</p>';
+    }
+    return html+"</li>";
+  }
+  function groupHeader(g){
+    var progress=progressOf(g), count=countGroup(g), total=groupQuests(g).length;
+    return '<div class="group-head"><div><div class="group-kicker">'+(g.kind==="independent"?"Other quests":"Quest collection")+'</div><h3 class="group-title">'+esc(g.name)+'</h3><div class="group-sub">'+esc(g.subtitle||"")+'</div></div><span class="group-counter">'+count+' / '+total+'</span></div>'+
+       '<div class="progress" aria-label="'+count+' of '+total+' quests completed"><div class="progress-fill" style="width:'+progress+'%"></div></div>';
+  }
+  function cardsWithScrolls(list,showDivisions){
+    var html='<ul class="quest-list">',lastScroll="";
+    list.forEach(function(q){
+      if(showDivisions && q.scroll && q.scroll!==lastScroll){
+        html+='</ul><div class="scroll-heading">'+esc(q.scroll)+'</div><ul class="quest-list">';
+        lastScroll=q.scroll;
+      }
+      html+=card(q);
+    });
+    return html+"</ul>";
+  }
+  function renderBrowse(){
+    heading("Browse Quests","MULTI-PROJECT");
+    var html='<div class="segment" role="group" aria-label="Quest visibility">';
+    html+='<button type="button" data-action="filter" data-filter="available" aria-pressed="'+(state.filter==="available")+'">Available</button>';
+    html+='<button type="button" data-action="filter" data-filter="all" aria-pressed="'+(state.filter==="all")+'">All Quests</button></div>';
+    state.groups.forEach(function(g){
+      var quests=groupQuests(g), shown;
+      if(state.filter==="available"){
+        shown=g.kind==="independent"?quests.filter(function(q){return !completed(q);}):(nextOf(g)?[nextOf(g)]:[]);
+      }else shown=quests;
+      html+='<section class="group" aria-label="'+esc(g.name)+'">'+groupHeader(g);
+      if(shown.length)html+=cardsWithScrolls(shown,state.filter==="all"&&g.id==="gorin");
+      else html+='<p class="small-note">All quests in this collection are complete.</p>';
+      html+='</section>';
+    });
+    if(state.filter==="available"){
+      var done=state.quests.filter(completed);
+      if(done.length){
+        html+='<details class="disclosure"><summary>Completed quests ('+done.length+')</summary>';
+        done.forEach(function(q){
+          html+='<button class="quest-row" data-action="detail" data-id="'+esc(q.id)+'" type="button">'+stateIcon("completed")+'<span class="quest-copy"><span class="quest-title">'+esc(q.title)+'</span><span class="quest-meta"><span class="quest-id">'+esc(groupOf(q).name)+'</span></span></span><span class="chevron">›</span></button>';
+        });
+        html+='</details>';
       }
     }
-    li.append(controls);list.append(li);
-  });
-  scroller.scrollTop=oldY;
-}
-function setActive(id) {
-  const q=questFor(id);
-  if(!canActivate(q))return;
-  state.activeId=id;
-  saveActive(id);
-  renderCurrent();
-  renderBrowse();
-  closeInspect();
-  switchView('current');
-  document.querySelector('#screen-current .scroller').scrollTop=0;
-}
-function inspectQuest(id) {
-  const q=questFor(id);
-  if(!q)return;
-  state.inspectingId=id;
-  $('browse-title').textContent='Quest details';
-  $('quest-count').textContent='';
-  $('browse-list').hidden=true;
-  $('inspect-panel').hidden=false;
-  $('inspect-id').textContent=id;
-  $('inspect-title').textContent=q.title;
-  const kind=visualState(q);
-  $('inspect-status').className='inspect-status state-'+kind;
-  $('inspect-status').textContent=statusText(q);
-  $('inspect-note').textContent=isCompleted(q)?'This quest has been completed.':
-    !isUnlocked(q)?'You can inspect this quest, but its prerequisites must be completed before activation.':
-    state.activeId===id?'This is your currently active quest.':'Viewing a quest does not make it active.';
-  renderFacts('inspect-facts',q);
-  $('browse-scroller').scrollTop=0;
-}
-function closeInspect() {
-  state.inspectingId=null;
-  $('browse-title').textContent='All quests';
-  $('quest-count').textContent=state.quests.length+' quests';
-  $('browse-list').hidden=false;
-  $('inspect-panel').hidden=true;
-}
-$('inspect-back').addEventListener('click',()=>{
-  closeInspect();
-  $('browse-scroller').scrollTop=0;
-});
-document.querySelectorAll('.tabbar button').forEach(button=>{
-  button.addEventListener('click',()=>{
-    if(button.dataset.view==='browse')closeInspect();
-    switchView(button.dataset.view);
-  });
-  button.addEventListener('keydown',event=>{
-    if(!['ArrowLeft','ArrowRight'].includes(event.key))return;
-    event.preventDefault();
-    const other=button.dataset.view==='current'?'browse':'current';
-    if(other==='browse')closeInspect();
-    switchView(other);
-    $('tab-'+other).focus();
-  });
-});
-async function loadQuests() {
-  try {
-    const response=await fetch('./quests.json');
-    if(!response.ok)throw new Error('Quest data request failed');
-    const payload=await response.json();
-    if(!Array.isArray(payload.quests))throw new Error('Expected a quests array');
-    state.quests=payload.quests;
-    const remembered=getSavedActive();
-    state.activeId=remembered && canActivateOnLoad(remembered)?remembered:null;
-    if(remembered && !state.activeId)saveActive('');
-    renderCurrent();closeInspect();renderBrowse();
-  } catch(error) {
-    $('quest-count').textContent='Could not load quests';
-    $('quest-list').textContent='Could not read quests.json.';
-    console.error(error);
+    html+='<p class="footnote">Prototype progress is saved locally in this browser. Completion in this app does not verify written work or update the original corpus.</p>';
+    $("scroller").innerHTML=html;
+    $("scroller").scrollTop=state.browseY;
   }
-}
-function canActivateOnLoad(id) {
-  const q=questFor(id);
-  return !!q && !isCompleted(q) && isUnlocked(q);
-}
-switchView('current');loadQuests();
+  function readonlyObjectives(q){
+    return q.objectives.map(function(objective,i){
+      var checked=completed(q)||!!state.checks[q.id+":"+i];
+      return '<div class="objective readonly"><span aria-hidden="true" class="readonly-check '+(checked?"checked":"")+'">'+(checked?"✓":"")+'</span><span>'+esc(objective)+'</span></div>';
+    }).join("");
+  }
+  function formatContext(q){
+    var g=groupOf(q);
+    var parts=[g.name];
+    if(q.scroll)parts.push(q.scroll);
+    if(q.code)parts.push(q.code);
+    return parts.join(" · ");
+  }
+  function renderDetail(){
+    var q=getQuest(state.detailId);
+    if(!q){state.page="browse";renderBrowse();return;}
+    heading("Quest Details",q.code||q.id);
+    var k=kindOf(q);
+    var text='<button class="back" type="button" data-action="back">‹ Back to Browse</button>';
+    text+='<div class="section-eyebrow">'+esc(formatContext(q))+'</div><h3 class="detail-title">'+esc(q.title)+'</h3>';
+    text+='<div class="status-line status-text '+k+'"><span class="status-dot"></span>'+kindLabels[k]+'</div>';
+    text+='<div class="divider"></div><div class="section-eyebrow">Quest objective</div><p class="detail-copy">'+esc(q.outcome||"Complete the objectives for this quest.")+'</p>';
+    text+='<div class="divider"></div><div class="heading-row"><h3>Objectives</h3><span class="small-note">'+countDone(q)+' / '+q.objectives.length+'</span></div>';
+    text+=readonlyObjectives(q);
+    if(q.objectivesAreTemplate)text+='<p class="small-note">These objectives are editable placeholders for the prototype, not a verified course checklist.</p>';
+    if(q.titleIsWorkingTranslation)text+='<p class="small-note">This is a working English title derived from the Japanese V4 heading.</p>';
+    if(!unlocked(q) && !completed(q))text+='<p class="small-note">This quest is locked until the preceding quest is complete.</p>';
+    text+='<div class="divider"></div>';
+    if(state.activeId===q.id)text+='<button class="btn primary block" type="button" data-action="current">Go to Active Quest</button>';
+    else text+='<button class="btn primary block" type="button" data-action="start" data-id="'+esc(q.id)+'" '+(canStart(q)?"":"disabled")+'>'+(completed(q)?"Completed":!unlocked(q)?"Locked":statusOf(q)==="in_progress"?"Set Active":"Start Quest")+'</button>';
+    $("scroller").innerHTML=text;
+    $("scroller").scrollTop=0;
+  }
+  function renderCurrent(){
+    heading("Current Quest",state.activeId?"ACTIVE":"NONE SELECTED");
+    var q=getQuest(state.activeId);
+    if(!q){
+      $("scroller").innerHTML='<div class="empty"><strong>No active quest.</strong><p>Choose an unlocked quest from Browse. You can work on one quest at a time while keeping other quests in progress.</p><button type="button" class="btn primary block" data-action="browse">Browse Available Quests</button></div>';
+      return;
+    }
+    var count=countDone(q),ready=count===q.objectives.length,kind=kindOf(q);
+    var html='<div class="section-eyebrow">'+esc(formatContext(q))+'</div><h3 class="detail-title">'+esc(q.title)+'</h3>';
+    html+='<div class="status-line status-text '+kind+'"><span class="status-dot"></span>Active Quest</div>';
+    html+='<p class="detail-copy">'+esc(q.outcome||"Complete this quest.")+'</p>';
+    html+='<div class="divider"></div><div class="heading-row"><h3>Quest Objectives</h3><span class="small-note">'+count+' / '+q.objectives.length+'</span></div>';
+    q.objectives.forEach(function(obj,i){
+      var id='objective-'+esc(q.id)+'-'+i,checked=!!state.checks[q.id+":"+i];
+      html+='<div class="objective"><input type="checkbox" id="'+id+'" data-check="'+esc(q.id)+'" data-index="'+i+'" '+(checked?"checked":"")+'><label for="'+id+'">'+esc(obj)+'</label></div>';
+    });
+    html+='<div class="divider"></div><p class="small-note" style="color:'+(ready?"var(--green)":"var(--muted)")+'">'+(ready?"All objectives complete. You can now finish this quest.":"Check off every objective when its outcome is actually finished.")+'</p>';
+    html+='<button type="button" class="btn primary block" data-action="complete" '+(ready?"":"disabled")+'>✓ Mark Quest Complete</button>';
+    html+='<div style="height:10px"></div><button type="button" class="btn secondary block" data-action="browse">Browse Other Quests</button>';
+    if(q.objectivesAreTemplate)html+='<p class="footnote">The objectives for this quest are illustrative prototype items.</p>';
+    $("scroller").innerHTML=html;
+  }
+  function renderComplete(){
+    var q=getQuest(state.recentId);
+    if(!q){state.page="browse";renderBrowse();return;}
+    heading("Quest Complete","PROGRESS");
+    var g=groupOf(q),next=after(q);
+    var html='<div class="complete-head"><span class="complete-badge">✓</span>Quest Complete</div>';
+    html+='<h3 class="detail-title">'+esc(q.title)+'</h3><p class="detail-copy">All '+q.objectives.length+' objectives marked complete.</p>';
+    html+='<div class="divider"></div><div class="heading-row"><h3>'+esc(g.name)+'</h3><span class="group-counter">'+countGroup(g)+' / '+groupQuests(g).length+'</span></div>';
+    html+='<div class="progress"><div class="progress-fill" style="width:'+progressOf(g)+'%"></div></div>';
+    if(q.scroll && g.id==="gorin"){
+      var inScroll=groupQuests(g).filter(function(x){return x.scroll===q.scroll;});
+      html+='<p class="small-note">'+esc(q.scroll)+': '+inScroll.filter(completed).length+' / '+inScroll.length+' sections complete</p>';
+    }
+    html+='<div class="divider"></div>';
+    if(next && unlocked(next)){
+      html+='<div class="notice"><div class="group-kicker">Next quest unlocked</div><div class="notice-title">'+esc(next.title)+'</div>';
+      html+='<p>'+esc(formatContext(next))+' · '+next.objectives.length+' objectives</p>';
+      html+='<div style="height:13px"></div><button type="button" class="btn primary block" data-action="start" data-id="'+esc(next.id)+'">Start Next Quest</button></div>';
+    }else if(!next){
+      html+='<div class="notice"><div class="notice-title">Collection progress recorded</div><p>'+(g.kind==="independent"?"This independent quest is complete.":"No more quests in this collection.")+'</p></div>';
+    }
+    html+='<div class="complete-actions"><button type="button" class="btn secondary block" data-action="browse">Browse Other Quests</button></div>';
+    $("scroller").innerHTML=html;
+    $("scroller").scrollTop=0;
+  }
+  function render(){
+    focus();
+    $("tab-current").setAttribute("aria-current",state.page==="current"?"page":"false");
+    $("tab-browse").setAttribute("aria-current",state.page==="browse"||state.page==="detail"?"page":"false");
+    if(state.page==="browse")renderBrowse();
+    if(state.page==="detail")renderDetail();
+    if(state.page==="current")renderCurrent();
+    if(state.page==="complete")renderComplete();
+  }
+  function go(page){
+    if(state.page==="browse")state.browseY=$("scroller").scrollTop;
+    state.page=page;
+    if(page==="browse")state.detailId=null;
+    render();
+    if(page!=="browse")$("scroller").scrollTop=0;
+  }
+  function start(id){
+    var q=getQuest(id);
+    if(!canStart(q))return;
+    state.statuses[q.id]="in_progress";
+    state.activeId=q.id;
+    state.selectedId=null;
+    persist();
+    go("current");
+  }
+  function completeQuest(){
+    var q=getQuest(state.activeId);
+    if(!q || !unlocked(q) || completed(q) || countDone(q)!==q.objectives.length)return;
+    state.statuses[q.id]="completed";
+    state.activeId=null;
+    state.recentId=q.id;
+    state.selectedId=null;
+    persist();
+    go("complete");
+  }
+  $("scroller").addEventListener("click",function(event){
+    var target=event.target.closest("[data-action]");
+    if(!target)return;
+    var action=target.dataset.action,id=target.dataset.id;
+    if(action==="filter"){
+      state.filter=target.dataset.filter;
+      state.selectedId=null;state.browseY=0;render();return;
+    }
+    if(action==="toggle"){
+      state.selectedId=state.selectedId===id?null:id;
+      state.browseY=$("scroller").scrollTop;
+      render();return;
+    }
+    if(action==="detail"){
+      state.detailId=id;go("detail");return;
+    }
+    if(action==="start"){start(id);return;}
+    if(action==="back"||action==="browse"){go("browse");return;}
+    if(action==="current"){go("current");return;}
+    if(action==="complete"){completeQuest();}
+  });
+  $("scroller").addEventListener("change",function(event){
+    var target=event.target;
+    if(!target.matches("input[data-check]"))return;
+    var q=getQuest(target.dataset.check),i=Number(target.dataset.index);
+    if(!q||q.id!==state.activeId||!Number.isInteger(i)||i<0||i>=q.objectives.length)return;
+    state.checks[q.id+":"+i]=target.checked;
+    persist();render();
+  });
+  $("focus-button").addEventListener("click",function(){go(state.activeId?"current":"browse");});
+  $("tab-current").addEventListener("click",function(){go("current");});
+  $("tab-browse").addEventListener("click",function(){go("browse");});
+  $("reset").addEventListener("click",function(){
+    if(!window.confirm("Reset V3 prototype progress on this browser? Versions 1 and 2 will not be affected."))return;
+    state.statuses={};state.checks={};state.activeId=null;state.recentId=null;state.selectedId=null;state.filter="available";state.browseY=0;
+    try{localStorage.removeItem(STORAGE_KEY);}catch(error){}
+    go("browse");
+  });
+  async function init(){
+    try{
+      var response=await fetch("./quests.json",{cache:"no-store"});
+      if(!response.ok)throw new Error("quests.json returned "+response.status);
+      var data=await response.json();
+      if(!Array.isArray(data.quests)||!Array.isArray(data.collections))throw new Error("Invalid quest data");
+      state.quests=data.quests;state.groups=data.collections;
+      restore();
+      render();
+    }catch(error){
+      console.error(error);
+      heading("Unable to Load Quests","ERROR");
+      $("scroller").innerHTML='<div class="empty">Could not load the V3 quest data. Try refreshing this page after the GitHub Pages update finishes.</div>';
+    }
+  }
+  init();
+})();
 </script>
 </body>
 </html>
