@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quest Journal — Dojo Prototype</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0f1b23;
+      --panel: #1c2e39;
+      --gold: #caaa74;
+      --text: #f4ebda;
+      --muted: #b5c3c8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      background: var(--background);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    main {
+      width: min(100%, 620px);
+      margin: 0 auto;
+      padding: max(26px, env(safe-area-inset-top)) 18px max(32px, env(safe-area-inset-bottom));
+    }
+    header { margin-bottom: 24px; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 6px 0 5px;
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 7vw, 2.35rem);
+      font-weight: 600;
+    }
+    #count { margin: 0; color: var(--muted); font-size: 0.93rem; }
+    #quest-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .quest-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      min-height: 80px;
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid rgba(202, 170, 116, 0.38);
+      border-radius: 14px;
+    }
+    .quest-id {
+      flex: 0 0 38px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .quest-title {
+      min-width: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+    .message { color: var(--muted); line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">The Dojo</div>
+      <h1>Quest Journal</h1>
+      <p id="count" aria-live="polite">Loading quests…</p>
+    </header>
+    <ul id="quest-list" aria-label="Quests"></ul>
+  </main>
+
+  <script>
+    async function showQuests() {
+      const count = document.getElementById('count');
+      const list = document.getElementById('quest-list');
+      try {
+        const response = await fetch('./quests.json');
+        if (!response.ok) throw new Error('Could not load quests.json');
+        const data = await response.json();
+        if (!Array.isArray(data.quests)) throw new Error('Expected a quests array');
+
+        count.textContent = `${data.quests.length} quest${data.quests.length === 1 ? '' : 's'}`;
+        for (const quest of data.quests) {
+          const card = document.createElement('li');
+          card.className = 'quest-card';
+          const id = document.createElement('span');
+          id.className = 'quest-id';
+          id.textContent = quest.id ?? '';
+          const title = document.createElement('span');
+          title.className = 'quest-title';
+          title.textContent = quest.title ?? 'Untitled quest';
+          card.append(id, title);
+          list.appendChild(card);
+        }
+      } catch (error) {
+        count.textContent = 'Unable to load quests';
+        const note = document.createElement('p');
+        note.className = 'message';
+        note.textContent = 'Put index.html and quests.json in the same folder and open them through a website or local server.';
+        list.replaceWith(note);
+        console.error(error);
+      }
+    }
+    showQuests();
+  </script>
+</body>
+</html>
